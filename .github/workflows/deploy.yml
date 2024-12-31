@@ -18,9 +18,6 @@ jobs:
         with:
           node-version: 22
 
-      - name: Set Working Directory
-        run: cd frontend
-
       - name: Install dependencies
         run: npm install
 
