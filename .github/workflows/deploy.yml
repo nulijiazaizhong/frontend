@@ -31,4 +31,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out  # The directory where the static files are generated
+          publish_dir: ./out
+          cname: app.ets2la.com # Publish to app.ets2la.com
