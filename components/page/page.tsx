@@ -240,7 +240,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 					{String(children).replace(/\n$/, '')}
 				  </SyntaxHighlighter>
 				);
-			}
+			},
 			// Custom renderer for images
 		    img({node, ...props}) {
 				return (
