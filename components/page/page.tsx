@@ -241,6 +241,15 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 				  </SyntaxHighlighter>
 				);
 			}
+			// Custom renderer for images
+		    img({node, ...props}) {
+				return (
+					<img
+					{...props}
+					className="rounded-md"
+					/>
+				);
+			},
 		}} className={data.classname}>
 		  {data}
 		</Markdown>
