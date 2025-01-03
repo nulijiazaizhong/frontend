@@ -1,0 +1,493 @@
+Language:
+    credits: "Topluluk taraf\u0131ndan haz\u0131rlanm\u0131\u015F T\xFCrk\xE7e dil\
+        \ paketini kullanmaktas\u0131n\u0131z. Translated by Byeco - onayB09 - xaevlc"
+    iso_code: tr
+    name: "T\xFCrk\xE7e"
+    name_en: Turkish
+    version: 2.0.0
+Translations:
+    about.about: "Hakk\u0131nda"
+    about.atac_helicopter.description: "Hata d\xFCzeltmeleri"
+    about.cloud.description: "Linux & Unix Deste\u011Fi, \xE7e\u015Fitli iyile\u015F\
+        tirmeler ve hata d\xFCzeltmeleri"
+    about.contribute_description: "\u2022 E\u011Fer katk\u0131da bulunmak isterseniz,\
+        \ Discord sunucusumuza kat\u0131lman\u0131z\u0131 ve GitHub sayfas\u0131n\u0131\
+        \ kontrol etmenizi \xF6neririm."
+    about.description: "ETS2LA, ETS2 ve ATS i\xE7in kullan\u0131c\u0131 dostu bir\
+        \ otonom s\xFCr\xFC\u015F \xE7\xF6z\xFCm\xFC sunmay\u0131 ama\xE7lar. Daha\
+        \ fazla bilgi edinmek isterseniz, kenar \xE7ubu\u011Fu \xFCzerinden GitHub\
+        \ proje GitHub sayfas\u0131n\u0131 veya Wiki'yi ziyaret edebilirsiniz."
+    about.developers: "Geli\u015Ftiriciler / Katk\u0131da Bulunanlar"
+    about.dtheicydragon.description: "Hata d\xFCzeltmeleri"
+    about.dyldev.description: "\xC7e\u015Fitli eklemeler ve iyile\u015Ftirmeler, geli\u015F\
+        tirme ve Nesne Alg\u0131lama yapay zeka modelleri"
+    about.flexflexen.description: "Hata d\xFCzeltmeleri"
+    about.glas42.description: "Navigasyon Alg\u0131lama, Trafik I\u015F\u0131\u011F\
+        \u0131 Alg\u0131lama, ETS2LA Lite, 'proje orta\u011F\u0131'"
+    about.kofi_description: "\u2022 E\u011Fer projeyi be\u011Fendiyseniz ve geli\u015F\
+        im s\xFCrecini desteklemek isterseniz, Ko-Fi \xFCzerinden ba\u011F\u0131\u015F\
+        \ yapabilirsiniz."
+    about.lookatyourskill.description: "Hata d\xFCzeltmeleri"
+    about.lun.description: "\xC7ince \xE7eviri, hata d\xFCzeltmeleri"
+    about.mimi89999.description: "scs-sdk-controller geli\u015Ftiricisi"
+    about.mruiaw.description: "\xC7ince \xE7eviriler, hata d\xFCzeltmeleri"
+    about.no_credits: "Dil i\xE7in herhangi bir katk\u0131 kayd\u0131 bulunmamaktad\u0131\
+        r."
+    about.piotrke.description: "Oyuna ba\u011Flanmay\u0131 sa\u011Flayan ara\xE7 (hook)"
+    about.romansonnik.description: "Hata d\xFCzeltmeleri"
+    about.support_development: "Geli\u015Ftirmeye Destek Olun"
+    about.translate_description: "\u2022 E\u011Fer \xE7eviri s\xFCrecine katk\u0131\
+        da bulunmak isterseniz, Discord'a kat\u0131larak bunu yapabilirsiniz."
+    about.translation_credits: "\xC7eviri Katk\u0131lar\u0131"
+    about.truckersmudgeon.description: "Oyun verisi elde etme ve i\u015Fleme"
+    about.tumppi066.description: "ETS2LA'n\u0131n lider geli\u015Ftiricisi ve yarat\u0131\
+        c\u0131s\u0131, backend ve frontend."
+    about.viszke.description: "Hata d\xFCzeltmeleri"
+    about.whytrevorwhy.description: "ETS2LA & Harita \xFCzerinde Navigate yard\u0131\
+        m\u0131"
+    about.zhaoyj.description: "G\xF6rselle\u015Ftirme i\xE7in 3D modeller"
+    about.ziakhan4505.description: "C++ deste\u011Fi, Linux & Unix Deste\u011Fi, hata\
+        \ d\xFCzeltmeleri"
+    acc.settings.1.description: "Bu ayarlar, uygulaman\u0131n di\u011Fer ara\xE7lara\
+        \ nas\u0131l tepki verece\u011Fini etkiler."
+    acc.settings.1.title: "Adaptif H\u0131z Sabitleyici Ayarlar\u0131"
+    acc.settings.2.description: "\xD6ndeki ara\xE7tan ka\xE7 saniye geride olunmas\u0131\
+        \ gerekti\u011Fini belirler."
+    acc.settings.2.name: "Takip S\xFCresi"
+    acc.settings.3.description: "H\u0131z s\u0131n\u0131r\u0131n\u0131n ne kadar seyir\
+        \ edilebilece\u011Fi."
+    acc.settings.3.name: "H\u0131z Ayarlar\u0131"
+    acc.settings.4.description: "Uygulaman\u0131n \xF6ndeki nesneden ne kadar uzakta\
+        \ olmas\u0131 gerekti\u011Fini belirler."
+    acc.settings.4.name: Mesafe
+    acc.settings.5.description: "H\u0131z s\u0131n\u0131r\u0131na g\xF6re y\xFCzde\
+        \ olarak m\u0131 yoksa sabit bir miktar m\u0131 daha h\u0131zl\u0131 s\xFC\
+        r\xFClece\u011Fini belirler."
+    acc.settings.5.name: "H\u0131z Ayar\u0131 Tipi"
+    acc.settings.6.description: "Uygulaman\u0131n herhangi bir engel nedeniyle yava\u015F\
+        lad\u0131\u011F\u0131n\u0131 bildiren bir pop-up g\xF6sterir."
+    acc.settings.6.name: "Bildirimleri G\xF6ster"
+    cancel: "\u0130ptal"
+    clear: Temizle
+    confirm: Onayla
+    continue: Devam Et
+    controls.listener_started: "Kontrol dinleyicisi ba\u015Flat\u0131ld\u0131."
+    core.backend_started: "ETS2LA uygulamas\u0131 ba\u015Far\u0131yla ba\u015Flat\u0131\
+        ld\u0131."
+    done: "Tamamland\u0131!"
+    download: "\u0130ndir"
+    downloading: "\u0130ndiriliyor {0}..."
+    error: Hata
+    events.vehicle_change.vehicle_change: "Farkl\u0131 ara\xE7 alg\u0131land\u0131\
+        ."
+    events.vehicle_change.vehicle_change_description: "Farkl\u0131 ara\xE7 alg\u0131\
+        land\u0131. L\xFCtfen kabin i\xE7indeykeb F4 tu\u015Funa bas\u0131n, koltuk\
+        \ ayarlar\u0131 k\u0131sm\u0131ndan yeni g\xF6r\xFC\u015F a\xE7\u0131s\u0131\
+        \ (FOV) de\u011Ferini girin."
+    frontend.404.button: "Ana Men\xFC"
+    frontend.404.message: "Herneyse, ana ekrana d\xF6nmek i\xE7in a\u015Fa\u011F\u0131\
+        daki butona t\u0131klay\u0131n. Ayr\u0131ca, buraya nas\u0131l ula\u015Ft\u0131\
+        \u011F\u0131n\u0131z\u0131 bize s\xF6yleyebilir misiniz?"
+    frontend.404.title: "Burada olman\u0131n sebebi... sadece ac\u0131 \xE7ekmek mi?"
+    frontend.dialog.not_supported: "{0} diyalog i\xE7inde desteklenmiyor."
+    frontend.disclaimer.description.line1: "Geli\u015Ftirici ekip, ETS2LA veya herhangi\
+        \ bir ETS2LA eklentisinden kaynaklanan yan etkilerden sorumlu tutulamaz. Olu\u015F\
+        abilecek her t\xFCrl\xFC olumsuz durum tamamen kullan\u0131c\u0131 sorumlulu\u011F\
+        undad\u0131r."
+    frontend.disclaimer.description.line2: "ETS2LA'nin TruckersMP'de kullan\u0131\
+        lmas\u0131 TMP ekibi taraf\u0131ndan onaylanm\u0131\u015Ft\u0131r, ancak ETS2LA\
+        \ yaz\u0131l\u0131m\u0131 kaynakl\u0131 herhangi bir yasaklanma veya uyar\u0131\
+        \ tamamen kullan\u0131c\u0131 sorumlulu\u011Fundad\u0131r."
+    frontend.disclaimer.dontshowagain: "Bir daha g\xF6sterme"
+    frontend.disclaimer.dontshowagain.toast: "Bir sonraki g\xFCncellemeye kadar gizlendi."
+    frontend.disclaimer.ok: "Sorumluluk reddini anlad\u0131m ve onayl\u0131yorum."
+    frontend.disclaimer.title: Sorumluluk Reddi Bildirimi!
+    frontend.feedback: Geribildirim
+    frontend.feedback.description: "L\xFCtfen geribildirimlerinizi bizimle payla\u015F\
+        \u0131n. Bu, geli\u015Ftiricilerin g\xF6rebilece\u011Fi \xF6zel bir kanala\
+        \ do\u011Frudan g\xF6nderilecektir."
+    frontend.feedback.disclaimer: "Ki\u015Fisel bilgilerinizi payla\u015Fmay\u0131\
+        n."
+    frontend.feedback.empty: "Geri bildirim kutusu bo\u015F, l\xFCtfen geribildirimlerinizi\
+        \ payla\u015F\u0131n."
+    frontend.feedback.error_sending: "Geribildirimleriniz g\xF6nderirken bir hata\
+        \ olu\u015Ftu, l\xFCtfen daha sonra tekrar deneyin."
+    frontend.feedback.sending: "Geribildirim g\xF6nderiliyor..."
+    frontend.feedback.sent: "Geribildirimleriniz g\xF6nderildi!"
+    frontend.feedback.submit: "G\xF6nder"
+    frontend.hello: Merhaba, {0}!
+    frontend.immediate.checking_updates: "G\xFCncellemeler kontrol ediliyor..."
+    frontend.immediate.close: Kapat
+    frontend.immediate.connected: "ETS2LA backend'i ile ba\u011Flant\u0131 kuruldu."
+    frontend.immediate.disable_stay_on_top: "\xDCstte kalmay\u0131 devre d\u0131\u015F\
+        \u0131 b\u0131rak"
+    frontend.immediate.disable_transparent: "Saydaml\u0131k efektlerini devre d\u0131\
+        \u015F\u0131 b\u0131rak."
+    frontend.immediate.disconnected: "ETS2LA backend'i ile ba\u011Flant\u0131 koptu."
+    frontend.immediate.enable_stay_on_top: "\xDCstte kalmay\u0131 etkinle\u015Ftir"
+    frontend.immediate.enable_transparent: "Saydaml\u0131k efektlerini etkinle\u015F\
+        tir."
+    frontend.immediate.minimize: "K\xFC\xE7\xFClt"
+    frontend.immediate.no_updates: "Hi\xE7bir g\xFCncelleme mevcut de\u011Fil."
+    frontend.immediate.socket_connected: "Ba\u011Fl\u0131"
+    frontend.immediate.socket_disconnected: "Ba\u011Flant\u0131 kesildi, l\xFCtfen\
+        \ yenileyin."
+    frontend.immediate.up_to_date: "G\xFCncelsiniz!"
+    frontend.immediate.update_available: "{0} g\xFCncelleme geridesiniz"
+    frontend.immediate.update_check_error: 'Hata: {0}'
+    frontend.logged_out: "\xC7\u0131k\u0131\u015F yap\u0131ld\u0131."
+    frontend.login: "Giri\u015F"
+    frontend.login.already_logged_in: "NOT: Zaten giri\u015F yapt\u0131n\u0131z. Tekrar\
+        \ giri\u015F yaparak bunu ge\xE7ersiz k\u0131labilirsiniz."
+    frontend.login.disclaimer: "Anl\u0131k olarak yaln\u0131zca Discord ile giri\u015F\
+        i destekliyoruz. Bu, \u015Fifre gibi hassas verilerin g\xFCvenli\u011Fini\
+        \ sa\u011Flamak i\xE7indir."
+    frontend.login.discord: "Discord ile Giri\u015F Yap"
+    frontend.login.privacy_policy: Gizlilik Politikasi
+    frontend.login.successful: "Ba\u015Far\u0131yla giri\u015F yap\u0131ld\u0131!"
+    frontend.login.successful_description: "Sol alt k\xF6\u015Fede kullan\u0131c\u0131\
+        \ ad\u0131n\u0131z\u0131n alt\u0131ndaki men\xFCden \xE7\u0131k\u0131\u015F\
+        \ yapabilirsiniz."
+    frontend.plugins.authors: Yazarlar
+    frontend.plugins.disabled_plugin: "{0} devre d\u0131\u015F\u0131 b\u0131rak\u0131\
+        ld\u0131"
+    frontend.plugins.disabling_plugin: "{0} devre d\u0131\u015F\u0131 b\u0131rak\u0131\
+        l\u0131yor"
+    frontend.plugins.enabled_plugin: "{0} etkinle\u015Ftirildi"
+    frontend.plugins.enabling_plugin: "{0} etkinle\u015Ftiriliyor"
+    frontend.plugins.end_list: Listenin sonuna geldiniz
+    frontend.plugins.error_disabling_plugin: "{0} devre d\u0131\u015F\u0131 b\u0131\
+        rak\u0131l\u0131rken hata olu\u015Ftu"
+    frontend.plugins.error_enabling_plugin: "{0} etkinle\u015Ftirilirken hata olu\u015F\
+        tu"
+    frontend.plugins.hidden: '{0} eklenti gizlendi'
+    frontend.plugins.name: "Ad\u0131"
+    frontend.plugins.select_authors: "Yazarlar\u0131 Ara"
+    frontend.plugins.select_tags: Etiketleri Ara
+    frontend.plugins.selected_authors: "{0} yazar se\xE7ildi"
+    frontend.plugins.selected_tags: "{0} etiket se\xE7ildi"
+    frontend.plugins.tags: Etiketler
+    frontend.settings: Ayarlar
+    frontend.settings.array.add: Eleman Ekle
+    frontend.settings.array.added_element: "Dizi eleman\u0131 eklendi"
+    frontend.settings.array.remove: "Kald\u0131r"
+    frontend.settings.array.removed_element: "Dizi eleman\u0131 kald\u0131r\u0131\
+        ld\u0131"
+    frontend.settings.array.updated_element: "Dizi eleman\u0131 g\xFCncellendi"
+    frontend.settings.backend_no_data: Got no data from the backend.
+    frontend.settings.boolean.updated: "Ayar g\xFCncellendi"
+    frontend.settings.controls: Kontroller
+    frontend.settings.data_missing: "Eklenti verileri ge\xE7ersiz veya eksik."
+    frontend.settings.enum.no_enum: "Hi\xE7bir enum de\u011Feri sa\u011Flanmad\u0131\
+        ."
+    frontend.settings.enum.updated: "Ayar g\xFCncellendi"
+    frontend.settings.error: 'Hata: {0}'
+    frontend.settings.global: Genel
+    frontend.settings.global_info: "Bu liste yaln\u0131zca ortak ayarlar dosyas\u0131\
+        n\u0131 destekleyen eklentileri i\xE7erir."
+    frontend.settings.needs_restart: "Ayarlar\u0131n uygulanmas\u0131 i\xE7in eklentinin\
+        \ yeniden ba\u015Flat\u0131lmas\u0131 gerekmektedir."
+    frontend.settings.number.updated: "Ayar g\xFCncellendi"
+    frontend.settings.restarted: "Yeniden ba\u015Flatma ba\u015Far\u0131l\u0131!"
+    frontend.settings.string.updated: "Ayar g\xFCncellendi"
+    frontend.settings.unknown_data_type: 'Bilinmeyen veri tipi: {0}'
+    frontend.sidebar.account: "Hesab\u0131m"
+    frontend.sidebar.anonymous: Anonim
+    frontend.sidebar.chat: Sohbet
+    frontend.sidebar.dashboard: Panel
+    frontend.sidebar.help: "Yard\u0131m"
+    frontend.sidebar.main: Ana
+    frontend.sidebar.manager: "Y\xF6neticisi"
+    frontend.sidebar.performance: Performans
+    frontend.sidebar.plugins: Eklentiler
+    frontend.sidebar.settings: Ayarlar
+    frontend.sidebar.sign_in: "Giri\u015F Yap"
+    frontend.sidebar.sign_out: "\xC7\u0131k\u0131\u015F Yap"
+    frontend.sidebar.sign_out_description: "Her zaman yeniden giri\u015F yapabilirsiniz."
+    frontend.sidebar.sign_out_successful: "\xC7\u0131k\u0131\u015F ba\u015Far\u0131\
+        l\u0131."
+    frontend.sidebar.updates_available: "G\xFCncellemeler Mevcut"
+    frontend.sidebar.visualization: "G\xF6r\xFCn\xFCle\u015Ftirme"
+    frontend.sidebar.wiki: Wiki
+    frontend.states.complete: "Tamamland\u0131!"
+    frontend.theme.dark: "Karanl\u0131k Tema"
+    frontend.theme.light: "Ayd\u0131nl\u0131k Tema"
+    global.settings.1.description: "Bunlar genellikle t\xFCm uygulamay\u0131 etkileyen\
+        \ ayarlard\u0131r."
+    global.settings.1.title: Genel Ayarlar
+    global.settings.10.description: "Pencerenin geni\u015Fli\u011Fini belirler."
+    global.settings.10.name: "Pencere Geni\u015Fli\u011Fi"
+    global.settings.11.description: "Pencerenin y\xFCksekli\u011Fini belirler."
+    global.settings.11.name: "Pencere Y\xFCksekli\u011Fi"
+    global.settings.12.description: "Saydam moddaki pencerenin saydaml\u0131k seviyesini\
+        \ belirler. 1 = tamamen opak, 0 = tamamen saydam."
+    global.settings.12.name: "Saydaml\u0131k Modu - Alfa"
+    global.settings.13.description: "G\xF6rsel uygulamalar (Nesne Alg\u0131lama vb.)\
+        \ i\xE7in kullan\u0131lacak ekran ID'sini belirler. Bu, ETS2'nin \xE7al\u0131\
+        \u015Ft\u0131\u011F\u0131 monit\xF6re ayarlanmal\u0131d\u0131r. De\u011Fi\u015F\
+        ikliklerin uygulanmas\u0131 i\xE7in yeniden ba\u015Flatma gerekir."
+    global.settings.13.name: Ekran ID'si
+    global.settings.14.description: "A\xE7\u0131l\u0131r pencereyi ka\xE7\u0131rd\u0131\
+        ysan\u0131z g\xF6r\xFC\u015F alan\u0131n\u0131 burada de\u011Fi\u015Ftirebilirsiniz."
+    global.settings.14.name: "G\xF6r\xFC\u015F Alan\u0131 (FOV)"
+    global.settings.15.description: "Ekranda kar tanelerini etkinle\u015Ftirir."
+    global.settings.15.name: Kar
+    global.settings.16.description: "Ekranda havai fi\u015Fekleri etkinle\u015Ftirir."
+    global.settings.16.name: "Havai Fi\u015Fekler"
+    global.settings.2.description: "Kullan\u0131lacak ses paketi. Bu, uygulamadaki\
+        \ t\xFCm sesleri de\u011Fi\u015Ftirecektir."
+    global.settings.2.name: Ses Paketi
+    global.settings.3.description: Uygulamadaki seslerin seviyesini belirler.
+    global.settings.3.name: Ses Seviyesi
+    global.settings.4.description: "Frontend'in \xE7al\u0131\u015Faca\u011F\u0131\
+        \ portu ayarlar."
+    global.settings.4.name: Frontend Portu
+    global.settings.5.description: "Bir hata olu\u015Ftu\u011Funda geli\u015Fmi\u015F\
+        \ hata ay\u0131klama kullan\u0131lmas\u0131n\u0131 sa\u011Flar."
+    global.settings.5.name: "Geli\u015Fmi\u015F Hata Ay\u0131klama"
+    global.settings.6.description: "Hata raporlar\u0131n\u0131 geli\u015Ftiricilere\
+        \ g\xF6ndermeyi etkinle\u015Ftirir."
+    global.settings.6.name: "Hata Raporlar\u0131n\u0131 G\xF6nder"
+    global.settings.7.description: "Hata ay\u0131klama modunu etkinle\u015Ftirir."
+    global.settings.7.name: "Hata Ay\u0131klama Modu"
+    global.settings.8.description: "Uygulama i\xE7in kullan\u0131lacak dili belirler.\
+        \ De\u011Fi\u015Fikliklerin uygulanmas\u0131 i\xE7in yeniden ba\u015Flatma\
+        \ gerekir."
+    global.settings.8.name: Dil
+    global.settings.9.description: "Uygulama i\xE7in \xE7er\xE7evesiz pencere kullan\u0131\
+        m\u0131n\u0131 sa\u011Flar. De\u011Fi\u015Fikliklerin uygulanmas\u0131 i\xE7\
+        in tam yeniden ba\u015Flatma gerekir. Bu, uygulama penceresini ta\u015F\u0131\
+        rken olu\u015Fan problemleri d\xFCzeltir ve \xF6l\xE7eklendirmeyi etkinle\u015F\
+        tirir."
+    global.settings.9.name: "\xC7er\xE7evesiz"
+    global.settings.audio: Ses
+    global.settings.misc: "Di\u011Fer"
+    global.settings.ui: "Kullan\u0131c\u0131 Aray\xFCz\xFC"
+    global.settings.variables: "De\u011Fi\u015Fkenler"
+    godot.server_started: Godot {0} portunda hizmet veriyor
+    immediate.empty_page: "Bo\u015F bir sayfa g\xF6nderilmeye \xE7al\u0131\u015F\u0131\
+        ld\u0131."
+    immediate.message_error: "Mesaj i\u015Flenirken bir hata olu\u015Ftu!"
+    immediate.websocket_started: "A\u011F soketi ba\u015Flat\u0131ld\u0131."
+    install: Kur
+    loading: "Y\xFCkleniyor..."
+    logging.delete_log_error: "G\xFCnl\xFCk dosyas\u0131 silinemedi."
+    logging.logger_initialized: "G\xFCnl\xFCk kaydedici ba\u015Flat\u0131ld\u0131."
+    main.closed: "ETS2LA kapat\u0131ld\u0131."
+    main.crashed: "ETS2LA a\u015Fa\u011F\u0131daki hata nedeniyle \xE7\xF6kt\xFC:"
+    main.development_mode: "ETS2LA geli\u015Ftirici modunda \xE7al\u0131\u015Ft\u0131\
+        r\u0131l\u0131yor."
+    main.errors: 'Hatalar:'
+    main.errors_and_warnings: "G\xFCnl\xFCk dosyas\u0131ndaki hata ve uyar\u0131lar:"
+    main.legacy_traceback: "Eski y\u0131\u011F\u0131n izleme \xE7\u0131kt\u0131s\u0131\
+        \ kullan\u0131ld\u0131."
+    main.no_errors_or_warnings: "Hata veya uyar\u0131 bulunamad\u0131."
+    main.overseer_started: "ETS2LA Overseer ba\u015Flat\u0131ld\u0131!"
+    main.press_enter: "\xC7\u0131kmak i\xE7in enter tu\u015Funa bas\u0131n..."
+    main.restarting: "ETS2LA yeniden ba\u015Flat\u0131l\u0131yor..."
+    main.send_report: "Yukar\u0131daki geri bildirimi geli\u015Ftiricilere g\xF6nder."
+    main.update_done: "G\xFCncelleme tamamland\u0131... yeniden ba\u015Flat\u0131\
+        l\u0131yor!"
+    main.updating: "ETS2LA g\xFCncelleniyor..."
+    main.warnings: "Uyar\u0131lar:"
+    map.extracting_data: "GameData.zip ar\u015Fivden \xE7\u0131kart\u0131l\u0131yor\
+        \ l\xFCtfen bekleyin..."
+    map.json_not_found: "GameData klas\xF6r\xFCnde JSON dosyas\u0131 bulunamad\u0131\
+        . L\xFCtfen GameData.zip dosyas\u0131n\u0131 ar\u015Fivden \xE7\u0131kart\u0131\
+        n."
+    map.loading.ferries: "Feribotlar y\xFCkleniyor..."
+    map.loading.final_calculations: "Harita son hesaplamalar\u0131 yap\u0131yor..."
+    map.loading.nodes: "Harita noktalar\u0131 y\xFCkleniyor..."
+    map.loading.prefab_data: "Harita prefab verisi y\xFCkleniyor..."
+    map.loading.prefabs: "Harita prefablar\u0131 y\xFCkleniyor..."
+    map.loading.preparing: "Harita veri y\xFCklemeye haz\u0131rlan\u0131yor..."
+    map.loading.roads: "Harita yollar\u0131 y\xFCkleniyor..."
+    map.settings.1.description: "Bu ayarlar harita eklentisi i\xE7indir."
+    map.settings.1.title: "Harita Ayarlar\u0131"
+    map.settings.10.title: "Direksiyon Ayarlar\u0131"
+    map.settings.11.description: "Direksiyonun yumu\u015Fakl\u0131\u011F\u0131 i\xE7\
+        in saniye cinsinden bir de\u011Fer belirler. 0 de\u011Feri \xE7ok h\u0131\
+        zl\u0131 bir tepki verecektir, 0.5'in \xFCzerindeki bir de\u011Fer ise sa\u011F\
+        a sola sallanabilir."
+    map.settings.11.name: "Yumu\u015Fakl\u0131k"
+    map.settings.12.description: "Hedefinize ula\u015Fmak i\xE7in gerekli rotay\u0131\
+        \ hesaplar. Uyar\u0131: Bu rota en h\u0131zl\u0131 rota olmayabilir!"
+    map.settings.12.name: "ETS2LA Kaynakl\u0131 Navigasyon"
+    map.settings.2.description: "Bu se\xE7enek, kamyonun direksiyonunun y\xF6nlendirme\
+        \ a\xE7\u0131s\u0131 i\xE7in gerekli t\xFCm de\u011Ferleri hesaplayacakt\u0131\
+        r."
+    map.settings.2.name: "Y\xF6nlendirme A\xE7\u0131s\u0131 Hesaplama"
+    map.settings.3.description: "Bu se\xE7enek, di\u011Fer eklentilerin Harita'n\u0131\
+        n verilerini kullanmas\u0131na izin verir. L\xFCtfen g\xF6rselle\u015Ftirmenin\
+        \ bu se\xE7enek etkinle\u015Ftirilmeden \xE7al\u0131\u015Fmayaca\u011F\u0131\
+        n\u0131 unutmay\u0131n. Bu se\xE7enek\u011Fin kapat\u0131lmas\u0131 halinde\
+        \ performans biraz artabilir."
+    map.settings.3.name: "Veri G\xF6nderimi"
+    map.settings.4.title: "Dahili G\xF6rselle\u015Ftirme"
+    map.settings.5.description: "Dahili g\xF6rselle\u015Ftirmenin yak\u0131nla\u015F\
+        t\u0131rma seviyesini kontrol eder."
+    map.settings.5.name: "Yak\u0131nla\u015Ft\u0131rma"
+    map.settings.6.description: "Haritan\u0131n dahili g\xF6rselle\u015Ftirmesini\
+        \ i\u015Fleyip i\u015Flemeyece\u011Fini belirler. Harici veriyi g\xF6ndermiyorsan\u0131\
+        z faydal\u0131 olabilir."
+    map.settings.6.name: "Etkinle\u015Ftir"
+    map.settings.7.title: "Harici G\xF6rselle\u015Ftirme"
+    map.settings.8.description: "Bu se\xE7enek, di\u011Fer eklentilere g\xF6nderilecek\
+        \ verilerin maksimum mesafesini ayarlar. Eklenti taraf\u0131ndan izin veriliyorsa\
+        \ uygulan\u0131r."
+    map.settings.8.name: Render Mesafesi
+    map.settings.9.description: "Bu se\xE7enek, oyun \xFCzerinde yollar\u0131 g\xF6\
+        sterir. AR eklentisini de etkinle\u015Ftirmeniz gerekir."
+    map.settings.9.name: "AR Verisini G\xF6ster"
+    map.visualisation.prefabs.curves: "E\u011Friler: {0}"
+    map.visualisation.prefabs.prefabs: 'Prefabs: {0}, Tile: {1}'
+    map.visualisation.roads.text: "Yollar: {0}, Tile: {1}, Y\xFCkleniyor: {2}"
+    'no': "Hay\u0131r"
+    object_detection.connection_failed.1: "Hugging Face sunucusuna ula\u015F\u0131\
+        lam\u0131yor."
+    object_detection.connection_failed.2: "L\xFCtfen internet ba\u011Flant\u0131n\u0131\
+        z\u0131 kontrol edin."
+    object_detection.connection_failed.3: "NOT: \xC7in gibi baz\u0131 \xFClkelerde\
+        \ sunucu engellenmi\u015F olabilir."
+    object_detection.connection_failed.4: "Bu durumda, yard\u0131m almak i\xE7in Discord\
+        \ \xFCzerinden bize ula\u015Fabilirsiniz."
+    object_detection.loaded_model: "Nesne Tespiti modeli {0} \xFCzerine y\xFCklendi"
+    object_detection.loading_model: "Nesne Tespit Modeli Y\xFCkleniyor..."
+    object_detection.not_found.1: "A\u015Fa\u011F\u0131da belirtilen istenen model\
+        \ hen\xFCz indirilmedi."
+    object_detection.not_found.2: "A\u015Fa\u011F\u0131daki butona t\u0131klayarak\
+        \ modeli adresinden indirin"
+    object_detection.processing_error: "Ara\xE7 verileri i\u015Flenirken hata olu\u015F\
+        tu"
+    object_detection.screen_capture_profile: "Nesne Tespiti \u015Fu ekran yakalama\
+        \ profili ile kullan\u0131l\u0131yor: {0}"
+    object_detection.settings.1.description: "Bu ayarlar, nesne tespiti kalitesini\
+        \ ve performans\u0131n\u0131 etkiler."
+    object_detection.settings.1.title: "Nesne Tespit Ayarlar\u0131"
+    object_detection.settings.2.description: "Nesne Tespitinin \xE7al\u0131\u015F\
+        t\u0131r\u0131laca\u011F\u0131 cihaz\u0131 se\xE7er. Otomatik se\xE7ilirse,\
+        \ sisteminize g\xF6re karar verilir. (GPU se\xE7ili iken CUDA y\xFCklenmemi\u015F\
+        se veya GPU mevcut de\u011Filse, varsay\u0131lan olarak CPU kullan\u0131l\u0131\
+        r.)"
+    object_detection.settings.2.name: Birim
+    object_detection.settings.3.description: "Kullanmak istedi\u011Finiz nesne tespit\
+        \ modu. Kalite modunun g\xFC\xE7l\xFC bir donan\u0131m gerektirdi\u011Fini\
+        \ unutmay\u0131n."
+    object_detection.settings.3.name: Mod
+    object_detection.settings.4.description: "YOLO modelinin yenileme oran\u0131.\
+        \ Daha y\xFCksek de\u011Ferler, tespitlerin daha h\u0131zl\u0131 g\xFCncellenmesini\
+        \ sa\u011Flar. Performans modunda bu FPS, kalite modunda ise tespitler aras\u0131\
+        nda ge\xE7en kare say\u0131s\u0131d\u0131r. Performans modunda 2'nin \xFC\
+        zerindeki de\u011Ferlerin beklendi\u011Fi gibi \xE7al\u0131\u015Fmayabilece\u011F\
+        ini unutmay\u0131n."
+    object_detection.settings.4.name: "YOLO H\u0131z\u0131"
+    object_detection.settings.5.description: "Kullanmak istedi\u011Finiz model mimarisi.\
+        \ YoloV7'nin daha fazla g\xFC\xE7 gerektirdi\u011Fini unutmay\u0131n."
+    object_detection.settings.5.name: Model Mimarisi
+    object_detection.settings.6.description: "Nesne tespiti i\xE7in ekran\u0131n hangi\
+        \ b\xF6l\xFCm\xFCn\xFCn kullan\u0131laca\u011F\u0131n\u0131 belirler. 0. indeks\
+        \ X, 1. indeks Y, 2. indeks Geni\u015Flik, 3. indeks Y\xFCkseklik'tir. Bu\
+        \ ayar, eklenti bir kez ba\u015Flat\u0131ld\u0131ktan sonra otomatik olarak\
+        \ olu\u015Fturulacakt\u0131r."
+    object_detection.settings.6.name: "Ekran Yakalama Boyutlar\u0131"
+    object_detection.tracking_failed: "{0} i\xE7in {1} g\xFCvenilirli\u011Fi ile izleme\
+        \ ba\u015Far\u0131s\u0131z oldu"
+    plugins.adaptivecruisecontrol: "Adaptif H\u0131z Sabitleyici"
+    plugins.adaptivecruisecontrol.description: "\xD6n\xFCn\xFCzdeki ara\xE7lar i\xE7\
+        in yava\u015Flar (bir nesne alg\u0131lama modeli aktifse). Ayr\u0131ca virajlar\
+        \ i\xE7in yava\u015Flar (bu bilgiyi d\u0131\u015Fa aktaran bir eklenti etkinle\u015F\
+        tirilmi\u015Fse)."
+    plugins.ar: "AR (Art\u0131r\u0131lm\u0131\u015F Ger\xE7eklik)"
+    plugins.ar.description: "Geli\u015Ftirme a\u015Famas\u0131nda... Eklenti, oyununuzun\
+        \ \xFCzerine \u015Fekiller \xE7izer ve bunlar oyun d\xFCnyas\u0131ndaym\u0131\
+        \u015F\xE7as\u0131na hissettirir."
+    plugins.cruisecontrol: "H\u0131z Sabitleyici"
+    plugins.cruisecontrol.description: "Oyun i\xE7i h\u0131z sabitleyiciyi kullanarak\
+        \ h\u0131z\u0131 kontrol eder ve \xF6ndeki ara\xE7larla mesafeyi korur. Adaptif\
+        \ H\u0131z Sabitleyici ile \xE7al\u0131\u015Famaz!"
+    plugins.datacollection: Veri Toplama
+    plugins.datacollection.description: "Ara\xE7 alg\u0131lama eklentisi i\xE7in veri\
+        \ toplama."
+    plugins.depthprediction: Derinlik Tahmini
+    plugins.depthprediction.description: "Nesne \xF6nleme i\xE7in derinlik tahmini\
+        \ sa\u011Flar, l\xFCtfen bu eklentinin ciddi performans gereksinimleri dolay\u0131\
+        s\u0131yla yaln\u0131zca NVIDIA grafik kartlar\u0131nda \xE7al\u0131\u015F\
+        abilece\u011Fini unutmay\u0131n."
+    plugins.discordrichpresence: "Discord Detayl\u0131 Durum (Rich Presence)"
+    plugins.discordrichpresence.description: "ETS2LA i\xE7in Discord Detayl\u0131\
+        \ Durum (Rich Presence)"
+    plugins.map: Harita
+    plugins.map.description: "Harita alg\u0131lama eklentisi."
+    plugins.microcontrollercontrol: Mikrodenetleyici Kontrolleri
+    plugins.microcontrollercontrol.description: "ETS2LA ve ETS2'yi bir mikrodenetleyiciden\
+        \ kontrol etmenizi sa\u011Flar. (D\xFC\u011Fme kutular\u0131 i\xE7in yap\u0131\
+        lm\u0131\u015Ft\u0131r)"
+    plugins.navigationdetection: "Navigasyon Alg\u0131lama"
+    plugins.navigationdetection.description: "Oyun i\xE7i rota dan\u0131\u015Fman\u0131\
+        n\u0131 kullanarak se\xE7ilen rotay\u0131 takip eder."
+    plugins.objectdetection: "Nesne Alg\u0131lama"
+    plugins.objectdetection.description: "Bilgisayarla g\xF6rme teknolojisini kullanarak\
+        \ \xE7e\u015Fitli nesneleri alg\u0131lar ve bunlar\u0131 3D g\xF6rselle\u015F\
+        tirmede g\xF6r\xFCnt\xFCleyebilir."
+    plugins.raycastingtest: Raycasting Test
+    plugins.raycastingtest.description: "Raycasting i\xE7in bir test eklentisi. Fare\
+        \ konumuna raycasting yapar."
+    plugins.sockets: Socket
+    plugins.sockets.description: "Dahili g\xF6rselle\u015Ftirme i\xE7in veri soketini\
+        \ kullan\u0131labilir hale getiren eklenti."
+    plugins.trafficlightdetection: "Trafik I\u015F\u0131\u011F\u0131 Alg\u0131lama"
+    plugins.trafficlightdetection.description: "Bilgisayarla g\xF6rme kullanarak trafik\
+        \ \u0131\u015F\u0131klar\u0131n\u0131 alg\u0131lar ve bunlar\u0131 bir \xE7\
+        \u0131kt\u0131 penceresinde g\xF6r\xFCnt\xFCleyebilir. K\u0131rm\u0131z\u0131\
+        \ \u0131\u015F\u0131klarda kamyonu durdurmak i\xE7in 'H\u0131z Sabitleyici'\
+        \ eklentisi ile ileti\u015Fim kurar."
+    plugins.truckstats: Kamyon Verileri
+    plugins.truckstats.description: "Bu eklenti kamyon, rota ve oyun hakk\u0131nda\
+        \ baz\u0131 verileri g\xF6sterir."
+    runner.could_not_import: "{0} eklentisi i\xE7e aktar\u0131lamad\u0131"
+    runner.could_not_load_module: "{0} mod\xFCl\xFC y\xFCklenemedi"
+    runner.error_calling_function: "{1} i\xE7indeki {0} fonksiyonu \xE7a\u011Fr\u0131\
+        l\u0131rken hata olu\u015Ftu"
+    runner.initialize_error: "{0} i\xE7in Initialize() \xE7al\u0131\u015Ft\u0131r\u0131\
+        l\u0131rken hata olu\u015Ftu"
+    runner.plugin_crash: "{0} eklentisi \xE7\xF6kt\xFC."
+    sdk_install.description: "Oyun ile ileti\u015Fim kurmak i\xE7in gerekli DLL'lerin\
+        \ kurulu oldu\u011Fundan emin olun."
+    sdk_install.games: 'Sistemde bulunan oyunlar:'
+    sdk_install.install: "SDK'lar\u0131 Kur"
+    sdk_install.install_description: "Bu buton, yukar\u0131da listelenen t\xFCm oyunlar\
+        \ i\xE7in SDK'lar\u0131 kurar. Kurulum tamamland\u0131ktan sonra sayfay\u0131\
+        \ yenilemek biraz zaman alabilir."
+    sdk_install.installed: '- Kuruldu'
+    sdk_install.no_games: "Sistemde hi\xE7bir oyun bulunamad\u0131. SDK'lar\u0131\
+        \ manuel olarak kurman\u0131z gerekecek."
+    sdk_install.not_installed: "- Kurulmad\u0131"
+    sdk_install.title: SDK Kurulumu
+    sdk_install.uninstall: "SDK'lar\u0131 Kald\u0131r"
+    sdk_install.uninstall_description: "Bu buton, yukar\u0131da listelenen t\xFCm\
+        \ oyunlar i\xE7in SDK'lar\u0131 kald\u0131r\u0131r. Kald\u0131rma i\u015F\
+        lemi tamamland\u0131ktan sonra sayfay\u0131 yenilemek biraz zaman alabilir."
+    search: Ara
+    set: "Ayarland\u0131"
+    setting: "Ayarlan\u0131yor..."
+    sounds.invalid_file_type: "Ses paketi '{0}' ge\xE7ersiz dosya t\xFCr\xFCne sahip\
+        \ '{1}'"
+    sounds.missing_sound: "'{0}' ses paketi i\xE7in gerekli ses olan '{1}' sesi eksik"
+    sounds.sound_not_found_in_soundpack: "'{0}' sesi oynat\u0131lmaya \xE7al\u0131\
+        \u015F\u0131ld\u0131 fakat '{1}' ses paketinde b\xF6yle bir ses bulunamad\u0131"
+    submit: Uygula
+    success: "Ba\u015Far\u0131l\u0131"
+    uninstall: "Kald\u0131r"
+    unknown: Bilinmeten
+    webpage.opened: "ETS2LA Kullan\u0131c\u0131 aray\xFCz\xFC (UI) a\xE7\u0131ld\u0131\
+        ."
+    webpage.ui_loading: "Kullan\u0131c\u0131 aray\xFCz\xFC ba\u015Flat\u0131l\u0131\
+        rken l\xFCtfen bekleyin"
+    webserver.disabling_plugin: "{0} eklentisi devre d\u0131\u015F\u0131 b\u0131rak\u0131\
+        l\u0131yor"
+    webserver.enabling_plugin: "{0} eklentisi etkinle\u015Ftiriliyor"
+    webserver.frontend_started: "Frontend {0} ( {1} ) adresinde ba\u015Flat\u0131\
+        ld\u0131"
+    webserver.webserver_started: "Web sunucusu {0} ( {1} ) adresinde ba\u015Flat\u0131\
+        ld\u0131"
+    'yes': Evet

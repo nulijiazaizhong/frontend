@@ -1,0 +1,475 @@
+Language:
+    credits: "A magyar ford\xEDt\xE1st k\xE9sz\xEDtitte: H4ck3r_pr0_g4m3r \xE9s delilevente."
+    iso_code: hu
+    name: Magyar
+    name_en: Hungarian
+    version: 2.0.0
+Translations:
+    about.about: "R\xF3lunk"
+    about.atac_helicopter.description: "Hiba jav\xEDt\xE1sok"
+    about.cloud.description: "Linux & Unix Port, k\xFCl\xF6nboz\u0151 implement\xE1\
+        ci\xF3k \xE9s hiba jav\xEDt\xE1sok"
+    about.contribute_description: "\u2022 Ha szeretn\xE9l hozz\xE1j\xE1rulni, akkor\
+        \ aj\xE1lnlom, hogy l\xE9pj be a Discrod szerver\xFCnkbe, \xE9s csekkold le\
+        \ a GitHub oldalunkat."
+    about.description: "ETS2LA egy projekt, ami egy egyszer\u0171en kezelhet\u0151\
+        \ \xF6nvezet\u0151 megold\xE1st szeretne adni az EST2 \xE9s ATS j\xE1t\xE9\
+        kokban. Ha t\xF6vvet szeretn\xE9l megtudni, l\xE1togass el a GitHub oldalunkra,\
+        \ vagy a Wikip\xE9di\xE1ra az oldals\xE1v seg\xEDts\xE9g\xE9vel."
+    about.developers: "Fejleszt\u0151k / K\xF6zrem\u0171k\xF6d\u0151k"
+    about.dtheicydragon.description: "Hiba jav\xEDt\xE1sok"
+    about.dyldev.description: "K\xFCl\xF6nb\xF6z\u0151 \xFAj\xEDt\xE1sok \xE9s jav\xED\
+        t\xE1sok, T\xE1rgy Felismer\u0151 MI modellek & fejleszt\xE9s\xFCk"
+    about.flexflexen.description: "Hiba jav\xEDt\xE1sok"
+    about.glas42.description: "Navig\xE1ci\xF3 Felismer\u0151, K\xF6zleked\xE9si L\xE1\
+        mpa Felismer\u0151, ETS2LA Lite, 'T\xE1rs-Tulajdonos'"
+    about.kofi_description: "\u2022 Ha tetszik a project, \xE9s szeretn\xE9d t\xE1\
+        mogatni a fejleszt\xE9s\xE9t, azt megteheted Ko-Fi kereszt\xFCl."
+    about.lookatyourskill.description: "Hiba jav\xEDt\xE1sok"
+    about.lun.description: "K\xEDnai ford\xEDt\xE1sok, hiba jav\xEDt\xE1sok"
+    about.mimi89999.description: "scs-sdk-controller fejleszt\u0151je"
+    about.mruiaw.description: "K\xEDnai ford\xEDt\xE1sok, hiba jav\xEDt\xE1sok"
+    about.no_credits: Ennek a nyelvnek nincsenek kreditei.
+    about.piotrke.description: "J\xE1t\xE9k adatok olvas\xE1sa"
+    about.romansonnik.description: "Hiba jav\xEDt\xE1sok"
+    about.support_development: "T\xE1mogasd a fejleszt\xE9st"
+    about.translate_description: "\u2022 Hogyha szeretn\xE9l hozz\xE1j\xE1rulni a\
+        \ ford\xEDt\xE1sokhoz, l\xE9pj be a Discord szerverbe."
+    about.translation_credits: "Ford\xEDt\xE1si kreditek"
+    about.truckersmudgeon.description: "J\xE1t\xE9k adatok gy\u0171jt\xE9se \xE9s\
+        \ elemz\xE9se"
+    about.tumppi066.description: "F\u0151 fejleszt\u0151je \xE9s megalkot\xF3ja az\
+        \ ETS2LA-nak"
+    about.viszke.description: "Hiba jav\xEDt\xE1sok"
+    about.whytrevorwhy.description: "Seg\xEDtett az ETS2LA Navig\xE1ci\xF3j\xE1t \xE9\
+        s t\xE9rk\xE9p\xE9t \xFAjra\xEDrni"
+    about.zhaoyj.description: "3D modellek a megjelen\xEDt\xE9shez"
+    about.ziakhan4505.description: "C++ t\xE1mogat\xE1s, Linux & Unix Port, hiba jav\xED\
+        t\xE1sok"
+    acc.settings.1.description: "Ez hat\xE1ssal lesz arra, hogy az alkalmaz\xE1s hogyan\
+        \ reag\xE1l m\xE1s j\xE1rm\u0171vekre."
+    acc.settings.1.title: "Adaptiv Tempomat be\xE1ll\xEDt\xE1sok"
+    acc.settings.2.description: "H\xE1ny m\xE1sodpercre az ell\xF6tt\xFCnk l\xE9v\u0151\
+        re legy\xFCnk."
+    acc.settings.2.name: "K\xF6vet\xE9si id\u0151"
+    acc.settings.3.description: "Ennyi sz\xE1zal\xE9kkal vezessen a megengedett sebess\xE9\
+        ghat\xE1r felett."
+    acc.settings.3.name: "Sebess\xE9g Elt\xE9r\xE9s"
+    acc.settings.4.description: "Milyen t\xE1vols\xE1got tartson az allkalmaz\xE1\
+        s a dolgokt\xF3l."
+    acc.settings.4.name: "K\xF6vet\xE9si t\xE1vols\xE1g"
+    acc.settings.5.description: "A be\xE1ll\xEDtott \xE9rt\xE9k sz\xE1zal\xE9k\xE1\
+        val vezet\xFCnk a megengedett sebess\xE9ghat\xE1r felett, vagy annyival (km/h)\
+        \ vezet\xFCnk a sebbes\xE9ghat\xE1r felett.?"
+    acc.settings.5.name: "Be\xE1ll\xEDtott \xE9rt\xE9k elt\xE9r\xE9s\xE9nek tipusa"
+    acc.settings.6.description: "Az alkalmaz\xE1s jelen\xEDtsen meg egy felugro ablakot\
+        \ mikor lelass\xEDt az alkalmaz\xE1s valami miatt."
+    acc.settings.6.name: "\xC9rtes\xEDt\xE9s mutat\xE1sa"
+    cancel: "M\xE9gsem"
+    clear: "T\xF6rl\xE9s"
+    confirm: "Meger\u0151s\xEDt"
+    continue: "Folytat\xE1s"
+    controls.listener_started: "Vez\xE9rl\u0151 hallgat\xF3 elindult."
+    core.backend_started: "Az ETS2LA h\xE1tt\xE9r elindult sikeresen."
+    done: "K\xE9sz!"
+    download: "Let\xF6ltve"
+    downloading: "{0} Let\xF6lt\xE9se..."
+    error: Hiba
+    events.vehicle_change.vehicle_change: "J\xE1rm\u0171 csere \xE9szlelve."
+    events.vehicle_change.vehicle_change_description: "Mi \xE9szlelt\xFCk hogy egy\
+        \ \xFAj j\xE1rm\u0171be sz\xE1lt\xE1l, k\xE9r\xFCnk kabin n\xE9zetbe nyomd\
+        \ meg az f4-et, majd nyisd meg a \xFCl\xE9s be\xE1llit\xE1sokat \xE9s az \xFA\
+        j l\xE1t\xF3sz\xF6ged \xE9rt\xE9k\xE9t \xEDrd be."
+    frontend.404.button: "F\u0151men\xFC"
+    frontend.404.message: "B\xE1rhogy is, kattints az al\xE1bbi gombra a kezd\u0151\
+        k\xE9perny\u0151re val\xF3 visszat\xE9r\xE9shez, \xE9s k\xE9rlek, mondd el,\
+        \ hogyan ker\xFClt\xE9l ide?"
+    frontend.404.title: "Mi\xE9rt vagyunk itt... csak hogy szenvedj\xFCnk?"
+    frontend.dialog.not_supported: "{0} nem t\xE1mogatott a p\xE1rbesz\xE9dben."
+    frontend.disclaimer.description.line1: "ETS2LA nem felel\u0151s semmilyen fennakad\xF3\
+        \ probl\xE9m\xE1\xE9rt, ami a program haszn\xE1lata miatt t\xF6rt\xE9nt. K\xE9\
+        rlek haszn\xE1ld a programot saj\xE1t kock\xE1zatra."
+    frontend.disclaimer.description.line2: "ETS2LA haszn\xE1lata enged\xE9lyezve van\
+        \ a TruckersMP-ben, a moder\xE1torok \xE1lltal, \xE1m ak\xE1rmilyen figyelmeztet\xE9\
+        s\xE9rt \xE9s b\xFCntet\xE9s\xE9rt amit a program okoz, te vagy a felel\u0151\
+        s."
+    frontend.disclaimer.dontshowagain: "Ne mutasa m\xE9g egyszer ezt az \xFCzenetet."
+    frontend.disclaimer.dontshowagain.toast: "Te nem fogod ezt l\xE1tni a k\xF6vetkez\u0151\
+        \ friss\xEDt\xE9sig."
+    frontend.disclaimer.ok: "\xC9rtettem."
+    frontend.disclaimer.title: "Felel\u0151ss\xE9g v\xE1lal\xE1s!"
+    frontend.feedback: "Visszajelz\xE9s"
+    frontend.feedback.description: "K\xE9rlek, adj meg b\xE1rmilyen visszajelz\xE9\
+        st. Ez k\xF6zvetlen\xFCl egy priv\xE1t csatorn\xE1ra ker\xFCl a fejleszt\u0151\
+        k sz\xE1m\xE1ra."
+    frontend.feedback.disclaimer: "Ne ossz meg szem\xE9lyes inform\xE1ci\xF3kat."
+    frontend.feedback.empty: "A visszajelz\xE9s \xFCres, k\xE9rlek, adj meg b\xE1\
+        rmilyen visszajelz\xE9st."
+    frontend.feedback.error_sending: "Hiba t\xF6rt\xE9nt a visszajelz\xE9s k\xFCld\xE9\
+        se k\xF6zben, pr\xF3b\xE1ld \xFAjra k\xE9s\u0151bb."
+    frontend.feedback.sending: "Visszajelz\xE9s k\xFCld\xE9se..."
+    frontend.feedback.sent: "Visszajelz\xE9s elk\xFCldve!"
+    frontend.feedback.submit: "Bek\xFCld\xE9s"
+    frontend.hello: Hello, {0}!
+    frontend.immediate.checking_updates: "Friss\xEDt\xE9sek ellen\u0151rz\xE9se..."
+    frontend.immediate.close: "Bez\xE1r\xE1s"
+    frontend.immediate.connected: "Kapcsol\xF3dva az ETS2LA h\xE1tt\xE9rhez"
+    frontend.immediate.disable_stay_on_top: "Az \xE9l\u0151 k\xE9perny\u0151n tart\xE1\
+        s letilt\xE1sa"
+    frontend.immediate.disable_transparent: "\xC1tl\xE1tsz\xF3s\xE1g letilt\xE1sa"
+    frontend.immediate.disconnected: "Kapcsolat megszakadva az ETS2LA h\xE1tt\xE9\
+        rrel"
+    frontend.immediate.enable_stay_on_top: "Az \xE9l\u0151 k\xE9perny\u0151n tart\xE1\
+        s enged\xE9lyez\xE9se"
+    frontend.immediate.enable_transparent: "\xC1tl\xE1tsz\xF3s\xE1g enged\xE9lyez\xE9\
+        se"
+    frontend.immediate.minimize: "Minimaliz\xE1l\xE1s"
+    frontend.immediate.no_updates: "Nincs el\xE9rhet\u0151 friss\xEDt\xE9s."
+    frontend.immediate.socket_connected: "Kapcsol\xF3dva"
+    frontend.immediate.socket_disconnected: "Kapcsolat megszakadva, k\xE9rlek friss\xED\
+        ts."
+    frontend.immediate.up_to_date: "Friss\xEDtve"
+    frontend.immediate.update_available: "{0} friss\xEDt\xE9s(ek) van(nak) m\xE9g"
+    frontend.immediate.update_check_error: 'Hiba: {0}'
+    frontend.logged_out: Kijelentkezve.
+    frontend.login: "Bejelentkez\xE9s"
+    frontend.login.already_logged_in: "MEGJEGYZ\xC9S: Te m\xE1r bejelentkezt\xE9l,\
+        \ fel\xFCl tudod \xEDrni azzal, hogy m\xE9g egyszer bejelentkezel."
+    frontend.login.disclaimer: "Jelenleg csak Discoral tudsz bejelentkezni, hogy ne\
+        \ keljen szenzit\xEDv adatokat t\xE1rolnunk mint p\xE9ld\xE1ul jelszavak."
+    frontend.login.discord: "Bejelentkez\xE9s Discorddal"
+    frontend.login.privacy_policy: "Adatv\xE9delmi ir\xE1nyelvek"
+    frontend.login.successful: "Sikeresen bejelentkezt\xE9l!"
+    frontend.login.successful_description: "Kijelentkez\xE9shez haszn\xE1ld a context\
+        \ men\xFCt a felhaszn\xE1l\xF3neved alatt, a bal lenti sarokban."
+    frontend.plugins.authors: "K\xE9sz\xEDt\u0151k"
+    frontend.plugins.disabled_plugin: Kikapcsolva {0}
+    frontend.plugins.disabling_plugin: "Kikapcsol\xE1s {0}"
+    frontend.plugins.enabled_plugin: Bekapcsolva {0}
+    frontend.plugins.enabling_plugin: "Bekapcsol\xE1s {0}"
+    frontend.plugins.end_list: "Ez a lista v\xE9ge."
+    frontend.plugins.error_disabling_plugin: "Hiba kikapcsol\xE1skor {0}"
+    frontend.plugins.error_enabling_plugin: "Hiba bakapcsol\xE1skor {0}"
+    frontend.plugins.hidden: '{0} plugin(ok) elrejtve'
+    frontend.plugins.name: "N\xE9v"
+    frontend.plugins.select_authors: "Keres\xE9s k\xE9sz\xEDt\u0151k alapj\xE1n"
+    frontend.plugins.select_tags: "Keres\xE9s c\xEDmk\xE9k alapj\xE1n"
+    frontend.plugins.selected_authors: "{0} kesz\xEDt\xF3(k) kiv\xE1lasztva"
+    frontend.plugins.selected_tags: "{0} c\xEDmke(\xE9k) kiv\xE1lasztva"
+    frontend.plugins.tags: "C\xEDmk\xE9k"
+    frontend.settings: "Be\xE1ll\xEDt\xE1sok"
+    frontend.settings.array.add: "Elem hozz\xE1ad\xE1sa"
+    frontend.settings.array.added_element: "T\xF6mb elem hozz\xE1adva"
+    frontend.settings.array.remove: "Elt\xE1vol\xEDt\xE1s"
+    frontend.settings.array.removed_element: "T\xF6mb elem elt\xE1vol\xEDtva"
+    frontend.settings.array.updated_element: "T\xF6mb elem friss\xEDtve"
+    frontend.settings.backend_no_data: "Nincs adat a h\xE1tt\xE9rr\u0151l."
+    frontend.settings.boolean.updated: "Be\xE1ll\xEDt\xE1s friss\xEDtve"
+    frontend.settings.controls: "Vez\xE9rl\u0151k"
+    frontend.settings.data_missing: "A plugin adat \xE9rv\xE9nytelen vagy hi\xE1nyzik."
+    frontend.settings.enum.no_enum: "Nincsenek enum \xE9rt\xE9kek megadva."
+    frontend.settings.enum.updated: "Be\xE1ll\xEDt\xE1s friss\xEDtve"
+    frontend.settings.error: 'Hiba: {0}'
+    frontend.settings.global: "Glob\xE1lis"
+    frontend.settings.global_info: "Ez a lista csak azokat a pluginokat tartalmazza,\
+        \ amelyek t\xE1mogatj\xE1k a glob\xE1lis be\xE1ll\xEDt\xE1si f\xE1jlt."
+    frontend.settings.needs_restart: "A plugin \xFAjraind\xEDt\xE1st ig\xE9nyel a\
+        \ be\xE1ll\xEDt\xE1sok friss\xEDt\xE9s\xE9hez."
+    frontend.settings.number.updated: "Be\xE1ll\xEDt\xE1s friss\xEDtve"
+    frontend.settings.restarted: "\xDAjraind\xEDt\xE1s sikeres"
+    frontend.settings.string.updated: "Be\xE1ll\xEDt\xE1s friss\xEDtve"
+    frontend.settings.unknown_data_type: "Ismeretlen adatt\xEDpus: {0}"
+    frontend.sidebar.account: "Fi\xF3k"
+    frontend.sidebar.anonymous: "N\xE9vtelen"
+    frontend.sidebar.chat: Chat
+    frontend.sidebar.dashboard: "Ir\xE1ny\xEDt\xF3pult"
+    frontend.sidebar.help: "Seg\xEDts\xE9g"
+    frontend.sidebar.main: "F\u0151oldal"
+    frontend.sidebar.manager: "Kezel\u0151"
+    frontend.sidebar.performance: "Teljes\xEDtm\xE9ny"
+    frontend.sidebar.plugins: Pluginok
+    frontend.sidebar.settings: "Be\xE1ll\xEDt\xE1sok"
+    frontend.sidebar.sign_in: "Regisztr\xE1ci\xF3"
+    frontend.sidebar.sign_out: "Kijelentkez\xE9s"
+    frontend.sidebar.sign_out_description: "B\xE1rmikor bejelentkezhetsz."
+    frontend.sidebar.sign_out_successful: "Sikeresen kijelentkezt\xE9l."
+    frontend.sidebar.updates_available: "Friss\xEDt\xE9sek el\xE9rhet\u0151ek"
+    frontend.sidebar.visualization: "Vizualiz\xE1ci\xF3"
+    frontend.sidebar.wiki: Wiki
+    frontend.states.complete: "K\xE9sz!"
+    frontend.theme.dark: "S\xF6t\xE9t"
+    frontend.theme.light: "Vil\xE1gos"
+    global.settings.1.description: "Ezek els\u0151sorban az alkalmaz\xE1s eg\xE9sz\xE9\
+        t \xE9rint\u0151 be\xE1ll\xEDt\xE1sok."
+    global.settings.1.title: "Glob\xE1lis Be\xE1ll\xEDt\xE1sok"
+    global.settings.10.description: "Meghat\xE1rozza az ablak sz\xE9less\xE9g\xE9\
+        t."
+    global.settings.10.name: "Ablak sz\xE9less\xE9g"
+    global.settings.11.description: "Meghat\xE1rozza az ablak magass\xE1g\xE1t."
+    global.settings.11.name: "Ablak magass\xE1g"
+    global.settings.12.description: "Az ablak \xE1tl\xE1tsz\xF3s\xE1g\xE1t \xE1ll\xED\
+        tja 1 = nem \xE1tl\xE1tsz\xF3, 0 = teljesen \xE1tl\xE1tsz\xF3."
+    global.settings.12.name: "\xC1tl\xE1tsz\xF3 m\xF3d alfa"
+    global.settings.13.description: "A kijelz\u0151 azonos\xEDt\xF3ja, amelyet a l\xE1\
+        t\xF3 alkalmaz\xE1sokhoz (objektumfelismer\xE9s stb.) haszn\xE1lni kell. Ezt\
+        \ arra a monitorra kell be\xE1ll\xEDtani, amelyen az ETS2 fut. \xDAjra kell\
+        \ ind\xEDtani a m\xF3dos\xEDt\xE1sok alkalmaz\xE1s\xE1hoz!"
+    global.settings.13.name: "Kijelz\u0151 ID"
+    global.settings.14.description: "Nem jelent meg a felugr\xF3 ablak? Akkor v\xE1\
+        ltoztasd meg itt a l\xE1t\xF3sz\xF6gedet."
+    global.settings.14.name: "L\xE1t\xF3sz\xF6g"
+    global.settings.15.description: "T\xE9len enged\xE9lyezheted a h\xF3 sz\xE1lling\xF3\
+        z\xE1st a k\xE9perny\u0151d\xF6n."
+    global.settings.15.name: "H\xF3"
+    global.settings.16.description: "T\xE9len enged\xE9lyezheted a t\u0171zij\xE1\
+        t\xE9kot a k\xE9perny\u0151d\xF6n to enable fireworks on the screen."
+    global.settings.16.name: "T\u0171zij\xE1t\xE9k"
+    global.settings.2.description: "A haszn\xE1lni k\xEDv\xE1nt hangcsomag. Ezek megv\xE1\
+        ltoztatj\xE1k az alkalmaz\xE1s \xF6sszes hangj\xE1t."
+    global.settings.2.name: Hangcsomag
+    global.settings.3.description: "Az alkalmaz\xE1s hangereje."
+    global.settings.3.name: "Hanger\u0151"
+    global.settings.4.description: A port, amin a frontend fut.
+    global.settings.4.name: Frontend Port
+    global.settings.5.description: "Haszn\xE1lj k\xFCl\xF6nleges hiba\xFCzenetet,\
+        \ amikor hiba t\xF6rt\xE9nik."
+    global.settings.5.name: "K\xFCl\xF6nleges Hiba\xFCzenet"
+    global.settings.6.description: "K\xFCldeni kell-e a hibajelent\xE9seket a fejleszt\u0151\
+        knek."
+    global.settings.6.name: "Hibajelent\xE9sek K\xFCld\xE9se"
+    global.settings.7.description: "Enged\xE9lyezni kell-e a hibakeres\u0151 m\xF3\
+        dot."
+    global.settings.7.name: "Debug M\xF3d"
+    global.settings.8.description: "Az alkalmaz\xE1s nyelve. A v\xE1ltoztat\xE1sok\
+        \ alkalmaz\xE1s\xE1hoz \xFAjra kell ind\xEDtani az alkalmaz\xE1st!"
+    global.settings.8.name: Nyelv
+    global.settings.9.description: "Keret n\xE9lk\xFCli ablak haszn\xE1lata az alkalmaz\xE1\
+        shoz. \xDAjra kell ind\xEDtani az alkalmaz\xE1st! Megoldja az alkalmaz\xE1\
+        s ablak\xE1nak mozgat\xE1s\xE1val kapcsolatos probl\xE9m\xE1kat. Lehet\u0151\
+        v\xE9 teszi a m\xE9retez\xE9st is."
+    global.settings.9.name: "Keret n\xE9lk\xFCl"
+    global.settings.audio: Hang
+    global.settings.misc: "Egy\xE9b"
+    global.settings.ui: "Felhaszn\xE1l\xF3i fel\xFClet"
+    global.settings.variables: "V\xE1ltoz\xF3k"
+    godot.server_started: "Godot szolg\xE1ltat a {0} porton"
+    immediate.empty_page: "\xDCres oldalt pr\xF3b\xE1lt k\xFCldeni."
+    immediate.message_error: "Hiba t\xF6rt\xE9nt az \xFCzenet feldolgoz\xE1sa k\xF6\
+        zben."
+    immediate.websocket_started: Websocket elindult.
+    install: "Let\xF6lt\xE9s"
+    loading: "Bet\xF6lt\xE9s..."
+    logging.delete_log_error: "Nem siker\xFClt t\xF6r\xF6lni a napl\xF3f\xE1jlt."
+    logging.logger_initialized: "A napl\xF3z\xF3 inicializ\xE1lva lett."
+    main.closed: "Az ETS2LA le lett z\xE1rva."
+    main.crashed: "Az ETS2LA \xF6sszeomlott a k\xF6vetkez\u0151 hib\xE1val:"
+    main.development_mode: "ETS2LA elind\xEDt\xE1sa fejleszt\xE9si m\xF3dban."
+    main.errors: "Hib\xE1k:"
+    main.errors_and_warnings: "Hib\xE1k \xE9s figyelmeztet\xE9sek a napl\xF3f\xE1\
+        jlokban:"
+    main.legacy_traceback: "R\xE9gi traceback nyomtat\xE1st haszn\xE1lt."
+    main.no_errors_or_warnings: "Nincsenek hib\xE1k vagy figyelmeztet\xE9sek."
+    main.overseer_started: "Az ETS2LA Fel\xFCgyel\u0151 elindult!"
+    main.press_enter: "Nyomj Entert a kil\xE9p\xE9shez..."
+    main.restarting: "Az ETS2LA \xFAjraindul..."
+    main.send_report: "K\xFCldd el a fenti traceback-et a fejleszt\u0151knek."
+    main.update_done: "Friss\xEDt\xE9s k\xE9sz... \xFAjraind\xEDt\xE1s!"
+    main.updating: "Az ETS2LA friss\xEDt\xE9se..."
+    main.warnings: "Figyelmeztet\xE9sek:"
+    map.extracting_data: "Kibont\xE1s allat van a GameData.zip k\xE9r\xFCnk v\xE1\
+        rj..."
+    map.json_not_found: "Nem tal\xE1lhat\xF3 JSON file GameData mapp\xE1ban, k\xE9\
+        rlek csomagold ki a GameData.zip file-t."
+    map.loading.ferries: "T\xE9rk\xE9p bet\xF6lti a kompokat..."
+    map.loading.final_calculations: "T\xE9rk\xE9p utols\xF3 sz\xE1m\xEDt\xE1sai..."
+    map.loading.nodes: "T\xE9rk\xE9p bet\xF6lti a csom\xF3pontokat..."
+    map.loading.prefab_data: "T\xE9rk\xE9p bet\xF6lti az el\u0151re fabrik\xE1llt\
+        \ adatokat..."
+    map.loading.prefabs: "T\xE9rk\xE9p bet\xF6lti az el\u0151re fabrik\xE1llt objektumokat..."
+    map.loading.preparing: "T\xE9rk\xE9p el\u0151k\xE9sz\xFCl az adatok bet\xF6lt\xE9\
+        s\xE9re..."
+    map.loading.roads: "T\xE9rk\xE9p bet\xF6lti a utakat..."
+    map.settings.1.description: "Ezek a be\xE1ll\xEDt\xE1sok a t\xE9rk\xE9p pluginra\
+        \ vonatkoznak."
+    map.settings.1.title: "T\xE9rk\xE9pi Be\xE1ll\xEDt\xE1sok"
+    map.settings.10.title: "Korm\xE1nyz\xE1si be\xE1ll\xEDt\xE1sok"
+    map.settings.11.description: "H\xE1ny m\xE1sodperc alatt reag\xE1ljon a korm\xE1\
+        ny? A 0 \xE9rt\xE9k azonnali reakci\xF3t ad, m\xEDg a t\xF6bb, mint 0.5 lehets\xE9\
+        ges, hogy kacs\xE1z\xE1shoz vezet."
+    map.settings.11.name: "Holtj\xE1t\xE9k"
+    map.settings.12.description: "Kisz\xE1m\xEDtja a c\xE9l\xE1llom\xE1shoz vezet\u0151\
+        \ \xFAtvonalat. Felh\xEDv\xE1s: Ez az \xFAtvonal nem garant\xE1ltan a leggyorsabb!"
+    map.settings.12.name: "Navig\xE1l\xE1s az ETS2LA-n"
+    map.settings.2.description: "Ez kisz\xE1m\xEDtja a t\xE9rk\xE9p \xF6sszes sz\xFC\
+        ks\xE9ges \xE9rt\xE9k\xE9t a teheraut\xF3 korm\xE1nyz\xE1s\xE1hoz."
+    map.settings.2.name: "Korm\xE1nyz\xE1s Sz\xE1m\xEDt\xE1sa"
+    map.settings.3.description: "Ez lehet\u0151v\xE9 teszi m\xE1s pluginek sz\xE1\
+        m\xE1ra, hogy haszn\xE1lj\xE1k a t\xE9rk\xE9p adatait. K\xE9rlek, vedd figyelembe,\
+        \ hogy a vizualiz\xE1ci\xF3 nem fog m\u0171k\xF6dni, ha ez az opci\xF3 nincs\
+        \ enged\xE9lyezve. Ez az opci\xF3 marginalisan jav\xEDthatja a teljes\xED\
+        tm\xE9nyt."
+    map.settings.3.name: "Adatok K\xFCld\xE9se"
+    map.settings.4.title: "Bels\u0151 Vizualiz\xE1ci\xF3"
+    map.settings.5.description: "Ir\xE1ny\xEDtja a bels\u0151 vizualiz\xE1ci\xF3 nagy\xED\
+        t\xE1si szintj\xE9t."
+    map.settings.5.name: Zoom
+    map.settings.6.description: "A t\xE9rk\xE9p bels\u0151 vizualiz\xE1ci\xF3j\xE1\
+        nak megjelen\xEDt\xE9se. Hasznos, ha nem k\xFCld\xF6d az k\xFCls\u0151 adatokat."
+    map.settings.6.name: "Enged\xE9lyez\xE9s"
+    map.settings.7.title: "K\xFCls\u0151 Vizualiz\xE1ci\xF3"
+    map.settings.8.description: "Ez be\xE1ll\xEDtja az adat maxim\xE1lis t\xE1vols\xE1\
+        g\xE1t, amelyet m\xE1s plugineknek k\xFCldesz. Felt\xE9telezve, hogy azt a\
+        \ plugin enged\xE9lyezi."
+    map.settings.8.name: "Render T\xE1vols\xE1g"
+    map.settings.9.description: "Ez megjelen\xEDti az utakat a j\xE1t\xE9kodon, sz\xFC\
+        ks\xE9ged lesz az AR plugin enged\xE9lyez\xE9s\xE9re is."
+    map.settings.9.name: "AR Adatok Megjelen\xEDt\xE9se"
+    map.visualisation.prefabs.curves: "Kanyarok/G\xF6rb\xE9k: {0}"
+    map.visualisation.prefabs.prefabs: "El\u0151re fabrik\xE1ltt objektumok: {0},\
+        \ Csemp\xE9k: {1}"
+    map.visualisation.roads.text: "Utak: {0}, Csemp\xE9k: {1}, Bet\xF6lt\xE9s: {2}"
+    'no': Nem
+    object_detection.connection_failed.1: "Nem siker\xFClt el\xE9rni a Hugging Face\
+        \ szervereket."
+    object_detection.connection_failed.2: "K\xE9rj\xFCk ellen\u0151rize internet kapcsolat\xE1\
+        t."
+    object_detection.connection_failed.3: "JEGYZET: Orsz\xE1gok mint k\xEDna a szerver\
+        \ le lehet blokkolva."
+    object_detection.connection_failed.4: "Ebben az esetben k\xE9rdezd meg a Discord-ot\
+        \ seg\xEDts\xE9g\xE9rt."
+    object_detection.loaded_model: "Az Obijektum felismer\u0151 bet\xF6lt\xF6tt a\
+        \ {0}"
+    object_detection.loading_model: "Bet\xF6ltj\xFCk az Objektum detekt\xE1l\xF3 Modelj\xE9\
+        t..."
+    object_detection.not_found.1: "Az al\xE1bb l\xE1that\xF3 sz\xFCks\xE9ges model\
+        \ m\xE9g nem t\xF6lt\xF6d\xF6t le."
+    object_detection.not_found.2: "Kattints a gombra az al\xE1bbi model let\xF6lt\xE9\
+        s\xE9hez."
+    object_detection.processing_error: "Hiba j\xE1rm\u0171 adat feldolgoz\xE1sa k\xF6\
+        zben."
+    object_detection.screen_capture_profile: "Obijektum felismer\u0151 megjelen\xED\
+        t\xE9si profilja: {0}"
+    object_detection.settings.1.description: "Ezek a be\xE1ll\xEDt\xE1sok befoly\xE1\
+        solj\xE1k az objektum detekt\xE1l\xE1s min\u0151s\xE9g\xE9t \xE9s teljes\xED\
+        tm\xE9ny\xE9t."
+    object_detection.settings.1.title: "Objektum Detekt\xE1l\xE1si Be\xE1ll\xEDt\xE1\
+        sok"
+    object_detection.settings.2.description: "Az eszk\xF6z, amin az Objektum Detekt\xE1\
+        l\xE1s fut, ha automatikus m\xF3dot haszn\xE1lsz, az a rendszered alapj\xE1\
+        n lesz eld\xF6ntve. (Ha GPU-t v\xE1lasztasz, \xE9s nincs, vagy CUDA nincs\
+        \ telep\xEDtve, akkor CPU-ra v\xE1lt.)"
+    object_detection.settings.2.name: "Eszk\xF6z"
+    object_detection.settings.3.description: "Az objektum detekt\xE1l\xE1si m\xF3\
+        d, amit haszn\xE1lni szeretn\xE9l. K\xE9rlek, vedd figyelembe, hogy a min\u0151\
+        s\xE9gi m\xF3d nagy teljes\xEDtm\xE9ny\u0171 PC-t ig\xE9nyel."
+    object_detection.settings.3.name: "M\xF3d"
+    object_detection.settings.4.description: "A YOLO modell friss\xEDt\xE9si sebess\xE9\
+        ge. Magasabb \xE9rt\xE9kek gyorsabban friss\xEDtik a detekt\xE1l\xE1sokat.\
+        \ Teljes\xEDtm\xE9ny m\xF3dban ez FPS, min\u0151s\xE9gi m\xF3dban pedig az\
+        \ \xE9szlel\xE9sek k\xF6z\xF6tti k\xE9pkock\xE1k sz\xE1ma. K\xE9rlek, vedd\
+        \ figyelembe, hogy a teljes\xEDtm\xE9ny m\xF3dban a 2-n\xE9l nagyobb \xE9\
+        rt\xE9kek nem m\u0171k\xF6dhetnek megfelel\u0151en."
+    object_detection.settings.4.name: "YOLO Sebess\xE9g"
+    object_detection.settings.5.description: "A modell architekt\xFAra, amit haszn\xE1\
+        lni szeretn\xE9l. K\xE9rlek, vedd figyelembe, hogy a YoloV7 t\xF6bb teljes\xED\
+        tm\xE9nyt ig\xE9nyel."
+    object_detection.settings.5.name: "Modell Architekt\xFAra"
+    object_detection.settings.6.description: "Melyik r\xE9sze a k\xE9perny\u0151nek\
+        \ haszn\xE1lhat\xF3 az objektum detekt\xE1l\xE1shoz. Index 0 az X, index 1\
+        \ az Y, index 2 a Sz\xE9less\xE9g, index 3 a Magass\xE1g. Ez a be\xE1ll\xED\
+        t\xE1s automatikusan gener\xE1l\xF3dik, miut\xE1n egyszer elind\xEDtod a plugint."
+    object_detection.settings.6.name: "K\xE9perny\u0151 K\xE9p M\xE9retei"
+    object_detection.tracking_failed: "{0} K\xF6vet\xE9se sikertelen, {1} Ennyi konfidenci\xE1\
+        val."
+    plugins.adaptivecruisecontrol: "Adapt\xEDv Tempomat"
+    plugins.adaptivecruisecontrol.description: "WIP - Adapt\xEDv Tempomat a j\xE1\
+        rm\u0171 sebess\xE9g\xE9t, \xE9s a megengedett sebess\xE9get haszn\xE1lva."
+    plugins.ar: "AR (Kiterjesztett val\xF3s\xE1g)"
+    plugins.ar.description: "Fejleszt\xE9s alatt... A plugin form\xE1kat fog rajzolni\
+        \ a k\xE9perny\u0151re, hogy \xFAgy n\xE9zzen ki mintha a j\xE1t\xE9kban lenne."
+    plugins.cruisecontrol: Tempomat
+    plugins.cruisecontrol.description: "Be\xE1ll\xEDtja a j\xE1t\xE9kban l\xE9v\u0151\
+        \ tempomatot a megfelel\u0151 sebess\xE9gre."
+    plugins.datacollection: "Adat gy\u0171jt\xE9s"
+    plugins.datacollection.description: "Adat gy\u0171jt\xE9s a j\xE1rm\u0171 felismer\xE9\
+        snek."
+    plugins.depthprediction: "M\xE9lys\xE9g j\xF3slat"
+    plugins.depthprediction.description: "T\xE1vols\xE1got sz\xE1m\xEDt\xE1st ad a\
+        \ t\xE1rgyelker\xFCl\xE9snek. K\xE9rlek sz\xE1m\xEDtsd bele, hogy lehet hogy\
+        \ csak NVIDIA vide\xF3k\xE1rty\xE1n fog csak m\u0171k\xF6dni, a teljes\xED\
+        tm\xE9ny miatt."
+    plugins.discordrichpresence: "Discord gazdag Megjelen\xE9s"
+    plugins.discordrichpresence.description: "Discord gazdag megjelen\xE9s az ETS2LA-nak"
+    plugins.map: "T\xE9rk\xE9p"
+    plugins.map.description: "T\xE9rk\xE9p felismer\u0151 plugin."
+    plugins.microcontrollercontrol: Microkontroller Kontroll
+    plugins.microcontrollercontrol.description: "Megengedi hogy ir\xE1ny\xEDtsd ETS2\
+        \ \xE9s ETS2LA-t egy mikrokontrollerrel. (Saj\xE1t felszerel\xE9snek tervezve)"
+    plugins.navigationdetection: "Navig\xE1ci\xF3 felismer\u0151"
+    plugins.navigationdetection.description: "A j\xE1tkbeli kist\xE9rk\xE9pet haszn\xE1\
+        lva k\xF6veti az el\u0151re kiv\xE1lasztott \xFAtvonalat."
+    plugins.objectdetection: "T\xE1rgy felismer\xE9s"
+    plugins.objectdetection.description: "Felismer k\xFCl\xF6nb\xF6z\u0151 t\xE1rgyakat\
+        \ \xE9s kijelzi azokat egy k\xFCl\xF6n ablakban, \xE9s egy 3D-s megjelen\xED\
+        t\xE9sben."
+    plugins.raycastingtest: "Sug\xE1r sug\xE1rz\xE1s teszt"
+    plugins.raycastingtest.description: "Egy teszt plugin sug\xE1r sug\xE1rz\xE1sra.\
+        \ Sugarakat fog b\xE1ltani az eg\xE9rmutat\xF3dhoz."
+    plugins.sockets: Aljzatok
+    plugins.sockets.description: "Plugin, hogy az aljzatok el\xE9rhet\u0151ek legf\u0151\
+        k\xE9pp a be\xE9p\xEDtett megjelen\xEDt\xE9shez."
+    plugins.trafficlightdetection: "Forgalmi Jelz\u0151l\xE1mpa felismer\xE9s"
+    plugins.trafficlightdetection.description: "Felismeri a jelz\u0151 l\xE1mp\xE1\
+        kat \xE9s mejlen\xEDti \u0151ket egy k\xFCl\xF6n ablakban. Kommunik\xE1l az\
+        \ Adapt\xEDv Tempomattal, hogy meg\xE1ll\xEDtsa a kamiont egy piros l\xE1\
+        mp\xE1n\xE1l."
+    plugins.truckstats: Kamion Statisztika
+    plugins.truckstats.description: "Ez a plugin megjelen\xEDt statisztik\xE1kat a\
+        \ kamionr\xF3l, az \xFAtr\xF3l \xE9s a j\xE1t\xE9kr\xF3l."
+    runner.could_not_import: "Nem tud megh\xEDvni plugin {0}"
+    runner.could_not_load_module: "Nem tud bet\xF6lteni modult {0}"
+    runner.error_calling_function: "Hiba a {0} f\xFCggv\xE9ny megh\xEDv\xE1sakor a\
+        \ {1}-ben"
+    runner.initialize_error: "Hiba az inicializ\xE1l\xE1s() futtat\xE1sa k\xF6zben\
+        \ a {0} eset\xE9ben"
+    runner.plugin_crash: "Plugin {0} \xF6sszeomlott."
+    sdk_install.description: "Ellen\u0151rizd le, hogy minden DLL le van-e t\xF6ltve\
+        \ megfelel\u0151en ahoz hogy kommunik\xE1llni tudjun a j\xE1t\xE9kkal."
+    sdk_install.games: "Ezeket a j\xE1t\xE9kokat tal\xE1lltuk a sz\xE1m\xEDt\xF3g\xE9\
+        peden:"
+    sdk_install.install: "SDK(\xE1k) let\xF6lt\xE9se"
+    sdk_install.install_description: "Ez a gomb telep\xEDteni fogja az SDK(ak)-at\
+        \ az \xF6sszes felsorolt j\xE1t\xE9kba. Lehet hogy egy kis id\u0151be gog\
+        \ ker\xFClni hogy friss\xEDtsen a web oldal a telep\xEDt\xE9s ut\xE1n."
+    sdk_install.installed: "- Let\xF6ltve"
+    sdk_install.no_games: "Nem tal\xE1ltunk j\xE1t\xE9kot a sz\xE1m\xEDt\xF3g\xE9\
+        peden. Az SDK(ak) manu\xE1lisan kell majd let\xF6ltened!"
+    sdk_install.not_installed: "- Nincs Let\xF6ltve"
+    sdk_install.title: "SDK Be\xE1ll\xEDt\xE1sa"
+    sdk_install.uninstall: "SDK(\xE1k) elt\xE1vol\xEDt\xE1sa"
+    sdk_install.uninstall_description: "Ez a gomb el fogja t\xE1vol\xEDtani az SDK(ak)-at\
+        \ az \xF6sszes felsorolt j\xE1t\xE9kba. Lehet hogy egy kis id\u0151be gog\
+        \ ker\xFClni hogy friss\xEDtsen a web oldal az elt\xE1vol\xEDt\xE1s ut\xE1\
+        n."
+    search: "Keres\xE9s"
+    set: "Be\xE1ll\xEDt"
+    setting: "Be\xE1ll\xEDt\xE1s..."
+    sounds.invalid_file_type: "A '{0}' hangcsomag \xE9rv\xE9nytelen f\xE1jlform\xE1\
+        tum '{1}'"
+    sounds.missing_sound: "A '{0}' hangcsomag hi\xE1nyzik a sz\xFCks\xE9ges hang '{1}'"
+    sounds.sound_not_found_in_soundpack: "A '{0}' hang lej\xE1tsz\xE1s\xE1ra tett\
+        \ pr\xF3b\xE1lkoz\xE1s nem tal\xE1lta meg a '{1}' hangcsomagban"
+    submit: "Beny\xFAjt\xE1s"
+    success: Sikeres
+    uninstall: "Elt\xE1vol\xEDt\xE1s"
+    unknown: Ismeretlen
+    webpage.opened: "Az ETS2LA UI megny\xEDlt."
+    webpage.ui_loading: "K\xE9rlek, v\xE1rj, am\xEDg inicializ\xE1ljuk a felhaszn\xE1\
+        l\xF3i fel\xFCletet"
+    webserver.disabling_plugin: "Plugin letilt\xE1sa {0}"
+    webserver.enabling_plugin: "Plugin enged\xE9lyez\xE9se {0}"
+    webserver.frontend_started: "Frontend elindult a k\xF6vetkez\u0151 c\xEDmen: {0}\
+        \ ( {1} )"
+    webserver.webserver_started: "Webszerver elindult a k\xF6vetkez\u0151 c\xEDmen:\
+        \ {0} ( {1} )"
+    'yes': Igen

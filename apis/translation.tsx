@@ -11,18 +11,21 @@ declare var require: {
 };
 
 interface Translation {
-    [key: string]: string;
+    "default": {
+        "Translations": { [key: string]: string };
+        "Language": { [key: string]: string };
+    }
 }
 
 export const translations: { [key: string]: Translation } = {};
 export var currentLanguage: string = "en";
 
 export const loadTranslations = async () => {
-    const context = require.context('@/translations', false, /\.json$/);
+    const context = require.context('@/translations', false, /\.yaml$/);
     const translationFiles: { [key: string]: Translation } = {};
   
     context.keys().forEach((key: string) => {
-        const language = key.replace('./', '').replace('.json', '');
+        const language = key.replace('./', '').replace('.yaml', '');
         translationFiles[language] = context(key);
     });
 
@@ -30,7 +33,11 @@ export const loadTranslations = async () => {
 };
 
 export const translate = (key: string, ...values: any[]): string => {
-    const translation = translations[currentLanguage]?.[key];
+    //console.log(translations[currentLanguage]);
+    let translation = translations[currentLanguage].default.Translations?.[key];
+    if (!translation) {
+        translation = translations[currentLanguage].default.Language?.[key];
+    }
     if (!translation) {
         return key;
     }

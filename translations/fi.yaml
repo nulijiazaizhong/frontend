@@ -1,0 +1,430 @@
+Language:
+    credits: "K\xE4\xE4nt\xE4j\xE4n\xE4 toimi Tumppi066, kiitos latauksesta ja toivottavasti\
+        \ pid\xE4t!"
+    iso_code: fi
+    name: Suomi
+    name_en: Finnish
+    version: 2.0.0
+Translations:
+    about.about: ETS2LA:sta
+    about.atac_helicopter.description: Korjauksia
+    about.cloud.description: Linux & Unix tuki, erilaisia parannuksia ja korjauksia
+    about.contribute_description: "\u2022 Jos haluat kehitt\xE4\xE4 ETS2LA:ta eteenp\xE4\
+        in, suosittelen sit\xE4 varten liittym\xE4\xE4n Discordiin. Github linkin\
+        \ alla on my\xF6s linkki sinne."
+    about.description: "ETS2LA pyrkii tarjoamaan helppok\xE4ytt\xF6isen itsest\xE4\
+        \xE4n ajamista tarjoavan sovelluksen ETS2 ja ATS peleille. Jos haluat tiet\xE4\
+        \xE4 lis\xE4\xE4 mene meid\xE4n Github sivulle tai paina sivupalkista 'Wiki'!"
+    about.developers: "Kehitt\xE4j\xE4t / Avustajat"
+    about.dtheicydragon.description: Korjauksia
+    about.dyldev.description: Objektien tunnistuksen AI mallit ja kehitys, erilaisia
+        parannuksia ja korjauksia
+    about.flexflexen.description: Korjauksia
+    about.glas42.description: Navigaatio ohjaus, liikennevalojen tunnistus, ETS2LA
+        Lite, 'osaomistaja'
+    about.kofi_description: "\u2022 Jos haluat tukea kehityst\xE4 rahallisesti, voit\
+        \ tehd\xE4 sen alla olevan Ko-Fi linkin kautta."
+    about.lookatyourskill.description: Korjauksia
+    about.lun.description: "Kiinankieliset k\xE4\xE4nn\xF6kset, korjauksia"
+    about.mimi89999.description: "scs-sdk-controller kehitt\xE4j\xE4"
+    about.mruiaw.description: "Kiinankieliset k\xE4\xE4nn\xF6kset, korjauksia"
+    about.no_credits: "Kielelle ei ole annettu krediittej\xE4."
+    about.piotrke.description: "Peliin yhdist\xE4minen"
+    about.romansonnik.description: Korjauksia
+    about.support_development: "Tue kehityst\xE4"
+    about.translate_description: "\u2022 Jos haluat avustaa k\xE4\xE4nt\xE4misess\xE4\
+        , niin liity Discord kanavalle, ja liity oman kielesi k\xE4\xE4nt\xE4j\xE4\
+        ryhm\xE4\xE4n."
+    about.translation_credits: "K\xE4\xE4nn\xF6ksien krediitit"
+    about.truckersmudgeon.description: "Pelien datan ker\xE4ys ja prosessointi"
+    about.tumppi066.description: "P\xE4\xE4kehitt\xE4j\xE4 ja ETS2LA:n perustaja"
+    about.viszke.description: Korjauksia
+    about.zhaoyj.description: Visualisaation 3D mallit
+    about.ziakhan4505.description: C++ tukea, Linux & Unix tuki, korjauksia
+    acc.settings.1.description: "N\xE4m\xE4 asetukset vaikuttavat adaptiivisen vakionopeudens\xE4\
+        \xE4timen toimintaan."
+    acc.settings.1.title: "Adaptiivisen vakionopeudens\xE4\xE4timen asetukset"
+    acc.settings.2.description: "Kuinka monta sekunttia per\xE4ss\xE4 ETS2LA yritt\xE4\
+        \xE4 seurata edell\xE4 menev\xE4\xE4 autoa."
+    acc.settings.2.name: "Seuraamis et\xE4isyys (aikana)"
+    acc.settings.3.description: "Aja t\xE4m\xE4n verran kovempaa kuin nopeusrajoitus."
+    acc.settings.3.name: "Nopeuden s\xE4\xE4t\xF6"
+    acc.settings.4.description: "Kuinka kaukana edell\xE4 menev\xE4st\xE4 autosta\
+        \ ETS2LA yritt\xE4\xE4 pysy\xE4."
+    acc.settings.4.name: "Et\xE4isyys"
+    acc.settings.5.description: "'Percentage' tilassa ajetaan tietty\xE4 prosenttia\
+        \ kovempaa, 'Absolute' tilassa ajetaan annettua arvoa kovempaa."
+    acc.settings.5.name: "S\xE4\xE4d\xF6n tyyppi"
+    acc.settings.6.description: "L\xE4hett\xE4\xE4 ilmoituksen kun vakionopeudens\xE4\
+        \xE4din hidastaa estett\xE4 varten."
+    acc.settings.6.name: "N\xE4yt\xE4 Ilmoitukset"
+    cancel: Peruuta
+    clear: "Tyhjenn\xE4"
+    confirm: Vahvista
+    continue: Jatka
+    controls.listener_started: "K\xE4ytt\xE4j\xE4n sy\xF6tteen kuuntelu k\xE4ynnistetty."
+    core.backend_started: "Taustaprosessi on k\xE4ynnistetty onnistuneesti."
+    done: Valmis
+    download: Lataa
+    downloading: Ladataan {0}...
+    error: "Ep\xE4onnistui"
+    events.vehicle_change.vehicle_change: Ajoneuvon vaihto.
+    events.vehicle_change.vehicle_change_description: "Vaihdoit ajoneuvoa. Paina sis\xE4\
+        kuvassa F4, avaa penkin asetukset, ja kirjoita t\xE4h\xE4n ajoneuvosi fov."
+    frontend.404.button: "Kotin\xE4ytt\xF6\xF6n"
+    frontend.404.message: "No painappa nappia niin p\xE4\xE4set takas (ja l\xE4het\xE4\
+        \ meille mit\xE4 teit, kiitos!)"
+    frontend.404.title: "Oho, mites p\xE4\xE4dyit t\xE4nne?"
+    frontend.dialog.not_supported: '{0} ei tueta dialogissa.'
+    frontend.disclaimer.description.line1: "ETS2LA ei ole vastuussa mist\xE4\xE4n\
+        \ sovelluksen k\xE4yt\xF6st\xE4 aiheutuvista haitoista. Sovelluksen k\xE4\
+        ytt\xE4minen on omalla vastuullasi."
+    frontend.disclaimer.description.line2: "ETS2LA:n k\xE4ytt\xE4minen TruckersMP\
+        \ (TMP) palvelussa on sen tekij\xF6iden mukaan sallittua. Muista kuitenkin,\
+        \ ett\xE4 heid\xE4n n\xE4k\xF6kulmastaan sin\xE4 olet vastuussa ETS2LA:n teoista."
+    frontend.disclaimer.dontshowagain: "\xC4l\xE4 n\xE4yt\xE4 t\xE4t\xE4 uudelleen"
+    frontend.disclaimer.dontshowagain.toast: "Et n\xE4e viesti\xE4 uudelleen ennen\
+        \ seuraavaa p\xE4ivityst\xE4."
+    frontend.disclaimer.ok: "Ymm\xE4rr\xE4n"
+    frontend.disclaimer.title: Huomio!
+    frontend.feedback: Palaute
+    frontend.feedback.description: "Palautteesi ja ehdotuksesi t\xE4h\xE4n. Palaute\
+        \ on n\xE4kyvill\xE4 vain kehitt\xE4jille."
+    frontend.feedback.disclaimer: "\xC4l\xE4 jaa henkil\xF6kohtaisia tietoja, kuten\
+        \ s\xE4hk\xF6postiosoitetta."
+    frontend.feedback.empty: Et kirjoittanut palautetta, kokeile uudelleen.
+    frontend.feedback.error_sending: "Palautteen l\xE4hett\xE4minen ep\xE4onnistui,\
+        \ kokeile my\xF6hemmin uudelleen."
+    frontend.feedback.sending: "L\xE4hetet\xE4\xE4n..."
+    frontend.feedback.sent: Palaute vastaanotettu
+    frontend.feedback.submit: "L\xE4het\xE4"
+    frontend.hello: Tervetuloa, {0}!
+    frontend.immediate.checking_updates: "Tarkistetaan p\xE4ivityksi\xE4..."
+    frontend.immediate.close: Sulje
+    frontend.immediate.connected: Yhdistetty ETS2LA:n taustaprosessiin
+    frontend.immediate.disable_stay_on_top: "\xC4l\xE4 pid\xE4 p\xE4\xE4llimm\xE4\
+        isen\xE4"
+    frontend.immediate.disable_transparent: "Poistu l\xE4pin\xE4kyvyystilasta"
+    frontend.immediate.disconnected: Yhteys taustaprosessiin katkaistu
+    frontend.immediate.enable_stay_on_top: "Pid\xE4 p\xE4\xE4llimm\xE4isen\xE4"
+    frontend.immediate.enable_transparent: "L\xE4pin\xE4kyvyystila"
+    frontend.immediate.minimize: "Pienenn\xE4"
+    frontend.immediate.no_updates: Sinulla on jo uusin versio
+    frontend.immediate.socket_connected: Yhdistetty
+    frontend.immediate.socket_disconnected: "Yhteys katkaistu, p\xE4ivit\xE4 sivu"
+    frontend.immediate.up_to_date: "Ei p\xE4ivityksi\xE4 saatavilla"
+    frontend.immediate.update_available: "{0} p\xE4ivitys(t\xE4) saatavilla!"
+    frontend.immediate.update_check_error: 'Virhe: {0}'
+    frontend.logged_out: Kirjauduttu ulos.
+    frontend.login: Kirjautuminen
+    frontend.login.already_logged_in: "HUOMIO: Olet jo kirjautunut sis\xE4\xE4n. Voit\
+        \ kuitenkin kirjautua uudelleen ja ylikirjoittaa nykyisen kirjautumisen."
+    frontend.login.disclaimer: "Tuemme t\xE4ll\xE4 hetkell\xE4 vain Discord kirjautumista.\
+        \ T\xE4m\xE4 johtuu yksinkertaisesti tietosuojasta, emme halua tallentaa mit\xE4\
+        \xE4n arkaluotoista tietoa."
+    frontend.login.discord: Kirjaudu Discordilla
+    frontend.login.privacy_policy: "Yksityisyysk\xE4yt\xE4nt\xF6"
+    frontend.login.successful: Kirjautuminen onnistui!
+    frontend.login.successful_description: "Voit kirjautua ulos painamalla nime\xE4\
+        si vasemmassa alakulmassa."
+    frontend.plugins.authors: "Tekij\xE4t"
+    frontend.plugins.disabled_plugin: '{0} on deaktivoitu'
+    frontend.plugins.disabling_plugin: Deaktivoidaan {0}
+    frontend.plugins.enabled_plugin: '{0} on aktivoitu'
+    frontend.plugins.enabling_plugin: Aktivoidaan {0}
+    frontend.plugins.end_list: "Oho, nyt loppu laajennukset, k\xE4ypp\xE4s lataamassa\
+        \ lis\xE4\xE4."
+    frontend.plugins.error_disabling_plugin: Virhe deaktivoitaessa {0}
+    frontend.plugins.error_enabling_plugin: Virhe aktivoitaessa {0}
+    frontend.plugins.hidden: '{0} laajennus(ta) piilotettu'
+    frontend.plugins.name: Nimi
+    frontend.plugins.select_authors: "Etsi tekij\xF6ill\xE4"
+    frontend.plugins.select_tags: Etsi kategorioilla
+    frontend.plugins.selected_authors: "{0} tekij\xE4(\xE4) valittu"
+    frontend.plugins.selected_tags: '{0} kategoria(a) valittu'
+    frontend.plugins.tags: Kategoriat
+    frontend.settings: Asetukset
+    frontend.settings.array.add: "Lis\xE4\xE4"
+    frontend.settings.array.added_element: "Lis\xE4ttiin uusi listan elementti"
+    frontend.settings.array.remove: Poista
+    frontend.settings.array.removed_element: Poistettiin listan elementti
+    frontend.settings.array.updated_element: "P\xE4ivitettiin listan elementti"
+    frontend.settings.backend_no_data: "Taustaprosessi ei l\xE4hett\xE4nyt tietoja."
+    frontend.settings.boolean.updated: "Asetus p\xE4ivitetty"
+    frontend.settings.controls: "Sy\xF6te"
+    frontend.settings.data_missing: Laajennuksen tiedot puutuvat tai ovat virheelliset.
+    frontend.settings.enum.no_enum: Luettelossa ei ole valintoja
+    frontend.settings.enum.updated: "Asetus p\xE4ivitetty"
+    frontend.settings.error: 'Virhe: {0}'
+    frontend.settings.global: Yleiset
+    frontend.settings.global_info: "Listassa on vain ne laajennukset jotka tukevat\
+        \ yleisi\xE4 asetuksia."
+    frontend.settings.needs_restart: "Laajennus vaatii uudelleenk\xE4ynnistyksen."
+    frontend.settings.number.updated: "Asetus p\xE4ivitetty"
+    frontend.settings.restarted: "Uudelleenk\xE4ynnistys onnistunut."
+    frontend.settings.string.updated: "Asetus p\xE4ivitetty"
+    frontend.settings.unknown_data_type: 'Tuntematon tyyppi: {0}'
+    frontend.sidebar.account: Tilin hallinta
+    frontend.sidebar.anonymous: Tuntematon
+    frontend.sidebar.chat: Chatti
+    frontend.sidebar.dashboard: "P\xE4\xE4valikko"
+    frontend.sidebar.help: Apuja
+    frontend.sidebar.main: Olennaiset
+    frontend.sidebar.manager: Hallitse
+    frontend.sidebar.performance: Suorityskyky
+    frontend.sidebar.plugins: Laajennukset
+    frontend.sidebar.settings: Asetukset
+    frontend.sidebar.sign_in: "Kirjaudu sis\xE4\xE4n"
+    frontend.sidebar.sign_out: Kirjaudu ulos
+    frontend.sidebar.sign_out_description: Voit kirjautua uudelleen milloin vain.
+    frontend.sidebar.sign_out_successful: Uloskirjautuminen onnistui.
+    frontend.sidebar.updates_available: Updates Available
+    frontend.sidebar.visualization: Visualisaatio
+    frontend.sidebar.wiki: Wiki
+    frontend.states.complete: Valmis!
+    frontend.theme.dark: Tumma
+    frontend.theme.light: Vaalea
+    global.settings.1.description: "N\xE4m\xE4 ovat asetuksia jotka vaikuttavat yleisesti\
+        \ sovelluksen toimintaan."
+    global.settings.1.title: Asetukset
+    global.settings.10.description: ETS2LA:n ikkunan leveys.
+    global.settings.10.name: Ikkunan leveys
+    global.settings.11.description: ETS2LA:n ikkunan korkeus.
+    global.settings.11.name: Ikkunan korkeus
+    global.settings.12.description: "Kuinka l\xE4pin\xE4kyv\xE4 ikkuna on l\xE4pin\xE4\
+        kyvyys tilassa. 1 on normaali, 0.7 tarkoittaa 30% l\xE4pin\xE4kyvyytt\xE4."
+    global.settings.12.name: "L\xE4pin\xE4kyvyys tilan arvo"
+    global.settings.13.description: "Havaitsimme monta n\xE4ytt\xF6\xE4, valitse mill\xE4\
+        \ n\xE4yt\xF6ll\xE4 ETS2/ATS avataan/on. (Windows asetuksista n\xE4kee n\xE4\
+        yt\xF6n numeron) Vaatii uudelleenk\xE4ynnistyksen!"
+    global.settings.13.name: "N\xE4yt\xF6n indeksi"
+    global.settings.14.description: "J\xE4ik\xF6 ilmoitus huomaamatta? Aseta FOV manuaalisesti\
+        \ t\xE4ss\xE4."
+    global.settings.14.name: FOV
+    global.settings.15.description: "Talvella n\xE4yt\xF6ll\xE4 sataa lunta."
+    global.settings.15.name: Lumi
+    global.settings.16.description: "Ilotulitteita laukaistaan n\xE4yt\xF6ll\xE4 31\
+        \ Joulukuuta - 1 Tammikuuta."
+    global.settings.16.name: Ilotulitteet
+    global.settings.2.description: "\xC4\xE4nipaketti jota k\xE4ytet\xE4\xE4n. T\xE4\
+        m\xE4 vaikuttaa kaikkiin sovelluksen \xE4\xE4niin."
+    global.settings.2.name: "\xC4\xE4nipaketti"
+    global.settings.3.description: "Sovelluksen \xE4\xE4nenvoimakkuus."
+    global.settings.3.name: "\xC4\xE4nenvoimakkuus"
+    global.settings.4.description: "K\xE4ytt\xF6liittym\xE4n portti jota k\xE4ytet\xE4\
+        \xE4n."
+    global.settings.4.name: "K\xE4ytt\xF6liittym\xE4n portti"
+    global.settings.5.description: "K\xE4yt\xE4 uutta virheen tulostusta."
+    global.settings.5.name: Uusi virheen tulostus
+    global.settings.6.description: "L\xE4het\xE4 kaatumisraportit kehitt\xE4jille."
+    global.settings.6.name: "L\xE4het\xE4 kaatumisraportit"
+    global.settings.7.description: "Avaa k\xE4ytt\xF6liittym\xE4n konsolin k\xE4ynnistyksen\
+        \ yhteydess\xE4."
+    global.settings.7.name: Debug tila
+    global.settings.8.description: "Sovelluksen kieli. Vaatii uudelleenk\xE4ynnistyksen!"
+    global.settings.8.name: Kieli
+    global.settings.9.description: "Vaatii uudelleenk\xE4ynnistyksen! Poistaa k\xE4\
+        ytt\xF6j\xE4rjestelm\xE4n ikkunan reunat. Poistamalla k\xE4yt\xF6st\xE4 voi\
+        \ korjata ongelmia esimerkiksi ikkunan liikuttamisen kanssa."
+    global.settings.9.name: Reunaton ikkuna
+    global.settings.audio: "\xC4\xE4net"
+    global.settings.misc: Sekalaiset
+    global.settings.ui: "K\xE4ytt\xF6liittym\xE4"
+    global.settings.variables: Muuttujat
+    godot.server_started: Godot avattu portille {0}
+    immediate.empty_page: "Yritettiin l\xE4hett\xE4\xE4 tyhj\xE4 sivu."
+    immediate.message_error: "Kommunikaatio viestin k\xE4sittelyss\xE4 tapahtui virhe."
+    immediate.websocket_started: "Websocket (k\xE4ytt\xF6liittym\xE4n ja taustaprosessin\
+        \ nopea kommunikaatio) k\xE4ynnistetty."
+    install: Asenna
+    loading: Ladataan...
+    logging.delete_log_error: Lokitiedostoa ei voitu poistaa.
+    logging.logger_initialized: Lokikirjaus alustettu.
+    main.closed: ETS2LA on sammunut.
+    main.crashed: "ETS2LA kaatui seuraavalla virheell\xE4:"
+    main.development_mode: ETS2LA kehitystilassa...
+    main.errors: "Virheit\xE4:"
+    main.errors_and_warnings: 'Virheet ja varoitukset lokitiedostoissa:'
+    main.legacy_traceback: "K\xE4ytettiin vanhaa virheen tulostusta."
+    main.no_errors_or_warnings: "Virheit\xE4 tai varoituksia ei l\xF6ytynyt."
+    main.overseer_started: "ETS2LA k\xE4ynnistyy..."
+    main.press_enter: Painaa rivinvaihtoa sulkeaksesi sovelluksen...
+    main.restarting: "ETS2LA k\xE4ynnistyy uudelleen..."
+    main.send_report: "L\xE4het\xE4 yll\xE4 oleva virhe tekij\xF6ille."
+    main.update_done: "P\xE4ivitys valmis... k\xE4ynnistet\xE4\xE4n uudelleen!"
+    main.updating: "ETS2LA p\xE4ivitys alkanut..."
+    main.warnings: 'Varoituksia:'
+    map.extracting_data: Puretaan GameData.zip, odota hetki...
+    map.json_not_found: "JSON tietoja ei l\xF6ytynyt. Pura .zip tiedosto ja yrit\xE4\
+        \ uudelleen."
+    map.loading.ferries: Kartta lataa lauttoja...
+    map.loading.final_calculations: Kartta viimeistelee laskelmia...
+    map.loading.nodes: "Kartta lataa pisteit\xE4..."
+    map.loading.prefab_data: Kartta lataa risteyksien tietoja...
+    map.loading.prefabs: "Kartta lataa risteyksi\xE4..."
+    map.loading.preparing: Kartta valmistautuu lataamaan tiedot...
+    map.loading.roads: "Kartta lataa teit\xE4..."
+    map.settings.1.description: "N\xE4m\xE4 asetukset vaikuttavat karttaan ja sen\
+        \ karttatietoihin."
+    map.settings.1.title: Kartan asetukset
+    map.settings.10.title: Ohjauksen asetuksets
+    map.settings.11.description: "Pehmennyksen sekunttim\xE4\xE4r\xE4. 0 vie peliin\
+        \ sen hetken ohjauksen, kun taas esimerkiksi 0.5 vie puolen sekunnin ajan\
+        \ keskiarvon."
+    map.settings.11.name: Pehmeys
+    map.settings.12.description: "Laskee reitin m\xE4\xE4r\xE4np\xE4\xE4h\xE4n, jotta\
+        \ ETS2LA voi ajaa loppuun saakka. Huomio: T\xE4m\xE4 reitti ei v\xE4ltt\xE4\
+        m\xE4tt\xE4 ole nopein mahdollinen!"
+    map.settings.12.name: Navigoi ETS2LA:lla
+    map.settings.2.description: Laskee kaiken tarpeellisen, jotta sovellus voi ohjata
+        karttatietojen pohjalta. Vaikuttaa suorituskykyyn.
+    map.settings.2.name: Laske ohjaus
+    map.settings.3.description: "Asetus antaa muiden laajennusten k\xE4ytt\xE4\xE4\
+        \ karttadataa. Visualisaatio ei voit toimia ilman t\xE4t\xE4 asetusta. Asetuksella\
+        \ voi vaikuttaa hieman suorituskykyyn."
+    map.settings.3.name: "L\xE4het\xE4 karttatiedot"
+    map.settings.4.title: "Sis\xE4inen visualisaatio"
+    map.settings.5.description: "Vaikuttaa sis\xE4isen visualisation suurennukseen."
+    map.settings.5.name: Suurennus
+    map.settings.6.description: "Aktivoidaanko sis\xE4inen visualisaatio? Hy\xF6dyllinen\
+        \ jos tietojen l\xE4hetys on pois p\xE4\xE4lt\xE4."
+    map.settings.6.name: "K\xE4yt\xE4"
+    map.settings.7.title: Ulkoinen visualisaatio
+    map.settings.8.description: "Maksimi et\xE4isyys teille, jotka l\xE4hetet\xE4\xE4\
+        n muille laajennuksille."
+    map.settings.8.name: "Render\xF6intiet\xE4isyys"
+    map.settings.9.description: "N\xE4ytt\xE4\xE4 tiet virtuaalisesti pelin p\xE4\xE4\
+        ll\xE4, muista aktivoida my\xF6s AR laajennus t\xE4t\xE4 varten."
+    map.settings.9.name: "N\xE4yt\xE4 AR"
+    map.visualisation.prefabs.curves: "K\xE4yri\xE4 {0}"
+    map.visualisation.prefabs.prefabs: "Risteyksi\xE4 {0}, Coordinaatit: {1}"
+    map.visualisation.roads.text: "Teit\xE4 {0}, Coordinaatit: {1}, Ladataan {2}"
+    'no': Ei
+    object_detection.connection_failed.1: "Hugging Facen palvelimiin ei saatu yhteytt\xE4\
+        ."
+    object_detection.connection_failed.2: "Tarkista verkkoyhteytesi ja yrit\xE4 uudelleen."
+    object_detection.connection_failed.3: 'HUOMIO: Esimerkiksi Kiinassa ja Turkissa
+        yhteys voi olla estetty.'
+    object_detection.connection_failed.4: "T\xE4ss\xE4 tapauksessa pyyd\xE4 apua Discordissa."
+    object_detection.loaded_model: 'Objektien tunnistus ladattu laitteella: {0}'
+    object_detection.loading_model: Ladataan objektien tunnistusta...
+    object_detection.not_found.1: "Alla olevaa tiedostoa ei ole viel\xE4 ladattu."
+    object_detection.not_found.2: Paina nappia ladataksesi tiedosto.
+    object_detection.processing_error: "Virhe k\xE4sitelless\xE4 ajoneuvon dataa."
+    object_detection.screen_capture_profile: "Objektien tunnistus k\xE4ytt\xE4\xE4\
+        \ profiilia: {0}"
+    object_detection.settings.1.description: "N\xE4m\xE4 asetukset vaikuttavat objektien\
+        \ tunnistuksen toimintaan."
+    object_detection.settings.1.title: Objektien tunnistus
+    object_detection.settings.2.description: "Mill\xE4 laitteella objektien tunnistus\
+        \ k\xE4y. Jos valitset 'Automatic' valitsee sovellus automaattisesti parhaan.\
+        \ Jos valitset GPU sinulla t\xE4ytyy olla CUDA tuettu laite ja ajuri asennettuna."
+    object_detection.settings.2.name: Laite
+    object_detection.settings.3.description: "Kumpaa suorityskyky tilaa k\xE4ytet\xE4\
+        \xE4n. 'Quality' tarkoittaa tarkkaa tilaa ja 'Performance' nopeaa tilaa."
+    object_detection.settings.3.name: Suoritus tila
+    object_detection.settings.4.description: "YOLO mallin p\xE4ivitysnopeus. 'Performance'\
+        \ tilassa vaikuttaa t\xE4m\xE4 siihen kuinka monta kertaa sekunnissa malli\
+        \ p\xE4ivitet\xE4\xE4n. 'Quality' tilassa arvo on kuinka monennessa 'framessa'\
+        \ malli p\xE4ivitet\xE4\xE4n. (esimerkiksi 4 tarkoittaa ett\xE4 malli p\xE4\
+        ivitet\xE4\xE4n joka 4 'frame')"
+    object_detection.settings.4.name: YOLOn nopeus
+    object_detection.settings.5.description: "YoloV7 vaatii enemm\xE4n tehoja kuin\
+        \ YoloV5. Eroa ei ole paljoa joten suositus on k\xE4ytt\xE4\xE4 YoloV5 mallia."
+    object_detection.settings.5.name: Mallin arkkitehtuuri
+    object_detection.settings.6.description: "Miss\xE4 kohtaa n\xE4ytt\xF6\xE4 etsit\xE4\
+        \xE4n objekteja. Ensimm\xE4inen on X, toinen Y, kolmas leveys, nelj\xE4s korkeus.\
+        \ T\xE4m\xE4 asetus p\xE4ivittyy automaattisesti kun aktivoit laajennuksen\
+        \ kerran."
+    object_detection.settings.6.name: Kuvakaappauksen mitat
+    object_detection.tracking_failed: "{0} seuraaminen ep\xE4onnistui. Mallin luottamus:\
+        \ {1}"
+    plugins.adaptivecruisecontrol: "Adaptiivinen vakionopeudens\xE4\xE4din"
+    plugins.adaptivecruisecontrol.description: "WIP - Vakionopeudens\xE4\xE4din joka\
+        \ jarruttaa edell\xE4 menev\xE4n auton perusteella."
+    plugins.ar: "AR (Lis\xE4tty todellisuus)"
+    plugins.ar.description: "Yh\xE4 tekeill\xE4... Piirt\xE4\xE4 kuvia ja viivoja\
+        \ ym. pelin p\xE4\xE4lle."
+    plugins.cruisecontrol: "Vakionopeudens\xE4\xE4din"
+    plugins.cruisecontrol.description: "Asettaa vakionopeudens\xE4\xE4timen pelin\
+        \ tien nopeusrajoituksen mukaan."
+    plugins.datacollection: "Tietojen ker\xE4ys"
+    plugins.datacollection.description: "Ker\xE4\xE4 objektien tunnistusta varten\
+        \ tarvittavia kuvia."
+    plugins.depthprediction: "Syvyysn\xE4k\xF6"
+    plugins.depthprediction.description: "Antaa muille laajennuksille syvyyskartan\
+        \ pelimaailmasta. Vaatii suuren m\xE4\xE4r\xE4n laskentatehoa ja NVIDIA CUDA\
+        \ n\xE4yt\xF6nohjaimen. Suositellaan pidett\xE4v\xE4ksi pois p\xE4\xE4lt\xE4\
+        ."
+    plugins.discordrichpresence: Discord Rich Presence
+    plugins.discordrichpresence.description: Discord Rich Presence laajennus ETS2LA:lle.
+    plugins.map: Kartta
+    plugins.map.description: "Karttatietojen visualisointi ja lukeminen pelist\xE4\
+        . HUOMIO: T\xE4ytyy olla p\xE4\xE4ll\xE4 melkein jokaisessa tilanteessa."
+    plugins.microcontrollercontrol: Mikro-ohjaimien tuki
+    plugins.microcontrollercontrol.description: "Antaa mikro-ohjaimien (kuten arduino)\
+        \ ohjata ETS2LA:ta ja peli\xE4 sen kautta."
+    plugins.navigationdetection: Navigaatio ohjaus
+    plugins.navigationdetection.description: Sama kuin ETS2LA V1.0:ssa - Ohjaa rekkaa
+        pienen kartan navigaation avulla.
+    plugins.objectdetection: Objektien tunnistus
+    plugins.objectdetection.description: "Tunnistaa objekteja pelimaailmasta ja l\xE4\
+        hett\xE4\xE4 niist\xE4 tietoja muille laajennuksille."
+    plugins.raycastingtest: "S\xE4teensuuntaus testi"
+    plugins.raycastingtest.description: "L\xE4hinn\xE4 kehitt\xE4jille - S\xE4teensuuntaa\
+        \ nykyiseen hiiren paikkaan ja l\xE4hett\xE4\xE4 tiedon 'autona'."
+    plugins.sockets: Socket-rajapinta
+    plugins.sockets.description: "ETS2LA:n websocket laajennus. L\xE4hett\xE4\xE4\
+        \ reaaliaikaisia tietoja pelist\xE4 ja sovelluksesta esimerkiksi visualisaatiolle."
+    plugins.trafficlightdetection: Liikennevalojen tunnistus
+    plugins.trafficlightdetection.description: "Tunnistaa konen\xE4oll\xE4 liikennevalot\
+        \ ja l\xE4hett\xE4\xE4 niist\xE4 tietoja muille laajennuksille. Esimerkiksi\
+        \ Vakionopeudens\xE4\xE4din laajennus jarruttaa liikennevalon ollessa punainen."
+    plugins.truckstats: Rekan tilastot
+    plugins.truckstats.description: "N\xE4ytt\xE4\xE4 tietoja rekasta, pelist\xE4\
+        , ja reitist\xE4. Esimerkiksi n\xE4ytt\xE4\xE4 kuinka kauan oikeaa aikaa on\
+        \ j\xE4ljell\xE4."
+    runner.could_not_import: '{0} laajennusta ei voitu ladata.'
+    runner.could_not_load_module: '{0} moduulia ei voitu ladata.'
+    runner.error_calling_function: Virhe kutsuttaessa funktiota {0} laajennuksessa
+        {1}
+    runner.initialize_error: Virhe {0} laajennuksen alustuksessa. [Initialize()]
+    runner.plugin_crash: '{0} on kaatunut, virhe alla.'
+    sdk_install.description: "Tarkista ett\xE4 tarvittavat DLL:t on asennettu jotta\
+        \ voimme kommunikoida pelin kanssa."
+    sdk_install.games: "L\xF6ysimme seuraavat pelit:"
+    sdk_install.install: Asenna SDK:t
+    sdk_install.install_description: "Nappia painamalla asennat SDK:n kaikkiin listattuihin\
+        \ peleihin. Huomaa ett\xE4 sivun p\xE4ivitys voi kest\xE4\xE4 hetken asennuksen\
+        \ j\xE4lkeen."
+    sdk_install.installed: '- Asennettu'
+    sdk_install.no_games: "Emme l\xF6yt\xE4neet pelej\xE4si automaattisesti. Sinun\
+        \ t\xE4ytyy asentaa SDK:t k\xE4sin."
+    sdk_install.not_installed: '- Ei asennettu'
+    sdk_install.title: SDK Asennus
+    sdk_install.uninstall: Poista SDK:t
+    sdk_install.uninstall_description: "Nappia painamalla poistat SDK:n kaikista listatuista\
+        \ peleist\xE4. Huomaa ett\xE4 sivun p\xE4ivitys voi kest\xE4\xE4 hetken asennuksen\
+        \ j\xE4lkeen."
+    search: Etsi
+    set: Asetettu
+    setting: Asetetaan...
+    sounds.invalid_file_type: "\xC4\xE4nipaketissa '{0}' on virheellinen tiedosto\
+        \ p\xE4\xE4tteell\xE4 '{1}'"
+    sounds.missing_sound: "\xC4\xE4nipaketissa '{0}' ei ole tarvittavaa \xE4\xE4nt\xE4\
+        \ '{1}'"
+    sounds.sound_not_found_in_soundpack: "Yritettiin soittaa \xE4\xE4nt\xE4 '{0}',\
+        \ mutta sit\xE4 ei l\xF6ytynyt \xE4\xE4nipaketista '{1}'"
+    submit: "L\xE4het\xE4"
+    success: Onnistui
+    uninstall: Poista
+    unknown: Tuntematon
+    webpage.opened: "K\xE4ytt\xF6liittym\xE4n ikkuna avattu."
+    webpage.ui_loading: "Odota kunnes k\xE4ytt\xF6liittym\xE4 on k\xE4ynnistynyt"
+    webserver.disabling_plugin: Suljetaan {0}
+    webserver.enabling_plugin: "K\xE4ynnistet\xE4\xE4n {0}"
+    webserver.frontend_started: "K\xE4ytt\xF6liittym\xE4 k\xE4ynnistetty osoitteessa\
+        \ {0} ( {1} )"
+    webserver.webserver_started: "Taustaprosessin palvelin k\xE4ynnistetty osoitteessa\
+        \ {0} ( {1} )"
+    'yes': "Kyll\xE4"

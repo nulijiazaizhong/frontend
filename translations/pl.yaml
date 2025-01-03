@@ -1,0 +1,479 @@
+Language:
+    credits: "U\u017Cywasz Polskiego t\u0142umaczenia, napisanego przez handler1337."
+    iso_code: pl
+    name: Polski
+    name_en: Polish
+    version: 2.0.0
+Translations:
+    about.about: Informacje
+    about.atac_helicopter.description: "Poprawki b\u0142\u0119d\xF3w"
+    about.cloud.description: "Port na Linux i Unix, r\xF3\u017Cne ulepszenia i poprawki\
+        \ b\u0142\u0119d\xF3w"
+    about.contribute_description: "\u2022 Je\u015Bli chcesz wnie\u015B\u0107 sw\xF3\
+        j wk\u0142ad, zalecam do\u0142\u0105czenie do serwera Discord i zapoznanie\
+        \ si\u0119 ze stron\u0105 GitHub."
+    about.description: "ETS2LA to projekt maj\u0105cy na celu dostarczenie \u0142\
+        atwego w u\u017Cyciu rozwi\u0105zania do automatycznego prowadzenia pojazd\xF3\
+        w w ETS2 i ATS. Je\u015Bli chcesz dowiedzie\u0107 si\u0119 wi\u0119cej, mo\u017C\
+        esz odwiedzi\u0107 stron\u0119 GitHub lub wiki za pomoc\u0105 paska bocznego."
+    about.developers: "Tw\xF3rcy / Wsp\xF3\u0142tw\xF3rcy"
+    about.dtheicydragon.description: "Poprawki b\u0142\u0119d\xF3w"
+    about.dyldev.description: "R\xF3\u017Cne dodatki i ulepszenia, modele sztucznej\
+        \ inteligencji do wykrywania obiekt\xF3w oraz rozw\xF3j"
+    about.flexflexen.description: "Poprawki b\u0142\u0119d\xF3w"
+    about.glas42.description: "Detekcja nawigacji, detekcja sygnalizacji \u015Bwietlnej,\
+        \ ETS2LA Lite, 'wsp\xF3\u0142w\u0142a\u015Bciciel'"
+    about.kofi_description: "\u2022 Je\u015Bli podoba Ci si\u0119 projekt i chcesz\
+        \ wesprze\u0107 jego rozw\xF3j, mo\u017Cesz to zrobi\u0107, przekazuj\u0105\
+        c darowizn\u0119 przez Ko-Fi."
+    about.lookatyourskill.description: "Poprawki b\u0142\u0119d\xF3w"
+    about.lun.description: "Chi\u0144skie t\u0142umaczenia, poprawki b\u0142\u0119\
+        d\xF3w"
+    about.mimi89999.description: Deweloper scs-sdk-controller
+    about.mruiaw.description: "Chi\u0144skie t\u0142umaczenia, poprawki b\u0142\u0119\
+        d\xF3w"
+    about.no_credits: "J\u0119zyk nie ma podzi\u0119kowa\u0144."
+    about.piotrke.description: Przechwytywanie gry
+    about.romansonnik.description: "Poprawki b\u0142\u0119d\xF3w"
+    about.support_development: "Wesprzyj rozw\xF3j"
+    about.translate_description: "\u2022 Je\u015Bli chcesz wnie\u015B\u0107 sw\xF3\
+        j wk\u0142ad w t\u0142umaczenia, mo\u017Cesz to zrobi\u0107, do\u0142\u0105\
+        czaj\u0105c do serwera Discord."
+    about.translation_credits: "Podzi\u0119kowania za t\u0142umaczenie"
+    about.truckersmudgeon.description: Ekstrakcja i przetwarzanie danych z gry
+    about.tumppi066.description: "G\u0142\xF3wny deweloper i tw\xF3rca ETS2LA, backend\
+        \ i frontend."
+    about.viszke.description: "Poprawki b\u0142\u0119d\xF3w"
+    about.whytrevorwhy.description: Pomoc przy nawigacji w ETS2LA i mapie
+    about.zhaoyj.description: Modele 3D do wizualizacji
+    about.ziakhan4505.description: "Wsparcie dla C++, port na Linux i Unix, poprawki\
+        \ b\u0142\u0119d\xF3w"
+    acc.settings.1.description: "To wp\u0142ynie na to jak aplikacja reaguje na inne\
+        \ pojazdy."
+    acc.settings.1.title: Ustawienia adaptacyjnego tempomatu
+    acc.settings.2.description: "Ile sekund powinno nas dzieli\u0107 od pojazdu z\
+        \ przodu."
+    acc.settings.2.name: "Czas pod\u0105\u017Cania"
+    acc.settings.3.description: "Jed\u017A tak\u0105 warto\u015Bci\u0105 powy\u017C\
+        ej limitu pr\u0119dko\u015Bci."
+    acc.settings.3.name: "Offset pr\u0119dko\u015Bci"
+    acc.settings.4.description: "Jak daleko aplikacja powinna trzyma\u0107 od obiektu."
+    acc.settings.4.name: Dystans
+    acc.settings.5.description: "Czy je\u017Adzimy o okre\u015Blony procent szybciej\
+        \ ni\u017C dozwolona pr\u0119dko\u015B\u0107, czy dodajemy sta\u0142\u0105\
+        \ warto\u015B\u0107?"
+    acc.settings.5.name: "Typ offsetu pr\u0119dko\u015Bci"
+    acc.settings.6.description: "Wy\u015Bwietl powiadomienie, gdy aplikacja spowalnia\
+        \ z powodu jakichkolwiek przeszk\xF3d."
+    acc.settings.6.name: "Poka\u017C powiadomienia"
+    cancel: Anuluj
+    clear: "Wyczy\u015B\u0107"
+    confirm: "Potwierd\u017A"
+    continue: Kontynuuj
+    controls.listener_started: "Nas\u0142uchiwanie sterowania zosta\u0142o uruchomione."
+    core.backend_started: "Backend ETS2LA zosta\u0142 pomy\u015Blnie uruchomiony."
+    done: Gotowe!
+    download: Pobierz
+    downloading: Pobieranie {0}...
+    error: "B\u0142\u0105d"
+    events.vehicle_change.vehicle_change: "Wykryto zmian\u0119 pojazdu."
+    events.vehicle_change.vehicle_change_description: "Wykryli\u015Bmy zmian\u0119\
+        \ pojazdu. Naci\u015Bnij F4 podczas widoku z kabiny, otw\xF3rz ustawienia\
+        \ fotela i podaj now\u0105 warto\u015B\u0107 FOV (pola widzenia)."
+    frontend.404.button: "Menu g\u0142\xF3wne"
+    frontend.404.message: "Kliknij przycisk poni\u017Cej, aby wr\xF3ci\u0107 do ekranu\
+        \ g\u0142\xF3wnego, a czy mo\u017Cesz nam powiedzie\u0107, jak tu trafi\u0142\
+        e\u015B?"
+    frontend.404.title: "Po co tu jeste\u015Bmy... po prostu, \u017Ceby cierpie\u0107\
+        ?"
+    frontend.dialog.not_supported: "{0} nie jest obs\u0142ugiwany w oknie dialogowym."
+    frontend.disclaimer.description.line1: "ETS2LA nie ponosi odpowiedzialno\u015B\
+        ci za jakiekolwiek negatywne skutki wynikaj\u0105ce z korzystania z funkcji\
+        \ oferowanych przez to oprogramowanie. Prosz\u0119 korzysta\u0107 z oprogramowania\
+        \ na w\u0142asne ryzyko."
+    frontend.disclaimer.description.line2: "Korzystanie z ETS2LA w TruckersMP zosta\u0142\
+        o dopuszczone przez zesp\xF3\u0142 TMP, jednak to Ty ponosisz odpowiedzialno\u015B\
+        \u0107 za wszelkie bany lub ostrze\u017Cenia wynikaj\u0105ce z u\u017Cywania\
+        \ tego oprogramowania."
+    frontend.disclaimer.dontshowagain: Nie pokazuj tego ponownie.
+    frontend.disclaimer.dontshowagain.toast: "Nie zobaczysz tego ponownie a\u017C\
+        \ do nast\u0119pnej aktualizacji."
+    frontend.disclaimer.ok: Rozumiem
+    frontend.disclaimer.title: "Wa\u017Cna informacja!"
+    frontend.feedback: Opinia i uwagi
+    frontend.feedback.description: "Prosz\u0119 poda\u0107 wszelkie uwagi, kt\xF3\
+        re masz. Zostan\u0105 one wys\u0142ane bezpo\u015Brednio do prywatnego kana\u0142\
+        u, aby deweloperzy mogli je zobaczy\u0107."
+    frontend.feedback.disclaimer: "Nie podawaj \u017Cadnych informacji osobistych"
+    frontend.feedback.empty: "Opinie s\u0105 puste, prosz\u0119 poda\u0107 wszelkie\
+        \ uwagi, kt\xF3re masz."
+    frontend.feedback.error_sending: "Napotkano b\u0142\u0105d podczas wysy\u0142\
+        ania opinii! Spr\xF3buj p\xF3\u017Aniej."
+    frontend.feedback.sending: "Wysy\u0142anie opinii..."
+    frontend.feedback.sent: "Wys\u0142ano opini\u0119!"
+    frontend.feedback.submit: "Zg\u0142o\u015B"
+    frontend.hello: Witaj, {0}!
+    frontend.immediate.checking_updates: Sprawdzanie aktualizacji...
+    frontend.immediate.close: Zamknij
+    frontend.immediate.connected: "Po\u0142aczono z serwerem backend ETS2LA"
+    frontend.immediate.disable_stay_on_top: "Wy\u0142\u0105cz opcj\u0119 zawsze na\
+        \ wierzchu"
+    frontend.immediate.disable_transparent: "Wy\u0142\u0105cz prze\u017Aroczysto\u015B\
+        \u0107"
+    frontend.immediate.disconnected: "Roz\u0142\u0105czono z serwerem backend ETS2LA"
+    frontend.immediate.enable_stay_on_top: "W\u0142\u0105cz opcj\u0119 zawsze na wierzchu"
+    frontend.immediate.enable_transparent: "W\u0142\u0105cz prze\u017Aroczysto\u015B\
+        \u0107"
+    frontend.immediate.minimize: Minimalizuj
+    frontend.immediate.no_updates: "Brak dost\u0119pnych aktualizacji"
+    frontend.immediate.socket_connected: "Po\u0142\u0105czono"
+    frontend.immediate.socket_disconnected: "Roz\u0142\u0105czono, prosz\u0119 od\u015B\
+        wie\u017Cy\u0107"
+    frontend.immediate.up_to_date: Aktualne
+    frontend.immediate.update_available: "Jeste\u015B {0} aktualizacji do ty\u0142\
+        u"
+    frontend.immediate.update_check_error: "B\u0142\u0105d: {0}"
+    frontend.logged_out: Wylogowano.
+    frontend.login: Logowanie
+    frontend.login.already_logged_in: "UWAGA: Jeste\u015B ju\u017C zalogowany. Mo\u017C\
+        esz to nadpisa\u0107, loguj\u0105c si\u0119 ponownie."
+    frontend.login.disclaimer: "Obecnie wspieramy logowanie tylko przez Discorda,\
+        \ aby nie musie\u0107 przechowywa\u0107 \u017Cadnych wra\u017Cliwych informacji,\
+        \ takich jak has\u0142a."
+    frontend.login.discord: "Zaloguj u\u017Cywaj\u0105c aplikacji Discord"
+    frontend.login.privacy_policy: "Polityka prywatno\u015Bci"
+    frontend.login.successful: "Pomy\u015Blnie zalogowano!"
+    frontend.login.successful_description: "Wyloguj si\u0119, korzystaj\u0105c z menu\
+        \ kontekstowego pod swoj\u0105 nazw\u0105 u\u017Cytkownika w lewym dolnym\
+        \ rogu."
+    frontend.plugins.authors: Autorzy
+    frontend.plugins.disabled_plugin: "Wy\u0142\u0105czanie {0}"
+    frontend.plugins.disabling_plugin: "Wy\u0142\u0105czanie {0}"
+    frontend.plugins.enabled_plugin: Uruchomiono {0}
+    frontend.plugins.enabling_plugin: Uruchamianie {0}
+    frontend.plugins.end_list: Koniec listy
+    frontend.plugins.error_disabling_plugin: "B\u0142\u0105d podczas wy\u0142\u0105\
+        czania {0}"
+    frontend.plugins.error_enabling_plugin: "B\u0142\u0105d podczas uruchamiania {0}"
+    frontend.plugins.hidden: "{0} ukrytych dodatk\xF3w"
+    frontend.plugins.name: Nazwa
+    frontend.plugins.select_authors: "Wyszukaj Autor\xF3w"
+    frontend.plugins.select_tags: Wyszukaj Tagi
+    frontend.plugins.selected_authors: "{0} wybranych autor\xF3w"
+    frontend.plugins.selected_tags: '{0} tagi wybrane'
+    frontend.plugins.tags: Tagi
+    frontend.settings: Ustawienia
+    frontend.settings.array.add: Dodaj element
+    frontend.settings.array.added_element: Dodano element tablicy
+    frontend.settings.array.remove: "Usu\u0144"
+    frontend.settings.array.removed_element: "Usuni\u0119to element tablicy"
+    frontend.settings.array.updated_element: Zaktualizowano element tablicy
+    frontend.settings.backend_no_data: Brak danych z serwera backend.
+    frontend.settings.boolean.updated: Zaktualizowano ustawienie
+    frontend.settings.controls: Sterowanie
+    frontend.settings.data_missing: "Brak lub nieprawid\u0142owe dane dodatku."
+    frontend.settings.enum.no_enum: "Brak dostarczonych warto\u015Bci enum."
+    frontend.settings.enum.updated: Zaktualizowano ustawienie
+    frontend.settings.error: "B\u0142\u0105d: {0}"
+    frontend.settings.global: Globalne
+    frontend.settings.global_info: "Ta lista zawiera tylko dodatki, kt\xF3re obs\u0142\
+        uguj\u0105 plik ustawie\u0144 globalnych."
+    frontend.settings.needs_restart: "Dodatek potrzebuje ponownego uruchomienia w\
+        \ celu zastosowania ustawie\u0144."
+    frontend.settings.number.updated: Zaktualizowano ustawienie
+    frontend.settings.restarted: "Ponowne uruchomienie powiod\u0142o si\u0119."
+    frontend.settings.string.updated: Zaktualizowano ustawienie
+    frontend.settings.unknown_data_type: 'Nieznany typ danych: {0}'
+    frontend.sidebar.account: Konto
+    frontend.sidebar.anonymous: Anonimowy
+    frontend.sidebar.chat: Czat
+    frontend.sidebar.dashboard: "Strona g\u0142\xF3wna"
+    frontend.sidebar.help: Pomoc
+    frontend.sidebar.main: "G\u0142\xF3wne"
+    frontend.sidebar.manager: "Mened\u017Cer"
+    frontend.sidebar.performance: "Wydajno\u015B\u0107"
+    frontend.sidebar.plugins: Dodatki
+    frontend.sidebar.settings: Ustawienia
+    frontend.sidebar.sign_in: "Zaloguj si\u0119"
+    frontend.sidebar.sign_out: Wyloguj
+    frontend.sidebar.sign_out_description: "Mo\u017Cesz ponownie zalogowa\u0107 si\u0119\
+        \ w dowolnym momencie."
+    frontend.sidebar.sign_out_successful: "Wylogowywanie powiod\u0142o si\u0119."
+    frontend.sidebar.updates_available: Dostepne aktualizacje
+    frontend.sidebar.visualization: Wizualizacja
+    frontend.sidebar.wiki: Wiki
+    frontend.states.complete: Gotowe!
+    frontend.theme.dark: Ciemny
+    frontend.theme.light: Jasny
+    global.settings.1.description: "Ustawienia, kt\xF3re g\u0142\xF3wnie wp\u0142\
+        ywaj\u0105 na ca\u0142\u0105 aplikacj\u0119."
+    global.settings.1.title: Ustawienia globalne
+    global.settings.10.description: "Szeroko\u015B\u0107 okna."
+    global.settings.10.name: "Szeroko\u015B\u0107 okna"
+    global.settings.11.description: "Wysoko\u015B\u0107 okna."
+    global.settings.11.name: "Wysoko\u015B\u0107 okna"
+    global.settings.12.description: "Przezroczysto\u015B\u0107 okna w trybie przezroczystym.\
+        \ 1 = ca\u0142kowicie nieprzezroczyste, 0 = ca\u0142kowicie przezroczyste."
+    global.settings.12.name: "Tryb przejrzysto\u015Bci Alpha"
+    global.settings.13.description: "ID wy\u015Bwietlacza do u\u017Cycia w aplikacjach\
+        \ wizji komputerowej (Wykrywanie obiekt\xF3w itp.). Nale\u017Cy ustawi\u0107\
+        \ na monitor, na kt\xF3rym uruchomiona jest gra ETS2. Wymaga ponownego uruchomienia,\
+        \ aby zastosowa\u0107 zmiany!"
+    global.settings.13.name: "ID wy\u015Bwietlacza"
+    global.settings.14.description: "Przegapi\u0142e\u015B wyskakuj\u0105ce okienko?\
+        \ Zmie\u0144 swoje pole widzenia (FOV) tutaj."
+    global.settings.14.name: FOV
+    global.settings.15.description: "Okre\u015Bla czy w\u0142\u0105czy\u0107 cz\u0105\
+        steczki \u015Bniegu na ekranie."
+    global.settings.15.name: "\u015Anieg"
+    global.settings.16.description: "Okre\u015Bla czy w\u0142\u0105czy\u0107 fajerwerki\
+        \ na ekranie."
+    global.settings.16.name: Fajerwerki
+    global.settings.2.description: "Paczka d\u017Awi\u0119k\xF3w do u\u017Cycia. Zmieni\
+        \ wszystkie d\u017Awi\u0119ki aplikacji."
+    global.settings.2.name: "Paczka d\u017Awi\u0119k\xF3w"
+    global.settings.3.description: "G\u0142o\u015Bno\u015B\u0107 d\u017Awi\u0119k\xF3\
+        w w aplikacji."
+    global.settings.3.name: "G\u0142o\u015Bno\u015B\u0107"
+    global.settings.4.description: "Port na kt\xF3rym serwer frontend jest uruchomiony"
+    global.settings.4.name: Port serwera frontend
+    global.settings.5.description: "Okre\u015Bla czy w przypadku b\u0142\u0119du wy\u015B\
+        wietlacz szczeg\xF3\u0142owe informacj\u0119."
+    global.settings.5.name: "Szczeg\xF3\u0142owe informacj\u0119 b\u0142\u0119du"
+    global.settings.6.description: "Okre\u015Bla czy wysy\u0142a\u0107 raporty b\u0142\
+        \u0119du do deweloper\xF3w."
+    global.settings.6.name: "Wy\u015Blij raporty b\u0142\u0119du"
+    global.settings.7.description: "Okre\u015Bla uruchomienie tryby debugowania."
+    global.settings.7.name: Tryb debugowania
+    global.settings.8.description: "J\u0119zyk, kt\xF3ry ma by\u0107 u\u017Cywany\
+        \ w aplikacji. Wymaga ponownego uruchomienia, aby zastosowa\u0107 zmiany!"
+    global.settings.8.name: "J\u0119zyk"
+    global.settings.9.description: "Okre\u015Bla, czy aplikacja ma u\u017Cywa\u0107\
+        \ okna bez ramki. Wymaga pe\u0142nego restartu, aby zastosowa\u0107 zmiany!\
+        \ Rozwi\u0105\u017Ce problemy z przesuwaniem okna aplikacji. Umo\u017Cliwia\
+        \ tak\u017Ce skalowanie."
+    global.settings.9.name: Bez ramek
+    global.settings.audio: "D\u017Awi\u0119k"
+    global.settings.misc: "R\xF3\u017Cne"
+    global.settings.ui: "Interfejs u\u017Cytkownika"
+    global.settings.variables: Zmienne
+    godot.server_started: Godot uruchomiony na porcie {0}
+    immediate.empty_page: "Pr\xF3bowano wys\u0142a\u0107 pust\u0105 stron\u0119."
+    immediate.message_error: "Wyst\u0105pi\u0142 b\u0142\u0105d podczas przetwarzania\
+        \ wiadomo\u015Bci."
+    immediate.websocket_started: "Po\u0142\u0105czenie WebSocket zosta\u0142o uruchomione."
+    install: Zainstaluj
+    loading: "\u0141adowanie..."
+    logging.delete_log_error: "Nie uda\u0142o si\u0119 usun\u0105\u0107 pliku dziennika."
+    logging.logger_initialized: Rejestrator dziennika uruchomiony.
+    main.closed: "ETS2LA zosta\u0142 zamkni\u0119ty"
+    main.crashed: "ETS2LA niespodziewanie zako\u0144czy\u0142 prac\u0119 z nast\u0119\
+        puj\u0105cym b\u0142\u0119dem:"
+    main.development_mode: Uruchamianie ETS2LA w trybie programistycznym.
+    main.errors: "B\u0142\u0119dy:"
+    main.errors_and_warnings: "B\u0142\u0119dy i ostrze\u017Cenia w pliku dziennika\
+        \ zdarze\u0144:"
+    main.legacy_traceback: "U\u017Cyto starego sposobu wy\u015Bwietlania b\u0142\u0119\
+        d\xF3w."
+    main.no_errors_or_warnings: "Brak b\u0142\u0119d\xF3w ani ostrze\u017Ce\u0144."
+    main.overseer_started: "ETS2LA w\u0142\u0105czone!"
+    main.press_enter: "Naci\u015Bnij Enter aby wyj\u015B\u0107..."
+    main.restarting: Ponowne uruchamianie ETS2LA...
+    main.send_report: "Wy\u015Blij powy\u017Cszy komunikat o b\u0142\u0119dzie do\
+        \ deweloper\xF3w."
+    main.update_done: "Uko\u0144czono aktualizacj\u0119... ponowne uruchamianie!"
+    main.updating: Trwa aktualizacja ETS2LA...
+    main.warnings: "Ostrze\u017Cenia:"
+    map.extracting_data: "Ekstraktowanie GameData.zip prosz\u0119 czeka\u0107..."
+    map.json_not_found: "Nie znaleziono plik\xF3w JSON w folderze GameData, prosz\u0119\
+        \ rozpakowa\u0107 plik GameData.zip."
+    map.loading.ferries: "\u0141adowanie prom\xF3w mapy..."
+    map.loading.final_calculations: Finalne kalkulacje mapy...
+    map.loading.nodes: "\u0141adowanie w\u0119z\u0142\xF3w mapy..."
+    map.loading.prefab_data: "\u0141adowanie danych prefab mapy..."
+    map.loading.prefabs: "\u0141adowanie prefab mapy..."
+    map.loading.preparing: "Mapa przygotowuje si\u0119 do \u0142adowania danych..."
+    map.loading.roads: "\u0141adowanie dr\xF3g mapy..."
+    map.settings.1.description: Ustawienia dodatku do mapy.
+    map.settings.1.title: Ustawienia mapy
+    map.settings.10.title: Ustawienia kierowania
+    map.settings.11.description: "Liczba sekund do wyg\u0142adzenia kierowania. Warto\u015B\
+        \u0107 0 b\u0119dzie bardzo sztywna, natomiast warto\u015B\u0107 powy\u017C\
+        ej 0,5 mo\u017Ce powodowa\u0107 hu\u015Btanie si\u0119 w lewo i prawo."
+    map.settings.11.name: "P\u0142ynno\u015B\u0107"
+    map.settings.12.description: "Obliczy niezb\u0119dn\u0105 tras\u0119 do dotarcia\
+        \ do celu. Zastrze\u017Cenie: Ta trasa nie jest gwarantowanie najszybsza!"
+    map.settings.12.name: Nawigowanie na ETS2LA
+    map.settings.2.description: "To obliczy wszystkie niezb\u0119dne warto\u015Bci,\
+        \ aby mapa mog\u0142a kierowa\u0107 ci\u0119\u017Car\xF3wk\u0105."
+    map.settings.2.name: "Oblicz skr\u0119t"
+    map.settings.3.description: "To pozwoli innym wtyczkom na korzystanie z danych\
+        \ mapy. Prosz\u0119 pami\u0119ta\u0107, \u017Ce wizualizacja nie b\u0119dzie\
+        \ dzia\u0142a\u0107 bez w\u0142\u0105czonej tej opcji. Ta opcja mo\u017Ce,\
+        \ cho\u0107 w niewielkim stopniu, poprawi\u0107 wydajno\u015B\u0107."
+    map.settings.3.name: "Wysy\u0142aj dane"
+    map.settings.4.title: "Wewn\u0119trzna wizualizacja"
+    map.settings.5.description: "Kontroluje przybli\u017Cenie wewn\u0119trznej wizualizacji."
+    map.settings.5.name: "Przybli\u017Cenie"
+    map.settings.6.description: "Okre\u015Bla, czy renderowa\u0107 wewn\u0119trzn\u0105\
+        \ wizualizacj\u0119 mapy. Przydatne, je\u015Bli nie wysy\u0142asz danych zewn\u0119\
+        trznych."
+    map.settings.6.name: "W\u0142\u0105cz"
+    map.settings.7.title: "Zewn\u0119trzna wizualizacja"
+    map.settings.8.description: "Ustawi maksymaln\u0105 odleg\u0142o\u015B\u0107 danych\
+        \ wysy\u0142anych do innych dodatk\xF3w, pod warunkiem, \u017Ce jest to dozwolone\
+        \ przez dodatek."
+    map.settings.8.name: "Odleg\u0142o\u015B\u0107 renderowania"
+    map.settings.9.description: "To poka\u017Ce drogi na ekranie gry, musisz r\xF3\
+        wnie\u017C w\u0142\u0105czy\u0107 wtyczk\u0119 AR."
+    map.settings.9.name: "Poka\u017C dane AR"
+    map.visualisation.prefabs.curves: "Zakr\u0119ty: {0}"
+    map.visualisation.prefabs.prefabs: 'Prefabs: {0}, Kafelek: {1}'
+    map.visualisation.roads.text: "Drogi: {0}, Kafelek: {1}, \u0141adowanie: {2}"
+    'no': Nie
+    object_detection.connection_failed.1: "Nie mo\u017Cna po\u0142\u0105czy\u0107\
+        \ si\u0119 z serwerem na Hugging Face."
+    object_detection.connection_failed.2: "Sprawd\u017A swoje po\u0142\u0105czenie\
+        \ sieciowe"
+    object_detection.connection_failed.3: "UWAGA: W krajach takich jak Chiny serwer\
+        \ mo\u017Ce by\u0107 zablokowany."
+    object_detection.connection_failed.4: "W takim przypadku, powiniene\u015B napisa\u0107\
+        \ na Discordzie o pomoc."
+    object_detection.loaded_model: "Model detekcji obiekt\xF3w za\u0142adowany na\
+        \ {0}"
+    object_detection.loading_model: "\u0141adowanie modelu detekcji obiekt\xF3w..."
+    object_detection.not_found.1: "\u017B\u0105dany model, pokazany poni\u017Cej,\
+        \ nie zosta\u0142 jeszcze pobrany."
+    object_detection.not_found.2: "Kliknij przycisk poni\u017Cej, aby pobra\u0107\
+        \ model z"
+    object_detection.processing_error: "B\u0142\u0105d podczas przetwarzania danych\
+        \ pojazdu"
+    object_detection.screen_capture_profile: "Detekcja obiekt\xF3w u\u017Cywa profilu\
+        \ przechwytywania ekranu: {0}"
+    object_detection.settings.1.description: "Te ustawienia wp\u0142yn\u0105 na jako\u015B\
+        \u0107 i wydajno\u015B\u0107 wykrywania obiekt\xF3w."
+    object_detection.settings.1.title: "Ustawienia wykrywania obiekt\xF3w"
+    object_detection.settings.2.description: "Urz\u0105dzenie, na kt\xF3rym ma by\u0107\
+        \ uruchomione wykrywanie obiekt\xF3w. Je\u015Bli wybierzesz opcj\u0119 automatyczn\u0105\
+        , decyzja zostanie podj\u0119ta na podstawie Twojego systemu. (Je\u015Bli\
+        \ wybierzesz GPU, a nie posiadasz karty graficznej lub nie masz zainstalowanego\
+        \ CUDA, zostanie automatycznie wybrane CPU.)"
+    object_detection.settings.2.name: "Urz\u0105dzenie"
+    object_detection.settings.3.description: "Tryb wykrywania obiekt\xF3w, kt\xF3\
+        ry chcesz u\u017Cy\u0107. Prosz\u0119 pami\u0119ta\u0107, \u017Ce tryb jako\u015B\
+        ci wymaga wydajnego komputera, aby dzia\u0142a\u0142 p\u0142ynnie."
+    object_detection.settings.3.name: Tryb
+    object_detection.settings.4.description: "Cz\u0119stotliwo\u015B\u0107 od\u015B\
+        wie\u017Cania modelu YOLO. Wy\u017Csze warto\u015Bci b\u0119d\u0105 szybciej\
+        \ aktualizowa\u0107 detekcje. W trybie wydajno\u015Bci to liczba klatek na\
+        \ sekund\u0119 (FPS), w trybie jako\u015Bci to liczba klatek pomi\u0119dzy\
+        \ detekcjami. Prosz\u0119 pami\u0119ta\u0107, \u017Ce warto\u015Bci powy\u017C\
+        ej 2 w trybie wydajno\u015Bci mog\u0105 nie dzia\u0142a\u0107 zgodnie z oczekiwaniami."
+    object_detection.settings.4.name: "Pr\u0119dko\u015Bc YOLO"
+    object_detection.settings.5.description: "Architektura modelu, kt\xF3r\u0105 chcesz\
+        \ u\u017Cy\u0107. Prosz\u0119 pami\u0119ta\u0107, \u017Ce YoloV7 wymaga wi\u0119\
+        kszej mocy obliczeniowej."
+    object_detection.settings.5.name: Architektura modelu
+    object_detection.settings.6.description: "Jak\u0105 cz\u0119\u015B\u0107 ekranu\
+        \ u\u017Cywa\u0107 do wykrywania obiekt\xF3w. Indeks 0 to X, indeks 1 to Y,\
+        \ indeks 2 to szeroko\u015B\u0107, indeks 3 to wysoko\u015B\u0107. To ustawienie\
+        \ zostanie automatycznie wygenerowane po pierwszym uruchomieniu wtyczki."
+    object_detection.settings.6.name: Wymiary przechwytywania ekranu
+    object_detection.tracking_failed: "\u015Aledzenie nie powiod\u0142o si\u0119 na\
+        \ {0} z pewno\u015Bci\u0105 {1}"
+    plugins.adaptivecruisecontrol: Adaptacyjny tempomat
+    plugins.adaptivecruisecontrol.description: "Zwolni dla pojazd\xF3w z przodu (je\u015B\
+        li w\u0142\u0105czony jest model wykrywania obiekt\xF3w). Zwolni r\xF3wnie\u017C\
+        \ na zakr\u0119tach (je\u015Bli w\u0142\u0105czony jest dodatek eksportuj\u0105\
+        cy te informacje)."
+    plugins.ar: "AR (Rzeczywisto\u015B\u0107 rozszerzona)"
+    plugins.ar.description: "W trakcie tworzenia... Dodatek b\u0119dzie rysowa\u0107\
+        \ kszta\u0142ty na ekranie, aby wygl\u0105da\u0142y, jakby by\u0142y cz\u0119\
+        \u015Bci\u0105 \u015Bwiata gry."
+    plugins.cruisecontrol: Tempomat
+    plugins.cruisecontrol.description: "Ustawia tempomat w grze na odpowiedni\u0105\
+        \ pr\u0119dko\u015B\u0107."
+    plugins.datacollection: Zbieranie danych
+    plugins.datacollection.description: "Zbieranie danych dla dodatku wykrywania pojazd\xF3\
+        w."
+    plugins.depthprediction: "Przewidywanie g\u0142\u0119bi"
+    plugins.depthprediction.description: "Zapewnia przewidywanie g\u0142\u0119boko\u015B\
+        ci do omijania obiekt\xF3w, prosz\u0119 pami\u0119ta\u0107, \u017Ce ten dodatek\
+        \ mo\u017Ce dzia\u0142a\u0107 tylko na kartach graficznych NVIDIA, ze wzgl\u0119\
+        du na du\u017Ce wymagania sprz\u0119towe."
+    plugins.discordrichpresence: Discord Rich Presence
+    plugins.discordrichpresence.description: Discord Rich Presence dla ETS2LA
+    plugins.map: Mapa
+    plugins.map.description: Dodatek do wykrywania mapy.
+    plugins.microcontrollercontrol: Sterowanie mikrokontrolerem
+    plugins.microcontrollercontrol.description: "Pozwala na kontrolowanie ETS2LA i\
+        \ ETS2 za pomoc\u0105 mikrokontrolera (stworzone dla box\xF3w przycisk\xF3\
+        w)"
+    plugins.navigationdetection: Detekcja nawigacji
+    plugins.navigationdetection.description: "U\u017Cywa nawigacji w grze do \u015B\
+        ledzenia wybranej trasy."
+    plugins.objectdetection: "Detekcja obiekt\xF3w"
+    plugins.objectdetection.description: "Wykrywa r\xF3\u017Cne obiekty za pomoc\u0105\
+        \ wizji komputerowej i mo\u017Ce wy\u015Bwietla\u0107 je w oknie wynik\xF3\
+        w oraz wizualizacji 3D."
+    plugins.raycastingtest: Test raycast
+    plugins.raycastingtest.description: "Plugin testowy do rzutowania promieni. B\u0119\
+        dzie rzutowa\u0107 promie\u0144 na pozycj\u0119 twojego kursora."
+    plugins.sockets: Gniazda
+    plugins.sockets.description: "Plugin umo\u017Cliwiaj\u0105cy udost\u0119pnienie\
+        \ gniazda danych, g\u0142\xF3wnie dla wbudowanej wizualizacji."
+    plugins.trafficlightdetection: "Wykrywanie sygnalizacji \u015Bwietlnej"
+    plugins.trafficlightdetection.description: "Wykrywa sygnalizacj\u0119 \u015Bwietln\u0105\
+        \ za pomoc\u0105 wizji komputerowej i mo\u017Ce wy\u015Bwietla\u0107 j\u0105\
+        \ w oknie wynik\xF3w. Komunikuje si\u0119 z pluginem CruiseControl, aby zatrzyma\u0107\
+        \ ci\u0119\u017Car\xF3wk\u0119 na czerwonych \u015Bwiat\u0142ach."
+    plugins.truckstats: "Statystyki ci\u0119\u017Car\xF3wki"
+    plugins.truckstats.description: "Ten dodatek pokazuje niekt\xF3re informacj\u0119\
+        \ o ci\u0119\u017Car\xF3wce, trasie i grze."
+    runner.could_not_import: "Nie uda\u0142o si\u0119 zaimportowa\u0107 dodatku {0}"
+    runner.could_not_load_module: "Nie uda\u0142o si\u0119 za\u0142adowa\u0107 modu\u0142\
+        u {0}"
+    runner.error_calling_function: "B\u0142\u0105d podczas wywo\u0142ywania funkcji\
+        \ {0} w {1}"
+    runner.initialize_error: "B\u0142\u0105d podczas uruchamiania Initialize() dla\
+        \ {0}"
+    runner.plugin_crash: "Dodatek {0} niespodziewane zako\u0144czy\u0142 prac\u0119\
+        ."
+    sdk_install.description: "Sprawd\u017A, czy masz zainstalowane niezb\u0119dne\
+        \ pliki DLL, aby umo\u017Cliwi\u0107 nam komunikacj\u0119 z gr\u0105."
+    sdk_install.games: "Znale\u017Ali\u015Bmy nast\u0119puj\u0105ce gry na twoim systemie:"
+    sdk_install.install: Zainstaluj SDK
+    sdk_install.install_description: "Ten przycisk zainstaluje SDK dla wszystkich\
+        \ gier wymienionych powy\u017Cej. Po zako\u0144czeniu instalacji mo\u017C\
+        e zaj\u0105\u0107 chwil\u0119, zanim strona si\u0119 od\u015Bwie\u017Cy."
+    sdk_install.installed: '- Zainstalowane'
+    sdk_install.no_games: "Nie mogli\u015Bmy znale\u017A\u0107 \u017Cadnych gier na\
+        \ twoim systemie. B\u0119dziesz musia\u0142 zainstalowa\u0107 SDK r\u0119\
+        cznie."
+    sdk_install.not_installed: '- Nie zainstalowane'
+    sdk_install.title: Konfiguracja SDK
+    sdk_install.uninstall: Odinstaluj SDK
+    sdk_install.uninstall_description: "Ten przycisk odinstaluje SDK dla wszystkich\
+        \ gier wymienionych powy\u017Cej. Po zako\u0144czeniu odinstalowywania mo\u017C\
+        e zaj\u0105\u0107 chwil\u0119, zanim strona si\u0119 od\u015Bwie\u017Cy."
+    search: Szukaj
+    set: Ustawione
+    setting: Ustawianie
+    sounds.invalid_file_type: "Paczk\u0105 d\u017Awi\u0119k\xF3w '{0}' ma nieprawid\u0142\
+        owy typ pliku '{1}'"
+    sounds.missing_sound: "Paczka d\u017Awi\u0119k\xF3w '{0}' brakuje wymaganego d\u017A\
+        wi\u0119ku '{1}'"
+    sounds.sound_not_found_in_soundpack: "Pr\xF3bowano odtworzy\u0107 d\u017Awi\u0119\
+        k '{0}', ale nie znaleziono go w paczce d\u017Awi\u0119k\xF3w '{1}'"
+    submit: "Zg\u0142o\u015B"
+    success: Sukces
+    uninstall: Odinstaluj
+    unknown: Nieznany
+    webpage.opened: "Interfejs u\u017Cytkownika ETS2LA uruchomiony."
+    webpage.ui_loading: "\u0141adowanie interfejsu u\u017Cytkownika"
+    webserver.disabling_plugin: "Wy\u0142\u0105czanie dodatku {0}"
+    webserver.enabling_plugin: Uruchamianie dodatku {0}
+    webserver.frontend_started: "Frontend pomy\u015Blnie uruchomiony {0} ( {1} )"
+    webserver.webserver_started: "Po\u0142\u0105czenie Webserver uruchomione na {0}\
+        \ ( {1} )"
+    'yes': Tak
