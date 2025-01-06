@@ -32,7 +32,7 @@ import { AnimatePresence, motion } from "framer-motion"
 
 export default function Home() {
     const [ search, setSearch ] = useState<string>("")
-    const [ searchTags, setSearchTags ] = useState<string[]>([])
+    const [ searchTags, setSearchTags ] = useState<string[]>(["Base"])
     const [ searchAuthors, setSearchAuthors ] = useState<string[]>([])
     const { data, error, isLoading } = useSWR("plugins", () => GetPlugins(), { refreshInterval: 1000 }) as any
     if (isLoading) return <p className="absolute left-5 top-5 font-semibold text-xs text-stone-400">{translate("loading")}</p>
@@ -78,6 +78,7 @@ export default function Home() {
     }
 
     let hidden:number = 0;
+    const visible_plugins:string[] = [];
     const enabled_plugins:string[] = [];
     const disabled_plugins:string[] = [];
     for (const key in data) {
@@ -131,6 +132,20 @@ export default function Home() {
             else{
                 disabled_plugins.push(key)
             }
+        }
+    }
+
+    const all_visible_enabled = disabled_plugins.length == 0;
+
+    const EnableAllVisiblePlugins = async () => {
+        for (const plugin in disabled_plugins) {
+            await EnablePlugin(disabled_plugins[plugin])
+        }
+    }
+
+    const DisableAllVisiblePlugins = async () => {
+        for (const plugin in enabled_plugins) {
+            await DisablePlugin(enabled_plugins[plugin])
         }
     }
 
@@ -214,6 +229,31 @@ export default function Home() {
                                         <p className="text-muted-foreground text-sm col-span-2">{translate("frontend.plugins.name")}</p>
                                         <p className="text-muted-foreground text-sm col-span-2">{translate("frontend.plugins.authors")}</p>
                                         <p className="text-muted-foreground text-sm col-span-2">{translate("frontend.plugins.tags")}</p>
+                                        <Checkbox checked={all_visible_enabled} onClick={() => {
+                                            if(all_visible_enabled){
+                                                toast.promise(
+                                                    DisableAllVisiblePlugins(), 
+                                                    {
+                                                        loading: translate("frontend.plugins.disabling_all_plugins"),
+                                                        success: translate("frontend.plugins.disabled_all_plugins"),
+                                                        error: translate("frontend.plugins.error_disabling_all_plugins"),
+                                                    }
+                                                )
+                                            }
+                                            else{
+                                                toast.promise(
+                                                    EnableAllVisiblePlugins(), 
+                                                    {
+                                                        loading: translate("frontend.plugins.enabling_all_plugins"),
+                                                        success: translate("frontend.plugins.enabled_all_plugins"),
+                                                        error: translate("frontend.plugins.error_enabling_all_plugins"),
+                                                    }
+                                                )
+                                            }
+                                            setTimeout(() => {
+                                                mutate("plugins")
+                                            }, 200)
+                                        }} className={all_visible_enabled ? "left-3.5 absolute opacity-100" : "left-3.5 absolute opacity-60"} />
                                     </div>
 
                                     {enabled_plugins.map((plugin:any, index) => (
