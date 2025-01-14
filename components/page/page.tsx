@@ -426,7 +426,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 						})
 					})
 				}} className="w-8 h-8 p-[7px] data-[state=on]:bg-background data-[state=on]:hover:bg-white/10 " variant={"outline"}>
-					{pluginSettings[data.key] && pluginSettings[data.key] ? <Check /> : <X />}
+					{pluginSettings[data.key] && pluginSettings[data.key] ? <Check /> : <X className="text-muted-foreground/40" />}
 				</Toggle>
 				{data.options.separator && <Separator orientation="vertical" />}
 				<div>
