@@ -29,6 +29,7 @@ import { Tooltip, TooltipProvider, TooltipTrigger } from "@/components/ui/toolti
 import { TooltipContent } from "@radix-ui/react-tooltip"
 import { ip } from "@/apis/backend"
 import { AnimatePresence, motion } from "framer-motion"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 export default function Home() {
     const [ search, setSearch ] = useState<string>("")
@@ -217,12 +218,12 @@ export default function Home() {
                         }
                 </div>
             </div>
-            <div className="h-full pl-4 max-h-[calc(100vh-132px)]">
+            <div className="pl-4 max-h-[calc(100vh-90px)]">
                 <TooltipProvider>
                     <ResizablePanelGroup direction="horizontal" className="text-center gap-6 pr-4 h-full">
                         <AnimatePresence>
                             <ResizablePanel defaultSize={100} className="h-full w-full relative pt-5">
-                                <motion.div className="h-full w-full overflow-auto" layout>
+                                <motion.div className="h-full w-full overflow-hidden">
                                     {/* Plugin list */}
 
                                     <div className="w-full border rounded-t-md h-10 grid grid-cols-8 items-center text-left pl-12">
@@ -256,201 +257,206 @@ export default function Home() {
                                         }} className={all_visible_enabled ? "left-3.5 absolute opacity-100" : "left-3.5 absolute opacity-60"} />
                                     </div>
 
-                                    {enabled_plugins.map((plugin:any, index) => (
-                                        <motion.div key={plugin} className="w-full group relative border border-t-0 h-10 grid grid-cols-8 items-center text-left pl-12 cursor-pointer" layout animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }}>
-                                            <Checkbox checked={data[plugin].enabled} onClick={() => {
-                                                if(data[plugin].enabled){
-                                                    toast.promise(
-                                                        DisablePlugin(plugin), 
-                                                        {
-                                                            loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
-                                                            success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
-                                                            error: translate("frontend.plugins.error_disabling_plugin", translate(data[plugin].description.name)),
-                                                        }
-                                                    )
-                                                }
-                                                else{
-                                                    toast.promise(
-                                                        EnablePlugin(plugin), 
-                                                        {
-                                                            loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
-                                                            success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
-                                                            error: translate("frontend.plugins.error_enabling_plugin", translate(data[plugin].description.name)),
-                                                        }
-                                                    )
-                                                }
-                                                setTimeout(() => {
-                                                    mutate("plugins")
-                                                }, 200)
-                                            }} className="absolute left-3.5" />
-                                            <div className="flex col-span-2 gap-2 text-center items-center">
+                                    <ScrollArea className="max-h-[calc(100vh-190px)] overflow-y-auto">
+                                        {enabled_plugins.map((plugin:any, index) => (
+                                            <motion.div key={plugin} className="w-full group relative border border-t-0 h-10 grid grid-cols-8 items-center text-left pl-12 cursor-pointer" layout animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }}>
+                                                <Checkbox checked={data[plugin].enabled} onClick={() => {
+                                                    if(data[plugin].enabled){
+                                                        toast.promise(
+                                                            DisablePlugin(plugin), 
+                                                            {
+                                                                loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
+                                                                success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
+                                                                error: translate("frontend.plugins.error_disabling_plugin", translate(data[plugin].description.name)),
+                                                            }
+                                                        )
+                                                    }
+                                                    else{
+                                                        toast.promise(
+                                                            EnablePlugin(plugin), 
+                                                            {
+                                                                loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
+                                                                success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
+                                                                error: translate("frontend.plugins.error_enabling_plugin", translate(data[plugin].description.name)),
+                                                            }
+                                                        )
+                                                    }
+                                                    setTimeout(() => {
+                                                        mutate("plugins")
+                                                    }, 200)
+                                                }} className="absolute left-3.5" />
+                                                <div className="flex col-span-2 gap-2 text-center items-center">
+                                                    <Tooltip delayDuration={100}>
+                                                        <TooltipTrigger className="col-span-2 text-start">
+                                                            <p className="text-sm">{translate(data[plugin].description.name)}</p>
+                                                        </TooltipTrigger>
+                                                        <TooltipContent side="right" className="z-50">
+                                                            <div className="rounded-md max-w-72 bg-background p-4 border text-left">
+                                                                <p className="text-sm">{translate(data[plugin].description.description)}</p>
+                                                            </div>
+                                                        </TooltipContent>
+                                                    </Tooltip>
+                                                    <p className="text-xs text-muted-foreground pt-[2.5px]">
+                                                        {data[plugin].frametimes[data[plugin].frametimes.length - 1] ? 
+                                                            Math.round(1/data[plugin].frametimes[1])
+                                                        : "unknown"} fps
+                                                    </p>
+                                                </div>
+                                                <div className="text-sm col-span-2 flex gap-1">{
+                                                    // @ts-ignore
+                                                    data[plugin].authors.map((author, index) => (
+                                                        <div className="flex items-center text-left gap-1">
+                                                            <p className="text-xs">{index > 0 && index < data[plugin].authors.length ? "& " : ""}{author.name}</p>
+                                                        </div> 
+                                                    ))
+                                                }</div>
+                                                <div className="text-sm col-span-4">{
+                                                    // @ts-ignore
+                                                    data[plugin].description.tags.map((tag, index) => (
+                                                        <Badge variant={"outline"} key={index} className="mr-1 font-customSans font-normal h-7 cursor-pointer" onClick={() => {
+                                                            if (!searchTags.includes(tag)) {
+                                                                setSearchTags([...searchTags, tag])
+                                                            }
+                                                        }}>{tag}</Badge>
+                                                    ))    
+                                                }</div>
+                                                <div className="absolute right-0 opacity-0 group-hover:opacity-100 transition-all">
+                                                    <DropdownMenu>
+                                                        <DropdownMenuTrigger asChild>
+                                                            <Menu size={18} className="opacity-50 hover:opacity-80 mx-3" />
+                                                        </DropdownMenuTrigger>
+                                                        <DropdownMenuContent className="scale-90">
+                                                            { !data[plugin].enabled ?
+                                                                <DropdownMenuItem onClick={() => {
+                                                                    toast.promise(
+                                                                        EnablePlugin(plugin), 
+                                                                        {
+                                                                            loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
+                                                                            success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
+                                                                            error: translate("frontend.plugins.error_enabling_plugin", translate(data[plugin].description.name)),
+                                                                        }
+                                                                    )
+                                                                    setTimeout(() => {
+                                                                        mutate("plugins")
+                                                                    }, 200)
+                                                                }} className="gap-2"><Check size={20} />{translate("frontend.menubar.plugins.plugin.enable")}</DropdownMenuItem>
+                                                            :
+                                                                <DropdownMenuItem onClick={() => {
+                                                                    toast.promise(
+                                                                        DisablePlugin(plugin), 
+                                                                        {
+                                                                            loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
+                                                                            success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
+                                                                            error: translate("frontend.plugins.error_disabling_plugin", translate(data[plugin].description.name)),
+                                                                        }
+                                                                    )
+                                                                    setTimeout(() => {
+                                                                        mutate("plugins")
+                                                                    }, 200)
+                                                                }} className="gap-2"><X size={20} />{translate("frontend.menubar.plugins.plugin.disable")}</DropdownMenuItem>
+                                                            }
+                                                        </DropdownMenuContent>
+                                                    </DropdownMenu>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+
+                                        {disabled_plugins.map((plugin:any, index) => (
+                                            <motion.div key={plugin} className="w-full group relative border border-t-0 h-10 grid grid-cols-8 items-center text-left pl-12 cursor-pointer" layout animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }}>
+                                                <Checkbox checked={data[plugin].enabled} onClick={() => {
+                                                    if(data[plugin].enabled){
+                                                        toast.promise(
+                                                            DisablePlugin(plugin), 
+                                                            {
+                                                                loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
+                                                                success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
+                                                                error: translate("frontend.plugins.error_disabling_plugin", translate(data[plugin].description.name)),
+                                                            }
+                                                        )
+                                                    }
+                                                    else{
+                                                        toast.promise(
+                                                            EnablePlugin(plugin), 
+                                                            {
+                                                                loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
+                                                                success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
+                                                                error: translate("frontend.plugins.error_enabling_plugin", translate(data[plugin].description.name)),
+                                                            }
+                                                        )
+                                                    }
+                                                    setTimeout(() => {
+                                                        mutate("plugins")
+                                                    }, 200)
+                                                }} className="absolute left-3.5 opacity-60 group-hover:opacity-100" />
                                                 <Tooltip delayDuration={100}>
                                                     <TooltipTrigger className="col-span-2 text-start">
-                                                        <p className="text-sm">{translate(data[plugin].description.name)}</p>
+                                                        <p className="text-sm text-muted-foreground group-hover:text-foreground">{translate(data[plugin].description.name)}</p>
                                                     </TooltipTrigger>
                                                     <TooltipContent side="right" className="z-50">
-                                                        <div className="rounded-md max-w-72 bg-background p-4 border text-left">
+                                                        <div className="rounded-md max-w-72 bg-background p-4 border">
                                                             <p className="text-sm">{translate(data[plugin].description.description)}</p>
                                                         </div>
                                                     </TooltipContent>
                                                 </Tooltip>
-                                                <p className="text-xs text-muted-foreground pt-[2.5px]">
-                                                    {data[plugin].frametimes[data[plugin].frametimes.length - 1] ? 
-                                                        Math.round(1/data[plugin].frametimes[1])
-                                                    : "unknown"} fps
-                                                </p>
-                                            </div>
-                                            <div className="text-sm col-span-2 flex gap-1">{
-                                                // @ts-ignore
-                                                data[plugin].authors.map((author, index) => (
-                                                    <div className="flex items-center text-left gap-1">
-                                                        <p className="text-xs">{index > 0 && index < data[plugin].authors.length ? "& " : ""}{author.name}</p>
-                                                    </div> 
-                                                ))
-                                            }</div>
-                                            <div className="text-sm col-span-4">{
-                                                // @ts-ignore
-                                                data[plugin].description.tags.map((tag, index) => (
-                                                    <Badge variant={"outline"} key={index} className="mr-1 font-customSans font-normal h-7 cursor-pointer" onClick={() => {
-                                                        setSearchTags([...searchTags, tag])
-                                                    }}>{tag}</Badge>
-                                                ))    
-                                            }</div>
-                                            <div className="absolute right-0 opacity-0 group-hover:opacity-100 transition-all">
-                                                <DropdownMenu>
-                                                    <DropdownMenuTrigger asChild>
-                                                        <Menu size={18} className="opacity-50 hover:opacity-80 mx-3" />
-                                                    </DropdownMenuTrigger>
-                                                    <DropdownMenuContent className="scale-90">
-                                                        { !data[plugin].enabled ?
-                                                            <DropdownMenuItem onClick={() => {
-                                                                toast.promise(
-                                                                    EnablePlugin(plugin), 
-                                                                    {
-                                                                        loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
-                                                                        success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
-                                                                        error: translate("frontend.plugins.error_enabling_plugin", translate(data[plugin].description.name)),
-                                                                    }
-                                                                )
-                                                                setTimeout(() => {
-                                                                    mutate("plugins")
-                                                                }, 200)
-                                                            }} className="gap-2"><Check size={20} />{translate("frontend.menubar.plugins.plugin.enable")}</DropdownMenuItem>
-                                                        :
-                                                            <DropdownMenuItem onClick={() => {
-                                                                toast.promise(
-                                                                    DisablePlugin(plugin), 
-                                                                    {
-                                                                        loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
-                                                                        success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
-                                                                        error: translate("frontend.plugins.error_disabling_plugin", translate(data[plugin].description.name)),
-                                                                    }
-                                                                )
-                                                                setTimeout(() => {
-                                                                    mutate("plugins")
-                                                                }, 200)
-                                                            }} className="gap-2"><X size={20} />{translate("frontend.menubar.plugins.plugin.disable")}</DropdownMenuItem>
-                                                        }
-                                                    </DropdownMenuContent>
-                                                </DropdownMenu>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-
-                                    {disabled_plugins.map((plugin:any, index) => (
-                                        <motion.div key={plugin} className="w-full group relative border border-t-0 h-10 grid grid-cols-8 items-center text-left pl-12 cursor-pointer" layout animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }}>
-                                            <Checkbox checked={data[plugin].enabled} onClick={() => {
-                                                if(data[plugin].enabled){
-                                                    toast.promise(
-                                                        DisablePlugin(plugin), 
-                                                        {
-                                                            loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
-                                                            success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
-                                                            error: translate("frontend.plugins.error_disabling_plugin", translate(data[plugin].description.name)),
-                                                        }
-                                                    )
-                                                }
-                                                else{
-                                                    toast.promise(
-                                                        EnablePlugin(plugin), 
-                                                        {
-                                                            loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
-                                                            success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
-                                                            error: translate("frontend.plugins.error_enabling_plugin", translate(data[plugin].description.name)),
-                                                        }
-                                                    )
-                                                }
-                                                setTimeout(() => {
-                                                    mutate("plugins")
-                                                }, 200)
-                                            }} className="absolute left-3.5 opacity-60 group-hover:opacity-100" />
-                                            <Tooltip delayDuration={100}>
-                                                <TooltipTrigger className="col-span-2 text-start">
-                                                    <p className="text-sm text-muted-foreground group-hover:text-foreground">{translate(data[plugin].description.name)}</p>
-                                                </TooltipTrigger>
-                                                <TooltipContent side="right" className="z-50">
-                                                    <div className="rounded-md max-w-72 bg-background p-4 border">
-                                                        <p className="text-sm">{translate(data[plugin].description.description)}</p>
-                                                    </div>
-                                                </TooltipContent>
-                                            </Tooltip>
-                                            <div className="text-sm col-span-2 flex gap-1">{
-                                                // @ts-ignore
-                                                data[plugin].authors.map((author, index) => (
-                                                    <div className="flex items-center text-left gap-1">
-                                                        <p className="text-xs text-muted-foreground group-hover:text-foreground">{index > 0 && index < data[plugin].authors.length ? "& " : ""}{author.name}</p>
-                                                    </div> 
-                                                ))
-                                            }</div>
-                                            <div className="text-sm col-span-4">{
-                                                // @ts-ignore
-                                                data[plugin].description.tags.map((tag, index) => (
-                                                    <Badge variant={"outline"} key={index} className="mr-1 font-customSans font-normal h-7 cursor-pointer opacity-60 group-hover:opacity-100" onClick={() => {
-                                                        setSearchTags([...searchTags, tag])
-                                                    }}>{tag}</Badge>
-                                                ))    
-                                            }</div>
-                                            <div className="absolute right-0 opacity-0 group-hover:opacity-100 transition-all">
-                                                <DropdownMenu>
-                                                    <DropdownMenuTrigger asChild>
-                                                        <Menu size={18} className="opacity-50 hover:opacity-80 mx-3" />
-                                                    </DropdownMenuTrigger>
-                                                    <DropdownMenuContent className="scale-90">
-                                                        { !data[plugin].enabled ?
-                                                            <DropdownMenuItem onClick={() => {
-                                                                toast.promise(
-                                                                    EnablePlugin(plugin), 
-                                                                    {
-                                                                        loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
-                                                                        success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
-                                                                        error: translate("frontend.plugins.error_enabling_plugin", translate(data[plugin].description.name)),
-                                                                    }
-                                                                )
-                                                                setTimeout(() => {
-                                                                    mutate("plugins")
-                                                                }, 200)
-                                                            }} className="gap-2"><Check size={20} />{translate("frontend.menubar.plugins.plugin.enable")}</DropdownMenuItem>
-                                                        :
-                                                            <DropdownMenuItem onClick={() => {
-                                                                toast.promise(
-                                                                    DisablePlugin(plugin), 
-                                                                    {
-                                                                        loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
-                                                                        success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
-                                                                        error: translate("frontend.plugins.error_disabling_plugin", translate(data[plugin].description.name)),
-                                                                    }
-                                                                )
-                                                                setTimeout(() => {
-                                                                    mutate("plugins")
-                                                                }, 200)
-                                                            }} className="gap-2"><X size={20} />{translate("frontend.menubar.plugins.plugin.disable")}</DropdownMenuItem>
-                                                        }
-                                                    </DropdownMenuContent>
-                                                </DropdownMenu>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-
+                                                <div className="text-sm col-span-2 flex gap-1">{
+                                                    // @ts-ignore
+                                                    data[plugin].authors.map((author, index) => (
+                                                        <div className="flex items-center text-left gap-1">
+                                                            <p className="text-xs text-muted-foreground group-hover:text-foreground">{index > 0 && index < data[plugin].authors.length ? "& " : ""}{author.name}</p>
+                                                        </div> 
+                                                    ))
+                                                }</div>
+                                                <div className="text-sm col-span-4">{
+                                                    // @ts-ignore
+                                                    data[plugin].description.tags.map((tag, index) => (
+                                                        <Badge variant={"outline"} key={index} className="mr-1 font-customSans font-normal h-7 cursor-pointer opacity-60 group-hover:opacity-100" onClick={() => {
+                                                            if (!searchTags.includes(tag)) {
+                                                                setSearchTags([...searchTags, tag])
+                                                            }
+                                                        }}>{tag}</Badge>
+                                                    ))    
+                                                }</div>
+                                                <div className="absolute right-0 opacity-0 group-hover:opacity-100 transition-all">
+                                                    <DropdownMenu>
+                                                        <DropdownMenuTrigger asChild>
+                                                            <Menu size={18} className="opacity-50 hover:opacity-80 mx-3" />
+                                                        </DropdownMenuTrigger>
+                                                        <DropdownMenuContent className="scale-90">
+                                                            { !data[plugin].enabled ?
+                                                                <DropdownMenuItem onClick={() => {
+                                                                    toast.promise(
+                                                                        EnablePlugin(plugin), 
+                                                                        {
+                                                                            loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
+                                                                            success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
+                                                                            error: translate("frontend.plugins.error_enabling_plugin", translate(data[plugin].description.name)),
+                                                                        }
+                                                                    )
+                                                                    setTimeout(() => {
+                                                                        mutate("plugins")
+                                                                    }, 200)
+                                                                }} className="gap-2"><Check size={20} />{translate("frontend.menubar.plugins.plugin.enable")}</DropdownMenuItem>
+                                                            :
+                                                                <DropdownMenuItem onClick={() => {
+                                                                    toast.promise(
+                                                                        DisablePlugin(plugin), 
+                                                                        {
+                                                                            loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
+                                                                            success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
+                                                                            error: translate("frontend.plugins.error_disabling_plugin", translate(data[plugin].description.name)),
+                                                                        }
+                                                                    )
+                                                                    setTimeout(() => {
+                                                                        mutate("plugins")
+                                                                    }, 200)
+                                                                }} className="gap-2"><X size={20} />{translate("frontend.menubar.plugins.plugin.disable")}</DropdownMenuItem>
+                                                            }
+                                                        </DropdownMenuContent>
+                                                    </DropdownMenu>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </ScrollArea>
                                     <motion.div className="w-full border border-t-0 rounded-b-md h-10 items-center flex pl-4" layout>
                                         {hidden > 0 ? <p className="text-muted-foreground text-xs">{translate("frontend.plugins.hidden", hidden)}</p> : <p className="text-muted-foreground text-xs">{translate("frontend.plugins.end_list")}</p>}
                                     </motion.div>
