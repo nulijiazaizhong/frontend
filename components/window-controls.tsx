@@ -92,8 +92,9 @@ export default function WindowControls({ isCollapsed }: { isCollapsed: boolean }
                 onMouseLeave={() => {
                     setIsMouseInDragArea(false);
                 }}
+                id="slide_area"
             />
-            <div className={isCollapsed && collapsedContainerClassName || containerClassName} onMouseDown={handleMouseDown}>
+            <div className={isCollapsed && collapsedContainerClassName || containerClassName} onMouseDown={handleMouseDown} id="window_controls">
                 {isCollapsed && (
                     <div className={`absolute right-0 top-0 h-6 flex items-center pl-2.5 pr-12 transition-all bg-sidebar rounded-bl-lg z-[-10] duration-150 ${isMouseInDragArea ? 'w-96 opacity-100' : 'w-0 opacity-0'}`}>
                         <div

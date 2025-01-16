@@ -16,11 +16,49 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import RenderPage from "@/components/page/render_page"
 import ControlsPage from "./controls/page";
 import { motion } from "framer-motion";
+import { ACTIONS, EVENTS, ORIGIN, STATUS, CallBackProps } from 'react-joyride';
+import { JoyRideNoSSR } from "@/components/joyride-no-ssr";
+import { useEffect } from "react";
+
+const STEPS = [
+    {
+        target: "#static_settings",
+        content: "Here you can see the settings that are needed by the entire app.",
+        disableBeacon: true,
+        hideFooter: true,
+    },
+    {
+        target: "#settings_page",
+        content: "Right now you can see the Global settings. These include UI settings and other miscellaneous settings required by the app at some point.",
+        disableBeacon: true,
+        hideFooter: true,
+    },
+    {
+        target: "#plugin_settings",
+        content: 'This is a list of all the plugins that have settings pages. You can click on any of them to change settings on a per-plugin basis.',
+        placement: "right",
+        disableBeacon: true,
+        hideFooter: true,
+    },
+    {
+        target: "#open_sdk_settings",
+        content: 'As the final step you should open the SDK settings page, and install the SDK if you haven\'t already. Please note that if you\'re coming from V1, you should reinstall the SDK on this page.',
+        placement: "right",
+        disableBeacon: true,
+        hideFooter: true,
+    }
+];
 
 export default function Home() {
     const { data } = useSWR("plugin_ui_plugins", () => GetPlugins());
     const [selectedPlugin, setSelectedPlugin] = useState("Global")
+    const [hasDoneOnboarding, setHasDoneOnboarding] = useState(false);
+    const [stepIndex, setStepIndex] = useState(0);
 
+    useEffect(() => {
+        const hasDoneOnboarding = localStorage.getItem("hasDoneSettingsOnboarding");
+        setHasDoneOnboarding(hasDoneOnboarding === "true");
+    });
 
     const plugins:string[] = [];
     for (const key in data) {
@@ -29,6 +67,18 @@ export default function Home() {
             plugins.push(key)
         }
     }
+
+    const handleJoyrideCallback = (data: CallBackProps) => {
+        const { action, index, origin, status, type } = data;
+        
+        // @ts-expect-error
+        if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
+            setStepIndex(index + (action === ACTIONS.PREV ? -1 : 1));
+        } // @ts-expect-error
+        else if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
+            localStorage.setItem("hasDoneSettingsOnboarding", "true");
+        }
+    };
 
     const renderPluginPage = () => {
         if (selectedPlugin === "Global") {
@@ -48,78 +98,107 @@ export default function Home() {
     };
 
     return (
-        <div className="h-full font-geist rounded-lg bg-background p-4">
-            <div className="flex flex-col gap-2 p-5 pt-[10px]">
-                <h2 className="text-lg font-bold">{translate("frontend.settings")}</h2>
-                <Separator className="translate-y-4" />
+        <>
+            <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
+                steps={STEPS}
+                run={!hasDoneOnboarding}
+                stepIndex={stepIndex}
+                spotlightPadding={5}
+                styles={
+                    {
+                        options: {
+                            backgroundColor: "#18181b",
+                            arrowColor: "#18181b",
+                            textColor: "#fafafa",
+                        },
+                        buttonClose: {
+                            width: "8px",
+                            height: "8px",
+                        },
+                        tooltipContent: {
+                            fontSize: "14px",
+                        }
+                    }
+                }
+                callback={handleJoyrideCallback}
+            />
+            <div className="h-full font-geist rounded-lg bg-background p-4">
+                <div className="flex flex-col gap-2 p-5 pt-[10px]">
+                    <h2 className="text-lg font-bold">{translate("frontend.settings")}</h2>
+                    <Separator className="translate-y-4" />
+                </div>
+                <div className="h-full pt-0 p-1 overflow-auto">
+                    <TooltipProvider>
+                        <ResizablePanelGroup direction="horizontal" className="text-center gap-4 pr-4 h-full">
+                            <ResizablePanel defaultSize={25}>
+                                <ScrollArea className="h-full pt-4 relative" type="hover">
+                                    <div className="absolute bottom-0 z-10 right-0 top-0 w-12 bg-gradient-to-l from-background pointer-events-none" />
+                                    <div className="flex flex-col gap-2 text-start relative">
+                                        <div className="flex flex-col gap-2 text-start relative p-0 pb-8" id="static_settings">
+                                            <Button key={"Global"} className="items-center justify-start text-sm rounded-r-none" variant={selectedPlugin == "Global" && "secondary" || "ghost"} onClick={() => setSelectedPlugin("Global")}>
+                                                {translate("frontend.settings.global")}
+                                            </Button>
+                                            <Button key={"Controls"} className="items-center justify-start text-sm rounded-r-none" variant={selectedPlugin == "Controls" && "secondary" || "ghost"} onClick={() => setSelectedPlugin("Controls")}>
+                                                {translate("frontend.settings.controls")}
+                                            </Button>
+                                            <Button key={"SDK"} className="items-center justify-start text-sm rounded-r-none" variant={selectedPlugin == "SDK" && "secondary" || "ghost"} onClick={() => setSelectedPlugin("SDK")} id="open_sdk_settings">
+                                                SDK
+                                            </Button>
+                                        </div>
+                                        <div className="flex flex-col gap-2 text-start relative p-0" id="plugin_settings">
+                                            {plugins.map((plugin:any, index) => (
+                                                plugin == "Separator" ? <br key={index} /> : 
+                                                plugin == "Global" ? null : // @ts-ignore
+                                                data && data[plugin] && data[plugin].settings ?
+                                                <div className="items-center justify-start text-sm">
+                                                    <Tooltip>
+                                                        <TooltipTrigger className="items-center justify-start text-sm w-full">
+                                                            <Button key={index} className="items-center justify-start text-sm w-full rounded-r-none" variant={selectedPlugin == plugin && "secondary" || "ghost"} onClick={() => setSelectedPlugin(plugin)}>
+                                                                {// @ts-ignore
+                                                                    translate(data[plugin].description.name)
+                                                                }
+                                                            </Button>
+                                                        </TooltipTrigger>
+                                                        <TooltipContent>
+                                                            <div className="flex flex-col gap-2 text-start">
+                                                                <p className="text-xs text-start">
+                                                                    {// @ts-ignore
+                                                                        translate(data[plugin].description.name)
+                                                                    }
+                                                                </p>
+                                                            </div>
+                                                        </TooltipContent>
+                                                    </Tooltip> 
+                                                </div> : null
+                                            ))}
+                                        </div>
+                                        <br />
+                                        <p className="text-xs text-muted-foreground text-start pl-4">
+                                            {translate("frontend.settings.global_info")}
+                                        </p>
+                                    </div>
+                                </ScrollArea>
+                            </ResizablePanel>
+                            <ResizablePanel defaultSize={75} className="h-full w-full relative">
+                                <ScrollArea className="h-full" type="hover">
+                                    <div className="h-4" />
+                                    <motion.div 
+                                        animate={{ opacity: 1 }}
+                                        initial={{ opacity: 0 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.5 }}
+                                        id="settings_page"
+                                    >
+                                        {renderPluginPage()}
+                                    </motion.div>
+                                </ScrollArea>
+                                <div className="absolute h-4 top-0 left-0 right-0 bg-gradient-to-b from-background pointer-events-none" />
+                            </ResizablePanel>
+                        </ResizablePanelGroup>
+                    </TooltipProvider>
+                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background pointer-events-none" />
+                </div>
             </div>
-            <div className="h-full pt-0 p-1 overflow-auto">
-                <TooltipProvider>
-                    <ResizablePanelGroup direction="horizontal" className="text-center gap-4 pr-4 h-full">
-                        <ResizablePanel defaultSize={25}>
-                            <ScrollArea className="h-full pt-4 relative" type="hover">
-                                <div className="absolute bottom-0 z-10 right-0 top-0 w-12 bg-gradient-to-l from-background pointer-events-none" />
-                                <div className="flex flex-col gap-2 text-start relative">
-                                    <Button key={"Global"} className="items-center justify-start text-sm rounded-r-none" variant={selectedPlugin == "Global" && "secondary" || "ghost"} onClick={() => setSelectedPlugin("Global")}>
-                                        {translate("frontend.settings.global")}
-                                    </Button>
-                                    <Button key={"Controls"} className="items-center justify-start text-sm rounded-r-none" variant={selectedPlugin == "Controls" && "secondary" || "ghost"} onClick={() => setSelectedPlugin("Controls")}>
-                                        {translate("frontend.settings.controls")}
-                                    </Button>
-                                    <Button key={"SDK"} className="items-center justify-start text-sm rounded-r-none" variant={selectedPlugin == "SDK" && "secondary" || "ghost"} onClick={() => setSelectedPlugin("SDK")}>
-                                        SDK
-                                    </Button>
-                                    <br />
-                                    {plugins.map((plugin:any, index) => (
-                                        plugin == "Separator" ? <br key={index} /> : 
-                                        plugin == "Global" ? null : // @ts-ignore
-                                        data && data[plugin] && data[plugin].settings ?
-                                        <div className="items-center justify-start text-sm">
-                                            <Tooltip>
-                                                <TooltipTrigger className="items-center justify-start text-sm w-full">
-                                                    <Button key={index} className="items-center justify-start text-sm w-full rounded-r-none" variant={selectedPlugin == plugin && "secondary" || "ghost"} onClick={() => setSelectedPlugin(plugin)}>
-                                                        {// @ts-ignore
-                                                            translate(data[plugin].description.name)
-                                                        }
-                                                    </Button>
-                                                </TooltipTrigger>
-                                                <TooltipContent>
-                                                    <div className="flex flex-col gap-2 text-start">
-                                                        <p className="text-xs text-start">
-                                                            {// @ts-ignore
-                                                                translate(data[plugin].description.name)
-                                                            }
-                                                        </p>
-                                                    </div>
-                                                </TooltipContent>
-                                            </Tooltip> 
-                                        </div> : null
-                                    ))}
-                                    <br />
-                                    <p className="text-xs text-muted-foreground text-start pl-4">
-                                        {translate("frontend.settings.global_info")}
-                                    </p>
-                                </div>
-                            </ScrollArea>
-                        </ResizablePanel>
-                        <ResizablePanel defaultSize={75} className="h-full w-full relative">
-                            <ScrollArea className="h-full" type="hover">
-                                <div className="h-4" />
-                                <motion.div 
-                                    animate={{ opacity: 1 }}
-                                    initial={{ opacity: 0 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ duration: 0.5 }}
-                                >
-                                    {renderPluginPage()}
-                                </motion.div>
-                            </ScrollArea>
-                            <div className="absolute h-4 top-0 left-0 right-0 bg-gradient-to-b from-background pointer-events-none" />
-                        </ResizablePanel>
-                    </ResizablePanelGroup>
-                </TooltipProvider>
-                <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background pointer-events-none" />
-            </div>
-        </div>
+        </>
     )
 }

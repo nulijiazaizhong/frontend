@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import { translate, currentLanguage } from "@/apis/translation";
 import { Button } from "./ui/button";
 
-export function Disclaimer() {
+export function Disclaimer({ closed_callback }: { closed_callback: () => void }) {
     const [isOpen, setIsOpen] = useState(true);
 
     return (
@@ -29,6 +29,7 @@ export function Disclaimer() {
                 <Button variant={"outline"} onClick={
                     () => {
                         setIsOpen(false);
+                        closed_callback();
                     }
                 }>
                     {translate("frontend.disclaimer.ok")}

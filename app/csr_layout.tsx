@@ -21,6 +21,8 @@ import Snowfall from "react-snowfall"
 import useSWR from "swr";
 import Loader from "@/components/loader";
 import { useCollapsed } from "@/contexts/collapsed";
+import { ACTIONS, EVENTS, STATUS, CallBackProps } from 'react-joyride';
+import { JoyRideNoSSR, skipAll } from "@/components/joyride-no-ssr";
 
 export default function CSRLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     const { data: language, isLoading: loadingLanguage } = useSWR("language", GetCurrentLanguage, { refreshInterval: 2000 });
@@ -28,7 +30,45 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
     const [isSnowAllowed, setIsSnowAllowed] = useState(false);
     const [areFireworksAllowed, setAreFireworksAllowed] = useState(false);
     const [loadingTranslations, setLoadingTranslations] = useState(true);
+    const [hasDoneOnboarding, setHasDoneOnboarding] = useState(false);
+    const [stepIndex, setStepIndex] = useState(0);
+    const [run, setRun] = useState(false);
     const isMobile = useIsMobile();
+
+    const STEPS = [
+        {
+            target: "#window_controls",
+            content: "These are the window controls. The left most button controls some extra options. Hover over it to see a tooltip! (after the onboarding)",
+            disableBeacon: true,
+        },
+        {
+            target: "#slide_area",
+            content: "You can move the window around by dragging this area.",
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#sidebar_rail",
+            content: 'You can click on the side of the sidebar to collapse it and go into "fullscreen" mode.',
+            placement: "right",
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#sidebar",
+            content: 'You can easily navigate the different app pages using the sidebar. Some of them have more tips to help you get used to the app!',   
+            placement: "right",
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#settings",
+            content: 'For now you should head to the settings page!',   
+            placement: "right",
+            disableBeacon: true,
+            hideFooter: true,
+        },
+    ];
 
     useEffect(() => {
         if (language) {
@@ -55,11 +95,32 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
     const isNewYear = ((month === 0 && day === 1) || (month === 11 && day === 31)) && areFireworksAllowed;
     const isSnowing = (month >= 10 || month === 0) && isSnowAllowed;
 
+    const handleJoyrideCallback = (data: CallBackProps) => {
+        const { action, index, origin, status, type } = data;
+        
+        // @ts-expect-error
+        if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
+            setStepIndex(index + (action === ACTIONS.PREV ? -1 : 1));
+        } // @ts-expect-error
+        else if ([STATUS.FINISHED].includes(status)) {
+            localStorage.setItem("hasDoneOnboarding", "true");
+        } // @ts-expect-error
+        else if ([STATUS.SKIPPED].includes(status)) {
+            skipAll();
+        }
+    };
+
     useEffect(() => {
         loadTranslations().then(() => {
+            const hasDoneOnboarding = localStorage.getItem("hasDoneOnboarding");
+            setHasDoneOnboarding(hasDoneOnboarding === "true");
             setLoadingTranslations(false);
         });
     }, []);
+
+    const startOnboarding = () => {
+        setRun(true);
+    }
 
     const toggleSidebar = () => {
         setIsCollapsed(!isCollapsed);
@@ -91,8 +152,38 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
                     </div>
                 ) || (
                     <>
-                        <Disclaimer />
+                        <Disclaimer closed_callback={startOnboarding} />
                         <ProgressBarProvider>
+                            <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
+                                steps={STEPS}
+                                run={run && !hasDoneOnboarding}
+                                stepIndex={stepIndex}
+                                showSkipButton
+                                spotlightPadding={5}
+                                styles={
+                                    {
+                                        options: {
+                                            backgroundColor: "#18181b",
+                                            arrowColor: "#18181b",
+                                            textColor: "#fafafa",
+                                        },
+                                        buttonClose: {
+                                            width: "8px",
+                                            height: "8px",
+                                        },
+                                        buttonNext: {
+                                            visibility: "hidden",
+                                        },
+                                        buttonBack: {
+                                            visibility: "hidden",
+                                        },
+                                        tooltipContent: {
+                                            fontSize: "14px",
+                                        }
+                                    }
+                                }
+                                callback={handleJoyrideCallback}
+                            />
                             <Toaster position={isCollapsed ? "bottom-center" : "bottom-right"} toastOptions={{
                                 unstyled: true,
                                 classNames: {

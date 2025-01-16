@@ -70,9 +70,9 @@ export function ETS2LASidebar({toggleSidebar} : {toggleSidebar: () => void}) {
     }
 
     return (
-        <Sidebar className="border-none font-geist" variant="inset">
+        <Sidebar className="border-none font-geist" variant="inset" id="sidebar" >
             <SidebarHeader className="bg-sidebarbg w-full">
-                <div className="flex flex-col gap-4 items-center w-full">
+                <div className="flex flex-col gap-4 items-center w-full" id="sidebar_header">
                     <div className="flex flex-col gap-1 w-full">
                         <p className="text-sm font-semibold pl-2 cursor-pointer" onMouseDown={() => {
                             startTransition(async () => {
@@ -171,9 +171,10 @@ export function ETS2LASidebar({toggleSidebar} : {toggleSidebar: () => void}) {
                     </SidebarMenuButton>
                 </SidebarGroup>
             </SidebarContent>
+            
             <SidebarRail className="z-[999]" onMouseDown={() => {
                 toggleSidebar()
-            }} />
+            }} id="sidebar_rail" />
             <SidebarFooter className="bg-sidebarbg pb-10">
                 <div>
                     <SidebarMenuButton className={buttonClassName("/settings")} onMouseDown={
@@ -183,7 +184,7 @@ export function ETS2LASidebar({toggleSidebar} : {toggleSidebar: () => void}) {
                                     router.push('/settings')
                                 })
                             }
-                        }>
+                        } id="settings" >
                         <Bolt /> {translate("frontend.sidebar.settings")}
                     </SidebarMenuButton>
                     <SidebarMenu>
@@ -270,8 +271,9 @@ export function ETS2LASidebar({toggleSidebar} : {toggleSidebar: () => void}) {
                         </DropdownMenu>
                     </SidebarMenuItem>
                     */}
-                    
-                <RenderPage url="/stats" className="w-full h-8 -my-4 pt-4" />
+                <div id="ram_usage" className="w-full h-8 -my-4 pt-4">
+                    <RenderPage url="/stats" className="w-full" />
+                </div>
             </SidebarFooter>
         </Sidebar>
     )

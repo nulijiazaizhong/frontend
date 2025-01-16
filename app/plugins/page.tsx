@@ -1,8 +1,4 @@
-"use client"
-
-import {
-    Card
-} from "@/components/ui/card"  
+"use client";
 
 import { toast } from "sonner"
 import useSWR, { mutate } from "swr"
@@ -30,12 +26,59 @@ import { TooltipContent } from "@radix-ui/react-tooltip"
 import { ip } from "@/apis/backend"
 import { AnimatePresence, motion } from "framer-motion"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { JoyRideNoSSR } from "@/components/joyride-no-ssr";
+import { ACTIONS, EVENTS, ORIGIN, STATUS, CallBackProps } from 'react-joyride';
+import { useEffect } from "react";
+
+const STEPS = [
+    {
+        target: "#search_options",
+        content: "You can use the search options to easily find what you are looking for.",
+        disableBeacon: true,
+        hideFooter: true,
+    },
+    {
+        target: "#selected_tags",
+        content: "By default the Base tag is selected. You can add more selections by clicking on the tags in the plugin list or by opening the dropdown here.",
+        disableBeacon: true,
+        hideFooter: true,
+    },
+    {
+        target: "#clear_button",
+        content: 'Use the "Clear" button to remove all current search options.',
+        disableBeacon: true,
+        hideFooter: true,
+    },
+    {
+        target: "#enable_all_checkbox",
+        content: 'You can enable/disable all the currently visible plugins by clicking this checkbox.',   
+        placement: "right",
+        disableBeacon: true,
+        hideFooter: true,
+    },
+    {
+        target: "#plugins_list",
+        content: 'To get started you can enable everything but the "Data Collection End-To-End Driving" and "Navigation Detection" plugins. If your PC is less powerful, then you can disable "Object Detection", at the cost of losing any vision.',   
+        placement: "right",
+        disableBeacon: true,
+        hideFooter: true,
+    },
+];
 
 export default function Home() {
     const [ search, setSearch ] = useState<string>("")
     const [ searchTags, setSearchTags ] = useState<string[]>(["Base"])
     const [ searchAuthors, setSearchAuthors ] = useState<string[]>([])
     const { data, error, isLoading } = useSWR("plugins", () => GetPlugins(), { refreshInterval: 1000 }) as any
+    const [hasDonePluginsOnboarding, setHasDonePluginsOnboarding] = useState(false);
+    const [stepIndex, setStepIndex] = useState(0);
+
+    useEffect(() => {
+        if (localStorage.getItem("hasDonePluginsOnboarding") === "true") {
+            setHasDonePluginsOnboarding(true);
+        }
+    }, []);
+    
     if (isLoading) return <p className="absolute left-5 top-5 font-semibold text-xs text-stone-400">{translate("loading")}</p>
     if (error){
         toast.error(translate("frontend.menubar.error_fetching_plugins", ip), {description: error.message})
@@ -150,6 +193,18 @@ export default function Home() {
         }
     }
 
+    const handleJoyrideCallback = (data: CallBackProps) => {
+        const { action, index, origin, status, type } = data;
+        
+        // @ts-expect-error
+        if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
+            setStepIndex(index + (action === ACTIONS.PREV ? -1 : 1));
+        } // @ts-expect-error
+        else if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
+            localStorage.setItem("hasDonePluginsOnboarding", "true");
+        }
+    };
+
     return (
         <motion.div className="h-full font-geist p-2" 
             initial={{ opacity: 0 }}
@@ -157,15 +212,38 @@ export default function Home() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6 }}
         >
+            <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
+                steps={STEPS}
+                run={!hasDonePluginsOnboarding}
+                stepIndex={stepIndex}
+                spotlightPadding={5}
+                styles={
+                    {
+                        options: {
+                            backgroundColor: "#18181b",
+                            arrowColor: "#18181b",
+                            textColor: "#fafafa",
+                        },
+                        buttonClose: {
+                            width: "8px",
+                            height: "8px",
+                        },
+                        tooltipContent: {
+                            fontSize: "14px",
+                        }
+                    }
+                }
+                callback={handleJoyrideCallback}
+            />
             <div className="flex flex-col gap-2 p-5 pb-0 pt-2">
-                <div className="flex gap-3 items-center pr-10">
+                <div className="flex gap-3 items-center pr-10" id="search_options">
                     <p className="text-lg font-semibold pr-2 min-w-20">{translate("frontend.sidebar.plugins")}</p>
                     {/* Search options */}
                     <Input placeholder={translate("search")} value={search} onChange={(e) => setSearch(e.target.value)} />
                         <div className="p-0 h-3"></div> {/* Makeshift separator */}
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="outline" className="flex text-left items-center justify-start">
+                                <Button variant="outline" className="flex text-left items-center justify-start" id="selected_tags">
                                     <p className={searchTags.length > 0 ? "font-normal" : "font-normal text-muted-foreground"}>
                                         {searchTags.length > 0 ? translate("frontend.plugins.selected_tags", searchTags.length) : translate("frontend.plugins.select_tags")}
                                     </p>
@@ -213,7 +291,7 @@ export default function Home() {
                                     setSearch("")
                                     setSearchTags([])
                                     setSearchAuthors([])
-                                }} className="text-muted-foreground font-normal">{translate("clear")}</Button>
+                                }} className="text-muted-foreground font-normal" id="clear_button" >{translate("clear")}</Button>
                             ) : null
                         }
                 </div>
@@ -254,10 +332,10 @@ export default function Home() {
                                             setTimeout(() => {
                                                 mutate("plugins")
                                             }, 200)
-                                        }} className={all_visible_enabled ? "left-3.5 absolute opacity-100" : "left-3.5 absolute opacity-60"} />
+                                        }} id="enable_all_checkbox" className={all_visible_enabled ? "left-3.5 absolute opacity-100" : "left-3.5 absolute opacity-60"} />
                                     </div>
 
-                                    <ScrollArea className="max-h-[calc(100vh-190px)] overflow-y-auto">
+                                    <ScrollArea className="max-h-[calc(100vh-190px)] overflow-y-auto" id="plugins_list">
                                         {enabled_plugins.map((plugin:any, index) => (
                                             <motion.div key={plugin} className="w-full group relative border border-t-0 h-10 grid grid-cols-8 items-center text-left pl-12 cursor-pointer" layout animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }}>
                                                 <Checkbox checked={data[plugin].enabled} onClick={() => {
