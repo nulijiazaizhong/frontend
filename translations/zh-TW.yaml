@@ -356,8 +356,8 @@ Translations:
   acc.settings.5.description: "選擇超過限速的百分比，或者直接加上固定速度。"
   acc.settings.6.name: "減速通知"
   acc.settings.6.description: "當應用程式因任何障礙物而減速時，彈出通知視窗。"
-  acc.settings.7.name: "速限為「0」時的速度"
-  acc.settings.7.description: "當讀取到速限為「0」時的行駛速度。"
+  acc.settings.7.name: "速限為 0 時的速度"
+  acc.settings.7.description: "當讀取到速限為 0 時的行駛速度。"
 
 
   # MARK: Plugin keys
