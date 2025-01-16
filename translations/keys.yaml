@@ -147,6 +147,8 @@
 - frontend.sidebar.anonymous
 - frontend.sidebar.account
 - frontend.sidebar.sign_out
+- frontend.sidebar.sign_out_successful
+- frontend.sidebar.sign_out_description
 - frontend.sidebar.sign_in
 - frontend.login
 - frontend.login.disclaimer

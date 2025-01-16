@@ -143,9 +143,11 @@ Translations:
   frontend.plugins.end_list: "已達列表底部"
   frontend.plugins.enabling_plugin: "正在啟用 {0}"
   frontend.plugins.enabled_plugin: "已啟用 {0}"
+  frontend.plugins.enabled_all_plugins: "已啟用所有插件"
   frontend.plugins.error_enabling_plugin: "啟用 {0} 時發生錯誤"
   frontend.plugins.disabling_plugin: "正在停用 {0}"
   frontend.plugins.disabled_plugin: "已停用 {0}"
+  frontend.plugins.disabled_all_plugins: "已停用所有插件"
   frontend.plugins.error_disabling_plugin: "停用 {0} 時發生錯誤"
   frontend.plugins.hidden: "已隱藏 {0} 個插件"
   frontend.404.title: "我們為什麼在這裡... 就只是為了受苦嗎😥？"
@@ -354,6 +356,9 @@ Translations:
   acc.settings.5.description: "選擇超過限速的百分比，或者直接加上固定速度。"
   acc.settings.6.name: "減速通知"
   acc.settings.6.description: "當應用程式因任何障礙物而減速時，彈出通知視窗。"
+  acc.settings.7.name: "速限為「0」時的速度"
+  acc.settings.7.description: "當讀取到速限為「0」時的行駛速度。"
+
 
   # MARK: Plugin keys
 
