@@ -129,9 +129,13 @@
 - frontend.plugins.enabling_plugin
 - frontend.plugins.enabled_plugin
 - frontend.plugins.error_enabling_plugin
+- frontend.plugins.enabling_all_plugins
+- frontend.plugins.enabled_all_plugins
 - frontend.plugins.disabling_plugin
 - frontend.plugins.disabled_plugin
 - frontend.plugins.error_disabling_plugin
+- frontend.plugins.disabling_all_plugins
+- frontend.plugins.disabled_all_plugins
 - frontend.dialog.not_supported
 - frontend.sidebar.updates_available
 - frontend.sidebar.main
@@ -293,6 +297,8 @@
 - acc.settings.5.description
 - acc.settings.6.name
 - acc.settings.6.description
+- acc.settings.7.name
+- acc.settings.7.description
 - map.loading.preparing
 - map.loading.nodes
 - map.loading.roads

@@ -178,9 +178,13 @@ Translations:
   frontend.plugins.enabling_plugin: "Enabling {0}"
   frontend.plugins.enabled_plugin: "Enabled {0}"
   frontend.plugins.error_enabling_plugin: "Error enabling {0}"
+  frontend.plugins.enabling_all_plugins: "Enabling all plugins..."
+  frontend.plugins.enabled_all_plugins: "Enabled all plugins"
   frontend.plugins.disabling_plugin: "Disabling {0}"
   frontend.plugins.disabled_plugin: "Disabled {0}"
   frontend.plugins.error_disabling_plugin: "Error disabling {0}"
+  frontend.plugins.disabling_all_plugins: "Disabling all plugins..."
+  frontend.plugins.disabled_all_plugins: "Disabled all plugins"
   frontend.plugins.hidden: "{0} plugin(s) hidden"
   frontend.dialog.not_supported: "{0} is not supported in a dialog."
   # ^ {0} is the function that is not supported. Example: 'EnabledLock is not supported in a dialog.'

@@ -178,9 +178,13 @@ Translations:
   frontend.plugins.enabling_plugin: "正在启用 {0}"
   frontend.plugins.enabled_plugin: "已启用 {0}"
   frontend.plugins.error_enabling_plugin: "启用 {0} 时出现错误"
+  frontend.plugins.enabling_all_plugins: "正在启用所有插件..."
+  frontend.plugins.enabled_all_plugins: "已启用所有插件"
   frontend.plugins.disabling_plugin: "正在禁用 {0}"
   frontend.plugins.disabled_plugin: "已禁用 {0}"
   frontend.plugins.error_disabling_plugin: "禁用 {0} 时出现错误"
+  frontend.plugins.disabling_all_plugins: "正在禁用所有插件..."
+  frontend.plugins.disabled_all_plugins: "已禁用所有插件"
   frontend.plugins.hidden: "已隐藏 {0} 个插件"
   frontend.dialog.not_supported: "对话框中不支持 {0}。"
   # ^ {0} is the function that is not supported. Example: 'EnabledLock is not supported in a dialog.'
@@ -355,6 +359,8 @@ Translations:
   acc.settings.5.description: "行驶的速度是否要比限速快一定百分比，还是要快一定量？"
   acc.settings.6.name: "显示通知/弹出窗口"
   acc.settings.6.description: "当程序因任何障碍物而减速时显示一个弹出窗口。"
+  acc.settings.7.name: "在无限速路段时所保持的车速"
+  acc.settings.7.description: "当 API 读取到当前路段无限速时所保持的行驶速度。"
 
   # MARK: Plugin keys
 
