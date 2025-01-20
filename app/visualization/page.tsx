@@ -26,7 +26,7 @@ export default function Visualization() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.6 }}
-                        src="https://truckermudgeon.github.io#12.69/52.44/12.97/43.2/60"
+                        src="https://truckermudgeon.github.io/navigator"
                     />
                 </ResizablePanel>
             </ResizablePanelGroup>
