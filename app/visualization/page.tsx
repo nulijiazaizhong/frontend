@@ -20,7 +20,7 @@ export default function Visualization() {
                     />
                 </ResizablePanel>
                 <ResizableHandle withHandle className="bg-transparent" />
-                <ResizablePanel className="h-full w-0" defaultSize={0}>
+                <ResizablePanel className="h-full w-0" defaultSize={60}>
                     <motion.iframe className="w-full h-full" 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
