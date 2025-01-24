@@ -414,7 +414,7 @@ export default function ValueDialog({onClose, open, json}: {onClose: any, open: 
                 </div>
             </DialogTrigger>
             <DialogContent className="max-h-[80%] overflow-y-scroll overflow-x-hidden">
-                <div className="flex flex-col gap-2 font-geist max-w-[50%]">
+                <div className="flex flex-col gap-2 font-geist">
                     {PageRenderer(json)}
                 </div>
             </DialogContent>
