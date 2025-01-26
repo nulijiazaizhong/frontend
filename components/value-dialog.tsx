@@ -413,8 +413,8 @@ export default function ValueDialog({onClose, open, json}: {onClose: any, open: 
 
                 </div>
             </DialogTrigger>
-            <DialogContent className="max-h-[80%] overflow-y-scroll overflow-x-hidden">
-                <div className="flex flex-col gap-2 font-geist">
+            <DialogContent className="max-h-[80%] overflow-y-scroll overflow-x-hidden max-w-[550px]">
+                <div className="flex flex-col gap-2 font-geist max-w-[calc(550px-48px)]">
                     {PageRenderer(json)}
                 </div>
             </DialogContent>
