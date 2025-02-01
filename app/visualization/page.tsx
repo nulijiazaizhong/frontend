@@ -22,7 +22,7 @@ export default function Visualization() {
                     }
                 }}>
                     {isMapOpen && isVisualizationOpen && (
-                        <div className="absolute right-0 top-0 bottom-0 w-4 z-10 bg-gradient-to-r from-transparent to-[#181818]" />
+                        <div className="absolute right-0 top-0 bottom-0 w-1 z-10 bg-gradient-to-r from-transparent to-[#181818]" />
                     )}
                     {isVisualizationOpen && (
                         <motion.iframe className="w-full h-full" 
@@ -55,15 +55,15 @@ export default function Visualization() {
                     }
                 }}>
                     {isVisualizationOpen && isMapOpen && (
-                        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-transparent to-[#181818]" />
+                        <div className="absolute left-0 top-0 bottom-0 w-1 z-10 bg-gradient-to-l from-transparent to-[#181818]" />
                     )}
                     {isMapOpen && (
-                        <motion.iframe className="w-full h-full invert hue-rotate-180 saturate-[0.8] brightness-[0.83] contrast-[1.3]" 
+                        <motion.iframe className="w-full h-full" 
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.6 }}
-                            src="https://truckermudgeon.github.io/navigator"
+                            src="https://truckermudgeon.github.io/ets2la"
                         />
                     )}
                     {!isMapOpen && (
