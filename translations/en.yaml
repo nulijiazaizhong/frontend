@@ -213,6 +213,23 @@ Translations:
   frontend.login.successful: "Successfully logged in!"
   frontend.login.successful_description: "Log out using the context menu under your username in the bottom left."
 
+  # MARK: Tutorials
+
+  tutorials.main.window_controls: "These are the window controls. The left most button controls some extra options. Hover over it to see a tooltip! (after the onboarding)"
+  tutorials.main.slide_area: "You can move the window around by dragging this area."
+  tutorials.main.sidebar_collapse: 'You can click on the side of the sidebar to collapse it and go into "fullscreen" mode.'
+  tutorials.main.sidebar: "You can easily navigate the different app pages using the sidebar. Some of them have more tips to help you get used to the app!"
+  tutorials.main.settings: "For now you should head to the settings page!"
+  tutorials.settings.static: "Here you can see the settings that are needed by the entire app."
+  tutorials.settings.global: "Right now you can see the Global settings. These include UI settings and other miscellaneous settings required by the app at some point."
+  tutorials.settings.plugin: "This is a list of all the plugins that have settings pages. You can click on any of them to change settings on a per-plugin basis."
+  tutorials.settings.sdk: "As the final step you should open the SDK settings page, and install the SDK if you haven't already. Please note that if you're coming from V1, you should reinstall the SDK on this page."
+  tutorials.plugins.options: "You can use the search options to easily find what you are looking for."
+  tutorials.plugins.tags: "By default the Base tag is selected. You can add more selections by clicking on the tags in the plugin list or by opening the dropdown here."
+  tutorials.plugins.clear: 'Use this button to remove all current search options.'
+  tutorials.plugins.enable_all: "You can enable/disable all the currently visible plugins by clicking this checkbox."
+  tutorials.plugins.list: 'To get started you can enable everything but the "Data Collection End-To-End Driving" and "Navigation Detection" plugins.'
+
   # MARK: About
 
   about.about: "About"
