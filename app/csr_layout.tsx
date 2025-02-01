@@ -20,6 +20,7 @@ import AccountHandler from "@/apis/account";
 import Snowfall from "react-snowfall"
 import useSWR from "swr";
 import Loader from "@/components/loader";
+import { translate } from "@/apis/translation";
 import { useCollapsed } from "@/contexts/collapsed";
 import { ACTIONS, EVENTS, STATUS, CallBackProps } from 'react-joyride';
 import { JoyRideNoSSR, skipAll } from "@/components/joyride-no-ssr";
@@ -33,42 +34,13 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
     const [hasDoneOnboarding, setHasDoneOnboarding] = useState(false);
     const [stepIndex, setStepIndex] = useState(0);
     const [run, setRun] = useState(false);
+    const [STEPS, setSTEPS] = useState([
+        {
+            
+        }
+    ]);
     const isMobile = useIsMobile();
 
-    const STEPS = [
-        {
-            target: "#window_controls",
-            content: "These are the window controls. The left most button controls some extra options. Hover over it to see a tooltip! (after the onboarding)",
-            disableBeacon: true,
-        },
-        {
-            target: "#slide_area",
-            content: "You can move the window around by dragging this area.",
-            disableBeacon: true,
-            hideFooter: true,
-        },
-        {
-            target: "#sidebar_rail",
-            content: 'You can click on the side of the sidebar to collapse it and go into "fullscreen" mode.',
-            placement: "right",
-            disableBeacon: true,
-            hideFooter: true,
-        },
-        {
-            target: "#sidebar",
-            content: 'You can easily navigate the different app pages using the sidebar. Some of them have more tips to help you get used to the app!',   
-            placement: "right",
-            disableBeacon: true,
-            hideFooter: true,
-        },
-        {
-            target: "#settings",
-            content: 'For now you should head to the settings page!',   
-            placement: "right",
-            disableBeacon: true,
-            hideFooter: true,
-        },
-    ];
 
     useEffect(() => {
         if (language) {
@@ -76,6 +48,40 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
             setLoadingTranslations(true);
             loadTranslations().then(() => {
                 setLoadingTranslations(false);
+                setSTEPS([
+                    {
+                        target: "#window_controls",
+                        content: translate("tutorials.main.window_controls"),
+                        disableBeacon: true,
+                    },
+                    {
+                        target: "#slide_area",
+                        content: translate("tutorials.main.slide_area"),
+                        disableBeacon: true,
+                        hideFooter: true,
+                    },
+                    {
+                        target: "#sidebar_rail",
+                        content: translate("tutorials.main.sidebar_collapse"),
+                        placement: "right",
+                        disableBeacon: true,
+                        hideFooter: true,
+                    },
+                    {
+                        target: "#sidebar",
+                        content: translate("tutorials.main.sidebar"),   
+                        placement: "right",
+                        disableBeacon: true,
+                        hideFooter: true,
+                    },
+                    {
+                        target: "#settings",
+                        content: translate("tutorials.main.settings"),   
+                        placement: "right",
+                        disableBeacon: true,
+                        hideFooter: true,
+                    },
+                ]);
             });
         }
     }, [language]);
@@ -112,6 +118,40 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
 
     useEffect(() => {
         loadTranslations().then(() => {
+            setSTEPS([
+                {
+                    target: "#window_controls",
+                    content: translate("tutorials.main.window_controls"),
+                    disableBeacon: true,
+                },
+                {
+                    target: "#slide_area",
+                    content: translate("tutorials.main.slide_area"),
+                    disableBeacon: true,
+                    hideFooter: true,
+                },
+                {
+                    target: "#sidebar_rail",
+                    content: translate("tutorials.main.sidebar_collapse"),
+                    placement: "right",
+                    disableBeacon: true,
+                    hideFooter: true,
+                },
+                {
+                    target: "#sidebar",
+                    content: translate("tutorials.main.sidebar"),   
+                    placement: "right",
+                    disableBeacon: true,
+                    hideFooter: true,
+                },
+                {
+                    target: "#settings",
+                    content: translate("tutorials.main.settings"),   
+                    placement: "right",
+                    disableBeacon: true,
+                    hideFooter: true,
+                },
+            ]);
             const hasDoneOnboarding = localStorage.getItem("hasDoneOnboarding");
             setHasDoneOnboarding(hasDoneOnboarding === "true");
             setLoadingTranslations(false);

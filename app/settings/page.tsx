@@ -20,40 +20,40 @@ import { ACTIONS, EVENTS, ORIGIN, STATUS, CallBackProps } from 'react-joyride';
 import { JoyRideNoSSR } from "@/components/joyride-no-ssr";
 import { useEffect } from "react";
 
-const STEPS = [
-    {
-        target: "#static_settings",
-        content: "Here you can see the settings that are needed by the entire app.",
-        disableBeacon: true,
-        hideFooter: true,
-    },
-    {
-        target: "#settings_page",
-        content: "Right now you can see the Global settings. These include UI settings and other miscellaneous settings required by the app at some point.",
-        disableBeacon: true,
-        hideFooter: true,
-    },
-    {
-        target: "#plugin_settings",
-        content: 'This is a list of all the plugins that have settings pages. You can click on any of them to change settings on a per-plugin basis.',
-        placement: "right",
-        disableBeacon: true,
-        hideFooter: true,
-    },
-    {
-        target: "#open_sdk_settings",
-        content: 'As the final step you should open the SDK settings page, and install the SDK if you haven\'t already. Please note that if you\'re coming from V1, you should reinstall the SDK on this page.',
-        placement: "right",
-        disableBeacon: true,
-        hideFooter: true,
-    }
-];
-
 export default function Home() {
     const { data } = useSWR("plugin_ui_plugins", () => GetPlugins());
     const [selectedPlugin, setSelectedPlugin] = useState("Global")
     const [hasDoneOnboarding, setHasDoneOnboarding] = useState(false);
     const [stepIndex, setStepIndex] = useState(0);
+
+    const STEPS = [
+        {
+            target: "#static_settings",
+            content: translate("tutorials.settings.static"),
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#settings_page",
+            content: translate("tutorials.settings.global"),
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#plugin_settings",
+            content: translate("tutorials.settings.plugin"),
+            placement: "right",
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#open_sdk_settings",
+            content: translate("tutorials.settings.sdk"),
+            placement: "right",
+            disableBeacon: true,
+            hideFooter: true,
+        }
+    ];
 
     useEffect(() => {
         const hasDoneOnboarding = localStorage.getItem("hasDoneSettingsOnboarding");

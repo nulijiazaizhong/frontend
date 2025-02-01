@@ -30,41 +30,6 @@ import { JoyRideNoSSR } from "@/components/joyride-no-ssr";
 import { ACTIONS, EVENTS, ORIGIN, STATUS, CallBackProps } from 'react-joyride';
 import { useEffect } from "react";
 
-const STEPS = [
-    {
-        target: "#search_options",
-        content: "You can use the search options to easily find what you are looking for.",
-        disableBeacon: true,
-        hideFooter: true,
-    },
-    {
-        target: "#selected_tags",
-        content: "By default the Base tag is selected. You can add more selections by clicking on the tags in the plugin list or by opening the dropdown here.",
-        disableBeacon: true,
-        hideFooter: true,
-    },
-    {
-        target: "#clear_button",
-        content: 'Use the "Clear" button to remove all current search options.',
-        disableBeacon: true,
-        hideFooter: true,
-    },
-    {
-        target: "#enable_all_checkbox",
-        content: 'You can enable/disable all the currently visible plugins by clicking this checkbox.',   
-        placement: "right",
-        disableBeacon: true,
-        hideFooter: true,
-    },
-    {
-        target: "#plugins_list",
-        content: 'To get started you can enable everything but the "Data Collection End-To-End Driving" and "Navigation Detection" plugins. If your PC is less powerful, then you can disable "Object Detection", at the cost of losing any vision.',   
-        placement: "right",
-        disableBeacon: true,
-        hideFooter: true,
-    },
-];
-
 export default function Home() {
     const [ search, setSearch ] = useState<string>("")
     const [ searchTags, setSearchTags ] = useState<string[]>(["Base"])
@@ -72,6 +37,41 @@ export default function Home() {
     const { data, error, isLoading } = useSWR("plugins", () => GetPlugins(), { refreshInterval: 1000 }) as any
     const [hasDonePluginsOnboarding, setHasDonePluginsOnboarding] = useState(false);
     const [stepIndex, setStepIndex] = useState(0);
+
+    const STEPS = [
+        {
+            target: "#search_options",
+            content: translate("tutorials.plugins.options"),
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#selected_tags",
+            content: translate("tutorials.plugins.tags"),
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#clear_button",
+            content: translate("tutorials.plugins.clear"),
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#enable_all_checkbox",
+            content: translate("tutorials.plugins.enable_all"),   
+            placement: "right",
+            disableBeacon: true,
+            hideFooter: true,
+        },
+        {
+            target: "#plugins_list",
+            content: translate("tutorials.plugins.list"),   
+            placement: "right",
+            disableBeacon: true,
+            hideFooter: true,
+        },
+    ];
 
     useEffect(() => {
         if (localStorage.getItem("hasDonePluginsOnboarding") === "true") {
