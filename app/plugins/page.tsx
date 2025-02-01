@@ -122,7 +122,6 @@ export default function Home() {
     }
 
     let hidden:number = 0;
-    const visible_plugins:string[] = [];
     const enabled_plugins:string[] = [];
     const disabled_plugins:string[] = [];
     for (const key in data) {
@@ -181,15 +180,46 @@ export default function Home() {
 
     const all_visible_enabled = disabled_plugins.length == 0;
 
+    const EnablePluginLocal = async (plugin:string) => {
+        await EnablePlugin(plugin)
+        enabled_plugins.push(plugin)
+        disabled_plugins.splice(disabled_plugins.indexOf(plugin), 1)
+        // create the data again but update all plugin's enabled state based on enabled_plugins and disabled_plugins
+        let new_data = {}
+        for (const key in data) {
+            if (isNaN(parseInt(key))){
+                // @ts-ignore
+                new_data[key] = { ...data[key], enabled: enabled_plugins.includes(key) }
+            }
+        }
+        mutate("plugins", new_data, false)
+    }
+
+    const DisablePluginLocal = async (plugin:string) => {
+        await DisablePlugin(plugin)
+        disabled_plugins.push(plugin)
+        enabled_plugins.splice(enabled_plugins.indexOf(plugin), 1)
+        mutate("plugins", { ...data, [plugin]: { ...data[plugin], enabled: false } }, false)
+        // create the data again but update all plugin's enabled state based on enabled_plugins and disabled_plugins
+        let new_data = {}
+        for (const key in data) {
+            if (isNaN(parseInt(key))){
+                // @ts-ignore
+                new_data[key] = { ...data[key], enabled: enabled_plugins.includes(key) }
+            }
+        }
+        mutate("plugins", new_data, false)
+    }
+
     const EnableAllVisiblePlugins = async () => {
-        for (const plugin in disabled_plugins) {
-            await EnablePlugin(disabled_plugins[plugin])
+        while (disabled_plugins.length > 0) {
+            await EnablePluginLocal(disabled_plugins[0])
         }
     }
 
     const DisableAllVisiblePlugins = async () => {
-        for (const plugin in enabled_plugins) {
-            await DisablePlugin(enabled_plugins[plugin])
+        while (enabled_plugins.length > 0) {
+            await DisablePluginLocal(enabled_plugins[0])
         }
     }
 
@@ -341,7 +371,7 @@ export default function Home() {
                                                 <Checkbox checked={data[plugin].enabled} onClick={() => {
                                                     if(data[plugin].enabled){
                                                         toast.promise(
-                                                            DisablePlugin(plugin), 
+                                                            DisablePluginLocal(plugin), 
                                                             {
                                                                 loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
                                                                 success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
@@ -351,7 +381,7 @@ export default function Home() {
                                                     }
                                                     else{
                                                         toast.promise(
-                                                            EnablePlugin(plugin), 
+                                                            EnablePluginLocal(plugin), 
                                                             {
                                                                 loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
                                                                 success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
@@ -407,7 +437,7 @@ export default function Home() {
                                                             { !data[plugin].enabled ?
                                                                 <DropdownMenuItem onClick={() => {
                                                                     toast.promise(
-                                                                        EnablePlugin(plugin), 
+                                                                        EnablePluginLocal(plugin), 
                                                                         {
                                                                             loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
                                                                             success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
@@ -421,7 +451,7 @@ export default function Home() {
                                                             :
                                                                 <DropdownMenuItem onClick={() => {
                                                                     toast.promise(
-                                                                        DisablePlugin(plugin), 
+                                                                        DisablePluginLocal(plugin), 
                                                                         {
                                                                             loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
                                                                             success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
@@ -444,7 +474,7 @@ export default function Home() {
                                                 <Checkbox checked={data[plugin].enabled} onClick={() => {
                                                     if(data[plugin].enabled){
                                                         toast.promise(
-                                                            DisablePlugin(plugin), 
+                                                            DisablePluginLocal(plugin), 
                                                             {
                                                                 loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
                                                                 success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
@@ -454,7 +484,7 @@ export default function Home() {
                                                     }
                                                     else{
                                                         toast.promise(
-                                                            EnablePlugin(plugin), 
+                                                            EnablePluginLocal(plugin), 
                                                             {
                                                                 loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
                                                                 success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
@@ -503,7 +533,7 @@ export default function Home() {
                                                             { !data[plugin].enabled ?
                                                                 <DropdownMenuItem onClick={() => {
                                                                     toast.promise(
-                                                                        EnablePlugin(plugin), 
+                                                                        EnablePluginLocal(plugin), 
                                                                         {
                                                                             loading: translate("frontend.plugins.enabling_plugin", translate(data[plugin].description.name)),
                                                                             success: translate("frontend.plugins.enabled_plugin", translate(data[plugin].description.name)),
@@ -517,7 +547,7 @@ export default function Home() {
                                                             :
                                                                 <DropdownMenuItem onClick={() => {
                                                                     toast.promise(
-                                                                        DisablePlugin(plugin), 
+                                                                        DisablePluginLocal(plugin), 
                                                                         {
                                                                             loading: translate("frontend.plugins.disabling_plugin", translate(data[plugin].description.name)),
                                                                             success: translate("frontend.plugins.disabled_plugin", translate(data[plugin].description.name)),
