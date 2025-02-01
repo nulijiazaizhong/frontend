@@ -185,7 +185,7 @@ export default function Home() {
         enabled_plugins.push(plugin)
         disabled_plugins.splice(disabled_plugins.indexOf(plugin), 1)
         // create the data again but update all plugin's enabled state based on enabled_plugins and disabled_plugins
-        let new_data = {}
+        const new_data = {}
         for (const key in data) {
             if (isNaN(parseInt(key))){
                 // @ts-ignore
@@ -201,7 +201,7 @@ export default function Home() {
         enabled_plugins.splice(enabled_plugins.indexOf(plugin), 1)
         mutate("plugins", { ...data, [plugin]: { ...data[plugin], enabled: false } }, false)
         // create the data again but update all plugin's enabled state based on enabled_plugins and disabled_plugins
-        let new_data = {}
+        const new_data = {}
         for (const key in data) {
             if (isNaN(parseInt(key))){
                 // @ts-ignore
