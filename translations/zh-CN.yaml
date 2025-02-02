@@ -191,7 +191,7 @@ Translations:
   frontend.sidebar.updates_available: "可用更新"
   frontend.sidebar.main: "主界面"
   frontend.sidebar.dashboard: "概览"
-  frontend.sidebar.visualization: "可视化"
+  frontend.sidebar.visualization: "环境可视化"
   frontend.sidebar.plugins: "插件"
   frontend.sidebar.manager: "插件管理"
   frontend.sidebar.performance: "性能"
@@ -213,6 +213,23 @@ Translations:
   frontend.login.successful: "登录成功！"
   frontend.login.successful_description: "使用左下角用户名下的菜单进行注销。"
 
+  # MARK: Tutorials
+
+  tutorials.main.window_controls: "这些是窗口控制按钮。最左侧的按钮包含额外选项，您可以将鼠标悬停其上以查看详细提示！（在引导教程结束后）"
+  tutorials.main.slide_area: "您可以通过拖动此区域来移动窗口位置。"
+  tutorials.main.sidebar_collapse: '点击侧边栏边缘可以折叠侧边栏，以进入"全屏"模式。'
+  tutorials.main.sidebar: "您可以通过侧边栏轻松切换到软件的不同页面。部分页面还包含更多提示帮助您熟悉本软件！"
+  tutorials.main.settings: "现在请前往设置页面！"
+  tutorials.settings.static: "这里显示的是整个软件所需的基础设置。"
+  tutorials.settings.global: "当前显示的是全局设置，包含界面设置和其他插件运行所需的杂项配置。"
+  tutorials.settings.plugin: "这是所有带有设置页面的插件列表。点击任意插件可配置其专属设置。"
+  tutorials.settings.sdk: "最后请打开SDK设置页面并安装SDK（如果尚未安装）。注意：如果您是从V1版本升级而来，需要在此页面重新安装SDK。"
+  tutorials.plugins.options: "您可以使用搜索选项快速定位所需内容。"
+  tutorials.plugins.tags: "默认选中了base标签。您可以通过点击插件列表中的标签或在此处打开下拉菜单来添加更多筛选条件。"
+  tutorials.plugins.clear: '点击此按钮可清除当前所有搜索选项。'
+  tutorials.plugins.enable_all: "通过此复选框可批量启用/禁用当前可见的所有插件。"
+  tutorials.plugins.list: '初次使用时，建议启用除"Data Collection End-To-End Driving"和"Navigation Detection"之外的所有插件。'
+
   # MARK: About
 
   about.about: "关于本软件"
@@ -231,9 +248,9 @@ Translations:
   about.truckersmudgeon.description: "游戏数据提取与处理"
   about.whytrevorwhy.description: "协助开发地图插件与导航功能"
   about.mimi89999.description: "scs-sdk-controller 开发人员"
-  about.zhaoyj.description: "可视化的 3D 模型"
+  about.zhaoyj.description: "环境可视化的 3D 模型"
   about.lun.description: "中文翻译，错误修复"
-  about.mruiaw.description: "中文翻译、错误修复"
+  about.mruiaw.description: "中文翻译，错误修复"
   about.ziakhan4505.description: "C++ 支持、Linux 和 Unix 适配、错误修复"
   about.piotrke.description: "Game hooks"
   about.dtheicydragon.description: "错误修复"
@@ -264,11 +281,11 @@ Translations:
   plugins.navigationdetection: "导航检测"
   plugins.navigationdetection.description: "使用游戏内的路线来跟随选择的路线。"
   plugins.objectdetection: "物体检测"
-  plugins.objectdetection.description: "使用屏幕图像识别检测各种物体，并可在输出窗口和 3D 可视化中显示它们。"
+  plugins.objectdetection.description: "使用屏幕图像识别检测各种物体，并可在输出窗口和 3D 环境可视化中显示它们。"
   plugins.raycastingtest: "Raycast测试"
   plugins.raycastingtest.description: "Raycast测试插件，将射线投射到您的鼠标位置。"
   plugins.sockets: "Sockets"
-  plugins.sockets.description: "使数据接口可用，主要用于内置的可视化功能。"
+  plugins.sockets.description: "使数据接口可用，主要用于内置的环境可视化功能。"
   plugins.trafficlightdetection: "红绿灯检测"
   plugins.trafficlightdetection.description: "使用计算机视觉检测红绿灯，并可在输出窗口显示它们。它与巡航控制插件连接，可在红灯时停止卡车。"
   plugins.truckstats: "卡车数据"
@@ -317,7 +334,7 @@ Translations:
   map.settings.2.name: "计算转向"
   map.settings.2.description: "这将计算地图转向卡车所需的必要值。"
   map.settings.3.name: "发送数据"
-  map.settings.3.description: "这将允许其他插件使用地图的数据。请注意，如果未启用此选项，可视化将无法工作。此选项可以且将提高性能。"
+  map.settings.3.description: "这将允许其他插件使用地图的数据。请注意，如果未启用此选项，环境可视化将无法工作。此选项可以且将提高性能。"
   map.settings.4.title: "内部可视化"
   map.settings.5.name: "缩放"
   map.settings.5.description: "控制内部可视化的缩放级别。"
