@@ -8,6 +8,7 @@ import {
 
 import { useState, useEffect } from "react"
 import { toast } from "sonner";
+import {GetSettingByKey} from "@/apis/settings";
 
 export default function WindowControls({ isCollapsed }: { isCollapsed: boolean }) {
     const [lastMousePosition, setLastMousePosition] = useState({ x: 0, y: 0 });
@@ -76,6 +77,16 @@ export default function WindowControls({ isCollapsed }: { isCollapsed: boolean }
         }
     };
 
+    useEffect(() => {
+        GetSettingByKey("global", "stay_on_top", false).then((stayOnTop) => {
+            setStayOnTop(stayOnTop)
+        })
+        GetSettingByKey("global", "transparency", false).then((transparency) => {
+            SetTransparent(transparency).then(()=> {
+                setTransparency(transparency)
+            })
+        })
+    }, []);
 
     const collapsedContainerClassName = "flex gap-1 absolute h-6 w-[59px] rounded-bl-lg top-0 right-0 items-center justify-center p-0 z-50 bg-sidebar transition-all pywebview-drag-region opacity-75 hover:opacity-100";
     const containerClassName = "flex gap-1 absolute h-6 w-[59px] rounded-bl-lg top-0 right-0 items-center justify-center p-0 z-50 bg-sidebar transition-all pywebview-drag-region";
@@ -115,17 +126,19 @@ export default function WindowControls({ isCollapsed }: { isCollapsed: boolean }
                         <TooltipTrigger 
                             onClick={(e) => {
                                 // Left click
-                                setStayOnTop(!stayOnTop)
-                                SetStayOnTop(stayOnTop).then(() => {
-                                    toast.success(`${stayOnTop ? "Window is now on top" : "Window is no longer on top"}`)
+                                const newStayOnTop = !stayOnTop
+                                setStayOnTop(newStayOnTop)
+                                SetStayOnTop(newStayOnTop).then(() => {
+                                    toast.success(`${newStayOnTop ? "Window is now on top" : "Window is no longer on top"}`)
                                 })
                             }}
                             onContextMenu={(e) => {
                                 // Right click
                                 e.preventDefault() // Prevent default context menu
-                                setTransparency(!transparency)
-                                SetTransparent(transparency).then(() => {
-                                    toast.success(`${transparency ? "Window is now transparent" : "Window is no longer transparent"}`)
+                                const newTransparency = !transparency
+                                setTransparency(newTransparency)
+                                SetTransparent(newTransparency).then(() => {
+                                    toast.success(`${newTransparency ? "Window is now transparent" : "Window is no longer transparent"}`)
                                 })
                             }}
                         >
