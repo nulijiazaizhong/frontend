@@ -249,6 +249,20 @@ export async function GetPages() {
     return data
 }
 
+export async function GetPage(target_page:string) {
+    const response = await fetch(`http://${ip}:37520/api/page`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            page: target_page
+        })
+    })
+    const data = await response.json()
+    return data
+}
+
 export async function GetDevmode() {
     const response = await fetch(`http://${ip}:37520/backend/devmode`, {
         method: "GET",
