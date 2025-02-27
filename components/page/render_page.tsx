@@ -3,9 +3,11 @@ import { GetPage } from "@/apis/backend";
 import useSWR from "swr";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Loader from "../loader";
 
 export default function RenderPage({ url, className }: { url: string, className?: string }) {
     const [refreshInterval, setRefreshInterval] = useState(1000); 
+    const [showTooLong, setShowTooLong] = useState(false);
     const {data: page} = useSWR("page " + url, () => GetPage(url), { refreshInterval: refreshInterval });
 
     useEffect(() => {
@@ -15,10 +17,24 @@ export default function RenderPage({ url, className }: { url: string, className?
         }
     }, [page]);
 
+    useEffect(() => {
+        setTimeout(() => {
+            setShowTooLong(true);
+        }, 3000);
+    }, []);
+
     if (!page) return (
-        <div>
-            <p className="text-muted-foreground text-xs">The page you are looking for was not found.</p>
-        </div>
+        <motion.div className="w-full h-full flex flex-col items-center justify-center gap-2 font-geist" layout>
+            <Loader className={"opacity-50"} />
+            <p className="text-muted-foreground text-xs text-center">
+                Fetching page...
+                {showTooLong && 
+                    <motion.p className="text-muted-foreground text-xs" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 15 }} transition={{ duration: 0.4}}>
+                        This page might not exist, or it has an error loading.
+                    </motion.p>
+                }
+            </p>
+        </motion.div>
     );
 
     return (
