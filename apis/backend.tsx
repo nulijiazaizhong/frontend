@@ -273,3 +273,14 @@ export async function GetDevmode() {
     const data = await response.json()
     return data
 }
+
+export async function ReloadPlugins() {
+    const response = await fetch(`http://${ip}:37520/api/plugins/reload`, {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    const data = await response.json()
+    return data
+}

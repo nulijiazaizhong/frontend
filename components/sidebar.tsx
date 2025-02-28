@@ -48,12 +48,14 @@ import { useTheme } from "next-themes"
 import { useAuth } from '@/apis/auth'
 import { Button } from "./ui/button"
 import { useEffect } from "react"
+import { GetDevmode, ReloadPlugins } from "@/apis/backend"
 import { toast } from "sonner"
 import useSWR from "swr"
 import RenderPage from "./page/render_page"
 
 export function ETS2LASidebar({toggleSidebar} : {toggleSidebar: () => void}) {
     const { data: update_data } = useSWR("update", CheckForUpdate, { refreshInterval: 60000 })
+    const { data: devmode } = useSWR("devmode", GetDevmode)
     const { data: metadata } = useSWR("metadata", GetMetadata)
     const { token, username, setToken, setUsername } = useAuth()
     const startProgress = useProgress()
@@ -170,6 +172,21 @@ export function ETS2LASidebar({toggleSidebar} : {toggleSidebar: () => void}) {
                         <MessageSquare /> {translate("frontend.sidebar.chat")}
                     </SidebarMenuButton>
                 </SidebarGroup>
+                {devmode && (
+                    <SidebarGroup>
+                        <SidebarGroupLabel className="font-semibold">
+                            Developers
+                        </SidebarGroupLabel>
+                        <SidebarMenuButton className={buttonClassName("/wiki")} onMouseDown={
+                            () => {
+                                ReloadPlugins()
+                                toast.success("Reloaded plugin data")
+                            }
+                        }>
+                            Reload Plugin Data
+                        </SidebarMenuButton>
+                    </SidebarGroup> 
+                )}
             </SidebarContent>
             
             <SidebarRail className="z-[999]" onMouseDown={() => {
