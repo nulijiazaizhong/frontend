@@ -34,7 +34,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Progress } from "../ui/progress"
 import Markdown from "react-markdown"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 // @ts-expect-error
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 // @ts-expect-error
@@ -576,11 +576,13 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 								<TabsTrigger key={index} value={tab.tab.name}>{translate(tab.tab.name)}</TabsTrigger>
 							))}
 						</TabsList>
-						{key_data.components.map((tab:any, index:number) => (
-							<TabsContent key={index} value={tab.tab.name} className="w-full rounded-md p-2 flex gap-6 flex-col data-[state=inactive]:hidden">
-								{PageRenderer(tab)}
-							</TabsContent>
-						))}
+						<AnimatePresence>
+							{key_data.components.map((tab:any, index:number) => (
+								<TabsContent key={index} value={tab.tab.name} className="w-full rounded-md p-2 flex gap-6 flex-col data-[state=inactive]:hidden">
+									{PageRenderer(tab)}
+								</TabsContent>
+							))}
+						</AnimatePresence>
 					</Tabs>
 				)
 			}

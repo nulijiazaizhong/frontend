@@ -182,15 +182,7 @@ export default function Home() {
                             <ResizablePanel defaultSize={75} className="h-full w-full relative">
                                 <ScrollArea className="h-full" type="hover">
                                     <div className="h-4" />
-                                    <motion.div 
-                                        animate={{ opacity: 1 }}
-                                        initial={{ opacity: 0 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{ duration: 0.5 }}
-                                        id="settings_page"
-                                    >
-                                        {renderPluginPage()}
-                                    </motion.div>
+                                    {renderPluginPage()}
                                 </ScrollArea>
                                 <div className="absolute h-4 top-0 left-0 right-0 bg-gradient-to-b from-background pointer-events-none" />
                             </ResizablePanel>

@@ -19,11 +19,13 @@ import { Disclaimer } from "@/components/disclaimer";
 import AccountHandler from "@/apis/account";
 import Snowfall from "react-snowfall"
 import useSWR from "swr";
+import { motion } from "framer-motion";
 import Loader from "@/components/loader";
 import { translate } from "@/apis/translation";
 import { useCollapsed } from "@/contexts/collapsed";
 import { ACTIONS, EVENTS, STATUS, CallBackProps } from 'react-joyride';
 import { JoyRideNoSSR, skipAll } from "@/components/joyride-no-ssr";
+import { AnimatePresence } from "framer-motion";
 
 export default function CSRLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     const { data: language, isLoading: loadingLanguage } = useSWR("language", GetCurrentLanguage, { refreshInterval: 2000 });
@@ -183,67 +185,69 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
                 enableSystem
                 disableTransitionOnChange
             >
-                {(loadingTranslations || loadingLanguage) && (
-                    <div className="absolute top-0 left-0 w-full h-full bg-sidebar flex items-center justify-center flex-col gap-2">
-                        <Loader className={"opacity-50"} />
-                        <p className="font-geist text-muted-foreground">
-                            Loading translations...
-                        </p>
-                    </div>
-                ) || (
-                    <>
-                        <Disclaimer closed_callback={startOnboarding} />
-                        <ProgressBarProvider>
-                            <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
-                                steps={STEPS}
-                                run={run && !hasDoneOnboarding}
-                                stepIndex={stepIndex}
-                                showSkipButton
-                                spotlightPadding={5}
-                                styles={
-                                    {
-                                        options: {
-                                            backgroundColor: "#18181b",
-                                            arrowColor: "#18181b",
-                                            textColor: "#fafafa",
-                                        },
-                                        buttonClose: {
-                                            width: "8px",
-                                            height: "8px",
-                                        },
-                                        buttonNext: {
-                                            visibility: "hidden",
-                                        },
-                                        buttonBack: {
-                                            visibility: "hidden",
-                                        },
-                                        tooltipContent: {
-                                            fontSize: "14px",
+                <AnimatePresence mode="wait">
+                    {(loadingTranslations || loadingLanguage) && (
+                        <motion.div className="absolute top-0 left-0 w-full h-full bg-sidebar flex items-center justify-center flex-col gap-2" key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }}>
+                            <Loader className={"opacity-50"} />
+                            <p className="font-geist text-muted-foreground">
+                                Loading translations...
+                            </p>
+                        </motion.div>
+                    ) || (
+                        <motion.div className="w-full h-full flex flex-col" key="main" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }}>
+                            <Disclaimer closed_callback={startOnboarding} />
+                            <ProgressBarProvider>
+                                <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
+                                    steps={STEPS}
+                                    run={run && !hasDoneOnboarding}
+                                    stepIndex={stepIndex}
+                                    showSkipButton
+                                    spotlightPadding={5}
+                                    styles={
+                                        {
+                                            options: {
+                                                backgroundColor: "#18181b",
+                                                arrowColor: "#18181b",
+                                                textColor: "#fafafa",
+                                            },
+                                            buttonClose: {
+                                                width: "8px",
+                                                height: "8px",
+                                            },
+                                            buttonNext: {
+                                                visibility: "hidden",
+                                            },
+                                            buttonBack: {
+                                                visibility: "hidden",
+                                            },
+                                            tooltipContent: {
+                                                fontSize: "14px",
+                                            }
                                         }
                                     }
-                                }
-                                callback={handleJoyrideCallback}
-                            />
-                            <Toaster position={isCollapsed ? "bottom-center" : "bottom-right"} toastOptions={{
-                                unstyled: true,
-                                classNames: {
-                                    toast: "rounded-lg shadow-lg backdrop-blur-md backdrop-brightness-75 w-[354px] border p-4 flex gap-2 items-center text-sm",
-                                }
-                            }} />
-                            <WindowControls isCollapsed={isCollapsed} />
-                            <States />
-                            <Popups />
-                            <SidebarProvider open={!isCollapsed}>
-                                <ETS2LASidebar toggleSidebar={toggleSidebar} />
-                                <SidebarInset className={`relative transition-all duration-300 overflow-hidden ${isCollapsed ? "max-h-[100vh]" : "max-h-[97.6vh]"}`}>
-                                    <ProgressBar className="absolute h-2 z-20 rounded-tl-lg shadow-lg shadow-sky-500/20 bg-sky-500 top-0 left-0" />
-                                    {isMobile && <SidebarTrigger className="absolute top-2 left-2" />}
-                                    {children}
-                                </SidebarInset>
-                            </SidebarProvider>
-                        </ProgressBarProvider>
-                    </>
-                )}
+                                    callback={handleJoyrideCallback}
+                                />
+                                <Toaster position={isCollapsed ? "bottom-center" : "bottom-right"} toastOptions={{
+                                    unstyled: true,
+                                    classNames: {
+                                        toast: "rounded-lg shadow-lg backdrop-blur-md backdrop-brightness-75 w-[354px] border p-4 flex gap-2 items-center text-sm",
+                                    }
+                                }} />
+                                <WindowControls isCollapsed={isCollapsed} />
+                                <States />
+                                <Popups />
+                                <SidebarProvider open={!isCollapsed}>
+                                    <ETS2LASidebar toggleSidebar={toggleSidebar} />
+                                    <SidebarInset className={`relative transition-all duration-300 overflow-hidden ${isCollapsed ? "max-h-[100vh]" : "max-h-[97.6vh]"}`}>
+                                        <ProgressBar className="absolute h-2 z-20 rounded-tl-lg shadow-lg shadow-sky-500/20 bg-sky-500 top-0 left-0" />
+                                        {isMobile && <SidebarTrigger className="absolute top-2 left-2" />}
+                                        {children}
+                                    </SidebarInset>
+                                </SidebarProvider>
+                            </ProgressBarProvider>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </ThemeProvider>
         </div>
     );
