@@ -438,15 +438,13 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 
 	const ButtonRenderer = (data:any) => {
 		if (data.title == ""){
-			return <div className={"flex justify-between items-center w-full" + GetBorderClassname(data.options.border)}>
-				<Button variant={"outline"} onClick={() => {
+			return <Button variant={"outline"} onClick={() => {
 					PluginFunctionCall(plugin, data.options.target, [], {}).then(() => {
 						toast.success(translate("Success"), {
 							duration: 500
 						})
 					})
-				}} className={"min-w-32 w-full " + data.classname}>{translate(data.text)}</Button>
-			</div>
+			}} className={"min-w-32 w-full " + data.classname}>{translate(data.text)}</Button>
 		}
 		return <div className={"flex justify-between p-4 items-center" + GetBorderClassname(data.options.border) + " " + data.classname}>
 				<div className="flex flex-col gap-1 pr-12">
@@ -494,7 +492,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 		if(border){
 			return " p-4 border rounded-md"
 		}
-		return " p-4"
+		return ""
 	}
 
     // @ts-ignore
@@ -552,7 +550,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 			if (key == "group") {
 				const direction = key_data.direction
 				if(direction == "horizontal"){
-					result.push(<div className={"flex w-full overflow-x-auto rounded-md items-center text-center" + GetBorderClassname(key_data.border) + " " + key_data.classname} style={{
+					result.push(<div className={"flex w-full overflow-x-auto rounded-md" + GetBorderClassname(key_data.border) + " " + key_data.classname} style={{
 						gap: key_data.gap + "px",
 						padding: key_data.padding + "px"
 					}}>
