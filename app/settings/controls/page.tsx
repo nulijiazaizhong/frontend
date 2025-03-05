@@ -29,7 +29,7 @@ export default function ControlsPage() {
     }
 
     const format_name = (name:string) => {
-        let length = name.length;
+        const length = name.length;
         if (length > 16) {
             return name.slice(0, 16) + "..."
         }
