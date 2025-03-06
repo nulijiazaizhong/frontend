@@ -29,6 +29,8 @@ export default function ControlsPage() {
     }
 
     const format_name = (name:string) => {
+        if(name == undefined) { return "Unbound" }
+
         const length = name.length;
         if (length > 16) {
             return name.slice(0, 16) + "..."
@@ -37,6 +39,7 @@ export default function ControlsPage() {
     }
 
     const format_key = (key:string) => {
+        if(key == undefined) { return "Unbound" }
         if(key.length <= 2) { return key }
 
         key = key.replace("_", " ")
