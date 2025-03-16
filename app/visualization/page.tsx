@@ -5,18 +5,28 @@ import {
     ResizablePanel,
     ResizablePanelGroup,
 } from "@/components/ui/resizable"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import useSWR from "swr";
+import { toast } from "sonner";
 
 export default function Visualization() {
+    const [ useMirror, setUseMirror ] = useState(false);
     const [ isVisualizationOpen, setIsVisualizationOpen ] = useState(false);
     const [ isMapOpen, setIsMapOpen ] = useState(false);
 
+    const map_link = "https://truckermudgeon.github.io/ets2la";
+    const visualization_link = "https://visualization.ets2la.com/";
+    const map_mirror = "https://ets2la.goodnightan.com/ets2la/index.html"
+    const visualization_mirror = "https://visualization.ets2la.com/"
+
+    const map = useMirror ? map_mirror : map_link;
+    const visualization = useMirror ? visualization_mirror : visualization_link;
 
     return (
         <motion.div className="flex w-full h-full">
             <ResizablePanelGroup direction="horizontal" className="w-full h-full">
-                <ResizablePanel className="h-full relative" defaultSize={40} onResize={(size) => {
+                <ResizablePanel className="h-full relative" defaultSize={60} onResize={(size) => {
                     if(size < 5){
                         setIsVisualizationOpen(false);
                     }
@@ -30,12 +40,22 @@ export default function Visualization() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.6 }}
-                            src="https://visualization.ets2la.com/"
+                            src={visualization}
                         />
                     )}
                     {!isVisualizationOpen && (
                         <div className="border w-full h-full rounded-l-xl items-center flex flex-col gap-4 justify-center border-r-0 font-geist">
-                            <Button variant={"outline"} onClick={() => setIsVisualizationOpen(true)}>Load Visualization</Button>
+                            <div className="flex flex-col gap-0 text-center">
+                                <p className="font-semibold pb-2">Load Visualization</p>
+                                <Button variant={"outline"} onClick={() => {
+                                    setIsVisualizationOpen(true)
+                                }} className="border-b-0 rounded-b-none group w-48"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Official</span></Button>
+                                <Button variant={"outline"} onClick={() => {
+                                    setUseMirror(true);
+                                    setIsVisualizationOpen(true)
+                                }} disabled={true} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">(mirror not available)</span></Button>
+                            </div>
+
                             <div className="flex flex-col gap-2 items-center">
                                 <p className="text-xs text-muted-foreground font-geist-mono">
                                     RAM Usage: ~400mb
@@ -49,7 +69,7 @@ export default function Visualization() {
                     )}
                 </ResizablePanel>
                 <ResizableHandle withHandle className="bg-transparent w-0 opacity-20 hover:opacity-100 z-50 transition-all" />
-                <ResizablePanel className="h-full w-0 relative" defaultSize={60} onResize={(size) => {
+                <ResizablePanel className="h-full w-0 relative" defaultSize={40} onResize={(size) => {
                     if(size < 5){
                         setIsMapOpen(false);
                     }
@@ -63,12 +83,21 @@ export default function Visualization() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.6 }}
-                            src="https://truckermudgeon.github.io/ets2la"
+                            src={map}
                         />
                     )}
                     {!isMapOpen && (
                         <div className="border w-full h-full rounded-r-xl items-center flex flex-col gap-4 justify-center font-geist">
-                            <Button variant={"outline"} onClick={() => setIsMapOpen(true)}>Load Map</Button>
+                            <div className="flex flex-col gap-0 text-center">
+                            <p className="font-semibold pb-2">Load Map</p>
+                                <Button variant={"outline"} onClick={() => {
+                                    setIsMapOpen(true)
+                                }} className="border-b-0 rounded-b-none group w-48"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Official</span></Button>
+                                <Button variant={"outline"} onClick={() => {
+                                    setUseMirror(true);
+                                    setIsMapOpen(true)
+                                }} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Goodnighttan Mirror</span></Button>
+                            </div>
                             <div className="flex flex-col gap-2 items-center">
                                 <p className="text-xs text-muted-foreground font-geist-mono">
                                     RAM Usage: ~200mb
