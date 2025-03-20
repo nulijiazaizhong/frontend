@@ -17,14 +17,12 @@ export function ProgressState({ state, plugin_name, state_progress_percent }: { 
 export function IndeterminateState({ state, plugin_name }: { state: string, plugin_name: string })
 {
     return (
-        <div className="h-min w-[354px] rounded-lg text-sm flex flex-col gap-2 font-semibold">
-            <div className="flex justify-between text-start items-center">
-                <div className="flex text-center content-center items-center gap-2">
-                    <Loader className={""} /> 
-                    <p style={{whiteSpace: "pre-wrap"}}>{state}</p>
-                </div>
-                <p className="text-[10px] text-muted-foreground p-0">{plugin_name}</p>
+        <div className="flex justify-between text-start items-center h-min font-semibold">
+            <div className="flex text-left content-center items-center gap-2">
+                <Loader className={""} /> 
+                <p style={{whiteSpace: "pre-wrap"}} className="pl-1">{state}</p>
             </div>
+            <p className="text-[10px] text-muted-foreground p-0 min-w-max">{plugin_name}</p>
         </div>
     )
 }
