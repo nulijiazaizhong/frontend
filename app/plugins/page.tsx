@@ -272,7 +272,7 @@ export default function Home() {
                     <Input placeholder={translate("search")} value={search} onChange={(e) => setSearch(e.target.value)} />
                         <div className="p-0 h-3"></div> {/* Makeshift separator */}
                         <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
+                            <DropdownMenuTrigger>
                                 <Button variant="outline" className="flex text-left items-center justify-start" id="selected_tags">
                                     <p className={searchTags.length > 0 ? "font-normal" : "font-normal text-muted-foreground"}>
                                         {searchTags.length > 0 ? translate("frontend.plugins.selected_tags", searchTags.length) : translate("frontend.plugins.select_tags")}
@@ -294,14 +294,14 @@ export default function Home() {
                         </DropdownMenu>
 
                         <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
+                            <DropdownMenuTrigger>
                                 <Button variant="outline" className="flex text-left items-center justify-start">
                                     <p className={searchAuthors.length > 0 ? "font-normal" : "font-normal text-muted-foreground"}>
                                         {searchAuthors.length > 0 ? translate("frontend.plugins.selected_authors", searchAuthors.length) : translate("frontend.plugins.select_authors")}
                                     </p>
                                 </Button>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56 bg-background font-geist">
+                            <DropdownMenuContent className="w-56 bg-background font-geist text-xs">
                                 {authors.map((author, index) => (
                                     <DropdownMenuCheckboxItem key={index} checked={searchAuthors.includes(author)} onClick={() => {
                                         if(searchAuthors.includes(author)){
@@ -310,7 +310,9 @@ export default function Home() {
                                         else{
                                             setSearchAuthors([...searchAuthors, author])
                                         }
-                                    }}>{author}</DropdownMenuCheckboxItem>
+                                    }}>
+                                        {author}
+                                    </DropdownMenuCheckboxItem>
                                 ))}
                             </DropdownMenuContent>
                         </DropdownMenu>
@@ -430,7 +432,7 @@ export default function Home() {
                                                 }</div>
                                                 <div className="absolute right-0 opacity-0 group-hover:opacity-100 transition-all">
                                                     <DropdownMenu>
-                                                        <DropdownMenuTrigger asChild>
+                                                        <DropdownMenuTrigger>
                                                             <Menu size={18} className="opacity-50 hover:opacity-80 mx-3" />
                                                         </DropdownMenuTrigger>
                                                         <DropdownMenuContent className="scale-90">
@@ -526,7 +528,7 @@ export default function Home() {
                                                 }</div>
                                                 <div className="absolute right-0 opacity-0 group-hover:opacity-100 transition-all">
                                                     <DropdownMenu>
-                                                        <DropdownMenuTrigger asChild>
+                                                        <DropdownMenuTrigger>
                                                             <Menu size={18} className="opacity-50 hover:opacity-80 mx-3" />
                                                         </DropdownMenuTrigger>
                                                         <DropdownMenuContent className="scale-90">

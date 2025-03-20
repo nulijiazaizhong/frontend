@@ -33,7 +33,7 @@ export function Disclaimer({ closed_callback }: { closed_callback: () => void })
                         () => {
                             open("https://ko-fi.com/Tumppi066", "_blank");
                         }
-                    } className="p-3 bg-[#201919] hover:bg-[#463636] transition-all duration-300 group hover:pr-[38px]">
+                    } className="p-3 bg-[#201919] hover:bg-[#463636] transition-all duration-300 group hover:pr-[20px] pr-2">
                         <div className="flex items-center gap-2 pl-[3px] pointer-events-none">
                             <Image src={kofi_logo} alt="Ko-Fi" className="w-6 h-6" />
                             <span className="max-w-0 opacity-0 group-hover:max-w-md group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
@@ -41,7 +41,7 @@ export function Disclaimer({ closed_callback }: { closed_callback: () => void })
                             </span>
                         </div>
                     </Button>
-                    <Button variant={"outline"} className="w-full" onClick={
+                    <Button variant={"outline"} className="bg-input/20 max-w-full grow" onClick={
                         () => {
                             setIsOpen(false);
                             closed_callback();

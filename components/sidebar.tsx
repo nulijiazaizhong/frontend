@@ -206,7 +206,7 @@ export function ETS2LASidebar() {
                     <SidebarMenu>
                         <SidebarMenuItem>
                             <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
+                                <DropdownMenuTrigger asChild className="">
                                     <SidebarMenuButton className="w-full flex justify-between hover:shadow-md transition-all">
                                         <div className="flex items-center gap-2">
                                             {token == "" ?
@@ -220,7 +220,7 @@ export function ETS2LASidebar() {
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent
                                     side="top"
-                                    className="w-(--radix-popper-anchor-width) bg-transparent backdrop-blur-lg backdrop-brightness-75"
+                                    className="bg-transparent backdrop-blur-lg backdrop-brightness-75"
                                 >
                                     {token == "" ?
                                         <DropdownMenuItem onMouseDown={
