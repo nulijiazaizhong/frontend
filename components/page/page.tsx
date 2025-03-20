@@ -512,7 +512,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 							<div className="absolute inset-0 flex items-center justify-center z-10 w-full">
 								<EnabledLock />
 							</div>
-							<div className="p-3 opacity-50 blur-sm">
+							<div className="p-3 opacity-50 blur-xs">
 								{PageRenderer(key_data.components)}
 							</div>
 						</div>

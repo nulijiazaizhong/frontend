@@ -132,7 +132,7 @@ export default function Home() {
                         <ResizablePanelGroup direction="horizontal" className="text-center gap-4 pr-4 h-full">
                             <ResizablePanel defaultSize={25}>
                                 <ScrollArea className="h-full pt-4 relative" type="hover">
-                                    <div className="absolute bottom-0 z-10 right-0 top-0 w-12 bg-gradient-to-l from-background pointer-events-none" />
+                                    <div className="absolute bottom-0 z-10 right-0 top-0 w-12 bg-linear-to-l from-background pointer-events-none" />
                                     <div className="flex flex-col gap-2 text-start relative">
                                         <div className="flex flex-col gap-2 text-start relative p-0 pb-8" id="static_settings">
                                             <Button key={"Global"} className="items-center justify-start text-sm rounded-r-none" variant={selectedPlugin == "Global" && "secondary" || "ghost"} onClick={() => setSelectedPlugin("Global")}>
@@ -184,11 +184,11 @@ export default function Home() {
                                     <div className="h-4" />
                                     {renderPluginPage()}
                                 </ScrollArea>
-                                <div className="absolute h-4 top-0 left-0 right-0 bg-gradient-to-b from-background pointer-events-none" />
+                                <div className="absolute h-4 top-0 left-0 right-0 bg-linear-to-b from-background pointer-events-none" />
                             </ResizablePanel>
                         </ResizablePanelGroup>
                     </TooltipProvider>
-                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-background pointer-events-none" />
                 </div>
             </div>
         </>

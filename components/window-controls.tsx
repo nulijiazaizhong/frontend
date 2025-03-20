@@ -113,7 +113,7 @@ export default function WindowControls() {
                 {sidebar_open && (
                     <div className={`absolute right-0 top-0 h-6 flex items-center pl-2.5 pr-12 transition-all bg-sidebar rounded-bl-lg z-[-10] duration-150 ${isMouseInDragArea ? 'w-96 opacity-100' : 'w-0 opacity-0'}`}>
                         <div
-                            className="flex-grow h-1 bg-repeat bg-center text-muted font-geist-mono text-[12px] text-center"
+                            className="grow h-1 bg-repeat bg-center text-muted font-geist-mono text-[12px] text-center"
                             style={{
                                 backgroundImage: "radial-gradient(circle, currentColor 1px, transparent 1px)",
                                 backgroundSize: "10px 10px"

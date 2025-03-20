@@ -32,7 +32,7 @@ export default function Visualization() {
                     }
                 }}>
                     {isMapOpen && isVisualizationOpen && (
-                        <div className="absolute right-0 top-0 bottom-0 w-1 z-10 bg-gradient-to-r from-transparent to-[#181818]" />
+                        <div className="absolute right-0 top-0 bottom-0 w-1 z-10 bg-linear-to-r from-transparent to-[#181818]" />
                     )}
                     {isVisualizationOpen && (
                         <motion.iframe className="w-full h-full" 
@@ -75,7 +75,7 @@ export default function Visualization() {
                     }
                 }}>
                     {isVisualizationOpen && isMapOpen && (
-                        <div className="absolute left-0 top-0 bottom-0 w-1 z-10 bg-gradient-to-l from-transparent to-[#181818]" />
+                        <div className="absolute left-0 top-0 bottom-0 w-1 z-10 bg-linear-to-l from-transparent to-[#181818]" />
                     )}
                     {isMapOpen && (
                         <motion.iframe className="w-full h-full" 

@@ -190,7 +190,7 @@ export function ETS2LASidebar() {
                 )}
             </SidebarContent>
             
-            <SidebarRail className="z-[999]" id="sidebar_rail" />
+            <SidebarRail className="z-999" id="sidebar_rail" />
             <SidebarFooter className="bg-sidebarbg pb-10">
                 <div>
                     <SidebarMenuButton className={buttonClassName("/settings")} onMouseDown={
@@ -220,7 +220,7 @@ export function ETS2LASidebar() {
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent
                                     side="top"
-                                    className="w-[--radix-popper-anchor-width] bg-transparent backdrop-blur-lg backdrop-brightness-75"
+                                    className="w-(--radix-popper-anchor-width) bg-transparent backdrop-blur-lg backdrop-brightness-75"
                                 >
                                     {token == "" ?
                                         <DropdownMenuItem onMouseDown={
@@ -270,7 +270,7 @@ export function ETS2LASidebar() {
                             </DropdownMenuTrigger>
                             <DropdownMenuContent
                                 side="top"
-                                className="w-[--radix-popper-anchor-width] bg-transparent backdrop-blur-md backdrop-brightness-90 text-center p-3"
+                                className="w-(--radix-popper-anchor-width) bg-transparent backdrop-blur-md backdrop-brightness-90 text-center p-3"
                             >
                                 <QRCodeSVG value={"https://example.com"} className="justify-self-center pb-1" />
                                 <div className="flex items-center w-full justify-center">
