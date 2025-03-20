@@ -189,7 +189,7 @@ export default function WindowControls() {
                                     <circle cx="4" cy="4" r="4" fill="black" />
                                 </mask>
                             </defs>
-                            <rect x="0" y="0" width="8" height="8" fill="#18181b" mask="url(#hole)" />
+                            <rect x="0" y="0" width="8" height="8" mask="url(#hole)" className="fill-sidebar" />
                         </svg>
                     </div>
                     {/* Left side outer rounding */}
@@ -201,7 +201,7 @@ export default function WindowControls() {
                                     <circle cx="4" cy="4" r="4" fill="black" />
                                 </mask>
                             </defs>
-                            <rect x="0" y="0" width="8" height="8" fill="#18181b" mask="url(#hole)" />
+                            <rect x="0" y="0" width="8" height="8" mask="url(#hole)" className="fill-sidebar" />
                         </svg>
                     </div>
                 </>

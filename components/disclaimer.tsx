@@ -24,7 +24,7 @@ export function Disclaimer({ closed_callback }: { closed_callback: () => void })
             </DialogTrigger>
             <DialogContent className="font-geist">
                 <DialogHeader>
-                    <DialogTitle>{translate("frontend.disclaimer.title")}</DialogTitle>
+                    <DialogTitle className="text-lg!">{translate("frontend.disclaimer.title")}</DialogTitle>
                 </DialogHeader>
                 <p className="text-muted-foreground">{translate("frontend.disclaimer.description.line1")}</p>
                 <p className="text-muted-foreground">{translate("frontend.disclaimer.description.line2")}</p>
@@ -33,10 +33,10 @@ export function Disclaimer({ closed_callback }: { closed_callback: () => void })
                         () => {
                             open("https://ko-fi.com/Tumppi066", "_blank");
                         }
-                    } className="p-3 bg-[#201919] hover:bg-[#463636] transition-all duration-300 group hover:pr-[20px] pr-2">
+                    } className="p-3 bg-kofi hover:bg-kofi-active! transition-all duration-300 group hover:pr-[20px] pr-2">
                         <div className="flex items-center gap-2 pl-[3px] pointer-events-none">
                             <Image src={kofi_logo} alt="Ko-Fi" className="w-6 h-6" />
-                            <span className="max-w-0 opacity-0 group-hover:max-w-md group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
+                            <span className="max-w-0 opacity-0 group-hover:max-w-md group-hover:opacity-100 transition-all duration-300 whitespace-nowrap text-white">
                                 {translate("about.support_development")}
                             </span>
                         </div>

@@ -105,7 +105,7 @@ class SliderComponent extends Component<SliderComponentProps, SliderComponentSta
         const suffix = data.options.suffix || "";
 
         return (
-            <div className="flex flex-col gap-3 w-full rounded-md">
+            <div className="flex flex-col gap-3 w-full rounded-md border p-4">
 				<div className="flex justify-between items-center">
                 	<p className="font-semibold">{translate(data.name)}</p>
 					<p className="text-muted-foreground">{value}{suffix}{tempSliderValue !== null ? tempSliderValue != value ? ` → ${tempSliderValue}${suffix}` : `` : ``}</p>
@@ -188,7 +188,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 
 	const TitleRenderer = (data: any) => {
 		// @ts-ignore
-		return <p className={weights[data.options.weight] + " " + text_sizes[data.options.size] + " " + data.classname} style={{whiteSpace: "pre-wrap"}}>{translate(data.text)}</p>
+		return <p className={weights[data.options.weight] + " " + text_sizes[data.options.size] + "! " + data.classname} style={{whiteSpace: "pre-wrap"}}>{translate(data.text)}</p>
 	}
 
 	const DescriptionRenderer = (data: any) => {
@@ -220,7 +220,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 				if (!hasLineBreaks) {
 					return (
 					<code
-						className="rounded-md bg-zinc-800 p-1 font-geist-mono text-xs"
+						className="rounded-md bg-accent p-1 font-geist-mono text-xs"
 						{...props}
 					>
 						{children}
@@ -297,8 +297,11 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 			else {
 				placeholder = pluginSettings[data.key]
 			}
-			return <div className="flex flex-col gap-2 w-full">
-				<p className="font-semibold">{translate(data.name)}</p>
+			return <div className="flex gap-4 w-full rounded-md p-4 border justify-between">
+				<div className="flex flex-col">
+						<p className="font-semibold">{translate(data.name)}</p>	
+						<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
+				</div>
 				<Input type={type} placeholder={placeholder} onChange={(e) => {
 					SetSettingByKey(plugin, data.key, e.target.value).then(() => {
 						if (data.requires_restart)
@@ -308,16 +311,18 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 							duration: 500
 						})
 					})
-				}} />
-				<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
+				}} className="max-w-xs" />
 			</div>
 		}
 
 		if (data.options.type == "number") {
 			return (
-				<div className="flex flex-col gap-2 w-full">
-					<p className="font-semibold">{translate(data.name)}</p>	
-					<Input type="number" placeholder={pluginSettings[data.key]} className="font-customMono" onChange={(e) => {
+				<div className="flex gap-4 w-full rounded-md p-4 border justify-between">
+					<div className="flex flex-col">
+						<p className="font-semibold">{translate(data.name)}</p>	
+						<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
+					</div>
+					<Input type="number" placeholder={pluginSettings[data.key]} className="font-geist-mono max-w-xs" onChange={(e) => {
 						SetSettingByKey(plugin, data.key, parseFloat(e.target.value)).then(() => {
 							if (data.requires_restart)
 								setNeedsRestart(true)
@@ -327,7 +332,6 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 							});
 						});
 					}} />
-					<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
 				</div>
 			)
 		}
@@ -387,8 +391,11 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 				pluginSettings[data.key] = data.options.options[0]
 			}
 		}
-		return <div className="flex flex-col gap-2">
-					<p className="font-semibold">{translate(data.name)}</p>
+		return <div className="flex gap-6 items-center rounded-md border p-4">
+					<div className="flex flex-col">
+						<p className="font-semibold">{translate(data.name)}</p>
+						<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
+					</div>
 					<Select defaultValue={pluginSettings[data.key]} onValueChange={(value) => {
 						SetSettingByKey(plugin, data.key, value).then(() => {
 							if (data.requires_restart)
@@ -399,7 +406,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 							})
 						})
 					}} >
-						<SelectTrigger>
+						<SelectTrigger className="grow">
 							<SelectValue placeholder={pluginSettings[data.key]}>{pluginSettings[data.key]}</SelectValue>
 						</SelectTrigger>
 						<SelectContent className="bg-background font-geist">
@@ -408,14 +415,18 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 							))}
 						</SelectContent>
 					</Select>
-					<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
 				</div>
 	}
 
 	const ToggleRenderer = (data:any) => {
-		return <div className={"items-top flex space-x-4 " + GetBorderClassname(data.options.border)}>
+		const checked = pluginSettings[data.key] && pluginSettings[data.key] || false;
+		let classname = "items-top flex space-x-4 " + GetBorderClassname(data.options.border);
+		if (data.options.border && checked) {
+			classname += " bg-input/30";
+		}
+		return <div className={classname}>
 			<Checkbox 
-				checked={pluginSettings[data.key] && pluginSettings[data.key] || false}
+				checked={checked}
 				onCheckedChange={(bool) => {
 					SetSettingByKey(plugin, data.key, bool).then(() => {
 						if (data.requires_restart)
@@ -439,25 +450,6 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 				</p>
 			</div>
 	  </div>
-		//return <div className="flex gap-4 w-full items-center">
-		//		<Toggle pressed={pluginSettings[data.key] && pluginSettings[data.key] || false} onPressedChange={(bool) => {
-		//			SetSettingByKey(plugin, data.key, bool).then(() => {
-		//				if (data.requires_restart)
-		//					setNeedsRestart(true)
-		//				mutate(plugin + "settings")
-		//				toast.success(translate("frontend.settings.boolean.updated"), {
-		//					duration: 500
-		//				})
-		//			})
-		//		}} className="w-8 h-8 p-[7px] data-[state=on]:bg-background data-[state=on]:hover:bg-white/10 " variant={"outline"}>
-		//			{pluginSettings[data.key] && pluginSettings[data.key] ? <Check /> : <X className="text-muted-foreground/40" />}
-		//		</Toggle>
-		//		{data.options.separator && <Separator orientation="vertical" />}
-		//		<div>
-		//			<h4>{translate(data.name)}</h4>
-		//			<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
-		//		</div>
-		//	</div>
 	}
 
 	const ButtonRenderer = (data:any) => {
@@ -593,14 +585,14 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 			if (key == "tabview") {
 				result.push(
 					<Tabs className="w-full" defaultValue={key_data.components[0].tab.name}>
-						<TabsList className="w-full bg-transparent">
+						<TabsList className="w-full bg-transparent p-0">
 							{key_data.components.map((tab:any, index:number) => (
 								<TabsTrigger key={index} value={tab.tab.name}>{translate(tab.tab.name)}</TabsTrigger>
 							))}
 						</TabsList>
 						<AnimatePresence>
 							{key_data.components.map((tab:any, index:number) => (
-								<TabsContent key={index} value={tab.tab.name} className="w-full rounded-md p-2 flex gap-6 flex-col data-[state=inactive]:hidden">
+								<TabsContent key={index} value={tab.tab.name} className="w-full rounded-md p-0 pt-4 flex gap-6 flex-col data-[state=inactive]:hidden">
 									{PageRenderer(tab)}
 								</TabsContent>
 							))}
