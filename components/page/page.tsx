@@ -105,7 +105,7 @@ class SliderComponent extends Component<SliderComponentProps, SliderComponentSta
         const suffix = data.options.suffix || "";
 
         return (
-            <div className="flex flex-col gap-3 w-full rounded-md border p-4">
+            <div className="flex flex-col gap-3 w-full rounded-md border p-4 bg-input/10 transition-all">
 				<div className="flex justify-between items-center">
                 	<p className="font-semibold">{translate(data.name)}</p>
 					<p className="text-muted-foreground">{value}{suffix}{tempSliderValue !== null ? tempSliderValue != value ? ` → ${tempSliderValue}${suffix}` : `` : ``}</p>
@@ -297,7 +297,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 			else {
 				placeholder = pluginSettings[data.key]
 			}
-			return <div className="flex gap-4 w-full rounded-md p-4 border justify-between">
+			return <div className="flex gap-4 w-full rounded-md p-4 border justify-between bg-input/10 transition-all">
 				<div className="flex flex-col">
 						<p className="font-semibold">{translate(data.name)}</p>	
 						<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
@@ -317,7 +317,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 
 		if (data.options.type == "number") {
 			return (
-				<div className="flex gap-4 w-full rounded-md p-4 border justify-between">
+				<div className="flex gap-4 w-full rounded-md p-4 border justify-between bg-input/10 transition-all">
 					<div className="flex flex-col">
 						<p className="font-semibold">{translate(data.name)}</p>	
 						<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
@@ -363,7 +363,20 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 				pluginSettings[data.key] = false
 			}
 		}
-		return <div className={"flex justify-between p-0 items-center" + GetBorderClassname(data.options.border)}>
+		let classname = "items-center justify-between flex space-x-4 " + GetBorderClassname(data.options.border);
+		if (data.options.border && checked) {
+			classname += " bg-input/30";
+		}
+		return <div className={classname} onClick={() => {
+			SetSettingByKey(plugin, data.key, !checked).then(() => {
+				if (data.requires_restart)
+					setNeedsRestart(true)
+				mutate(plugin + "settings")
+				toast.success(translate("frontend.settings.boolean.updated"), {
+					duration: 500
+				})
+			}
+		)}}>
 				<div className="flex flex-col gap-1 pr-12">
 					<p className="font-semibold">{translate(data.name)}</p>
 					<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
@@ -391,7 +404,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 				pluginSettings[data.key] = data.options.options[0]
 			}
 		}
-		return <div className="flex gap-6 items-center rounded-md border p-4">
+		return <div className="flex gap-6 items-center rounded-md border p-4 bg-input/10 transition-all">
 					<div className="flex flex-col">
 						<p className="font-semibold">{translate(data.name)}</p>
 						<p className="text-xs text-muted-foreground">{translate(data.description)}</p>
@@ -409,7 +422,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 						<SelectTrigger className="grow">
 							<SelectValue placeholder={pluginSettings[data.key]}>{pluginSettings[data.key]}</SelectValue>
 						</SelectTrigger>
-						<SelectContent className="bg-background font-geist">
+						<SelectContent className="bg-input/30 backdrop-blur-md font-geist">
 							{data.options.options.map((value:any) => (
 								<SelectItem key={value} value={value}>{value}</SelectItem>
 							))}
@@ -424,7 +437,16 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 		if (data.options.border && checked) {
 			classname += " bg-input/30";
 		}
-		return <div className={classname}>
+		return <div className={classname} onClick={() => {
+			SetSettingByKey(plugin, data.key, !checked).then(() => {
+				if (data.requires_restart)
+					setNeedsRestart(true)
+				mutate(plugin + "settings")
+				toast.success(translate("frontend.settings.boolean.updated"), {
+					duration: 500
+				})
+			})
+		}}>
 			<Checkbox 
 				checked={checked}
 				onCheckedChange={(bool) => {
@@ -439,10 +461,7 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 				}}
 			/>
 			<div className="grid gap-1.5 leading-none">
-				<label
-					htmlFor="terms1"
-					className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-				>
+				<label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
 					{translate(data.name)}
 				</label>
 				<p className="text-muted-foreground text-xs">

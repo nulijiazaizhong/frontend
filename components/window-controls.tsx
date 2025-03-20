@@ -146,7 +146,7 @@ export default function WindowControls() {
                                 })
                             }}
                         >
-                            <div className="w-[11px] h-[11px] bg-green-500 rounded-full flex items-center justify-center" />
+                            <div className="w-[11px] h-[11px] bg-green-500 rounded-full flex items-center justify-center cursor-pointer" />
                         </TooltipTrigger>
                         <TooltipContent className="bg-sidebar border text-foreground font-geist">
                             <p className="text-xs"><span className="font-semibold text-muted-foreground">LMB</span> Stay on top</p>
@@ -159,7 +159,7 @@ export default function WindowControls() {
                         <TooltipTrigger onClick={() => {
                             MinimizeBackend()
                         }}>
-                            <div className="w-[11px] h-[11px] bg-yellow-500 rounded-full flex items-center justify-center" />
+                            <div className="w-[11px] h-[11px] bg-yellow-500 rounded-full flex items-center justify-center cursor-pointer" />
                         </TooltipTrigger>
                         <TooltipContent className="bg-sidebar border text-white">
                             <p className="text-xs">Minimize</p>
@@ -169,7 +169,7 @@ export default function WindowControls() {
                         <TooltipTrigger onClick={() => {
                             CloseBackend()
                         }}>
-                            <div className="w-[11px] h-[11px] bg-red-500 rounded-full flex items-center justify-center" />
+                            <div className="w-[11px] h-[11px] bg-red-500 rounded-full flex items-center justify-center cursor-pointer" />
                         </TooltipTrigger>
                         <TooltipContent className="bg-sidebar border text-white">
                             <p className="text-xs">Close</p>

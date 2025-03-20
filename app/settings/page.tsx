@@ -172,10 +172,6 @@ export default function Home() {
                                                 </div> : null
                                             ))}
                                         </div>
-                                        <br />
-                                        <p className="text-xs text-muted-foreground text-start pl-4">
-                                            {translate("frontend.settings.global_info")}
-                                        </p>
                                     </div>
                                 </ScrollArea>
                             </ResizablePanel>

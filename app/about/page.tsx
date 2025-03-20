@@ -27,15 +27,15 @@ export default function Updater() {
                     <span className="sr-only">Toggle theme</span>
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
+                <DropdownMenuContent align="end" className="bg-input/30 font-geist">
                     <DropdownMenuItem onClick={() => setTheme("light")}>
-                    Light
+                        Light
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setTheme("dark")}>
-                    Dark
+                        Dark
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setTheme("system")}>
-                    System
+                        System
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>

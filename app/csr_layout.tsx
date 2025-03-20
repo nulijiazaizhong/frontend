@@ -176,7 +176,7 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
             <AccountHandler />
             <ThemeProvider
                 attribute="class"
-                defaultTheme="dark"
+                defaultTheme="system"
                 enableSystem
                 disableTransitionOnChange
             >
