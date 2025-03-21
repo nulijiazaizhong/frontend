@@ -280,11 +280,11 @@ export default function ValueDialog({onClose, open, json}: {onClose: any, open: 
                 </div>
         }
         else{
-            return <div className={"flex justify-between items-center" + GetBorderClassname(data.options.border)}>
-                    <Button variant={"outline"} className="w-full" onClick={() => {
+            return <Button variant={"outline"} className="" onClick={() => {
                         onClose(returnValue)
-                    }}>{translate(data.text)}</Button>
-                </div>
+                    }}>
+						{translate(data.text)}
+					</Button>
         }
 	}
 
@@ -414,7 +414,7 @@ export default function ValueDialog({onClose, open, json}: {onClose: any, open: 
                 </div>
             </DialogTrigger>
             <DialogContent className="max-h-[80%] overflow-y-scroll overflow-x-hidden max-w-[550px]">
-                <div className="flex flex-col gap-2 font-geist max-w-[calc(550px-48px)]">
+                <div className="flex flex-col gap-2 font-geist w-[calc(550px-88px)]">
                     {PageRenderer(json)}
                 </div>
             </DialogContent>
