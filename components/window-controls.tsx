@@ -92,8 +92,8 @@ export default function WindowControls() {
         })
     }, []);
 
-    const collapsedContainerClassName = "flex gap-1 absolute h-6 w-[59px] rounded-bl-lg top-0 right-0 items-center justify-center p-0 z-50 bg-sidebar transition-all opacity-75 hover:opacity-100";
-    const containerClassName = "flex gap-1 absolute h-6 w-[59px] rounded-bl-lg top-0 right-0 items-center justify-center p-0 z-50 bg-sidebar transition-all";
+    const collapsedContainerClassName = "flex gap-1 absolute h-6 w-[59px] border rounded-bl-lg top-0 right-0 items-center justify-center p-0 z-50 bg-sidebar transition-transform opacity-75 hover:opacity-100";
+    const containerClassName = "flex gap-1 absolute h-6 w-[59px] rounded-bl-lg top-0 right-0 items-center justify-center p-0 z-50 bg-transparent transition-transform";
 
     return (
         <>
@@ -109,11 +109,17 @@ export default function WindowControls() {
                 }}
                 id="slide_area"
             />
+            {!sidebar_open && (
+                <>
+                    <div className="absolute h-4 w-[50px] rounded-bl-lg border-b border-l top-2 right-2 z-40 transition-all pointer-events-none bg-sidebar" />   
+                    <div className="absolute h-6 w-[59px] rounded-bl-lg top-0 right-0 z-30 bg-sidebar" />   
+                </>
+            )}
             <div className={sidebar_open && collapsedContainerClassName || containerClassName} onMouseDown={handleMouseDown} id="window_controls">
                 {sidebar_open && (
-                    <div className={`absolute right-0 top-0 h-6 flex items-center pl-2.5 pr-12 transition-all bg-sidebar rounded-bl-lg z-[-10] duration-150 ${isMouseInDragArea ? 'w-96 opacity-100' : 'w-0 opacity-0'}`}>
+                    <div className={`absolute right-0 top-0 h-6 flex items-center border pl-2.5 pr-12 transition-all bg-sidebar rounded-bl-lg z-[-10] duration-150 ${isMouseInDragArea ? 'w-96 opacity-100' : 'w-0 opacity-0'}`}>
                         <div
-                            className="grow h-1 bg-repeat bg-center text-muted font-geist-mono text-[12px] text-center"
+                            className="grow h-1 bg-repeat bg-center text-muted-foreground/30 font-geist-mono text-[12px] text-center"
                             style={{
                                 backgroundImage: "radial-gradient(circle, currentColor 1px, transparent 1px)",
                                 backgroundSize: "10px 10px"
@@ -178,33 +184,7 @@ export default function WindowControls() {
                 </TooltipProvider>
             </div>
             {!sidebar_open && (
-                <>
-                    <div className="absolute top-0 right-0 left-[80px] h-6 z-40" onMouseDown={handleMouseDown} />
-                    {/* Bottom side outer rounding */}
-                    <div className="top-0 right-0 absolute z-50 w-4 h-4 my-[16px] mx-[-0.5px]">
-                        <svg viewBox="4 -4 8 8" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <mask id="hole">
-                                    <rect x="0" y="0" width="8" height="8" fill="white" />
-                                    <circle cx="4" cy="4" r="4" fill="black" />
-                                </mask>
-                            </defs>
-                            <rect x="0" y="0" width="8" height="8" mask="url(#hole)" className="fill-sidebar" />
-                        </svg>
-                    </div>
-                    {/* Left side outer rounding */}
-                    <div className="top-0 right-0 absolute z-50 w-4 h-4 my-[0px] mx-[51px]">
-                        <svg viewBox="4 -4 8 8" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <mask id="hole">
-                                    <rect x="0" y="0" width="8" height="8" fill="white" />
-                                    <circle cx="4" cy="4" r="4" fill="black" />
-                                </mask>
-                            </defs>
-                            <rect x="0" y="0" width="8" height="8" mask="url(#hole)" className="fill-sidebar" />
-                        </svg>
-                    </div>
-                </>
+                <div className="absolute top-0 right-0 left-[80px] h-6 z-40" onMouseDown={handleMouseDown} />
             )}
         </>
     )
