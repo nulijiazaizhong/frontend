@@ -49,7 +49,6 @@ export default function ControlsPage() {
     return (
         <div className="flex space-x-3 max-w-[calc(60vw-64px)] font-geist">
             <div className="flex flex-col gap-4 h-full overflow-auto auto-rows-min w-full text-left">
-                <p className="text-muted-foreground">Warning: <span className="font-semibold underline">Please close the game</span> before changing controls here.<br/>The game control listener <span className="font-semibold">might</span> interfere with ours depending on your system!</p>
                 {controls.map((control:any) => (
                     <div key={control} id={control} className="flex w-full h-full justify-between border rounded-md p-4 text-left items-start">
                         
