@@ -510,16 +510,16 @@ export function ETS2LAPage({ data, plugin, enabled, className }: { data: any, pl
 	const EnabledLock = () => {
 		return <div className="flex justify-between p-4 items-center border rounded-md backdrop-blur-md gap-10">
 			<div>
-				<h4>Please enable the plugin.</h4>
-				<p className="text-xs text-muted-foreground">{"This plugin is disabled. Enable it to access the rest of this plugin's settings."}</p>
+				<h4>{translate("please_enable_the_plugin.title")}</h4>
+				<p className="text-xs text-muted-foreground">{translate("please_enable_the_plugin.description")}</p>
 			</div>
 			<Button variant={"outline"} onClick={() => {
 				EnablePlugin(plugin).then(() => {
-					toast.success("Plugin enabled", {
+					toast.success(translate("plugin_enabled"), {
 						duration: 500
 					})
 				})
-			}} className="min-w-32">Enable {plugin}</Button>
+			}} className="min-w-32">{translate("enable_plugin")} {plugin}</Button>
 		</div>
 	}
 
