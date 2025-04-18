@@ -7,7 +7,7 @@ import { toast } from "sonner"
 const sleep = (delay:number) => new Promise((resolve) => setTimeout(resolve, delay))
 
 export let token = '';
-export let ip = 'ets2la.local';
+export let ip = 'localhost';
 
 export async function setToken(newToken: string){
     token = newToken;
@@ -22,6 +22,13 @@ export async function GetVersion() {
     console.log("Getting version")
     const response = await fetch("http://" + ip + ":37520/")
     const data = await response.json()
+    return data
+}
+
+export async function Fallback() {
+    GetVersion().catch((err) => {
+        setIP("ets2la.local")
+    });
 }
 
 export async function CheckWindow(window:string) {

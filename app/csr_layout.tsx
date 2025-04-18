@@ -12,7 +12,7 @@ import { Toaster } from "@/components/ui/sonner"
 import { States } from "@/components/states";
 import { Popups } from "@/components/popups";
 import { changeLanguage, loadTranslations } from "@/apis/translation";
-import { GetCurrentLanguage } from "@/apis/backend";
+import { GetCurrentLanguage, Fallback } from "@/apis/backend";
 import { Fireworks } from "@fireworks-js/react";
 import { GetSettingByKey } from "@/apis/settings";
 import { Disclaimer } from "@/components/disclaimer";
@@ -95,6 +95,10 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
             setAreFireworksAllowed(fireworks === true);
         });
     });
+
+    useEffect(() => {
+        Fallback().then((fallback) => {})
+    })
 
     const date = new Date();
     const month = date.getMonth();

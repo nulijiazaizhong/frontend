@@ -35,6 +35,11 @@ export function Popups() {
 
     useEffect(() => {
         // Initialize the WebSocket connection
+        if (ip != "localhost") {
+            toast.error("This device cannot connect to the websocket. You won't get notifications.")
+            return;
+        }
+        
         socket = new WebSocket(`ws://${ip}:37521`);
 
         // Connection opened
