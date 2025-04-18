@@ -10,7 +10,7 @@ export default function Wiki() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6 }}
             className="absolute w-full h-full rounded-md" 
-            src="https://ets2la.github.io/documentation/"
+            src="https://ets2la.com/"
             style={{ // clear header
                 transform: 'translateY(-80px)',
                 height: 'calc(100% + 80px)'

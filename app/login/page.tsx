@@ -42,7 +42,7 @@ export default function LoginPage() {
                 </Button>
                 <div>
                     <p className="max-w-96 text-muted-foreground text-xs cursor-pointer" onClick={() => {
-                        window.open("https://ets2la.github.io/documentation/privacy-policy/", "_blank");
+                        window.open("https://ets2la.github.io/documentation/privacy-policy/#the-information-we-store", "_blank");
                     }}>{translate("frontend.login.privacy_policy")}</p>
                 </div>
             </div>

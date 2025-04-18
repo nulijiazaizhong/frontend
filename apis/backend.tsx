@@ -7,7 +7,7 @@ import { toast } from "sonner"
 const sleep = (delay:number) => new Promise((resolve) => setTimeout(resolve, delay))
 
 export let token = '';
-export let ip = 'localhost';
+export let ip = 'ets2la.local';
 
 export async function setToken(newToken: string){
     token = newToken;
