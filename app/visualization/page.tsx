@@ -16,9 +16,9 @@ export default function Visualization() {
     const [ isMapOpen, setIsMapOpen ] = useState(false);
 
     const map_link = "https://truckermudgeon.github.io/ets2la";
-    const visualization_link = "http://visualization.ets2la.com/";
+    const visualization_link = "https://visualization.ets2la.com/";
     const map_mirror = "https://ets2lamap.goodnightan.com/ets2la/index.html"
-    const visualization_mirror = "http://ets2lavisualization.goodnightan.com/"
+    const visualization_mirror = "https://ets2lavisualization.goodnightan.com/"
 
     const map = useMirror ? map_mirror : map_link;
     const visualization = useMirror ? visualization_mirror : visualization_link;

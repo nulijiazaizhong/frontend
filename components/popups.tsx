@@ -39,8 +39,8 @@ export function Popups() {
             toast.error("This device cannot connect to the websocket. You won't get notifications.")
             return;
         }
-        
-        socket = new WebSocket(`ws://${ip}:37521`);
+
+        socket = new WebSocket(`wss://${ip}:37521`);
 
         // Connection opened
         socket.addEventListener("open", function (event) {
