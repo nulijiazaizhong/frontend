@@ -1,5 +1,9 @@
 "use client"
 
+// Anyone with experience in react and typescript should not look at the code...
+// ETS2LA was made with me learning react at the same time. Much of the code
+// is an absolute mess...
+
 import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ETS2LASidebar } from "@/components/sidebar";
@@ -25,6 +29,7 @@ import { translate } from "@/apis/translation";
 import { ACTIONS, EVENTS, STATUS, CallBackProps } from 'react-joyride';
 import { JoyRideNoSSR, skipAll } from "@/components/joyride-no-ssr";
 import { AnimatePresence } from "framer-motion";
+import { UIProvider } from "@/apis/ui_sockets";
 
 export default function CSRLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     const { data: language, isLoading: loadingLanguage } = useSWR("language", GetCurrentLanguage, { refreshInterval: 2000 });
@@ -194,58 +199,60 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
                         </motion.div>
                     ) || (
                         <motion.div className="w-full h-full flex flex-col" key="main" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }}>
-                            <Disclaimer closed_callback={startOnboarding} />
-                            <ProgressBarProvider>
-                                <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
-                                    steps={STEPS}
-                                    run={run && !hasDoneOnboarding}
-                                    stepIndex={stepIndex}
-                                    showSkipButton
-                                    spotlightPadding={5}
-                                    styles={
-                                        {
-                                            options: {
-                                                backgroundColor: "#18181b",
-                                                arrowColor: "#18181b",
-                                                textColor: "#fafafa",
-                                            },
-                                            buttonClose: {
-                                                width: "8px",
-                                                height: "8px",
-                                            },
-                                            buttonNext: {
-                                                visibility: "hidden",
-                                            },
-                                            buttonBack: {
-                                                visibility: "hidden",
-                                            },
-                                            tooltipContent: {
-                                                fontSize: "14px",
+                            <UIProvider>
+                                <Disclaimer closed_callback={startOnboarding} />
+                                <ProgressBarProvider>
+                                    <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
+                                        steps={STEPS}
+                                        run={run && !hasDoneOnboarding}
+                                        stepIndex={stepIndex}
+                                        showSkipButton
+                                        spotlightPadding={5}
+                                        styles={
+                                            {
+                                                options: {
+                                                    backgroundColor: "#18181b",
+                                                    arrowColor: "#18181b",
+                                                    textColor: "#fafafa",
+                                                },
+                                                buttonClose: {
+                                                    width: "8px",
+                                                    height: "8px",
+                                                },
+                                                buttonNext: {
+                                                    visibility: "hidden",
+                                                },
+                                                buttonBack: {
+                                                    visibility: "hidden",
+                                                },
+                                                tooltipContent: {
+                                                    fontSize: "14px",
+                                                }
                                             }
                                         }
-                                    }
-                                    callback={handleJoyrideCallback}
-                                />
-                                <Toaster position={isCollapsed ? "bottom-center" : "bottom-right"} toastOptions={{
-                                    unstyled: true,
-                                    classNames: {
-                                        toast: "rounded-lg text-foreground shadow-lg w-[354px] border p-4 flex gap-2 items-center text-sm bg-background",
-                                    }
-                                }} />
-                                <SidebarProvider open={isCollapsed} onOpenChange={
-                                    (open) => { setIsCollapsed(open); }
-                                }>
-                                    <WindowControls />
-                                    <States />
-                                    <Popups />
-                                    <ETS2LASidebar />
-                                    <SidebarInset className={`relative shadow-md! border transition-all duration-300 overflow-hidden ${isCollapsed ? "max-h-[100vh]" : "max-h-[97.6vh]"}`}>
-                                        <ProgressBar className="absolute h-2 z-20 rounded-tl-lg shadow-lg shadow-sky-500/20 bg-sky-500 top-0 left-0" />
-                                        {isMobile && <SidebarTrigger className="absolute top-2 left-2 z-50" />}
-                                        {children}
-                                    </SidebarInset>
-                                </SidebarProvider>
-                            </ProgressBarProvider>
+                                        callback={handleJoyrideCallback}
+                                    />
+                                    <Toaster position={isCollapsed ? "bottom-center" : "bottom-right"} toastOptions={{
+                                        unstyled: true,
+                                        classNames: {
+                                            toast: "rounded-lg text-foreground shadow-lg w-[354px] border p-4 flex gap-2 items-center text-sm bg-background",
+                                        }
+                                    }} />
+                                    <SidebarProvider open={isCollapsed} onOpenChange={
+                                        (open) => { setIsCollapsed(open); }
+                                    }>
+                                        <WindowControls />
+                                        <States />
+                                        <Popups />
+                                        <ETS2LASidebar />
+                                        <SidebarInset className={`relative shadow-md! border transition-all duration-300 overflow-hidden ${isCollapsed ? "max-h-[100vh]" : "max-h-[97.6vh]"}`}>
+                                            <ProgressBar className="absolute h-2 z-20 rounded-tl-lg shadow-lg shadow-sky-500/20 bg-sky-500 top-0 left-0" />
+                                            {isMobile && <SidebarTrigger className="absolute top-2 left-2 z-50" />}
+                                            {children}
+                                        </SidebarInset>
+                                    </SidebarProvider>
+                                </ProgressBarProvider>
+                            </UIProvider>
                         </motion.div>
                     )}
                 </AnimatePresence>
