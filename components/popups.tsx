@@ -40,7 +40,7 @@ export function Popups() {
             return;
         }
 
-        socket = new WebSocket(`wss://${ip}:37521`);
+        socket = new WebSocket(`ws://${ip}:37521`);
 
         // Connection opened
         socket.addEventListener("open", function (event) {
