@@ -230,6 +230,7 @@ export async function GetCurrentLanguage() {
         }
     })
     const data = await response.json()
+    console.log(data)
     return data
 }
 

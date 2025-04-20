@@ -1,16 +1,5 @@
-import { Skeleton } from "@/components/ui/skeleton"
-import useSWR, { mutate } from "swr"
-import { PluginFunctionCall, EnablePlugin } from "@/apis/backend"
+
 import { Separator } from "../ui/separator"
-import { Input } from "../ui/input"
-import { GetSettingsJSON, SetSettingByKey, SetSettingByKeys } from "@/apis/settings"
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "@/components/ui/select"
 import {
 	TooltipProvider,
 	Tooltip,
@@ -20,20 +9,16 @@ import {
 import { Toggle } from "@/components/ui/toggle"
 import { Switch } from "../ui/switch"
 import { Button } from "../ui/button"
-import { toast } from "sonner"
-import { useEffect } from "react"
-import { Slider } from "../ui/slider"
 import { useState } from "react"
 import { translate } from "@/apis/translation"
 import React, { Component } from 'react';
-import { SkeletonItem } from "@/components/page/skeleton_item"
 import {
 	Check,
-	X
+	X,
+	ChevronsUpDown
 } from "lucide-react"
-import { Checkbox } from "../ui/checkbox"
+import * as Icons from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Progress } from "../ui/progress"
 import Markdown from "react-markdown"
 import { AnimatePresence, motion } from "framer-motion"
 // @ts-expect-error
@@ -42,6 +27,20 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useWebSocketPages } from "@/apis/ui_sockets"
 import { SliderComponent } from "@/components/page/slider"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Alert } from "../ui/alert"
 
 
 export function ETS2LAPage({ url, data, enabled, className }: { url: string, data: any, enabled?: boolean, className?: string }) {
@@ -85,6 +84,31 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		const style = data.style ? data.style : {};
 		return <a className={classname} style={style} href={data.url} target="_blank" key={data.key}>{translate(data.text)}</a>
 	}
+	
+	const AlertRenderer = (data: any) => {
+		const classname = ParseClassname("border rounded-md p-4 bg-input/10", data.style.classname);
+		const style = data.style ? data.style : {};
+		const children = data.children ? data.children : [];
+		const result: any[] = PageRenderer(children);
+		return <div className={classname} style={style} key={data.id}>
+			{result}
+		</div>
+	}
+
+	const IconRenderer = (data: any) => {
+		const classname = ParseClassname("", data.style.classname);
+		const style = data.style ? data.style : {};
+		const icon_name = data.icon ?? "circle-help";
+		const words = icon_name.split("-");
+		// @ts-expect-error
+		const name = words[0].charAt(0).toUpperCase() + words[0].slice(1) + words.slice(1).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("");
+
+		// Get icon component by name (fallback to X if not found)
+		const LucideIcon = Icons[name as keyof typeof Icons] ?? Icons.CircleHelp;
+	  
+		// @ts-expect-error
+		return <LucideIcon className={classname} style={style} />;
+	};
 
 	const ButtonRenderer = (data: any) => {
 		const classname = ParseClassname("bg-input/10 text-foreground border hover:bg-input/30", data.style.classname);
@@ -161,6 +185,130 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 			</Markdown>
 		);
 	}
+
+	const ComboboxRenderer = (data: any) => {
+		const classname = ParseClassname("justify-between", data.style.classname);
+		const style = data.style ? data.style : {};
+		
+		const options = data.options ? data.options : [];
+		let default_value = data.default ? data.default : options ? options[0].value : "";
+
+		const changed = data.changed ? data.changed : null;
+		
+		const side = data.side ? data.side : "bottom";
+		const multiple = data.multiple ? data.multiple : false;
+		const disabled = data.disabled ? data.disabled : false;
+
+		if (multiple) {
+			default_value = data.default ? [data.default] : [];
+		}
+
+		const use_search = !!data.search;
+		const search_placeholder = data.search?.placeholder ?? "Search";
+		const search_empty = data.search?.empty ?? "No results found";
+		const search_style = data.search?.style ?? {};
+
+		const [open, setOpen] = useState(false);
+  		const [value, setValue] = useState(default_value);
+
+		React.useEffect(() => {
+			if (changed) {
+				send({
+					type: "function",
+					data: {
+						url: url,
+						target: changed,
+						args: [multiple ? value : value]
+					}
+				})
+			}
+		}, [value]);
+
+		return (
+		<Popover open={open} onOpenChange={(next) => {
+			setOpen(next);
+		}}>
+			<PopoverTrigger>
+				<Button
+					variant="outline"
+					role="combobox"
+					aria-expanded={open}
+					className={classname}
+					disabled={disabled}
+					style={style}
+				>
+					{multiple ? value.length + " selected" : value ? value : "Select option..."}
+					<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+				</Button>
+			</PopoverTrigger>
+			<AnimatePresence>
+				{open && (
+					<PopoverContent
+						asChild
+						className="p-0 w-[200px] font-geist"
+						side={side}
+						forceMount
+					>
+					<motion.div
+						initial={{ opacity: 0, scale: 0.8, y: -12 }}
+						animate={{ opacity: 1, scale: 1, y: 0 }}
+						exit={{ opacity: 0, scale: 0.8, y: -12 }}
+						transition={{ duration: 0.10, ease: "easeInOut" }}
+					>
+						<Command className="bg-sidebarbg max-h-64">
+						{use_search && (
+							<CommandInput
+							placeholder={search_placeholder}
+							className="h-9"
+							/>
+						)}
+						<CommandList>
+							<CommandEmpty className="text-muted-foreground text-xs py-3 wrap justify-self-center h-10">{search_empty}</CommandEmpty>
+							<CommandGroup>
+							{options.map((option: any) => {
+								const optionValue =
+								typeof option === "string" ? option : option?.value;
+								const isSelected = multiple
+								? value.includes(optionValue)
+								: value === optionValue;
+
+								return (
+								<CommandItem
+									key={optionValue}
+									value={optionValue}
+									onSelect={(currentValue) => {
+									if (multiple) {
+										setValue((prev: any) =>
+										prev.includes(currentValue)
+											? prev.filter((v: any) => v !== currentValue)
+											: [...prev, currentValue]
+										);
+									} else {
+										setValue(currentValue === value ? "" : currentValue);
+										setOpen(false);
+									}
+									}}
+									className="text-foreground"
+								>
+									{optionValue}
+									<Check
+									className={`ml-auto h-4 w-4 ${
+										isSelected ? "opacity-100" : "opacity-0"
+									}`}
+									/>
+								</CommandItem>
+								);
+							})}
+							</CommandGroup>
+						</CommandList>
+						</Command>
+					</motion.div>
+					</PopoverContent>
+				)}
+			</AnimatePresence>
+		</Popover>
+		);
+	};
 
 	const TooltipRenderer = (data: any, tooltip_data: any) => {
 		const classname = ParseClassname("", data.style.classname);
@@ -281,6 +429,15 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 			}
 			if (key == "slider") {
 				result.push(SliderRenderer(key_data));
+			}
+			if (key == "combobox") {
+				result.push(ComboboxRenderer(key_data));
+			}
+			if (key == "alert") {
+				result.push(AlertRenderer(key_data));
+			}
+			if (key == "icon") {
+				result.push(IconRenderer(key_data));
 			}
 		};
 

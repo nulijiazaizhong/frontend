@@ -98,7 +98,7 @@ function Slider({
           </TooltipTrigger>
           <TooltipContent
             side="top"
-            className="text-xs bg-background border text-foreground font-geist font-light p-1"
+            className="text-xs bg-sidebarbg border text-foreground font-geist font-light p-1"
           >
             <input
               value={inputValue}
