@@ -41,6 +41,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Alert } from "../ui/alert"
+import { Checkbox } from "../ui/checkbox"
+import { Input } from "../ui/input"
 
 
 export function ETS2LAPage({ url, data, enabled, className }: { url: string, data: any, enabled?: boolean, className?: string }) {
@@ -70,7 +72,19 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		const style = data.style ? data.style : {};
 		const children = data.children ? data.children : [];
 		const result: any[] = PageRenderer(children);
-		return <div className={classname} style={style} key={data.key}>{result}</div>
+		return <div className={classname} style={style} key={data.key} onClick={() => {
+			if (data.pressed)
+			{
+				send({
+					type: "function",
+					data: {
+						url: url,
+						target: data.pressed,
+						args: []
+					}
+				})
+			}
+		}}>{result}</div>
 	}
 
 	const SpaceRenderer = (data: any) => {
@@ -127,6 +141,111 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		})}}>
 			{result}
 		</Button>
+	}
+
+	const CheckboxRenderer = (data: any) => {
+		const classname = ParseClassname("", data.style.classname);
+		const style = data.style ? data.style : {};
+		const changed = data.changed ? data.changed : null;
+		const default_value = data.default ? data.default : false;
+
+		const [checked, setChecked] = useState(default_value);
+
+		React.useEffect(() => {
+			if (changed) {
+				send({
+					type: "function",
+					data: {
+						url: url,
+						target: changed,
+						args: [checked]
+					}
+				})
+			}
+		}, [checked]);
+
+		React.useEffect(() => {
+			setChecked(default_value);
+		}, [default_value]);
+
+		return (
+			<Checkbox 
+				className={classname}
+				style={style}
+				checked={checked}
+				onCheckedChange={(checked) => {
+					setChecked(checked);
+					if (changed) {
+						send({
+							type: "function",
+							data: {
+								url: url,
+								target: changed,
+								args: [checked]
+							}
+						})
+					}
+				}}
+			/>
+		);
+	}
+
+	const InputRenderer = (data: any) => {
+		const classname = ParseClassname("", data.style.classname);
+		const style = data.style ? data.style : {};
+		const changed = data.changed ? data.changed : null;
+		const type = data.type ? data.type : "text";
+		const default_value = data.default ? data.default : "";
+
+		const [value, setValue] = useState(default_value);
+
+		React.useEffect(() => {
+			setValue(default_value);
+		}, [default_value]);
+
+		return (
+			<Input 
+				className={classname}
+				style={style}
+				value={value}
+				type={type}
+				onChange={(data) => {
+					if (type == "number") {
+						setValue(data.target.valueAsNumber);
+					}
+					else
+					{
+						setValue(data.target.value);
+					}
+				}}
+				onKeyDown={(e) => {
+					if (e.key === "Enter") {
+						if (changed) {
+							send({
+								type: "function",
+								data: {
+									url: url,
+									target: changed,
+									args: [value]
+								}
+							})
+						}
+					}
+				}}
+				onBlur={() => {
+					if (changed) {
+						send({
+							type: "function",
+							data: {
+								url: url,
+								target: changed,
+								args: [value]
+							}
+						})
+					}
+				}}
+			/>
+		);
 	}
 
 	const MarkdownRenderer = (data: any) => {
@@ -187,7 +306,7 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 	}
 
 	const ComboboxRenderer = (data: any) => {
-		const classname = ParseClassname("justify-between", data.style.classname);
+		const classname = ParseClassname("min-w-max", data.style.classname);
 		const style = data.style ? data.style : {};
 		
 		const options = data.options ? data.options : [];
@@ -438,6 +557,12 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 			}
 			if (key == "icon") {
 				result.push(IconRenderer(key_data));
+			}
+			if (key == "checkbox") {
+				result.push(CheckboxRenderer(key_data));
+			}
+			if (key == "input") {
+				result.push(InputRenderer(key_data));
 			}
 		};
 

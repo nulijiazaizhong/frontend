@@ -178,7 +178,9 @@ export default function Home() {
                             <ResizablePanel defaultSize={75} className="h-full w-full relative">
                                 <ScrollArea className="h-full" type="hover">
                                     <div className="h-4" />
-                                    {renderPluginPage()}
+                                    <div className="w-[97%]">
+                                        {renderPluginPage()}
+                                    </div>
                                 </ScrollArea>
                                 <div className="absolute h-4 top-0 left-0 right-0 bg-linear-to-b from-background pointer-events-none" />
                             </ResizablePanel>
