@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { usePage } from "@/hooks/usePage";
 import Loader from "../loader";
 
-export default function RenderPage({ url, className }: { url: string, className?: string }) {
+export default function RenderPage({ url, className, container_classname }: { url: string, className?: string, container_classname?: string }) {
     const [showTooLong, setShowTooLong] = useState(false);
     const [start, setStart] = useState(Date.now());
     const [loaded, setLoaded] = useState(false);
@@ -42,6 +42,7 @@ export default function RenderPage({ url, className }: { url: string, className?
                 </motion.div>
             ) || page && (
                 <motion.div
+                    className={"h-full w-full overflow-y-auto " + container_classname}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}

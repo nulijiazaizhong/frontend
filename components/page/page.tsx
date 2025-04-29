@@ -125,18 +125,25 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 	};
 
 	const ButtonRenderer = (data: any) => {
-		const classname = ParseClassname("bg-input/10 text-foreground border hover:bg-input/30", data.style.classname);
+		const type = data.type ? data.type : "default";
+
+		const default_classname = type != "link" ? "bg-input/10 text-foreground border hover:bg-input/30" : "p-0 h-4";
+		const classname = ParseClassname(default_classname, data.style.classname);
 		const style = data.style ? data.style : {};
+
 		const children = data.children ? data.children : [];
 		const result: any[] = PageRenderer(children);
-		return <Button className={classname} style={style} key={data.key} 
+		
+		const name: string = data.name ? data.name : "";
+		
+		return <Button className={classname} style={style} key={data.key} variant={type}
 		onClick={() => {
 			send({
 				type: "function",
 				data: {
 					url: url,
 					target: data.action,
-					args: []
+					args: name ? [name] : []
 				}
 		})}}>
 			{result}
@@ -249,7 +256,7 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 	}
 
 	const MarkdownRenderer = (data: any) => {
-		const classname = ParseClassname("", data.style.classname);
+		const classname = ParseClassname("whitespace-normal w-full", data.style.classname);
 		const style = data.style ? data.style : {};
 
 		return (
@@ -436,7 +443,7 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		const tooltip_children = data.children ? data.children : [];
 		const tooltip_result: any[] = PageRenderer(tooltip_children);
 
-		const content_classname = ParseClassname("", tooltip_data.style.classname);
+		const content_classname = ParseClassname("bg-sidebarbg border font-geist", tooltip_data.style.classname);
 		const content_style = tooltip_data.style ? tooltip_data.style : {};
 
 		const content_children = tooltip_data.children ? tooltip_data.children : [];
