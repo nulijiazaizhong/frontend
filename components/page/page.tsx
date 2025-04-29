@@ -44,21 +44,24 @@ import { Alert } from "../ui/alert"
 import { Checkbox } from "../ui/checkbox"
 import { Input } from "../ui/input"
 
+import { InputRenderer } from "./input_renderer"
+import { ComboboxRenderer } from "./combobox_renderer"
+import { CheckboxRenderer } from "./checkbox_renderer"
+
+export function ParseClassname(default_classname: string, data_classname: string) {
+	if (data_classname == undefined) {
+		data_classname = default_classname
+	}
+	data_classname = data_classname.replace("default", default_classname);
+	const classname = data_classname ? data_classname : default_classname;
+	return classname
+}
 
 export function ETS2LAPage({ url, data, enabled, className }: { url: string, data: any, enabled?: boolean, className?: string }) {
 	const { send } = useWebSocketPages()
 
 	if(enabled == undefined){
 		enabled = true
-	}
-
-	const ParseClassname = (default_classname: string, data_classname: string) => {
-		if (data_classname == undefined) {
-			data_classname = default_classname
-		}
-		data_classname = data_classname.replace("default", default_classname);
-		const classname = data_classname ? data_classname : default_classname;
-		return classname
 	}
 
 	const TextRenderer = (data: any) => {
@@ -130,13 +133,14 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		const default_classname = type != "link" ? "bg-input/10 text-foreground border hover:bg-input/30" : "p-0 h-4";
 		const classname = ParseClassname(default_classname, data.style.classname);
 		const style = data.style ? data.style : {};
+		const enabled = data.enabled;
 
 		const children = data.children ? data.children : [];
 		const result: any[] = PageRenderer(children);
 		
 		const name: string = data.name ? data.name : "";
 		
-		return <Button className={classname} style={style} key={data.key} variant={type}
+		return <Button className={classname} style={style} key={data.key} variant={type} disabled={!enabled}
 		onClick={() => {
 			send({
 				type: "function",
@@ -148,111 +152,6 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		})}}>
 			{result}
 		</Button>
-	}
-
-	const CheckboxRenderer = (data: any) => {
-		const classname = ParseClassname("", data.style.classname);
-		const style = data.style ? data.style : {};
-		const changed = data.changed ? data.changed : null;
-		const default_value = data.default ? data.default : false;
-
-		const [checked, setChecked] = useState(default_value);
-
-		React.useEffect(() => {
-			if (changed) {
-				send({
-					type: "function",
-					data: {
-						url: url,
-						target: changed,
-						args: [checked]
-					}
-				})
-			}
-		}, [checked]);
-
-		React.useEffect(() => {
-			setChecked(default_value);
-		}, [default_value]);
-
-		return (
-			<Checkbox 
-				className={classname}
-				style={style}
-				checked={checked}
-				onCheckedChange={(checked) => {
-					setChecked(checked);
-					if (changed) {
-						send({
-							type: "function",
-							data: {
-								url: url,
-								target: changed,
-								args: [checked]
-							}
-						})
-					}
-				}}
-			/>
-		);
-	}
-
-	const InputRenderer = (data: any) => {
-		const classname = ParseClassname("", data.style.classname);
-		const style = data.style ? data.style : {};
-		const changed = data.changed ? data.changed : null;
-		const type = data.type ? data.type : "text";
-		const default_value = data.default ? data.default : "";
-
-		const [value, setValue] = useState(default_value);
-
-		React.useEffect(() => {
-			setValue(default_value);
-		}, [default_value]);
-
-		return (
-			<Input 
-				className={classname}
-				style={style}
-				value={value}
-				type={type}
-				onChange={(data) => {
-					if (type == "number") {
-						setValue(data.target.valueAsNumber);
-					}
-					else
-					{
-						setValue(data.target.value);
-					}
-				}}
-				onKeyDown={(e) => {
-					if (e.key === "Enter") {
-						if (changed) {
-							send({
-								type: "function",
-								data: {
-									url: url,
-									target: changed,
-									args: [value]
-								}
-							})
-						}
-					}
-				}}
-				onBlur={() => {
-					if (changed) {
-						send({
-							type: "function",
-							data: {
-								url: url,
-								target: changed,
-								args: [value]
-							}
-						})
-					}
-				}}
-			/>
-		);
 	}
 
 	const MarkdownRenderer = (data: any) => {
@@ -312,130 +211,6 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		);
 	}
 
-	const ComboboxRenderer = (data: any) => {
-		const classname = ParseClassname("min-w-max", data.style.classname);
-		const style = data.style ? data.style : {};
-		
-		const options = data.options ? data.options : [];
-		let default_value = data.default ? data.default : options ? options[0].value : "";
-
-		const changed = data.changed ? data.changed : null;
-		
-		const side = data.side ? data.side : "bottom";
-		const multiple = data.multiple ? data.multiple : false;
-		const disabled = data.disabled ? data.disabled : false;
-
-		if (multiple) {
-			default_value = data.default ? [data.default] : [];
-		}
-
-		const use_search = !!data.search;
-		const search_placeholder = data.search?.placeholder ?? "Search";
-		const search_empty = data.search?.empty ?? "No results found";
-		const search_style = data.search?.style ?? {};
-
-		const [open, setOpen] = useState(false);
-  		const [value, setValue] = useState(default_value);
-
-		React.useEffect(() => {
-			if (changed) {
-				send({
-					type: "function",
-					data: {
-						url: url,
-						target: changed,
-						args: [multiple ? value : value]
-					}
-				})
-			}
-		}, [value]);
-
-		return (
-		<Popover open={open} onOpenChange={(next) => {
-			setOpen(next);
-		}}>
-			<PopoverTrigger>
-				<Button
-					variant="outline"
-					role="combobox"
-					aria-expanded={open}
-					className={classname}
-					disabled={disabled}
-					style={style}
-				>
-					{multiple ? value.length + " selected" : value ? value : "Select option..."}
-					<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-				</Button>
-			</PopoverTrigger>
-			<AnimatePresence>
-				{open && (
-					<PopoverContent
-						asChild
-						className="p-0 w-[200px] font-geist"
-						side={side}
-						forceMount
-					>
-					<motion.div
-						initial={{ opacity: 0, scale: 0.8, y: -12 }}
-						animate={{ opacity: 1, scale: 1, y: 0 }}
-						exit={{ opacity: 0, scale: 0.8, y: -12 }}
-						transition={{ duration: 0.10, ease: "easeInOut" }}
-					>
-						<Command className="bg-sidebarbg max-h-64">
-						{use_search && (
-							<CommandInput
-							placeholder={search_placeholder}
-							className="h-9"
-							/>
-						)}
-						<CommandList>
-							<CommandEmpty className="text-muted-foreground text-xs py-3 wrap justify-self-center h-10">{search_empty}</CommandEmpty>
-							<CommandGroup>
-							{options.map((option: any) => {
-								const optionValue =
-								typeof option === "string" ? option : option?.value;
-								const isSelected = multiple
-								? value.includes(optionValue)
-								: value === optionValue;
-
-								return (
-								<CommandItem
-									key={optionValue}
-									value={optionValue}
-									onSelect={(currentValue) => {
-									if (multiple) {
-										setValue((prev: any) =>
-										prev.includes(currentValue)
-											? prev.filter((v: any) => v !== currentValue)
-											: [...prev, currentValue]
-										);
-									} else {
-										setValue(currentValue === value ? "" : currentValue);
-										setOpen(false);
-									}
-									}}
-									className="text-foreground"
-								>
-									{optionValue}
-									<Check
-									className={`ml-auto h-4 w-4 ${
-										isSelected ? "opacity-100" : "opacity-0"
-									}`}
-									/>
-								</CommandItem>
-								);
-							})}
-							</CommandGroup>
-						</CommandList>
-						</Command>
-					</motion.div>
-					</PopoverContent>
-				)}
-			</AnimatePresence>
-		</Popover>
-		);
-	};
-
 	const TooltipRenderer = (data: any, tooltip_data: any) => {
 		const classname = ParseClassname("", data.style.classname);
 		const style = data.style ? data.style : {};
@@ -464,7 +239,7 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 	const SeparatorRenderer = (data: any) => {
 		const classname = ParseClassname("", data.style.classname);
 		const style = data.style ? data.style : {};
-		const dir = data.style.dir ? data.style.dir : "horizontal";
+		const dir = data.direction ? data.direction : "horizontal";
 		
 		return <Separator className={classname} style={style} key={data.key} orientation={dir}></Separator>
 	}
@@ -557,7 +332,9 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 				result.push(SliderRenderer(key_data));
 			}
 			if (key == "combobox") {
-				result.push(ComboboxRenderer(key_data));
+				result.push(
+					<ComboboxRenderer data={key_data} url={url} send={send} key={key_data.key} />
+				)
 			}
 			if (key == "alert") {
 				result.push(AlertRenderer(key_data));
@@ -566,10 +343,14 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 				result.push(IconRenderer(key_data));
 			}
 			if (key == "checkbox") {
-				result.push(CheckboxRenderer(key_data));
+				result.push(
+					<CheckboxRenderer data={key_data} url={url} send={send} key={key_data.key} />
+				)
 			}
 			if (key == "input") {
-				result.push(InputRenderer(key_data));
+				result.push(
+					<InputRenderer data={key_data} url={url} send={send} key={key_data.key} />
+				)
 			}
 		};
 

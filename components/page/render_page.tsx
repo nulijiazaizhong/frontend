@@ -42,7 +42,7 @@ export default function RenderPage({ url, className, container_classname }: { ur
                 </motion.div>
             ) || page && (
                 <motion.div
-                    className={"h-full w-full overflow-y-auto " + container_classname}
+                    className={"h-full w-full overflow-y-auto overflow-x-hidden " + container_classname}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}

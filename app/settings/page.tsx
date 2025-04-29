@@ -84,9 +84,10 @@ export default function Home() {
         if (selectedPlugin === "Global") {
             return <RenderPage url="/settings/global" />;
         } else if (selectedPlugin === "Controls") {
-            return <ControlsPage />;
+            return <RenderPage url="/settings/controls" />;
+            //return <ControlsPage />;
         } else if (selectedPlugin === "SDK") {
-            return <RenderPage url="/setup/sdk" />;
+            return <RenderPage url="/settings/sdk" />;
             // @ts-ignore
         } else if (data && data[selectedPlugin] && data[selectedPlugin].settings) {
             // Ensure data is correctly passed to ETS2LASettingsPage

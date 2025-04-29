@@ -21,7 +21,7 @@ import {
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 
-import { Update, CheckForUpdate, GetMetadata } from "@/apis/backend"
+import { CheckForUpdate, GetMetadata } from "@/apis/backend"
 
 import { useProgress } from "react-transition-progress"
 import { startTransition } from "react"
@@ -91,7 +91,12 @@ export function ETS2LASidebar() {
                         }}>{metadata && "v" + metadata.version || "ERROR: please refresh the page or purge .next/cache"}</p>
                     </div>
                     { update_data && 
-                        <Button size={"sm"} variant={"outline"} className="w-full" onMouseDown={() => { Update() }}>
+                        <Button size={"sm"} variant={"outline"} className="w-full" onMouseDown={() => {
+                            startTransition(async () => {
+                                startProgress()
+                                router.push('/page?url=/updater')
+                            })
+                        }}>
                             {translate("frontend.sidebar.updates_available")}
                         </Button>
                     }
