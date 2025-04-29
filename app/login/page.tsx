@@ -28,34 +28,36 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="font-geist w-full h-full items-center justify-center flex flex-col gap-4">
-            <div className="flex flex-col gap-2">
-                <p className="text-xl font-semibold">{translate("frontend.login")}</p>
-                <p className="max-w-96 text-muted-foreground">{translate("frontend.login.disclaimer")}</p>
-            </div>
-            <div className="flex flex-col gap-2 w-96">
-                <Button className="max-w-96" variant={"outline"} onClick={() =>{
-                    open_login_window();
-                    setLoading(true);
-                }}>
-                    {translate("frontend.login.discord")} {loading && <Loader className="ml-2" />}
-                </Button>
-                <div>
-                    <p className="max-w-96 text-muted-foreground text-xs cursor-pointer" onClick={() => {
-                        window.open("https://ets2la.github.io/documentation/privacy-policy/#the-information-we-store", "_blank");
-                    }}>{translate("frontend.login.privacy_policy")}</p>
+        <div className="font-geist w-full h-full items-center flex justify-center">
+            <div className="border rounded-md p-4 bg-input/10 items-center justify-center flex flex-col gap-4">
+                <div className="flex flex-col gap-2">
+                    <p className="text-xl font-semibold">{translate("frontend.login")}</p>
+                    <p className="max-w-96 text-muted-foreground">{translate("frontend.login.disclaimer")}</p>
                 </div>
-            </div>
-            {user_id && token && (
-                <div className="flex flex-col gap-1">
-                    <p className="text-muted-foreground max-w-96">
-                        {translate("frontend.login.already_logged_in")}
-                    </p>
-                    <p className="text-muted-foreground max-w-96">
-                        {`User ID: ${user_id}`}
-                    </p>
+                <div className="flex flex-col gap-4 w-96">
+                    <Button className="max-w-96" variant={"outline"} onClick={() =>{
+                        open_login_window();
+                        setLoading(true);
+                    }}>
+                        {translate("frontend.login.discord")} {loading && <Loader className="ml-2" />}
+                    </Button>
+                    <div>
+                        <p className="max-w-96 text-muted-foreground text-xs cursor-pointer" onClick={() => {
+                            window.open("https://ets2la.github.io/documentation/privacy-policy/#the-information-we-store", "_blank");
+                        }}>{translate("frontend.login.privacy_policy")}</p>
+                    </div>
                 </div>
-            )}
+                {user_id && token && (
+                    <div className="flex flex-col gap-1">
+                        <p className="text-muted-foreground max-w-96">
+                            {translate("frontend.login.already_logged_in")}
+                        </p>
+                        <p className="text-muted-foreground max-w-96">
+                            {`User ID: ${user_id}`}
+                        </p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
