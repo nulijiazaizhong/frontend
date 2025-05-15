@@ -9,16 +9,18 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import useSWR from "swr";
 import { toast } from "sonner";
+import { useTheme } from "next-themes";
 
 export default function Visualization() {
     const [ useMirror, setUseMirror ] = useState(false);
     const [ isVisualizationOpen, setIsVisualizationOpen ] = useState(false);
     const [ isMapOpen, setIsMapOpen ] = useState(false);
+    const { theme } = useTheme();
 
     const map_link = "https://truckermudgeon.github.io/ets2la";
-    const visualization_link = "https://visualization.ets2la.com/";
+    const visualization_link = "https://visualization.ets2la.com?theme=" + theme;
     const map_mirror = "https://ets2lamap.goodnightan.com/ets2la/index.html"
-    const visualization_mirror = "https://ets2lavisualization.goodnightan.com/"
+    const visualization_mirror = "https://ets2lavisualization.goodnightan.com?theme=" + theme;
 
     const map = useMirror ? map_mirror : map_link;
     const visualization = useMirror ? visualization_mirror : visualization_link;
