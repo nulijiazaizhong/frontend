@@ -162,7 +162,7 @@ export function ETS2LASidebar() {
                     }>
                         <BookText /> {translate("frontend.sidebar.wiki")}
                     </SidebarMenuButton>
-                    <SidebarMenuButton className={buttonClassName("/chat")} onMouseDown={
+                    {/* <SidebarMenuButton className={buttonClassName("/chat")} onMouseDown={
                         () => {
                             startTransition(async () => {
                                 startProgress()
@@ -171,7 +171,7 @@ export function ETS2LASidebar() {
                         }
                     }>
                         <MessageSquare /> {translate("frontend.sidebar.chat")}
-                    </SidebarMenuButton>
+                    </SidebarMenuButton> */}
                 </SidebarGroup>
                 {devmode && (
                     <SidebarGroup>
