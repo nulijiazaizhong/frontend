@@ -1,4 +1,3 @@
-// usePage.ts
 import { useEffect } from "react";
 import { useWebSocketPages } from "../apis/ui_sockets";
 

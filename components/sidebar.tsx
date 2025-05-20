@@ -191,6 +191,16 @@ export function ETS2LASidebar() {
                         }>
                             Reload Plugin Data
                         </SidebarMenuButton>
+                        <SidebarMenuButton className={buttonClassName("/wiki")} onMouseDown={
+                            () => {
+                                startTransition(async () => {
+                                    startProgress()
+                                    router.push('/page?url=/telemetry')
+                                })
+                            }
+                        }>
+                            Telemetry
+                        </SidebarMenuButton>
                     </SidebarGroup> 
                 )}
             </SidebarContent>
