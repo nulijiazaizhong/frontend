@@ -19,8 +19,8 @@ export default function Visualization() {
 
     const map_link = "https://truckermudgeon.github.io/ets2la";
     const visualization_link = "https://visualization.ets2la.com?theme=" + theme;
-    const map_mirror = "https://ets2lamap.goodnightan.com/ets2la/index.html"
-    const visualization_mirror = "https://ets2lavisualization.goodnightan.com?theme=" + theme;
+    const map_mirror = "https://map.ets2la.cn/ets2la"
+    const visualization_mirror = "https://visualization.ets2la.cn?theme=" + theme;
 
     const map = useMirror ? map_mirror : map_link;
     const visualization = useMirror ? visualization_mirror : visualization_link;
