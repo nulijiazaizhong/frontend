@@ -1,5 +1,5 @@
 import { ParseClassname } from "./page";
-import { useState } from "react";
+import { use, useState } from "react";
 import { useEffect } from "react";
 import { Popover, PopoverTrigger, PopoverContent } from "../ui/popover";
 import { Button } from "../ui/button";
@@ -36,6 +36,12 @@ export function ComboboxRenderer({ data, url, send }: any) {
 			});
 		}
 	}, [value]);
+
+	useEffect(() => {
+		if (data.default) {
+			setValue(multiple ? [data.default] : data.default);
+		}
+	}, [data.default, multiple]);
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
