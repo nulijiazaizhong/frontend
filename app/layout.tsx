@@ -21,9 +21,12 @@ export default function RootLayout({ children, } : Readonly<{ children: React.Re
     return (
         <html lang="en">
             <head>
+                <title>ETS2LA</title>
+                <meta name="description" content="ETS2LA Frontend Page" />
                 <meta charSet="UTF-8" />
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="theme-color" content="#131316" />
                 <link rel="icon" href="/favicon.ico" />
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-sidebarbg overflow-hidden`}>

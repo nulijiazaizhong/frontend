@@ -26,9 +26,17 @@ export async function GetVersion() {
 }
 
 export async function Fallback() {
-    GetVersion().catch((err) => {
+    const result = await GetVersion().catch(() => {
         setIP("ets2la.local")
+        return GetVersion().then((data) => {
+            return data ? true : false;
+        }).catch(() => {
+            return false;
+        });
+    }).catch(() => {
+        return false;
     });
+    return result ? true : false;
 }
 
 export async function CheckWindow(window:string) {
