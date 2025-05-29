@@ -177,8 +177,8 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
             { isNotRunning ? (
                 <div className="absolute top-0 left-0 w-full h-full flex bg-background font-geist justify-center items-center">
                     <div className="flex items-center justify-center flex-col gap-2 p-4">
-                        <h3 className="text-xs">We couldn't connect to ETS2LA</h3>
-                        <p className="text-center text-muted-foreground">Please check your device is on the same network as a computer running ETS2LA.<br />You can find the download <a className="text-foreground hover:underline" href="https://github.com/ets2la/installer/releases/latest">here</a> if this is the first you've heard of us.</p>
+                        <h3 className="text-xs">{"We couldn't connect to ETS2LA"}</h3>
+                        <p className="text-center text-muted-foreground">{"Please check your device is on the same network as a computer running ETS2LA."}<br />{"You can find the download"} <a className="text-foreground hover:underline" href="https://github.com/ets2la/installer/releases/latest">here</a> {"if this is the first you've heard of us."}</p>
                     </div>
                     <div className="flex w-full gap-[4px] absolute bottom-2 left-0 right-0 justify-center">
                         <p className="text-xs text-muted-foreground">Looked in:</p>
