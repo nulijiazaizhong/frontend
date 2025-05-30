@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { useTheme } from "next-themes";
 
 export default function Visualization() {
+    const [ usePromods, setUsePromods ] = useState(false);
     const [ useMirror, setUseMirror ] = useState(false);
     const [ isVisualizationOpen, setIsVisualizationOpen ] = useState(false);
     const [ isMapOpen, setIsMapOpen ] = useState(false);
@@ -21,8 +22,9 @@ export default function Visualization() {
     const visualization_link = "https://visualization.ets2la.com?theme=" + theme;
     const map_mirror = "https://map.ets2la.cn/ets2la"
     const visualization_mirror = "https://visualization.ets2la.cn?theme=" + theme;
+    const pm_link = "https://piggywu981.github.io/ets2la";
 
-    const map = useMirror ? map_mirror : map_link;
+    const map = usePromods ? pm_link : (useMirror ? map_mirror : map_link);
     const visualization = useMirror ? visualization_mirror : visualization_link;
 
     return (
@@ -99,6 +101,10 @@ export default function Visualization() {
                                     setUseMirror(true);
                                     setIsMapOpen(true)
                                 }} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Goodnightan Mirror</span></Button>
+                                <Button variant={"outline"} onClick={() => {
+                                    setUsePromods(true);
+                                    setIsMapOpen(true)
+                                }} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Promods map(Canada)</span></Button>
                             </div>
                             <div className="flex flex-col gap-2 items-center">
                                 <p className="text-xs text-muted-foreground font-geist-mono">
