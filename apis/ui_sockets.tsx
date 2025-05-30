@@ -33,7 +33,6 @@ export const UIProvider = ({ children }: { children: React.ReactNode }) => {
     setPages({}); // Initialize pages state
 
     ws.onmessage = (event) => {
-      console.log("Message from server");
       const message = JSON.parse(event.data);
       const { url, data } = message;
 

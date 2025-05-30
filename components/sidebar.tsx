@@ -201,6 +201,16 @@ export function ETS2LASidebar() {
                         }>
                             Telemetry
                         </SidebarMenuButton>
+                        <SidebarMenuButton className={buttonClassName("/wiki")} onMouseDown={
+                            () => {
+                                startTransition(async () => {
+                                    startProgress()
+                                    router.push('/onboarding')
+                                })
+                            }
+                        }>
+                            Onboarding
+                        </SidebarMenuButton>
                     </SidebarGroup> 
                 )}
             </SidebarContent>
