@@ -98,13 +98,13 @@ export default function Visualization() {
                                     setIsMapOpen(true)
                                 }} className="border-b-0 rounded-b-none group w-48"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Official</span></Button>
                                 <Button variant={"outline"} onClick={() => {
-                                    setUseMirror(true);
-                                    setIsMapOpen(true)
-                                }} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Goodnightan Mirror</span></Button>
-                                <Button variant={"outline"} onClick={() => {
                                     setUsePromods(true);
                                     setIsMapOpen(true)
-                                }} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Promods map(Canada)</span></Button>
+                                }} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Promods Support</span></Button>
+                                <Button variant={"outline"} onClick={() => {
+                                    setUseMirror(true);
+                                    setIsMapOpen(true)
+                                }} className="mt-2 rounded-md group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Goodnightan Mirror</span></Button>
                             </div>
                             <div className="flex flex-col gap-2 items-center">
                                 <p className="text-xs text-muted-foreground font-geist-mono">
