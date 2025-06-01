@@ -24,7 +24,7 @@ export default function Visualization() {
     const visualization_mirror = "https://visualization.ets2la.cn?theme=" + theme;
     const pm_link = "https://piggywu981.github.io/ets2la";
 
-    const map = usePromods ? pm_link : (useMirror ? map_mirror : map_link);
+    const map = useMirror ? (usePromods ? pm_link : map_mirror) : (usePromods ? pm_link : map_link);
     const visualization = useMirror ? visualization_mirror : visualization_link;
 
     return (
@@ -104,7 +104,12 @@ export default function Visualization() {
                                 <Button variant={"outline"} onClick={() => {
                                     setUseMirror(true);
                                     setIsMapOpen(true)
-                                }} className="mt-2 rounded-md group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Goodnightan Mirror</span></Button>
+                                }} className="mt-2 border-b-0 rounded-b-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Goodnightan Mirror</span></Button>
+                                <Button variant={"outline"} onClick={() => {
+                                    setUseMirror(true);
+                                    setUsePromods(true);
+                                    setIsMapOpen(true)
+                                }} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Promods Support</span></Button>
                             </div>
                             <div className="flex flex-col gap-2 items-center">
                                 <p className="text-xs text-muted-foreground font-geist-mono">
