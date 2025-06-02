@@ -35,24 +35,20 @@ import {
     BookText,
     MessageSquare,
     Bolt,
-    User,
     UserCog,
     UserRoundMinus,
     ArrowLeftToLine,
-    Drill
 } from "lucide-react"
 
 import { SetSettingByKey } from "@/apis/settings"
-import { useRouter, usePathname } from "next/navigation"
+import { useRouter, usePathname, useSearchParams } from "next/navigation"
 import { useTheme } from "next-themes"
 import { useAuth } from '@/apis/auth'
 import { Button } from "./ui/button"
-import { useEffect } from "react"
 import { GetDevmode, ReloadPlugins } from "@/apis/backend"
 import { toast } from "sonner"
 import useSWR from "swr"
 import RenderPage from "./page/render_page"
-import { useSidebar } from "@/components/ui/sidebar"
 
 export function ETS2LASidebar() {
     const { data: update_data } = useSWR("update", CheckForUpdate, { refreshInterval: 60000 })
@@ -62,14 +58,23 @@ export function ETS2LASidebar() {
     const startProgress = useProgress()
     const router = useRouter()
     const path = usePathname()
+    const params = useSearchParams()
     const { theme } = useTheme();
 
-    const buttonClassName = (targetPath: string) => {
-        if(path == targetPath) {
+    const buttonClassName = (targetPath: string, targetQuery?: { [key: string]: string }) => {
+        if (targetQuery) {
+            const currentUrl = params.get('url')
+            const targetUrl = targetQuery.url
+            
+            if (path === targetPath && currentUrl === targetUrl) {
+                return "font-medium bg-secondary transition-all hover:shadow-md active:scale-95 duration-200"
+            }
+        } else if (path === targetPath) {
+            // For paths without query parameters, just check the path
             return "font-medium bg-secondary transition-all hover:shadow-md active:scale-95 duration-200"
-        } else {
-            return "font-medium transition-all hover:shadow-md active:scale-95 duration-200"
         }
+        
+        return "font-medium transition-all hover:shadow-md active:scale-95 duration-200"
     }
 
     return (
@@ -132,11 +137,11 @@ export function ETS2LASidebar() {
                     <SidebarGroupLabel className="font-semibold">
                         {translate("frontend.sidebar.plugins")}
                     </SidebarGroupLabel>
-                    <SidebarMenuButton className={buttonClassName("/plugins")} onMouseDown={
+                    <SidebarMenuButton className={buttonClassName("/page", { url: "/plugins" })} onMouseDown={
                         () => {
                             startTransition(async () => {
                                 startProgress()
-                                router.push('/plugins')
+                                router.push('/page?url=/plugins')
                             })
                         }
                     }>
@@ -191,7 +196,7 @@ export function ETS2LASidebar() {
                         }>
                             Reload Plugin Data
                         </SidebarMenuButton>
-                        <SidebarMenuButton className={buttonClassName("/wiki")} onMouseDown={
+                        <SidebarMenuButton className={buttonClassName("/page", { url: "/telemetry" })} onMouseDown={
                             () => {
                                 startTransition(async () => {
                                     startProgress()

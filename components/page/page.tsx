@@ -47,6 +47,7 @@ import { Input } from "../ui/input"
 import { InputRenderer } from "./input_renderer"
 import { ComboboxRenderer } from "./combobox_renderer"
 import { CheckboxRenderer } from "./checkbox_renderer"
+import Page from "@/app/page/page"
 
 export function ParseClassname(default_classname: string, data_classname: string) {
 	if (data_classname == undefined) {
@@ -285,6 +286,12 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		return <SliderComponent key={data.id} url={url} data={data} send={send}></SliderComponent>
 	}
 
+	const SpinnerRenderer = (data: any) => {
+		return <div className="animate-spin w-max h-max text-gray-500">
+			{PageRenderer(data.children)}
+		</div>
+	}
+
     // @ts-ignore
 	const PageRenderer = (data: any) => {
 		if (!Array.isArray(data)) {
@@ -351,6 +358,9 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 				result.push(
 					<InputRenderer data={key_data} url={url} send={send} key={key_data.key} />
 				)
+			}
+			if (key == "spinner") {
+				result.push(SpinnerRenderer(key_data));
 			}
 		};
 
