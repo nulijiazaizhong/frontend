@@ -32,14 +32,22 @@ export default function Updater() {
         if(!page) return;
         try
         {
-            const number = parseInt(page[1].container.children[0].container.children[0].text.text.split(" ")[0]);
-            const total = parseInt(page[1].container.children[0].container.children[0].text.text.split(" ")[2]);
+            const number = parseInt(page[1].container.children[0].container.children[0].button.children[0].text.text.split(" ")[0]);
+            const total = parseInt(page[1].container.children[0].container.children[0].button.children[0].text.text.split(" ")[2]);
             setPageNumber(number);
             setTotalPages(total);
+            if (number != 0 && total != 0 && number >= total) {
+                localStorage.setItem("hasDoneOnboarding", "true");
+            }
         }
         catch (error) {}
     }, [page]);
     
+    if (pageNumber == 1 && open) {
+        // The user skipped the onboarding
+        localStorage.setItem("hasDoneOnboarding", "true");
+    }
+
     return (
         <div className="w-full h-full overflow-auto">
             { pageNumber === 1 && (

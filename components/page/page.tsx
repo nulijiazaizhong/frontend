@@ -371,7 +371,6 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		<TooltipProvider delayDuration={0}>
 			<div className={"text-left flex flex-col w-full gap-6 relative font-geist " + className}>
 				{PageRenderer(data)}
-				<div className="h-12"></div>
 			</div>
 		</TooltipProvider>
 	)

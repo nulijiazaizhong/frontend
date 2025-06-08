@@ -22,55 +22,7 @@ import { usePages } from "@/hooks/usePages";
 
 export default function Home() {
     const [selectedPlugin, setSelectedPlugin] = useState("Global")
-    const [hasDoneOnboarding, setHasDoneOnboarding] = useState(false);
-    const [stepIndex, setStepIndex] = useState(0);
     const pages = usePages();
-
-    const STEPS = [
-        {
-            target: "#static_settings",
-            content: translate("tutorials.settings.static"),
-            disableBeacon: true,
-            hideFooter: true,
-        },
-        {
-            target: "#settings_page",
-            content: translate("tutorials.settings.global"),
-            disableBeacon: true,
-            hideFooter: true,
-        },
-        {
-            target: "#plugin_settings",
-            content: translate("tutorials.settings.plugin"),
-            placement: "right",
-            disableBeacon: true,
-            hideFooter: true,
-        },
-        {
-            target: "#open_sdk_settings",
-            content: translate("tutorials.settings.sdk"),
-            placement: "right",
-            disableBeacon: true,
-            hideFooter: true,
-        }
-    ];
-
-    useEffect(() => {
-        const hasDoneOnboarding = localStorage.getItem("hasDoneSettingsOnboarding");
-        setHasDoneOnboarding(hasDoneOnboarding === "true");
-    });
-
-    const handleJoyrideCallback = (data: CallBackProps) => {
-        const { action, index, origin, status, type } = data;
-        
-        // @ts-expect-error
-        if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
-            setStepIndex(index + (action === ACTIONS.PREV ? -1 : 1));
-        } // @ts-expect-error
-        else if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
-            localStorage.setItem("hasDoneSettingsOnboarding", "true");
-        }
-    };
 
     const renderPluginPage = () => {
         if (selectedPlugin === "Global") {
@@ -92,29 +44,6 @@ export default function Home() {
 
     return (
         <>
-            <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
-                steps={STEPS}
-                run={!hasDoneOnboarding}
-                stepIndex={stepIndex}
-                spotlightPadding={5}
-                styles={
-                    {
-                        options: {
-                            backgroundColor: "#18181b",
-                            arrowColor: "#18181b",
-                            textColor: "#fafafa",
-                        },
-                        buttonClose: {
-                            width: "8px",
-                            height: "8px",
-                        },
-                        tooltipContent: {
-                            fontSize: "14px",
-                        }
-                    }
-                }
-                callback={handleJoyrideCallback}
-            />
             <div className="h-full font-geist rounded-lg bg-background p-4">
                 <div className="flex flex-col gap-2 p-5 pt-[10px]">
                     <h2 className="text-lg font-bold">{translate("frontend.settings")}</h2>
@@ -173,6 +102,7 @@ export default function Home() {
                                     <div className="h-4" />
                                     <div className="w-[97%]">
                                         {renderPluginPage()}
+                                        <div className="h-24" />
                                     </div>
                                 </ScrollArea>
                                 <div className="absolute h-4 top-0 left-0 right-0 bg-linear-to-b from-background pointer-events-none" />

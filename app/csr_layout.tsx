@@ -25,11 +25,9 @@ import Snowfall from "react-snowfall"
 import useSWR from "swr";
 import { motion } from "framer-motion";
 import Loader from "@/components/loader";
-import { translate } from "@/apis/translation";
-import { ACTIONS, EVENTS, STATUS, CallBackProps } from 'react-joyride';
-import { JoyRideNoSSR, skipAll } from "@/components/joyride-no-ssr";
 import { AnimatePresence } from "framer-motion";
 import { UIProvider } from "@/apis/ui_sockets";
+import { useRouter } from "next/navigation";
 
 export default function CSRLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     const { data: language, isLoading: loadingLanguage } = useSWR("language", GetCurrentLanguage, { refreshInterval: 2000 });
@@ -38,15 +36,9 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
     const [areFireworksAllowed, setAreFireworksAllowed] = useState(false);
     const [loadingTranslations, setLoadingTranslations] = useState(true);
     const [hasDoneOnboarding, setHasDoneOnboarding] = useState(false);
-    const [stepIndex, setStepIndex] = useState(0);
-    const [run, setRun] = useState(false);
-    const [STEPS, setSTEPS] = useState([
-        {
-            
-        }
-    ]);
+    
     const isMobile = useIsMobile();
-
+    const router = useRouter();
 
     useEffect(() => {
         if (language) {
@@ -54,43 +46,20 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
             setLoadingTranslations(true);
             loadTranslations().then(() => {
                 setLoadingTranslations(false);
-                setSTEPS([
-                    {
-                        target: "#window_controls",
-                        content: translate("tutorials.main.window_controls"),
-                        disableBeacon: true,
-                    },
-                    {
-                        target: "#slide_area",
-                        content: translate("tutorials.main.slide_area"),
-                        disableBeacon: true,
-                        hideFooter: true,
-                    },
-                    {
-                        target: "#sidebar_rail",
-                        content: translate("tutorials.main.sidebar_collapse"),
-                        placement: "right",
-                        disableBeacon: true,
-                        hideFooter: true,
-                    },
-                    {
-                        target: "#sidebar",
-                        content: translate("tutorials.main.sidebar"),   
-                        placement: "right",
-                        disableBeacon: true,
-                        hideFooter: true,
-                    },
-                    {
-                        target: "#settings",
-                        content: translate("tutorials.main.settings"),   
-                        placement: "right",
-                        disableBeacon: true,
-                        hideFooter: true,
-                    },
-                ]);
             });
         }
     }, [language]);
+
+    useEffect(() => {
+        const hasDoneOnboarding = localStorage.getItem("hasDoneOnboarding");
+        console.log("Has done onboarding:", hasDoneOnboarding);
+        setHasDoneOnboarding(hasDoneOnboarding === "true");
+        if (hasDoneOnboarding != "true") {
+            // Redirect to onboarding page if not done
+            router.push("/onboarding");
+            console.log("Redirecting to onboarding page");
+        }
+    });
 
     useEffect(() => {
         GetSettingByKey("global", "snow", true).then((snow) => {
@@ -99,11 +68,13 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
         GetSettingByKey("global", "fireworks", true).then((fireworks) => {
             setAreFireworksAllowed(fireworks === true);
         });
-    });
+    }, []);
 
     useEffect(() => {
+        // Try and fallback to ets2la.local if the backend is not
+        // reachable through localhost.
         Fallback().then((fallback) => {})
-    })
+    });
 
     const date = new Date();
     const month = date.getMonth();
@@ -111,66 +82,11 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
     const isNewYear = ((month === 0 && day === 1) || (month === 11 && day === 31)) && areFireworksAllowed;
     const isSnowing = (month >= 10 || month === 0) && isSnowAllowed;
 
-    const handleJoyrideCallback = (data: CallBackProps) => {
-        const { action, index, origin, status, type } = data;
-        
-        // @ts-expect-error
-        if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
-            setStepIndex(index + (action === ACTIONS.PREV ? -1 : 1));
-        } // @ts-expect-error
-        else if ([STATUS.FINISHED].includes(status)) {
-            localStorage.setItem("hasDoneOnboarding", "true");
-        } // @ts-expect-error
-        else if ([STATUS.SKIPPED].includes(status)) {
-            skipAll();
-        }
-    };
-
     useEffect(() => {
         loadTranslations().then(() => {
-            setSTEPS([
-                {
-                    target: "#window_controls",
-                    content: translate("tutorials.main.window_controls"),
-                    disableBeacon: true,
-                },
-                {
-                    target: "#slide_area",
-                    content: translate("tutorials.main.slide_area"),
-                    disableBeacon: true,
-                    hideFooter: true,
-                },
-                {
-                    target: "#sidebar_rail",
-                    content: translate("tutorials.main.sidebar_collapse"),
-                    placement: "right",
-                    disableBeacon: true,
-                    hideFooter: true,
-                },
-                {
-                    target: "#sidebar",
-                    content: translate("tutorials.main.sidebar"),   
-                    placement: "right",
-                    disableBeacon: true,
-                    hideFooter: true,
-                },
-                {
-                    target: "#settings",
-                    content: translate("tutorials.main.settings"),   
-                    placement: "right",
-                    disableBeacon: true,
-                    hideFooter: true,
-                },
-            ]);
-            const hasDoneOnboarding = localStorage.getItem("hasDoneOnboarding");
-            setHasDoneOnboarding(hasDoneOnboarding === "true");
             setLoadingTranslations(false);
         });
     }, []);
-
-    const startOnboarding = () => {
-        setRun(true);
-    }
 
     return (
         <div className="h-screen w-screen flex overflow-hidden">
@@ -200,38 +116,8 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
                     ) || (
                         <motion.div className="w-full h-full flex flex-col" key="main" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }}>
                             <UIProvider>
-                                <Disclaimer closed_callback={startOnboarding} />
+                                <Disclaimer closed_callback={() => {}} />
                                 <ProgressBarProvider>
-                                    <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
-                                        steps={STEPS}
-                                        run={run && !hasDoneOnboarding}
-                                        stepIndex={stepIndex}
-                                        showSkipButton
-                                        spotlightPadding={5}
-                                        styles={
-                                            {
-                                                options: {
-                                                    backgroundColor: "#18181b",
-                                                    arrowColor: "#18181b",
-                                                    textColor: "#fafafa",
-                                                },
-                                                buttonClose: {
-                                                    width: "8px",
-                                                    height: "8px",
-                                                },
-                                                buttonNext: {
-                                                    visibility: "hidden",
-                                                },
-                                                buttonBack: {
-                                                    visibility: "hidden",
-                                                },
-                                                tooltipContent: {
-                                                    fontSize: "14px",
-                                                }
-                                            }
-                                        }
-                                        callback={handleJoyrideCallback}
-                                    />
                                     <Toaster position={isCollapsed ? "bottom-center" : "bottom-right"} toastOptions={{
                                         unstyled: true,
                                         classNames: {
