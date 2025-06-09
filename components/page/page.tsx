@@ -275,7 +275,6 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 						{PageRenderer(tab.tab.children)}
 					</TabsContent>
 				))}
-
 			</Tabs>
 		)
 	}

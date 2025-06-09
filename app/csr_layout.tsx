@@ -103,6 +103,7 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
                 attribute="class"
                 defaultTheme="system"
                 enableSystem
+                enableColorScheme
                 disableTransitionOnChange
             >
                 <AnimatePresence mode="wait">

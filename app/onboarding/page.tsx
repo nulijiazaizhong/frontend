@@ -23,9 +23,7 @@ export default function Updater() {
     const page = usePage("/onboarding");
     
     useEffect(() => {
-        // Close the sidebar when the component mounts
         setOpen(false);
-        console.log(open);
     }, []);
 
     useEffect(() => {
