@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/tooltip"
 import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
+import { Textarea } from "../ui/textarea"
 import { useState } from "react"
 import { translate } from "@/apis/translation"
 import React, { Component } from 'react';
@@ -143,6 +144,25 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		})}}>
 			{result}
 		</Button>
+	}
+
+	const TextAreaRenderer = (data: any) => {
+		const classname = ParseClassname("", data.style.classname);
+		const placeholder = data.placeholder ? data.placeholder : "";
+		const changed_callback = data.changed ? data.changed : null;
+		const style = data.style ? data.style : {};
+		const disabled = data.disabled ? data.disabled : false;
+
+		return <Textarea className={classname} style={style} key={data.id} placeholder={placeholder} disabled={disabled} onChange={(e) => {
+			send({
+				type: "function",
+				data: {
+					url: url,
+					target: changed_callback,
+					args: [e.target.value]
+				}
+			})
+		}}/>
 	}
 
 	const MarkdownRenderer = (data: any) => {
