@@ -176,7 +176,7 @@ export function ETS2LASidebar() {
                         () => {
                             startTransition(async () => {
                                 startProgress()
-                                router.push('/page?url=/chat')
+                                router.push('/chat')
                             })
                         }
                     }>
