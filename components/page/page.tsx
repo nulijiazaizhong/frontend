@@ -330,7 +330,7 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 			if (key == "button") {
 				result.push(ButtonRenderer(key_data));
 			}
-			if (key == "text_area") {
+			if (key == "textarea") {
 				result.push(TextAreaRenderer(key_data));
 			}
 			if (key == "markdown") {
