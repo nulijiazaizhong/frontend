@@ -1,4 +1,3 @@
-
 import { Separator } from "../ui/separator"
 import {
 	TooltipProvider,
@@ -6,9 +5,9 @@ import {
 	TooltipContent,
 	TooltipTrigger
 } from "@/components/ui/tooltip"
-import { Toggle } from "@/components/ui/toggle"
-import { Switch } from "../ui/switch"
 import { Button } from "../ui/button"
+import { Badge } from "../ui/badge"
+import { Textarea } from "../ui/textarea"
 import { useState } from "react"
 import { translate } from "@/apis/translation"
 import React, { Component } from 'react';
@@ -27,22 +26,6 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useWebSocketPages } from "@/apis/ui_sockets"
 import { SliderComponent } from "@/components/page/slider"
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Alert } from "../ui/alert"
-import { Checkbox } from "../ui/checkbox"
-import { Input } from "../ui/input"
 
 import { InputRenderer } from "./input_renderer"
 import { ComboboxRenderer } from "./combobox_renderer"
@@ -69,6 +52,14 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		const classname = ParseClassname("text-sm", data.style.classname);
 		const style = data.style ? data.style : {};
 		return <p className={classname} style={style} key={data.key}>{translate(data.text)}</p>
+	}
+
+	const BadgeRenderer = (data: any) => {
+		const classname = ParseClassname("", data.style.classname);
+		const style = data.style ? data.style : {};
+		const children = data.children ? data.children : [];
+		const result: any[] = PageRenderer(children);
+		return <Badge variant={data.variant} className={classname} style={style} key={data.key}>{result}</Badge>
 	}
 
 	const ContainerRenderer = (data: any) => {
@@ -153,6 +144,25 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		})}}>
 			{result}
 		</Button>
+	}
+
+	const TextAreaRenderer = (data: any) => {
+		const classname = ParseClassname("", data.style.classname);
+		const placeholder = data.placeholder ? data.placeholder : "";
+		const changed_callback = data.changed ? data.changed : null;
+		const style = data.style ? data.style : {};
+		const disabled = data.disabled ? data.disabled : false;
+
+		return <Textarea className={classname} style={style} key={data.id} placeholder={placeholder} disabled={disabled} onChange={(e) => {
+			send({
+				type: "function",
+				data: {
+					url: url,
+					target: changed_callback,
+					args: [e.target.value]
+				}
+			})
+		}}/>
 	}
 
 	const MarkdownRenderer = (data: any) => {
@@ -326,6 +336,9 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 			if (key == "text") {
 				result.push(TextRenderer(key_data));
 			}
+			if (key == "badge") {
+				result.push(BadgeRenderer(key_data));
+			}
 			if (key == "container") {
 				result.push(ContainerRenderer(key_data));
 			}
@@ -337,6 +350,9 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 			}
 			if (key == "button") {
 				result.push(ButtonRenderer(key_data));
+			}
+			if (key == "textarea") {
+				result.push(TextAreaRenderer(key_data));
 			}
 			if (key == "markdown") {
 				result.push(MarkdownRenderer(key_data));
