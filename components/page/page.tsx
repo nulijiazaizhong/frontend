@@ -251,27 +251,48 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		const changed = data.changed ? data.changed : null;
 		const children = data.children ? data.children : [];
 		
+		// Force remounting of tabs when children change with this key
+		const tabKey = `tabs-${url}-${JSON.stringify(data.children.map((c: any) => c.tab.name))}`;
+		const defaultValue = children.length > 0 ? children[0].tab.name : "";
+		
 		return (
-			<Tabs className="w-full" defaultValue={data.children[0].tab.name} onValueChange={(value) => {
-				if (changed) {
-					send({
-						type: "function",
-						data: {
-							url: url,
-							target: changed,
-							args: [value]
-						}
-					})
-				}
-			}}>
+			<Tabs 
+				className="w-full" 
+				defaultValue={defaultValue} 
+				key={tabKey}
+				onValueChange={(value) => {
+					if (changed) {
+						send({
+							type: "function",
+							data: {
+								url: url,
+								target: changed,
+								args: [value]
+							}
+						})
+					}
+				}}
+			>
 				<TabsList className={classname} style={style}>
 					{children.map((tab: any, index: number) => (
-						<TabsTrigger key={index} value={tab.tab.name} className={ParseClassname("", tab.tab.trigger_style.classname)} style={tab.tab.trigger_style}>{translate(tab.tab.name)}</TabsTrigger>
+						<TabsTrigger 
+							key={index} 
+							value={tab.tab.name} 
+							className={ParseClassname("", tab.tab.trigger_style.classname)} 
+							style={tab.tab.trigger_style}
+						>
+							{translate(tab.tab.name)}
+						</TabsTrigger>
 					))}
 				</TabsList>
-
+	
 				{children.map((tab: any, index: number) => (
-					<TabsContent key={index} value={tab.tab.name} className={ParseClassname("pt-4", tab.tab.container_style.classname)} style={tab.tab.container_style}>
+					<TabsContent 
+						key={index} 
+						value={tab.tab.name} 
+						className={ParseClassname("pt-4", tab.tab.container_style.classname)} 
+						style={tab.tab.container_style}
+					>
 						{PageRenderer(tab.tab.children)}
 					</TabsContent>
 				))}

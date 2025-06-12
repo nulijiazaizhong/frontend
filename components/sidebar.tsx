@@ -112,11 +112,11 @@ export function ETS2LASidebar() {
                     <SidebarGroupLabel className="font-semibold" >
                         {translate("frontend.sidebar.main")}
                     </SidebarGroupLabel>
-                    <SidebarMenuButton className={buttonClassName("/")} onMouseDown={
+                    <SidebarMenuButton className={buttonClassName("/about")} onMouseDown={
                         () => {
                             startTransition(async () => {
                                 startProgress()
-                                router.push('/')
+                                router.push('/about')
                             })
                         }
                     }>
@@ -172,11 +172,11 @@ export function ETS2LASidebar() {
                     }>
                         <BookText /> {translate("frontend.sidebar.wiki")}
                     </SidebarMenuButton>
-                    <SidebarMenuButton className={buttonClassName("/chat")} onMouseDown={
+                    <SidebarMenuButton className={buttonClassName("/page", { url: "/chat" })} onMouseDown={
                         () => {
                             startTransition(async () => {
                                 startProgress()
-                                router.push('/chat')
+                                router.push('/page?url=/chat')
                             })
                         }
                     }>
