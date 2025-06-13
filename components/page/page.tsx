@@ -91,7 +91,60 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 	const LinkRenderer = (data: any) => {
 		const classname = ParseClassname("", data.style.classname);
 		const style = data.style ? data.style : {};
-		return <a className={classname} style={style} href={data.url} target="_blank" key={data.key}>{translate(data.text)}</a>
+
+		const protocol = data.url ? data.url.split("://")[0] : "";
+		const root = data.url ? data.url.split("://")[1].split("/")[0] : "";
+		const path = data.url ? data.url.split("://")[1].split("/").slice(1).join("/") : "";
+
+		const isHTTP = protocol.toLowerCase() === "http";
+		const isETS2LA = root.toLowerCase().split(".").slice(-2, -1)[0] === "ets2la";
+		const isDonation = root.toLowerCase() === "patreon.com" || root.toLowerCase() === "ko-fi.com";
+
+		const officialDonationUrls = [
+			"https://ko-fi.com/tumppi066",
+		]
+		const isOfficialDonation = officialDonationUrls.includes(data.url.toLowerCase());
+
+		return (
+			<Tooltip>
+				<TooltipTrigger className={classname} style={style}>
+					<a className={classname} style={style} href={data.url} target="_blank" key={data.key}>{translate(data.text)}</a>
+				</TooltipTrigger>
+				<TooltipContent>
+					<div className="flex">
+						<a href={data.url} target="_blank" className="text-xs text-muted-foreground">{protocol}{"://"}</a>
+						<a href={data.url} target="_blank" className="text-xs">{root}</a>
+						<a href={data.url} target="_blank" className="text-xs text-muted-foreground">{"/"}{path}</a>
+					</div>
+					{isDonation && !isOfficialDonation
+						? <>
+							<Separator className="mt-2 mb-2" />
+							<p className="text-xs text-muted-foreground mt-2">This donation won't directly support ETS2LA.<br />Donating to plugin developers is encouraged.</p>
+						</>
+						: isOfficialDonation ?
+							<>
+								<Separator className="mt-2 mb-2" />
+								<p className="text-xs text-muted-foreground mt-2">This is an official donation link for ETS2LA.</p>
+							</>
+						: null
+					}
+					{isETS2LA
+						? <>
+							<Separator className="mt-2 mb-2" />
+							<p className="text-xs text-muted-foreground">This is an official ETS2LA link</p>
+						</>
+						: null
+					}
+					{isHTTP 
+						? <>
+							<Separator className="mt-2 mb-2" />
+							<p className="text-xs text-muted-foreground">Warning: This link is HTTP, the connection is not secure.<br />Do not send passwords or sensitive information.</p> 
+						</>
+						: null
+					}
+				</TooltipContent>
+			</Tooltip>
+		)
 	}
 	
 	const AlertRenderer = (data: any) => {
