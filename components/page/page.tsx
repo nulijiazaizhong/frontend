@@ -119,7 +119,7 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 					{isDonation && !isOfficialDonation
 						? <>
 							<Separator className="mt-2 mb-2" />
-							<p className="text-xs text-muted-foreground mt-2">This donation won't directly support ETS2LA.<br />Donating to plugin developers is encouraged.</p>
+							<p className="text-xs text-muted-foreground mt-2">{"This donation won't directly support ETS2LA."}<br />Donating to plugin developers is encouraged.</p>
 						</>
 						: isOfficialDonation ?
 							<>
