@@ -275,26 +275,28 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		);
 	}
 
-	const TooltipRenderer = (data: any, tooltip_data: any) => {
-		const classname = ParseClassname("", data.style.classname);
-		const style = data.style ? data.style : {};
+	const TooltipRenderer = (data: any) => {
+		const trigger_classname = ParseClassname("", data.trigger.style.classname);
+		const trigger_style = data.trigger.style ? data.trigger.style : {};
 
-		const tooltip_children = data.children ? data.children : [];
-		const tooltip_result: any[] = PageRenderer(tooltip_children);
+		const content_classname = ParseClassname("", data.content.style.classname);
+		const content_style = data.content.style ? data.content.style : {};
 
-		const content_classname = ParseClassname("bg-sidebarbg border font-geist", tooltip_data.style.classname);
-		const content_style = tooltip_data.style ? tooltip_data.style : {};
+		const trigger_children = data.trigger.children ? data.trigger.children : [];
+		const trigger: any[] = PageRenderer(trigger_children);
 
-		const content_children = tooltip_data.children ? tooltip_data.children : [];
-		const content_result: any[] = PageRenderer(content_children);
+		const content_children = data.content.children ? data.content.children : [];
+		const content = PageRenderer(content_children);
+
+		const side = data.side ? data.side : "top";
 
 		return (
 			<Tooltip>
-				<TooltipTrigger className={classname} style={style}>
-					{tooltip_result}
+				<TooltipTrigger className={trigger_classname} style={trigger_style}>
+					{trigger}
 				</TooltipTrigger>
-				<TooltipContent className={content_classname} style={content_style}>
-					{content_result}
+				<TooltipContent className={content_classname} style={content_style} side={side}>
+					{content}
 				</TooltipContent>
 			</Tooltip>
 		)
@@ -381,7 +383,6 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 			data = [data]
 		}
 		const result: any[] = [];
-		const tooltip_content: any = {};
 		for (const item of data) {
 			const key = Object.keys(item)[0];
 			const key_data = item[key];
@@ -410,12 +411,9 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 			if (key == "markdown") {
 				result.push(MarkdownRenderer(key_data));
 			}
-			if (key == "tooltip_content") {
-				tooltip_content[key_data.id] = key_data;
-			}
 			if (key == "tooltip") {
 				result.push(
-					TooltipRenderer(key_data, tooltip_content[key_data.content])
+					TooltipRenderer(key_data)
 				);
 			}
 			if (key == "separator") {
