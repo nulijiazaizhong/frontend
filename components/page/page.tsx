@@ -54,12 +54,31 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		return <p className={classname} style={style} key={data.key}>{translate(data.text)}</p>
 	}
 
+	const TextAreaRenderer = (data: any) => {
+		const classname = ParseClassname("", data.style.classname);
+		const placeholder = data.placeholder ? data.placeholder : "";
+		const changed_callback = data.changed ? data.changed : null;
+		const style = data.style ? data.style : {};
+		const disabled = data.disabled ? data.disabled : false;
+
+		return <Textarea className={classname} style={style} key={data.id} placeholder={placeholder} disabled={disabled} onChange={(e) => {
+			send({
+				type: "function",
+				data: {
+					url: url,
+					target: changed_callback,
+					args: [e.target.value]
+				}
+			})
+		}}/>
+	}
+
 	const BadgeRenderer = (data: any) => {
 		const classname = ParseClassname("", data.style.classname);
 		const style = data.style ? data.style : {};
 		const children = data.children ? data.children : [];
 		const result: any[] = PageRenderer(children);
-		return <Badge variant={data.variant} className={classname} style={style} key={data.key}>{result}</Badge>
+		return <Badge variant={data.variant} className={classname} style={style} key={data.id}>{result}</Badge>
 	}
 
 	const ContainerRenderer = (data: any) => {
@@ -197,25 +216,6 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		})}}>
 			{result}
 		</Button>
-	}
-
-	const TextAreaRenderer = (data: any) => {
-		const classname = ParseClassname("", data.style.classname);
-		const placeholder = data.placeholder ? data.placeholder : "";
-		const changed_callback = data.changed ? data.changed : null;
-		const style = data.style ? data.style : {};
-		const disabled = data.disabled ? data.disabled : false;
-
-		return <Textarea className={classname} style={style} key={data.id} placeholder={placeholder} disabled={disabled} onChange={(e) => {
-			send({
-				type: "function",
-				data: {
-					url: url,
-					target: changed_callback,
-					args: [e.target.value]
-				}
-			})
-		}}/>
 	}
 
 	const MarkdownRenderer = (data: any) => {
