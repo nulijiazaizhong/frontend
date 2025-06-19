@@ -387,67 +387,74 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 			const key = Object.keys(item)[0];
 			const key_data = item[key];
 			
-			if (key == "text") {
-				result.push(TextRenderer(key_data));
-			}
-			if (key == "badge") {
-				result.push(BadgeRenderer(key_data));
-			}
-			if (key == "container") {
-				result.push(ContainerRenderer(key_data));
-			}
-			if (key == "space") {
-				result.push(SpaceRenderer(key_data));
-			}
-			if (key == "link") {
-				result.push(LinkRenderer(key_data));
-			}
-			if (key == "button") {
-				result.push(ButtonRenderer(key_data));
-			}
-			if (key == "textarea") {
-				result.push(TextAreaRenderer(key_data));
-			}
-			if (key == "markdown") {
-				result.push(MarkdownRenderer(key_data));
-			}
-			if (key == "tooltip") {
+			try {
+				if (key == "text") {
+					result.push(TextRenderer(key_data));
+				}
+				if (key == "badge") {
+					result.push(BadgeRenderer(key_data));
+				}
+				if (key == "container") {
+					result.push(ContainerRenderer(key_data));
+				}
+				if (key == "space") {
+					result.push(SpaceRenderer(key_data));
+				}
+				if (key == "link") {
+					result.push(LinkRenderer(key_data));
+				}
+				if (key == "button") {
+					result.push(ButtonRenderer(key_data));
+				}
+				if (key == "textarea") {
+					result.push(TextAreaRenderer(key_data));
+				}
+				if (key == "markdown") {
+					result.push(MarkdownRenderer(key_data));
+				}
+				if (key == "tooltip") {
+					result.push(
+						TooltipRenderer(key_data)
+					);
+				}
+				if (key == "separator") {
+					result.push(SeparatorRenderer(key_data));
+				}
+				if (key == "tabs") {
+					result.push(TabRenderer(key_data));
+				}
+				if (key == "slider") {
+					result.push(SliderRenderer(key_data));
+				}
+				if (key == "combobox") {
+					result.push(
+						<ComboboxRenderer data={key_data} url={url} send={send} key={key_data.key} />
+					)
+				}
+				if (key == "alert") {
+					result.push(AlertRenderer(key_data));
+				}
+				if (key == "icon") {
+					result.push(IconRenderer(key_data));
+				}
+				if (key == "checkbox") {
+					result.push(
+						<CheckboxRenderer data={key_data} url={url} send={send} key={key_data.key} />
+					)
+				}
+				if (key == "input") {
+					result.push(
+						<InputRenderer data={key_data} url={url} send={send} key={key_data.key} />
+					)
+				}
+				if (key == "spinner") {
+					result.push(SpinnerRenderer(key_data));
+				}
+
+			} catch (error) {
 				result.push(
-					TooltipRenderer(key_data)
-				);
-			}
-			if (key == "separator") {
-				result.push(SeparatorRenderer(key_data));
-			}
-			if (key == "tabs") {
-				result.push(TabRenderer(key_data));
-			}
-			if (key == "slider") {
-				result.push(SliderRenderer(key_data));
-			}
-			if (key == "combobox") {
-				result.push(
-					<ComboboxRenderer data={key_data} url={url} send={send} key={key_data.key} />
+					<p className="text-red-500" key={key_data.key + "-error"}>Error rendering {key}: {error instanceof Error ? error.message : String(error)}</p>
 				)
-			}
-			if (key == "alert") {
-				result.push(AlertRenderer(key_data));
-			}
-			if (key == "icon") {
-				result.push(IconRenderer(key_data));
-			}
-			if (key == "checkbox") {
-				result.push(
-					<CheckboxRenderer data={key_data} url={url} send={send} key={key_data.key} />
-				)
-			}
-			if (key == "input") {
-				result.push(
-					<InputRenderer data={key_data} url={url} send={send} key={key_data.key} />
-				)
-			}
-			if (key == "spinner") {
-				result.push(SpinnerRenderer(key_data));
 			}
 		};
 
