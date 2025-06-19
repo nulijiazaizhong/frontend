@@ -21,7 +21,7 @@ import {
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 
-import { Update, CheckForUpdate, GetMetadata } from "@/apis/backend"
+import { CheckForUpdate, GetMetadata } from "@/apis/backend"
 
 import { useProgress } from "react-transition-progress"
 import { startTransition } from "react"
@@ -35,24 +35,20 @@ import {
     BookText,
     MessageSquare,
     Bolt,
-    User,
     UserCog,
     UserRoundMinus,
     ArrowLeftToLine,
-    Drill
 } from "lucide-react"
 
 import { SetSettingByKey } from "@/apis/settings"
-import { useRouter, usePathname } from "next/navigation"
+import { useRouter, usePathname, useSearchParams } from "next/navigation"
 import { useTheme } from "next-themes"
 import { useAuth } from '@/apis/auth'
 import { Button } from "./ui/button"
-import { useEffect } from "react"
 import { GetDevmode, ReloadPlugins } from "@/apis/backend"
 import { toast } from "sonner"
 import useSWR from "swr"
 import RenderPage from "./page/render_page"
-import { useSidebar } from "@/components/ui/sidebar"
 
 export function ETS2LASidebar() {
     const { data: update_data } = useSWR("update", CheckForUpdate, { refreshInterval: 60000 })
@@ -62,14 +58,23 @@ export function ETS2LASidebar() {
     const startProgress = useProgress()
     const router = useRouter()
     const path = usePathname()
+    const params = useSearchParams()
     const { theme } = useTheme();
 
-    const buttonClassName = (targetPath: string) => {
-        if(path == targetPath) {
+    const buttonClassName = (targetPath: string, targetQuery?: { [key: string]: string }) => {
+        if (targetQuery) {
+            const currentUrl = params.get('url')
+            const targetUrl = targetQuery.url
+            
+            if (path === targetPath && currentUrl === targetUrl) {
+                return "font-medium bg-secondary transition-all hover:shadow-md active:scale-95 duration-200"
+            }
+        } else if (path === targetPath) {
+            // For paths without query parameters, just check the path
             return "font-medium bg-secondary transition-all hover:shadow-md active:scale-95 duration-200"
-        } else {
-            return "font-medium transition-all hover:shadow-md active:scale-95 duration-200"
         }
+        
+        return "font-medium transition-all hover:shadow-md active:scale-95 duration-200"
     }
 
     return (
@@ -86,12 +91,17 @@ export function ETS2LASidebar() {
                         <p className="text-xs pl-2 font-semibold text-muted-foreground cursor-pointer" onMouseDown={() => {
                             startTransition(async () => {
                                 startProgress()
-                                router.push('/changelog')
+                                router.push('/page?url=/changelog')
                             })
                         }}>{metadata && "v" + metadata.version || "ERROR: please refresh the page or purge .next/cache"}</p>
                     </div>
                     { update_data && 
-                        <Button size={"sm"} variant={"outline"} className="w-full" onMouseDown={() => { Update() }}>
+                        <Button size={"sm"} variant={"outline"} className="w-full" onMouseDown={() => {
+                            startTransition(async () => {
+                                startProgress()
+                                router.push('/page?url=/updater')
+                            })
+                        }}>
                             {translate("frontend.sidebar.updates_available")}
                         </Button>
                     }
@@ -102,11 +112,11 @@ export function ETS2LASidebar() {
                     <SidebarGroupLabel className="font-semibold" >
                         {translate("frontend.sidebar.main")}
                     </SidebarGroupLabel>
-                    <SidebarMenuButton className={buttonClassName("/")} onMouseDown={
+                    <SidebarMenuButton className={buttonClassName("/about")} onMouseDown={
                         () => {
                             startTransition(async () => {
                                 startProgress()
-                                router.push('/')
+                                router.push('/about')
                             })
                         }
                     }>
@@ -127,11 +137,11 @@ export function ETS2LASidebar() {
                     <SidebarGroupLabel className="font-semibold">
                         {translate("frontend.sidebar.plugins")}
                     </SidebarGroupLabel>
-                    <SidebarMenuButton className={buttonClassName("/plugins")} onMouseDown={
+                    <SidebarMenuButton className={buttonClassName("/page", { url: "/plugins" })} onMouseDown={
                         () => {
                             startTransition(async () => {
                                 startProgress()
-                                router.push('/plugins')
+                                router.push('/page?url=/plugins')
                             })
                         }
                     }>
@@ -162,16 +172,16 @@ export function ETS2LASidebar() {
                     }>
                         <BookText /> {translate("frontend.sidebar.wiki")}
                     </SidebarMenuButton>
-                    {/* <SidebarMenuButton className={buttonClassName("/chat")} onMouseDown={
+                    <SidebarMenuButton className={buttonClassName("/page", { url: "/chat" })} onMouseDown={
                         () => {
                             startTransition(async () => {
                                 startProgress()
-                                router.push('/chat')
+                                router.push('/page?url=/chat')
                             })
                         }
                     }>
                         <MessageSquare /> {translate("frontend.sidebar.chat")}
-                    </SidebarMenuButton> */}
+                    </SidebarMenuButton>
                 </SidebarGroup>
                 {devmode && (
                     <SidebarGroup>
@@ -185,6 +195,26 @@ export function ETS2LASidebar() {
                             }
                         }>
                             Reload Plugin Data
+                        </SidebarMenuButton>
+                        <SidebarMenuButton className={buttonClassName("/page", { url: "/telemetry" })} onMouseDown={
+                            () => {
+                                startTransition(async () => {
+                                    startProgress()
+                                    router.push('/page?url=/telemetry')
+                                })
+                            }
+                        }>
+                            Telemetry
+                        </SidebarMenuButton>
+                        <SidebarMenuButton className={buttonClassName("/wiki")} onMouseDown={
+                            () => {
+                                startTransition(async () => {
+                                    startProgress()
+                                    router.push('/onboarding')
+                                })
+                            }
+                        }>
+                            Onboarding
                         </SidebarMenuButton>
                     </SidebarGroup> 
                 )}
@@ -256,39 +286,8 @@ export function ETS2LASidebar() {
                         </SidebarMenuItem>
                     </SidebarMenu>
                 </div>
-                    
-                    {/* DO NOT UNCOMMENT - This breaks the app on startup
-                    <SidebarMenuItem>
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                            <SidebarMenuButton className="w-full flex justify-between hover:shadow-md transition-all">
-                                <div className="flex items-center gap-2">
-                                    <span>ETS2LA Mobile</span>
-                                </div>
-                                <ChevronUp className="w-4 h-4 justify-self-end" />
-                            </SidebarMenuButton>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent
-                                side="top"
-                                className="w-(--radix-popper-anchor-width) bg-transparent backdrop-blur-md backdrop-brightness-90 text-center p-3"
-                            >
-                                <QRCodeSVG value={"https://example.com"} className="justify-self-center pb-1" />
-                                <div className="flex items-center w-full justify-center">
-                                    <div className="flex-1 h-px bg-muted-foreground mx-2"></div>
-                                    <span className="text-xs whitespace-nowrap text-muted-foreground">OR</span>
-                                    <div className="flex-1 h-px bg-muted-foreground mx-2"></div>
-                                </div>
-                                <p className="text-xs">
-                                    <a href={"http://" + ip + ":3005"} className="underline" target="_blank" rel="noopener noreferrer">
-                                        {"http://" + ip + ":3005"}
-                                    </a>
-                                </p>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </SidebarMenuItem>
-                    */}
-                <div id="ram_usage" className="w-full h-8 -my-4 pt-4">
-                    <RenderPage url="/stats" className="w-full" />
+                <div id="ram_usage" className="w-full h-10 -my-8 mt-0">
+                    <RenderPage url="/stats" className="w-full" container_classname="overflow-y-hidden" />
                 </div>
             </SidebarFooter>
         </Sidebar>

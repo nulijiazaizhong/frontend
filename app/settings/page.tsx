@@ -14,114 +14,36 @@ import { ETS2LAPage } from "@/components/page/page"
 import { translate } from "@/apis/translation"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import RenderPage from "@/components/page/render_page"
-import ControlsPage from "./controls/page";
 import { motion } from "framer-motion";
 import { ACTIONS, EVENTS, ORIGIN, STATUS, CallBackProps } from 'react-joyride';
 import { JoyRideNoSSR } from "@/components/joyride-no-ssr";
 import { useEffect } from "react";
+import { usePages } from "@/hooks/usePages";
 
 export default function Home() {
-    const { data } = useSWR("plugin_ui_plugins", () => GetPlugins());
     const [selectedPlugin, setSelectedPlugin] = useState("Global")
-    const [hasDoneOnboarding, setHasDoneOnboarding] = useState(false);
-    const [stepIndex, setStepIndex] = useState(0);
-
-    const STEPS = [
-        {
-            target: "#static_settings",
-            content: translate("tutorials.settings.static"),
-            disableBeacon: true,
-            hideFooter: true,
-        },
-        {
-            target: "#settings_page",
-            content: translate("tutorials.settings.global"),
-            disableBeacon: true,
-            hideFooter: true,
-        },
-        {
-            target: "#plugin_settings",
-            content: translate("tutorials.settings.plugin"),
-            placement: "right",
-            disableBeacon: true,
-            hideFooter: true,
-        },
-        {
-            target: "#open_sdk_settings",
-            content: translate("tutorials.settings.sdk"),
-            placement: "right",
-            disableBeacon: true,
-            hideFooter: true,
-        }
-    ];
-
-    useEffect(() => {
-        const hasDoneOnboarding = localStorage.getItem("hasDoneSettingsOnboarding");
-        setHasDoneOnboarding(hasDoneOnboarding === "true");
-    });
-
-    const plugins:string[] = [];
-    for (const key in data) {
-        // Check if the key is a number
-        if (isNaN(parseInt(key))){
-            plugins.push(key)
-        }
-    }
-
-    const handleJoyrideCallback = (data: CallBackProps) => {
-        const { action, index, origin, status, type } = data;
-        
-        // @ts-expect-error
-        if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
-            setStepIndex(index + (action === ACTIONS.PREV ? -1 : 1));
-        } // @ts-expect-error
-        else if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
-            localStorage.setItem("hasDoneSettingsOnboarding", "true");
-        }
-    };
+    const pages = usePages();
 
     const renderPluginPage = () => {
         if (selectedPlugin === "Global") {
             return <RenderPage url="/settings/global" />;
         } else if (selectedPlugin === "Controls") {
-            return <ControlsPage />;
+            return <RenderPage url="/settings/controls" />;
         } else if (selectedPlugin === "SDK") {
-            return <RenderPage url="/setup/sdk" />;
-            // @ts-ignore
-        } else if (data && data[selectedPlugin] && data[selectedPlugin].settings) {
-            // Ensure data is correctly passed to ETS2LASettingsPage
-            // @ts-ignore
-            return <ETS2LAPage plugin={selectedPlugin} data={data[selectedPlugin]["settings"]} enabled={data[selectedPlugin]["enabled"]} />;
+            return <RenderPage url="/settings/sdk" />;
         } else {
-            return <p className="text-xs text-muted-foreground text-start pl-4">{translate("frontend.settings.data_missing")}</p>;
+            for (const [key, data] of Object.entries(pages)) {
+                // @ts-ignore
+                if (data.title === selectedPlugin) {
+                    // @ts-ignore
+                    return <RenderPage url={data.url} className="h-full" container_classname="h-full" />;
+                }
+            }
         }
     };
 
     return (
         <>
-            <JoyRideNoSSR // @ts-expect-error no clue why it's complaining on the steps
-                steps={STEPS}
-                run={!hasDoneOnboarding}
-                stepIndex={stepIndex}
-                spotlightPadding={5}
-                styles={
-                    {
-                        options: {
-                            backgroundColor: "#18181b",
-                            arrowColor: "#18181b",
-                            textColor: "#fafafa",
-                        },
-                        buttonClose: {
-                            width: "8px",
-                            height: "8px",
-                        },
-                        tooltipContent: {
-                            fontSize: "14px",
-                        }
-                    }
-                }
-                callback={handleJoyrideCallback}
-            />
             <div className="h-full font-geist rounded-lg bg-background p-4">
                 <div className="flex flex-col gap-2 p-5 pt-[10px]">
                     <h2 className="text-lg font-bold">{translate("frontend.settings")}</h2>
@@ -146,24 +68,24 @@ export default function Home() {
                                             </Button>
                                         </div>
                                         <div className="flex flex-col gap-2 text-start relative p-0" id="plugin_settings">
-                                            {plugins.map((plugin:any, index) => (
-                                                plugin == "Separator" ? <br key={index} /> : 
-                                                plugin == "Global" ? null : // @ts-ignore
-                                                data && data[plugin] && data[plugin].settings ?
-                                                <div className="items-center justify-start text-sm">
+                                            {pages && Object.entries(pages).map(([key, data]:any, index:number) => (
+                                                data && data.url && data.location && data.title && data.location === "settings" ?
+                                                <div className="items-center justify-start text-sm" key={key}>
                                                     <Tooltip>
                                                         <TooltipTrigger className="items-center justify-start text-sm w-full">
-                                                            <Button key={index} className="items-center justify-start text-sm w-full rounded-r-none" variant={selectedPlugin == plugin && "secondary" || "ghost"} onClick={() => setSelectedPlugin(plugin)}>
-                                                                {// @ts-ignore
-                                                                    translate(data[plugin].description.name)
+                                                            <Button className="items-center justify-start text-sm w-full rounded-r-none" 
+                                                                variant={selectedPlugin == data.title ? "secondary" : "ghost"} 
+                                                                onClick={() => setSelectedPlugin(data.title)}>
+                                                                {
+                                                                    translate(data.title)
                                                                 }
                                                             </Button>
                                                         </TooltipTrigger>
                                                         <TooltipContent>
                                                             <div className="flex flex-col gap-2 text-start">
                                                                 <p className="text-xs text-start">
-                                                                    {// @ts-ignore
-                                                                        translate(data[plugin].description.name)
+                                                                    {
+                                                                        translate(data.title)
                                                                     }
                                                                 </p>
                                                             </div>
@@ -178,7 +100,10 @@ export default function Home() {
                             <ResizablePanel defaultSize={75} className="h-full w-full relative">
                                 <ScrollArea className="h-full" type="hover">
                                     <div className="h-4" />
-                                    {renderPluginPage()}
+                                    <div className="w-[97%]">
+                                        {renderPluginPage()}
+                                        <div className="h-24" />
+                                    </div>
                                 </ScrollArea>
                                 <div className="absolute h-4 top-0 left-0 right-0 bg-linear-to-b from-background pointer-events-none" />
                             </ResizablePanel>

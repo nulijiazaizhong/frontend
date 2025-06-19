@@ -1,33 +1,30 @@
-import { ETS2LAPage } from "@/components/page/page";
-import { GetPage } from "@/apis/backend";
-import useSWR from "swr";
 import { AnimatePresence, motion } from "framer-motion";
+import { ETS2LAPage } from "@/components/page/page";
 import { useEffect, useState } from "react";
+import { usePage } from "@/hooks/usePage";
 import Loader from "../loader";
 
-export default function RenderPage({ url, className }: { url: string, className?: string }) {
-    const [refreshInterval, setRefreshInterval] = useState(1000); 
+export default function RenderPage({ url, className, container_classname }: { url: string, className?: string, container_classname?: string }) {
     const [showTooLong, setShowTooLong] = useState(false);
     const [start, setStart] = useState(Date.now());
     const [loaded, setLoaded] = useState(false);
-    const {data: page} = useSWR("page " + url, () => GetPage(url), { refreshInterval: refreshInterval });
 
-    useEffect(() => {
-        if (page) {
-            setLoaded(true);
-            console.log(page);
-        }
-        if (page && page[1] && "refresh_rate" in page[1]) {
-            setRefreshInterval(page[1]["refresh_rate"] * 1000);
-        }
-    }, [page]);
+    const page = usePage(url);
 
     useEffect(() => {
         setStart(Date.now());
         setTimeout(() => {
             setShowTooLong(true);
         }, 3000);
-    }, []);
+    }, [url]);
+
+    useEffect(() => {
+        if (page) {
+            setLoaded(true);
+        } else {
+            setLoaded(false);
+        }
+    }, [page]);
 
     return (
         <AnimatePresence mode="wait">
@@ -45,13 +42,14 @@ export default function RenderPage({ url, className }: { url: string, className?
                 </motion.div>
             ) || page && (
                 <motion.div
+                    className={"h-full w-full overflow-y-auto overflow-x-hidden " + container_classname}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: Date.now() - start > 0.5 && 0.6 || 0 }}
                     key="page"
                 >
-                    <ETS2LAPage plugin={page[0]["settings"]} data={page} enabled={true} className={className} />
+                    <ETS2LAPage url={url} data={page} enabled={true} className={className} />
                 </motion.div>
             )}
         </AnimatePresence>

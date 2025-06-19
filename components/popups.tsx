@@ -1,170 +1,229 @@
 "use client"
-import { useEffect } from "react";
-import { useState, useRef } from "react";
-import {toast} from "sonner"
+import { useEffect, useState, useRef, useCallback } from "react";
+import { toast } from "sonner";
 import {
     Dialog,
     DialogContent,
     DialogDescription,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { translate } from "@/apis/translation";
 import ValueDialog from "./value-dialog";
 import { ip } from "@/apis/backend";
 
-let socket: WebSocket | null = null;
-export function Popups() {
-    const [dialogOpen, setDialogOpen] = useState(false);
-    const [dialogObject, setDialogObject] = useState({__html: ""});
-    const [dialogOptions, setDialogOptions] = useState<string[]>([]);
-    const [dialogDescription, setDialogDescription] = useState("");
-    const [valueDialogOpen, setValueDialogOpen] = useState(true);
-    const [valueDialogJson, setValueDialogJson] = useState("");
-    const [returnValue, setReturnValue] = useState(null)
-    const returnValueRef = useRef(returnValue);
-    const { push } = useRouter();
-    let lastMessage:any = null;
+interface AskMessage {
+    ask: {
+        text: string;
+        options: string[];
+        description: string;
+    };
+}
 
-    useEffect(() => { 
+interface DialogMessage {
+    dialog: {
+        json: string;
+    };
+}
+
+interface NavigateMessage {
+    navigate: {
+        url: string;
+        reason?: string;
+        sender: string;
+    };
+}
+
+interface ToastMessage {
+    type: 'error' | 'success' | 'info' | 'warning' | string;
+    text: string;
+}
+
+type WebSocketMessage = AskMessage | DialogMessage | NavigateMessage | ToastMessage;
+
+export function Popups() {
+    const [dialogState, setDialogState] = useState({
+        isOpen: false,
+        title: { __html: "" },
+        options: [] as string[],
+        description: "",
+    });
+    
+    const [valueDialogState, setValueDialogState] = useState({
+        isOpen: false,
+        json: "",
+    });
+    
+    // Dialog return value
+    const [returnValue, setReturnValue] = useState<any>(null);
+    const returnValueRef = useRef<any>(null);
+    
+    const socketRef = useRef<WebSocket | null>(null);
+    
+    const router = useRouter();
+
+    useEffect(() => {
         returnValueRef.current = returnValue;
     }, [returnValue]);
 
+    const handleWebSocketMessage = useCallback((event: MessageEvent) => {
+        try {
+            const messageData = event.data;
+            const message = JSON.parse(messageData) as WebSocketMessage;
+
+            if ('ask' in message) {
+                if (dialogState.isOpen) {
+                    return; // Prevent multiple dialogs from opening
+                }
+                setDialogState({
+                    isOpen: true,
+                    title: { __html: `<div>${message.ask.text}</div>` },
+                    options: message.ask.options,
+                    description: message.ask.description,
+                });
+            } 
+
+            else if ('dialog' in message) {
+                setValueDialogState({
+                    isOpen: true,
+                    json: message.dialog.json,
+                });
+                setReturnValue(null);
+                
+                // Poll for return value
+                const checkReturnValue = setInterval(() => {
+                    if (returnValueRef.current !== null) {
+                        if (socketRef.current?.readyState === WebSocket.OPEN) {
+                            socketRef.current.send(JSON.stringify(returnValueRef.current));
+                        }
+                        setReturnValue(null);
+                        clearInterval(checkReturnValue);
+                    }
+                }, 200);
+            } 
+
+            else if ('navigate' in message) {
+                if (dialogState.isOpen) {
+                    return; // Prevent multiple navigation requests from interrupting each other
+                }
+                const { url, reason, sender } = message.navigate;
+                console.log(`Navigation request from ${sender} to ${url} with reason: ${reason || 'No reason provided'}`);
+                setDialogState({
+                    isOpen: true,
+                    title: { __html: `<p>Navigation Request</p>` },
+                    options: ["Allow", "Deny"],
+                    description: `${sender} wants to navigate you to: ${url}${reason ? `\n"${reason}"` : ''}`,
+                });
+            } 
+
+            else if ('type' in message && 'text' in message) {
+                const { type, text } = message;
+                
+                switch (type) {
+                    case 'error': toast.error(text); break;
+                    case 'success': toast.success(text); break;
+                    case 'info': toast.info(text); break;
+                    case 'warning': toast.warning(text); break;
+                    default: toast(text);
+                }
+            }
+        } catch (error) {
+            console.error("Error handling WebSocket message:", error);
+        }
+    }, []);
+
     useEffect(() => {
-        // Initialize the WebSocket connection
-        if (ip != "localhost") {
-            toast.error("This device cannot connect to the websocket. You won't get notifications.")
+        if (ip !== "localhost") {
+            toast.error("This device cannot connect to the websocket. You won't get notifications.");
             return;
         }
 
-        socket = new WebSocket(`ws://${ip}:37521`);
+        const ws = new WebSocket(`ws://${ip}:37521`);
+        socketRef.current = ws;
 
-        // Connection opened
-        socket.addEventListener("open", function (event) {
-            toast.success(translate("frontend.immediate.connected"))
+        ws.addEventListener("open", () => {
+            toast.success(translate("frontend.immediate.connected"));
         });
 
-        // Listen for messages
-        socket.addEventListener("message", function (event) {
-            const message = JSON.parse(event.data)
-            if (lastMessage === message) return;
-            lastMessage = message;
-            if ("ask" in message) {
-                const text = message["ask"]["text"]
-                const options = message["ask"]["options"]
-                const description = message["ask"]["description"]
-                setDialogObject({__html: "<div>" + text + "</div>"})
-                setDialogOptions(options)
-                setDialogDescription(description)
-                setDialogOpen(true)
-                // Wait for the user to select an option
-                const listener = function (event:any) {
-                    const message = JSON.parse(event.data);
-                    if ("response" in message) {
-                        if (message["response"] === "dialog") {
-                            // Send the selected option to the backend
-                            if (socket !== null) {
-                                socket.send(JSON.stringify({response: dialogOptions[message["option"]]}));
-                                setDialogOpen(false);
-                            }
-                        }
-                    }
-                };
-            }
-            else if ("dialog" in message) {
-                const jsonData = message["dialog"]["json"]
-                setValueDialogJson(jsonData)
-                setValueDialogOpen(true)
-                setReturnValue(null)
-                // Wait for the return value to be set
-                const listener = setInterval(() => {
-                    if (returnValueRef.current !== null) { // Use the ref here
-                        if (socket !== null) {
-                            socket.send(JSON.stringify(returnValueRef.current)); // Use the ref here
-                        }
-                        setReturnValue(null)
-                        clearInterval(listener)
-                    }
-                }, 200);
-            }
-            else if ("page" in message) {
-                push(message["page"])
-            }
-            else {
-                const toastType = message["type"]
-                const toastMessage = message["text"]
-                if (toastType === "error") {
-                    toast.error(toastMessage)
-                } else if (toastType === "success") {
-                    toast.success(toastMessage)
-                } else if (toastType == "info") {
-                    toast.info(toastMessage)
-                } else if (toastType == "warning") {
-                    toast.warning(toastMessage)
-                } else {
-                    toast(toastMessage)
-                }
-            }
-        });
-
+        ws.addEventListener("message", handleWebSocketMessage);
         
-        // Connection closed
-        socket.addEventListener("close", function (event) {
-            toast.error(translate("frontend.immediate.disconnected"))
+        ws.addEventListener("close", () => {
+            toast.error(translate("frontend.immediate.disconnected"));
         });
         
-        // Error
-        socket.addEventListener("error", function (event) {
+        ws.addEventListener("error", (event) => {
             console.error("WebSocket error observed:", event);
         });
 
-        // Cleanup function to close the socket when the component unmounts
+        // Cleanup on unmount
         return () => {
-            if (socket !== null) {
-                socket.close();
+            if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
+                socketRef.current.close();
             }
-            socket = null;
+            socketRef.current = null;
         };
-    }, []); // Empty dependency array to run the effect only once on mount
+    }, [handleWebSocketMessage]);
 
-    const handleReturnValue = (value: any) => {
-        console.log(value)
-        setValueDialogOpen(false)
-        setReturnValue(value)
-    }
+    // Handle dialog response
+    const handleDialogResponse = (option: string) => {
+        if (socketRef.current?.readyState === WebSocket.OPEN) {
+            
+            // Special case for navigation
+            if (dialogState.title.__html.includes("Navigation Request") && option === "Allow") {
+                // Extract URL from description (this is quite ugly)
+                const urlMatch = dialogState.description.match(/navigate you to: ([^\n"]+)/);
+                if (urlMatch && urlMatch[1]) {
+                    router.push(`/page?url=${urlMatch[1]}`);
+                }
+            }
+            else {
+                socketRef.current.send(JSON.stringify({ response: option }));
+            }
+        }
 
-    return <div className={"absolute gap-2 flex"}>
-        <Dialog open={dialogOpen} >
-            <DialogTrigger>
-                <div>
+        setDialogState(prev => ({ ...prev, isOpen: false })); 
+    };
 
-                </div>
-            </DialogTrigger>
-            <DialogContent className="bg-sidebarbg font-geist">
-                <DialogHeader>
-                    <DialogTitle>
-                        <div dangerouslySetInnerHTML={dialogObject} />
-                    </DialogTitle>
-                </DialogHeader>
-                <DialogDescription style={{whiteSpace: "pre-wrap"}}>
-                    {dialogDescription}
-                </DialogDescription>
-                <div className="flex gap-2">
-                    {dialogOptions.map((option, index) => (
-                        <Button key={index} variant={"outline"} onClick={() => {
-                            if (socket !== null) {
-                                socket.send(JSON.stringify({response: option}));
-                            }
-                            setDialogOpen(false);
-                        }}>{option}</Button>
-                    ))}
-                </div>
-            </DialogContent>
-        </Dialog>
+    const handleValueDialogResponse = useCallback((value: any) => {
+        setValueDialogState(prev => ({ ...prev, isOpen: false }));
+        setReturnValue(value);
+    }, []);
 
-        <ValueDialog open={valueDialogOpen} onClose={handleReturnValue} json={valueDialogJson} />
-    </div>
+    return (
+        <div className="absolute gap-2 flex">
+            <Dialog open={dialogState.isOpen} onOpenChange={(open) => 
+                !open && setDialogState(prev => ({ ...prev, isOpen: false }))
+            }>
+                <DialogContent className="bg-sidebarbg font-geist">
+                    <DialogHeader>
+                        <DialogTitle>
+                            <div dangerouslySetInnerHTML={dialogState.title} />
+                        </DialogTitle>
+                    </DialogHeader>
+                    <DialogDescription style={{ whiteSpace: "pre-wrap" }}>
+                        {dialogState.description}
+                    </DialogDescription>
+                    <div className="flex gap-2">
+                        {dialogState.options.map((option, index) => (
+                            <Button 
+                                key={index} 
+                                variant="outline" 
+                                onClick={() => handleDialogResponse(option)}
+                            >
+                                {option}
+                            </Button>
+                        ))}
+                    </div>
+                </DialogContent>
+            </Dialog>
+
+            <ValueDialog 
+                open={valueDialogState.isOpen} 
+                onClose={handleValueDialogResponse} 
+                json={valueDialogState.json} 
+            />
+        </div>
+    );
 }

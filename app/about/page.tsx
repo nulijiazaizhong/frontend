@@ -39,7 +39,7 @@ export default function Updater() {
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
-            <RenderPage url="/about" className="pl-20 max-w-full pr-20 w-full" />
+            <RenderPage url="/about" className="max-w-full w-full" />
         </div>
     )
 }

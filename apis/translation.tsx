@@ -34,6 +34,10 @@ export const loadTranslations = async () => {
 
 export const translate = (key: string, ...values: any[]): string => {
     //console.log(translations[currentLanguage]);
+    if(!translations[currentLanguage]) {
+        console.warn(`Translation for language "${currentLanguage}" not found.`);
+        return key;
+    }
     let translation = translations[currentLanguage].default.Translations?.[key];
     if (!translation) {
         translation = translations[currentLanguage].default.Language?.[key];
