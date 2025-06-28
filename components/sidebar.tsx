@@ -147,11 +147,11 @@ export function ETS2LASidebar() {
                     }>
                         <ChartNoAxesGantt /> {translate("frontend.sidebar.manager")}
                     </SidebarMenuButton>
-                    <SidebarMenuButton className={buttonClassName("/performance")} onMouseDown={
+                    <SidebarMenuButton className={buttonClassName("/page", { url: "/performance" })} onMouseDown={
                         () => {
                             startTransition(async () => {
                                 startProgress()
-                                router.push('/performance')
+                                router.push('/page?url=/performance')
                             })
                         }
                     }>

@@ -30,6 +30,7 @@ import { SliderComponent } from "@/components/page/slider"
 import { InputRenderer } from "./input_renderer"
 import { ComboboxRenderer } from "./combobox_renderer"
 import { CheckboxRenderer } from "./checkbox_renderer"
+import { GraphRenderer } from "./graph_renderer"
 import Page from "@/app/page/page"
 
 export function ParseClassname(default_classname: string, data_classname: string) {
@@ -449,6 +450,11 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 				}
 				if (key == "spinner") {
 					result.push(SpinnerRenderer(key_data));
+				}
+				if (key == "graph") {
+					result.push(
+						<GraphRenderer data={key_data} url={url} send={send} key={key_data.key} />
+					)
 				}
 
 			} catch (error) {
