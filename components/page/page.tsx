@@ -378,6 +378,28 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		</div>
 	}
 
+	const ImageRenderer = (data: any) => {
+		const classname = ParseClassname("w-max h-max max-w-full max-h-full", data.style.classname);
+		const style = data.style ? data.style : {};
+		const url = data.url ? data.url : "";
+		const base64 = data.base64 ? data.base64 : "";
+		const alt = data.alt ? data.alt : "Image";
+
+		if (!url && !base64) {
+			return <p className="text-red-500">No image URL or base64 provided</p>;
+		}
+
+		if (url) {
+			return <img className={classname} style={style} key={data.key} src={url} alt={alt} />;
+		}
+
+		if (base64) {
+			return <img className={classname} style={style} key={data.key} src={`data:image/png;base64,${base64}`} alt={alt} />;
+		}
+
+		return <p className="text-red-500" key={data.key}>Invalid image data</p>;
+	}
+
     // @ts-ignore
 	const PageRenderer = (data: any) => {
 		if (!Array.isArray(data)) {
@@ -455,6 +477,10 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 					result.push(
 						<GraphRenderer data={key_data} url={url} send={send} key={key_data.key} />
 					)
+				}
+				
+				if (key == "image") {
+					result.push(ImageRenderer(key_data));
 				}
 
 			} catch (error) {
