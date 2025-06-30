@@ -32,28 +32,63 @@ export function GraphRenderer({ data, url, send }: any) {
             <ChartContainer config={graph_config} className={classname} style={style}>
                 <AreaChart data={graph_data}>
                     <defs>
-                        <linearGradient id={"fill"} x1="0" y1="0" x2="0" y2="1">
-                            <stop
-                            offset="5%"
-                            stopColor="#255579"
-                            stopOpacity={0.9}
-                            />
-                            <stop
-                            offset="95%"
-                            stopColor="#255579"
-                            stopOpacity={0.2}
-                            />
-                        </linearGradient>
+                        {Array.isArray(y) && y.map((axis, index) => (
+                            <linearGradient key={index} id={`fill-${axis.data_key}`} x1="0" y1="0" x2="0" y2="1">
+                                <stop
+                                    offset="5%"
+                                    stopColor={axis.color || "#255579"}
+                                    stopOpacity={0.9}
+                                />
+                                <stop
+                                    offset="95%"
+                                    stopColor={axis.color || "#255579"}
+                                    stopOpacity={0.2}
+                                />
+                            </linearGradient>
+                        ))}
+                        {!Array.isArray(y) && (
+                            <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+                                <stop
+                                    offset="5%"
+                                    stopColor={y.color || "#255579"}
+                                    stopOpacity={0.9}
+                                />
+                                <stop
+                                    offset="95%"
+                                    stopColor={y.color || "#255579"}
+                                    stopOpacity={0.2}
+                                />
+                            </linearGradient>
+                        )}
                     </defs>
                     <CartesianGrid horizontal={true} vertical={false} />
                     <XAxis dataKey={x.data_key} hide={x.hide} domain={[x.min, x.max]} />
-                    <YAxis dataKey={y.data_key} hide={y.hide} domain={[y.min, y.max]} />
-                    <Area
-                        type="natural"
-                        dataKey={y.data_key}
-                        fill="url(#fill)"
-                        isAnimationActive={false}
-                    />
+                    
+                    {Array.isArray(y) && y.map((axis, index) => (
+                        <YAxis key={index} dataKey={axis.data_key} hide={axis.hide} domain={[axis.min, axis.max]} />
+                    ))}
+                    {!Array.isArray(y) && (
+                        <YAxis dataKey={y.data_key} hide={y.hide} domain={[y.min, y.max]} />
+                    )}
+
+                    {Array.isArray(y) && y.map((axis, index) => (
+                        <Area
+                            key={index}
+                            type="natural"
+                            stroke={axis.color || "#255579"}
+                            dataKey={axis.data_key}
+                            fill={`url(#fill-${axis.data_key})`}
+                            isAnimationActive={false}
+                        />
+                    ))}
+                    {!Array.isArray(y) && (
+                        <Area
+                            type="natural"
+                            dataKey={y.data_key}
+                            fill="url(#fill)"
+                            isAnimationActive={false}
+                        />
+                    )}
                     <ChartTooltip content={<ChartTooltipContent />} />
                 </AreaChart>
             </ChartContainer>
