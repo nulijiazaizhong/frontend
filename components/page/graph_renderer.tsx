@@ -24,8 +24,8 @@ export function GraphRenderer({ data, url, send }: any) {
     const graph_config = data.config ? data.config satisfies ChartConfig : {} satisfies ChartConfig;
     const type = data.type ? data.type : "area";
 
-    const x_key = data.x_key ? data.x_key : "x";
-    const y_key = data.y_key ? data.y_key : "y";
+    const x = data.x ? data.x : {};
+    const y = data.y ? data.y : {};
 
     if (type === "area") {
         return (
@@ -46,11 +46,11 @@ export function GraphRenderer({ data, url, send }: any) {
                         </linearGradient>
                     </defs>
                     <CartesianGrid horizontal={true} vertical={false} />
-                    <XAxis dataKey={x_key} hide={true} />
-                    <YAxis dataKey={y_key} hide={true} />
+                    <XAxis dataKey={x.data_key} hide={x.hide} domain={[x.min, x.max]} />
+                    <YAxis dataKey={y.data_key} hide={y.hide} domain={[y.min, y.max]} />
                     <Area
                         type="natural"
-                        dataKey={y_key}
+                        dataKey={y.data_key}
                         fill="url(#fill)"
                         isAnimationActive={false}
                     />
@@ -65,11 +65,11 @@ export function GraphRenderer({ data, url, send }: any) {
             <ChartContainer config={graph_config} className={classname} style={style}>
                 <LineChart data={graph_data}>
                     <CartesianGrid horizontal={true} vertical={false} />
-                    <XAxis dataKey={x_key} hide={true} />
-                    <YAxis dataKey={y_key} hide={true} />
+                    <XAxis dataKey={x.data_key} hide={x.hide} domain={[x.min, x.max]} />
+                    <YAxis dataKey={y.data_key} hide={y.hide} domain={[y.min, y.max]} />
                     <Line
                         type="natural"
-                        dataKey={y_key}
+                        dataKey={y.data_key}
                         isAnimationActive={false}
                     />
                     <ChartTooltip content={<ChartTooltipContent />} />
@@ -96,11 +96,11 @@ export function GraphRenderer({ data, url, send }: any) {
                         </linearGradient>
                     </defs>
                     <CartesianGrid horizontal={true} vertical={false} />
-                    <XAxis dataKey={x_key} hide={true} />
-                    <YAxis dataKey={y_key} hide={true} />
+                    <XAxis dataKey={x.data_key} hide={x.hide} domain={[x.min, x.max]} />
+                    <YAxis dataKey={y.data_key} hide={y.hide} domain={[y.min, y.max]} />
                     <Bar
                         type="natural"
-                        dataKey={y_key}
+                        dataKey={y.data_key}
                         fill="url(#fill)"
                         isAnimationActive={false}
                     />

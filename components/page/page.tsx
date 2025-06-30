@@ -478,7 +478,6 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 						<GraphRenderer data={key_data} url={url} send={send} key={key_data.key} />
 					)
 				}
-				
 				if (key == "image") {
 					result.push(ImageRenderer(key_data));
 				}
