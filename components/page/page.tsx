@@ -400,6 +400,26 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		return <p className="text-red-500" key={data.key}>Invalid image data</p>;
 	}
 
+	const YoutubeRenderer = (data: any) => {
+		const classname = ParseClassname("w-full h-full", data.style.classname);
+		const style = data.style ? data.style : {};
+		const videoId = data.video_id ? data.video_id : "";
+		if (!videoId) {
+			return <p className="text-red-500">No video ID provided</p>;
+		}
+		return (
+			<div className={classname} style={style} key={data.key}>
+				<iframe
+					width="100%"
+					height="100%"
+					src={`https://www.youtube.com/embed/${videoId}`}
+					frameBorder="0"
+					allowFullScreen
+				></iframe>
+			</div>
+		);
+	}
+
     // @ts-ignore
 	const PageRenderer = (data: any) => {
 		if (!Array.isArray(data)) {
@@ -480,6 +500,9 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 				}
 				if (key == "image") {
 					result.push(ImageRenderer(key_data));
+				}
+				if (key == "youtube") {
+					result.push(YoutubeRenderer(key_data));
 				}
 
 			} catch (error) {
