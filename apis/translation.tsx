@@ -11,7 +11,7 @@ declare var require: {
 };
 
 interface Translation {
-    [key: string]: string;
+    "default": { [key: string]: string };
 }
 
 export const translations: { [key: string]: Translation } = {};
@@ -24,6 +24,7 @@ export const loadTranslations = async () => {
     context.keys().forEach((key: string) => {
         const language = key.replace('./', '').replace('.yaml', '');
         translationFiles[language] = context(key);
+        console.log(`Loaded translations for ${language}:`, translationFiles[language]);
     });
 
     Object.assign(translations, translationFiles);
@@ -31,14 +32,13 @@ export const loadTranslations = async () => {
 
 export const translate = (key: string, ...values: any[]): string => {
     if(!translations[currentLanguage]) {
-        console.warn(`Translation for language "${currentLanguage}" not found.`);
         return key;
     }
-    
+
     // Look for translation in current language
-    let translation = translations[currentLanguage][key];
+    let translation = translations[currentLanguage]["default"][key];
     if (!translation && currentLanguage !== "en") {
-        translation = translations["en"]?.[key];
+        translation = translations["en"]?.["default"]?.[key];
     }
     
     if (!translation) { // Return key if not found
