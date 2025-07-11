@@ -11,10 +11,7 @@ declare var require: {
 };
 
 interface Translation {
-    "default": {
-        "Translations": { [key: string]: string };
-        "Language": { [key: string]: string };
-    }
+    [key: string]: string;
 }
 
 export const translations: { [key: string]: Translation } = {};
@@ -33,26 +30,22 @@ export const loadTranslations = async () => {
 };
 
 export const translate = (key: string, ...values: any[]): string => {
-    //console.log(translations[currentLanguage]);
     if(!translations[currentLanguage]) {
         console.warn(`Translation for language "${currentLanguage}" not found.`);
         return key;
     }
-    let translation = translations[currentLanguage].default.Translations?.[key];
-    if (!translation) {
-        translation = translations[currentLanguage].default.Language?.[key];
+    
+    // Look for translation in current language
+    let translation = translations[currentLanguage][key];
+    if (!translation && currentLanguage !== "en") {
+        translation = translations["en"]?.[key];
     }
-    if (!translation) {
-        // Default to english
-        translation = translations["en"].default.Translations?.[key];
-        if (!translation) {
-            return key;
-        }
-        return translation.replace(/{(\d+)}/g, (match, number) => {
-            return values[number] !== undefined ? values[number] : match;
-        });
+    
+    if (!translation) { // Return key if not found
+        return key;
     }
 
+    // Replace placeholders with values
     return translation.replace(/{(\d+)}/g, (match, number) => {
         return values[number] !== undefined ? values[number] : match;
     });
