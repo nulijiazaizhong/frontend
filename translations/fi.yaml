@@ -1,19 +1,23 @@
-
 frontend.hello: "Tervetuloa, {0}!"
 # ^ {0} is the name of the user Example: 'Hello, Tumppi066'
 frontend.disclaimer.title: "Huomio!"
-frontend.disclaimer.description.line1: "ETS2LA ei ole vastuussa mistään sovelluksen käytöstä aiheutuvista haitoista. Sovelluksen käyttäminen on omalla vastuullasi."
-frontend.disclaimer.description.line2: "ETS2LA:n käyttäminen TruckersMP (TMP) palvelussa on sen tekijöiden mukaan sallittua. Muista kuitenkin, että heidän näkökulmastaan sinä olet vastuussa ETS2LA:n teoista."
+frontend.disclaimer.description.line1: "ETS2LA ei ole vastuussa mistään sovelluksen
+  käytöstä aiheutuvista haitoista. Sovelluksen käyttäminen on omalla vastuullasi."
+frontend.disclaimer.description.line2: "ETS2LA:n käyttäminen TruckersMP (TMP) palvelussa
+  on sen tekijöiden mukaan sallittua. Muista kuitenkin, että heidän näkökulmastaan
+  sinä olet vastuussa ETS2LA:n teoista."
 frontend.disclaimer.ok: "Ymmärrän"
 frontend.disclaimer.dontshowagain: "Älä näytä tätä uudelleen"
-frontend.disclaimer.dontshowagain.toast: "Et näe viestiä uudelleen ennen seuraavaa päivitystä."
+frontend.disclaimer.dontshowagain.toast: "Et näe viestiä uudelleen ennen seuraavaa
+  päivitystä."
 frontend.logged_out: "Kirjauduttu ulos."
 frontend.states.complete: "Valmis!"
 frontend.theme.dark: "Tumma"
 frontend.theme.light: "Vaalea"
 frontend.404.title: "Oho, mites päädyit tänne?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "No painappa nappia niin pääset takas (ja lähetä meille mitä teit, kiitos!)"
+frontend.404.message: "No painappa nappia niin pääset takas (ja lähetä meille mitä
+  teit, kiitos!)"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "Kotinäyttöön"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
@@ -21,7 +25,8 @@ frontend.settings.data_missing: "Laajennuksen tiedot puutuvat tai ovat virheelli
 frontend.settings: "Asetukset"
 frontend.settings.global: "Yleiset"
 frontend.settings.controls: "Syöte"
-frontend.settings.global_info: "Listassa on vain ne laajennukset jotka tukevat yleisiä asetuksia."
+frontend.settings.global_info: "Listassa on vain ne laajennukset jotka tukevat yleisiä
+  asetuksia."
 frontend.settings.error: "Virhe: {0}"
 # ^ {0} is the error message that happened.
 frontend.settings.backend_no_data: "Taustaprosessi ei lähettänyt tietoja."
@@ -43,8 +48,10 @@ frontend.feedback: "Palaute"
 frontend.feedback.empty: "Et kirjoittanut palautetta, kokeile uudelleen."
 frontend.feedback.sending: "Lähetetään..."
 frontend.feedback.sent: "Palaute vastaanotettu"
-frontend.feedback.error_sending: "Palautteen lähettäminen epäonnistui, kokeile myöhemmin uudelleen."
-frontend.feedback.description: "Palautteesi ja ehdotuksesi tähän. Palaute on näkyvillä vain kehittäjille."
+frontend.feedback.error_sending: "Palautteen lähettäminen epäonnistui, kokeile myöhemmin
+  uudelleen."
+frontend.feedback.description: "Palautteesi ja ehdotuksesi tähän. Palaute on näkyvillä
+  vain kehittäjille."
 frontend.feedback.disclaimer: "Älä jaa henkilökohtaisia tietoja, kuten sähköpostiosoitetta."
 frontend.feedback.submit: "Lähetä"
 frontend.immediate.connected: "Yhdistetty ETS2LA:n taustaprosessiin"
@@ -98,9 +105,18 @@ frontend.sidebar.sign_out_successful: "Uloskirjautuminen onnistui."
 frontend.sidebar.sign_out_description: "Voit kirjautua uudelleen milloin vain."
 frontend.sidebar.sign_in: "Kirjaudu sisään"
 frontend.login: "Kirjautuminen"
-frontend.login.disclaimer: "Tuemme tällä hetkellä vain Discord kirjautumista. Tämä johtuu yksinkertaisesti tietosuojasta, emme halua tallentaa mitään arkaluotoista tietoa."
+frontend.login.disclaimer: "Tuemme tällä hetkellä vain Discord kirjautumista. Tämä
+  johtuu yksinkertaisesti tietosuojasta, emme halua tallentaa mitään arkaluotoista
+  tietoa."
 frontend.login.discord: "Kirjaudu Discordilla"
 frontend.login.privacy_policy: "Yksityisyyskäytäntö"
-frontend.login.already_logged_in: "HUOMIO: Olet jo kirjautunut sisään. Voit kuitenkin kirjautua uudelleen ja ylikirjoittaa nykyisen kirjautumisen."
+frontend.login.already_logged_in: "HUOMIO: Olet jo kirjautunut sisään. Voit kuitenkin
+  kirjautua uudelleen ja ylikirjoittaa nykyisen kirjautumisen."
 frontend.login.successful: "Kirjautuminen onnistui!"
-frontend.login.successful_description: "Voit kirjautua ulos painamalla nimeäsi vasemmassa alakulmassa."
+frontend.login.successful_description: "Voit kirjautua ulos painamalla nimeäsi vasemmassa
+  alakulmassa."
+frontend.plugins.enabling_all_plugins: Käynnistetään kaikkia laajennuksia...
+frontend.plugins.enabled_all_plugins: Käynnistettiin kaikki laajennukset
+frontend.plugins.disabling_all_plugins: Sammutetaan kaikkia laajennuksia...
+frontend.plugins.disabled_all_plugins: Kaikki laajennukset sammutettiin
+frontend.support_development: Tue Kehitystä

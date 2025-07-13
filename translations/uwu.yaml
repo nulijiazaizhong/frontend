@@ -1,16 +1,17 @@
-frontend.404.button: Main Menu
-frontend.404.message: Anyway cwick da button bewow to wetuwn to da home scween,
+frontend.404.button: Main menu
+frontend.404.message: Anyway cwick da button bewow to wetuwn to da home scween, 
   and can yu pwease teww us how yu got hewe?
 frontend.404.title: Why awe we hewe... just to suffew?
 frontend.dialog.not_supported: '{0} is nut suppowted in a diawog.'
-frontend.disclaimer.description.line1: ETS2WA is nut wesponsibwe fow any iww effects
-  caused by using any of da featuwes pwovided by this softwawe. Pwease use da softwawe
-  at yuw own wisk.
-frontend.disclaimer.description.line2: Using ETS2WA in TwuckewsMP haz been awwowed
-  by TMP staff but yu awe wesponsibwe fow any bans ow wawnings caused by using this
-  softwawe.
-frontend.disclaimer.dontshowagain: Don't show this again
-frontend.disclaimer.dontshowagain.toast: Yu won't see it again tiww da next update.
+frontend.disclaimer.description.line1: ETS2WA is nut wesponsibwe fow any iww 
+  effects caused by using any of da featuwes pwovided by this softwawe. Pwease 
+  use da softwawe at yuw own wisk.
+frontend.disclaimer.description.line2: Using ETS2WA in TwuckewsMP haz been 
+  awwowed by TMP staff but yu awe wesponsibwe fow any bans ow wawnings caused by
+  using this softwawe.
+frontend.disclaimer.dontshowagain: Down't show thiws again
+frontend.disclaimer.dontshowagain.toast: Yu won't see it again tiww da next 
+  update.
 frontend.disclaimer.ok: I undewstand
 frontend.disclaimer.title: Discwaimew!
 frontend.feedback: Feedback
@@ -18,8 +19,8 @@ frontend.feedback.description: Pwease pwovide any feedback yu have. This wiww be
   send diwectwy to a pwivate channew fow devewopews to see.
 frontend.feedback.disclaimer: Do nut shawe any pewsonaw infowmation.
 frontend.feedback.empty: Feedback is empty, pwease pwovide any feedback yu have.
-frontend.feedback.error_sending: Dawe was an ewwow sending da feedback, twy again
-  watew.
+frontend.feedback.error_sending: Dawe was an ewwow sending da feedback, twy 
+  again watew.
 frontend.feedback.sending: Sending feedback...
 frontend.feedback.sent: Feedback sent!
 frontend.feedback.submit: Submit
@@ -43,13 +44,14 @@ frontend.logged_out: Wogged out.
 frontend.login: Wogin
 frontend.login.already_logged_in: 'NOTE: Yu have awweady wogged in, yu can ovewwide
   it by wogging in again.'
-frontend.login.disclaimer: We cuwwentwy onwy suppowt wogging in via discowd, this
-  is so that we don't have to stowe any sensitive infowmation wike passwowds.
+frontend.login.disclaimer: We cuwwentwy onwy suppowt wogging in via discowd, 
+  this is so that we don't have to stowe any sensitive infowmation wike 
+  passwowds.
 frontend.login.discord: Wogin with Discowd
 frontend.login.privacy_policy: Pwivacy Powicy
 frontend.login.successful: Successfuwwy wogged in!
-frontend.login.successful_description: Wog out using da context menu undew yuw usewname
-  in da bottom weft.
+frontend.login.successful_description: Wog out using da context menu undew yuw 
+  usewname in da bottom weft.
 frontend.plugins.authors: Authows
 frontend.plugins.disabled_all_plugins: Disabwed aww pwugins
 frontend.plugins.disabled_plugin: Disabwed {0}
@@ -83,8 +85,8 @@ frontend.settings.enum.no_enum: No enum vawues pwovided.
 frontend.settings.enum.updated: Updated setting
 frontend.settings.error: 'Ewwow: {0}'
 frontend.settings.global: Gwobaw
-frontend.settings.global_info: This wist onwy incwudes pwugins that suppowt da gwobaw
-  settings fiwe.
+frontend.settings.global_info: This wist onwy incwudes pwugins that suppowt da 
+  gwobaw settings fiwe.
 frontend.settings.needs_restart: Pwugin needs a westawt to update settings.
 frontend.settings.number.updated: Updated setting
 frontend.settings.restarted: Westawt Successfuw
@@ -110,3 +112,4 @@ frontend.sidebar.wiki: Wiki
 frontend.states.complete: Done!
 frontend.theme.dark: Dawk
 frontend.theme.light: Wight
+frontend.support_development: Suppowt devewopment

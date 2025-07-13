@@ -1,10 +1,14 @@
 frontend.hello: 'Salut, {0} !'
 frontend.disclaimer.title: 'Attention !'
-frontend.disclaimer.description.line1: 'ETS2LA décline toute responsabilité en cas de problème lié à l’utilisation de ses fonctionnalités. Tu l’utilises à tes propres risques.'
-frontend.disclaimer.description.line2: 'L’utilisation d’ETS2LA dans TruckersMP est autorisée par l’équipe TMP, mais toute sanction ou avertissement reste sous ta responsabilité.'
+frontend.disclaimer.description.line1: 'ETS2LA décline toute responsabilité en cas
+  de problème lié à l’utilisation de ses fonctionnalités. Tu l’utilises à tes propres
+  risques.'
+frontend.disclaimer.description.line2: 'L’utilisation d’ETS2LA dans TruckersMP est
+  autorisée par l’équipe TMP, mais toute sanction ou avertissement reste sous ta responsabilité.'
 frontend.disclaimer.ok: 'Compris'
 frontend.disclaimer.dontshowagain: 'Ne plus afficher ce message'
-frontend.disclaimer.dontshowagain.toast: 'Ce message ne s’affichera plus... sauf après une future mise à jour.'
+frontend.disclaimer.dontshowagain.toast: 'Ce message ne s’affichera plus... sauf après
+  une future mise à jour.'
 frontend.logged_out: 'Tu as été déconnecté.'
 frontend.states.complete: 'C’est terminé !'
 frontend.theme.dark: 'Mode sombre'
@@ -25,13 +29,15 @@ frontend.immediate.disable_transparent: 'Désactiver le mode transparent'
 frontend.immediate.minimize: 'Réduire la fenêtre'
 frontend.immediate.close: 'Fermer l’application'
 frontend.404.title: 'Pourquoi sommes-nous ici... juste pour souffrir ?'
-frontend.404.message: 'Peu importe, Clique sur le bouton ci-dessous pour retourner au menu principal... et au passage, dis-nous comment t’as fini ici !'
+frontend.404.message: 'Peu importe, Clique sur le bouton ci-dessous pour retourner
+  au menu principal... et au passage, dis-nous comment t’as fini ici !'
 frontend.404.button: 'Retour au menu'
 frontend.settings.data_missing: 'Les données du plugin sont invalides ou manquantes.'
 frontend.settings: 'Paramètres'
 frontend.settings.global: 'Généraux'
 frontend.settings.controls: 'Contrôles'
-frontend.settings.global_info: 'Cette liste contient uniquement les plugins qui prennent en charge les paramètres globaux.'
+frontend.settings.global_info: 'Cette liste contient uniquement les plugins qui prennent
+  en charge les paramètres globaux.'
 frontend.settings.error: 'Erreur : {0}'
 frontend.settings.backend_no_data: 'Aucune donnée reçue du backend.'
 frontend.settings.string.updated: 'Paramètre mis à jour'
@@ -45,14 +51,17 @@ frontend.settings.array.remove: 'Supprimer un élément'
 frontend.settings.enum.no_enum: 'Aucune valeur d’énumération fournie.'
 frontend.settings.enum.updated: 'Paramètre mis à jour'
 frontend.settings.unknown_data_type: 'Type de donnée inconnu : {0}'
-frontend.settings.needs_restart: 'Le plugin doit être redémarré pour appliquer les changements.'
+frontend.settings.needs_restart: 'Le plugin doit être redémarré pour appliquer les
+  changements.'
 frontend.settings.restarted: 'Redémarrage réussi'
 frontend.feedback: 'Retour'
 frontend.feedback.empty: 'Le retour est vide, merci de le remplir.'
 frontend.feedback.sending: 'Envoi du retour...'
 frontend.feedback.sent: 'Retour envoyé !'
-frontend.feedback.error_sending: 'Une erreur est survenue pendant l’envoi. Réessaie un peu plus tard.'
-frontend.feedback.description: 'Merci pour ton retour ! Il sera transmis en privé à l’équipe de développement.'
+frontend.feedback.error_sending: 'Une erreur est survenue pendant l’envoi. Réessaie
+  un peu plus tard.'
+frontend.feedback.description: 'Merci pour ton retour ! Il sera transmis en privé
+  à l’équipe de développement.'
 frontend.feedback.disclaimer: 'Évite de partager des infos personnelles.'
 frontend.feedback.submit: 'Soumettre'
 frontend.plugins.name: 'Nom'
@@ -95,9 +104,13 @@ frontend.sidebar.sign_out_description: 'Tu peux te reconnecter à tout moment.'
 frontend.sidebar.sign_in: 'Se connecter'
 
 frontend.login: 'Connexion'
-frontend.login.disclaimer: 'Pour l’instant, seule la connexion via Discord est dispo. Ça évite d’avoir à gérer des infos sensibles comme les mots de passe.'
+frontend.login.disclaimer: 'Pour l’instant, seule la connexion via Discord est dispo.
+  Ça évite d’avoir à gérer des infos sensibles comme les mots de passe.'
 frontend.login.discord: 'Connexion avec Discord'
 frontend.login.privacy_policy: 'Voir la politique de confidentialité'
-frontend.login.already_logged_in: 'Tu es déjà connecté. Si besoin, tu peux te reconnecter pour remplacer la session actuelle.'
+frontend.login.already_logged_in: 'Tu es déjà connecté. Si besoin, tu peux te reconnecter
+  pour remplacer la session actuelle.'
 frontend.login.successful: 'Connexion réussie !'
-frontend.login.successful_description: 'Tu peux te déconnecter via le menu sous ton pseudo, en bas à gauche.'
+frontend.login.successful_description: 'Tu peux te déconnecter via le menu sous ton
+  pseudo, en bas à gauche.'
+frontend.support_development: Support de Développement

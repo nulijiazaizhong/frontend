@@ -1,11 +1,16 @@
 frontend.hello: "Hej, {0}!"
 # ^ {0} is the name of the user Example: 'Hello, Tumppi066'
 frontend.disclaimer.title: "Ansvarsfriskrivning!"
-frontend.disclaimer.description.line1: "ETS2LA ansvarar inte för några negativa effekter som orsakas av att använda några av funktionerna som tillhandahålls av denna programvara. Vänligen använd programvaran på egen risk."
-frontend.disclaimer.description.line2: "Att använda ETS2LA i TruckersMP har tillåtits av TMP-personal, men du är ansvarig för eventuella avstängningar eller varningar som orsakas av att använda denna programvara."
+frontend.disclaimer.description.line1: "ETS2LA ansvarar inte för några negativa effekter
+  som orsakas av att använda några av funktionerna som tillhandahålls av denna programvara.
+  Vänligen använd programvaran på egen risk."
+frontend.disclaimer.description.line2: "Att använda ETS2LA i TruckersMP har tillåtits
+  av TMP-personal, men du är ansvarig för eventuella avstängningar eller varningar
+  som orsakas av att använda denna programvara."
 frontend.disclaimer.ok: "Jag förstår"
 frontend.disclaimer.dontshowagain: "Visa inte detta igen"
-frontend.disclaimer.dontshowagain.toast: "Du kommer inte att se det igen förrän nästa uppdatering."
+frontend.disclaimer.dontshowagain.toast: "Du kommer inte att se det igen förrän nästa
+  uppdatering."
 frontend.logged_out: "Utloggad."
 frontend.states.complete: "Klart!"
 frontend.theme.dark: "Mörk"
@@ -28,7 +33,8 @@ frontend.immediate.minimize: "Minimera"
 frontend.immediate.close: "Stäng"
 frontend.404.title: "Varför är vi här... bara för att lida?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "Hur som helst, klicka på knappen nedan för att återvända till startsidan, och kan du vänligen berätta för oss hur du kom hit?"
+frontend.404.message: "Hur som helst, klicka på knappen nedan för att återvända till
+  startsidan, och kan du vänligen berätta för oss hur du kom hit?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "Huvudmeny"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
@@ -36,7 +42,8 @@ frontend.settings.data_missing: "Plugin data is not valid or missing."
 frontend.settings: "Inställningar"
 frontend.settings.global: "Global"
 frontend.settings.controls: "Kontroller"
-frontend.settings.global_info: "Denna lista inkluderar endast plugins som stöder den globala inställningsfilen."
+frontend.settings.global_info: "Denna lista inkluderar endast plugins som stöder den
+  globala inställningsfilen."
 frontend.settings.error: "Fel: {0}"
 # ^ {0} is the error message that happened.
 frontend.settings.backend_no_data: "Fick ingen data från backend."
@@ -58,8 +65,10 @@ frontend.feedback: "Feedback"
 frontend.feedback.empty: "Feedback är tom, vänligen ge oss din feedback."
 frontend.feedback.sending: "Skickar feedback..."
 frontend.feedback.sent: "Feedback skickad!"
-frontend.feedback.error_sending: "Det uppstod ett fel vid skickandet av feedback, försök igen senare."
-frontend.feedback.description: "Vänligen ge oss din feedback. Detta kommer att skickas direkt till en privat kanal för utvecklare att se."
+frontend.feedback.error_sending: "Det uppstod ett fel vid skickandet av feedback,
+  försök igen senare."
+frontend.feedback.description: "Vänligen ge oss din feedback. Detta kommer att skickas
+  direkt till en privat kanal för utvecklare att se."
 frontend.feedback.disclaimer: "Dela inte med dig av någon personlig information."
 frontend.feedback.submit: "Skicka"
 frontend.plugins.name: "Namn"
@@ -101,9 +110,13 @@ frontend.sidebar.sign_out_successful: "Utloggning lyckades."
 frontend.sidebar.sign_out_description: "Du kan logga in igen när som helst."
 frontend.sidebar.sign_in: "Logga in"
 frontend.login: "Logga in"
-frontend.login.disclaimer: "Vi stöder för närvarande endast inloggning via Discord, detta är så att vi inte behöver lagra någon känslig information som lösenord."
+frontend.login.disclaimer: "Vi stöder för närvarande endast inloggning via Discord,
+  detta är så att vi inte behöver lagra någon känslig information som lösenord."
 frontend.login.discord: "Logga in med Discord"
 frontend.login.privacy_policy: "Integritetspolicy"
-frontend.login.already_logged_in: "OBS: Du har redan loggat in, du kan åsidosätta det genom att logga in igen."
+frontend.login.already_logged_in: "OBS: Du har redan loggat in, du kan åsidosätta
+  det genom att logga in igen."
 frontend.login.successful: "Inloggning lyckades!"
-frontend.login.successful_description: "Logga ut med hjälp av kontextmenyn under ditt användarnamn i det nedre vänstra hörnet."
+frontend.login.successful_description: "Logga ut med hjälp av kontextmenyn under ditt
+  användarnamn i det nedre vänstra hörnet."
+frontend.support_development: Stöd Utveckling

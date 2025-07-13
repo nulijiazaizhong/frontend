@@ -5,7 +5,7 @@ frontend.disclaimer.description.line1: "ETS2LA 对因使用该软件提供的任
 frontend.disclaimer.description.line2: "TMP 工作人员允许在 TruckersMP 中使用 ETS2LA，但您应对因使用该软件而导致的任何封禁或警告负责。"
 frontend.disclaimer.ok: "我明白"
 frontend.disclaimer.dontshowagain: "不再显示"
-frontend.disclaimer.dontshowagain.toast: "直到下一次更新前你不会再看到此消息"
+frontend.disclaimer.dontshowagain.toast: "直到下一次更新前你不会再看到此消息。"
 frontend.logged_out: "已登出。"
 frontend.states.complete: "完成！"
 frontend.theme.dark: "深色主题"
@@ -26,9 +26,9 @@ frontend.immediate.enable_transparent: "启用半透明"
 frontend.immediate.disable_transparent: "禁用半透明"
 frontend.immediate.minimize: "最小化"
 frontend.immediate.close: "关闭"
-frontend.404.title: "您貌似进入到了我们的视野盲区"
+frontend.404.title: "您貌似进入到了我们的视野盲区？"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "无论如何，请点击下方按钮返回主界面，并告诉我们您是怎么到达这个页面的"
+frontend.404.message: "无论如何，请点击下方按钮返回主界面，并告诉我们您是怎么到达这个页面的？"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "返回到主界面"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
