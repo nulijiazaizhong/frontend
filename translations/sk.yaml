@@ -1,11 +1,15 @@
 frontend.hello: "Ahoj, {0}!"
 # ^ {0} is the name of the user Example: 'Hello, Tumppi066'
 frontend.disclaimer.title: "Upozornenie!"
-frontend.disclaimer.description.line1: "ETS2LA nezodpovedá za žiadne škodlivé účinky spôsobené používaním ktorejkoľvek z funkcií poskytovaných týmto softvérom. Softvér používajte na vlastné riziko."
-frontend.disclaimer.description.line2: "Používanie ETS2LA v TruckersMP bolo povolené zamestnancami TMP, ale vy ste zodpovední za všetky zákazy alebo varovania spôsobené používaním tohto softvéru."
+frontend.disclaimer.description.line1: "ETS2LA nezodpovedá za žiadne škodlivé účinky
+  spôsobené používaním ktorejkoľvek z funkcií poskytovaných týmto softvérom. Softvér
+  používajte na vlastné riziko."
+frontend.disclaimer.description.line2: "Používanie ETS2LA v TruckersMP bolo povolené
+  zamestnancami TMP, ale vy ste zodpovední za všetky zákazy alebo varovania spôsobené
+  používaním tohto softvéru."
 frontend.disclaimer.ok: "Chápem"
 frontend.disclaimer.dontshowagain: "Znova nezobrazovať"
-frontend.disclaimer.dontshowagain.toast: "Do ďalšej aktualizácie neuvidíte túto správu"
+frontend.disclaimer.dontshowagain.toast: "Do ďalšej aktualizácie neuvidíte túto správu."
 frontend.logged_out: "Odhlásený."
 frontend.states.complete: "Hotovo!"
 frontend.theme.dark: "Čierna téma"
@@ -28,7 +32,8 @@ frontend.immediate.minimize: "Zminimalizovať"
 frontend.immediate.close: "Zavrieť"
 frontend.404.title: "Prečo sme tu... len trpieť?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "Kliknutím na tlačidlo nižšie sa vrátite na domovskú obrazovku a inak, môžete nám povedať, ako ste sa sem dostali?"
+frontend.404.message: "Kliknutím na tlačidlo nižšie sa vrátite na domovskú obrazovku
+  a inak, môžete nám povedať, ako ste sa sem dostali?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "Hlavné menu"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
@@ -36,7 +41,8 @@ frontend.settings.data_missing: "Plugin údaje nie sú platné alebo chýbajú."
 frontend.settings: "nastavenia"
 frontend.settings.global: "Globálne"
 frontend.settings.controls: "Ovládacie prvky"
-frontend.settings.global_info: "Tento zoznam obsahuje iba pluginy, ktoré podporujú globálne nastavenia súboru."
+frontend.settings.global_info: "Tento zoznam obsahuje iba pluginy, ktoré podporujú
+  globálne nastavenia súboru."
 frontend.settings.error: "Chyba: {0}"
 # ^ {0} is the error message that happened.
 frontend.settings.backend_no_data: "Nemám žiadne dáta z backendu."
@@ -55,11 +61,14 @@ frontend.settings.unknown_data_type: "Neznámy typ dát: {0}"
 frontend.settings.needs_restart: "Plugin potrebuje reštart aby sa aktualizovali nastavenia."
 frontend.settings.restarted: "Reštart prebehol úspešne"
 frontend.feedback: "spätná väzba"
-frontend.feedback.empty: "Pole pre spätnú väzbu je prázdne. Prosím, napíšte svoju správu."
+frontend.feedback.empty: "Pole pre spätnú väzbu je prázdne. Prosím, napíšte svoju
+  správu."
 frontend.feedback.sending: "Odosiela sa spätná väzba..."
 frontend.feedback.sent: "spätná väzba odoslaná!"
-frontend.feedback.error_sending: "Pri odosielaní spätnej väzby sa vyskytla chyba, skúste to neskôr."
-frontend.feedback.description: "poskytnite nám spätnú väzbu, ktorú máte. Toto bude odoslané priamo do súkromného chatu, aby ho vývojári videli."
+frontend.feedback.error_sending: "Pri odosielaní spätnej väzby sa vyskytla chyba,
+  skúste to neskôr."
+frontend.feedback.description: "poskytnite nám spätnú väzbu, ktorú máte. Toto bude
+  odoslané priamo do súkromného chatu, aby ho vývojári videli."
 frontend.feedback.disclaimer: "Nezdieľajte žiadne osobné údaje."
 frontend.feedback.submit: "Odoslať"
 frontend.plugins.name: "Meno"
@@ -78,8 +87,8 @@ frontend.plugins.enabled_all_plugins: "Všetky pluginy zapnuté"
 frontend.plugins.disabling_plugin: "Vypínam {0}"
 frontend.plugins.disabled_plugin: "Vypnutý plugin {0}"
 frontend.plugins.error_disabling_plugin: "Chyba pri vypínaní pluginu {0}"
-frontend.plugins.disabling_all_plugins: "Vypínam všetky pluginy"
-frontend.plugins.disabled_all_plugins: "Všetky pluginy vypnuté."
+frontend.plugins.disabling_all_plugins: "Vypínam všetky pluginy..."
+frontend.plugins.disabled_all_plugins: "Všetky pluginy vypnuté"
 frontend.plugins.hidden: "{0} skrytých pluginov"
 frontend.dialog.not_supported: "{0} nie je podporované v dialógovom okne."
 # ^ {0} is the function that is not supported. Example: 'EnabledLock is not supported in a dialog.'
@@ -97,13 +106,17 @@ frontend.sidebar.settings: "nastavenia"
 frontend.sidebar.anonymous: "Anonýmny"
 frontend.sidebar.account: "Účet"
 frontend.sidebar.sign_out: "Odhlásiť"
-frontend.sidebar.sign_out_successful: "Úspešne odhlásený"
+frontend.sidebar.sign_out_successful: "Úspešne odhlásený."
 frontend.sidebar.sign_out_description: "Môžete sa prihlásiť kedykoľvek znova."
 frontend.sidebar.sign_in: "Prihlásiť sa"
 frontend.login: "Prihlásenie"
-frontend.login.disclaimer: "V súčasnosti podporujeme iba prihlásenie cez Discord, aby sme nemuseli uchovávať žiadne citlivé informácie, ako sú heslá."
+frontend.login.disclaimer: "V súčasnosti podporujeme iba prihlásenie cez Discord,
+  aby sme nemuseli uchovávať žiadne citlivé informácie, ako sú heslá."
 frontend.login.discord: "Prihlásiť sa cez Discord"
 frontend.login.privacy_policy: "Zásady ochrany osobných údajov"
-frontend.login.already_logged_in: "POZNÁMKA: Už ste sa prihlásili, môžete to prepísať opätovným prihlásením."
-frontend.login.successful: "Úspešne prihlásený"
-frontend.login.successful_description: "Odhláste sa pomocou kontextového menu pod svojím užívateľským menom vľavo dole."
+frontend.login.already_logged_in: "POZNÁMKA: Už ste sa prihlásili, môžete to prepísať
+  opätovným prihlásením."
+frontend.login.successful: "Úspešne prihlásený!"
+frontend.login.successful_description: "Odhláste sa pomocou kontextového menu pod
+  svojím užívateľským menom vľavo dole."
+frontend.support_development: Podpora rozvoja

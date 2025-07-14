@@ -1,0 +1,119 @@
+frontend.disclaimer.title: Дисклеймер!
+frontend.disclaimer.ok: Я понимаю
+frontend.disclaimer.dontshowagain: Больше не показывать
+frontend.disclaimer.dontshowagain.toast: Вы больше это не увидите до следующего 
+  обновления.
+frontend.logged_out: Отключён от системы.
+frontend.states.complete: Готово!
+frontend.theme.dark: Тёмная
+frontend.theme.light: Светлая
+frontend.immediate.connected: Подключён к backend ETS2LA
+frontend.immediate.disconnected: Отключён от backend ETS2LA
+frontend.immediate.update_check_error: 'Ошибка: {0}'
+frontend.immediate.checking_updates: Проверка обновлений...
+frontend.immediate.update_available: Вы пропустили {0} обновлений
+frontend.immediate.no_updates: Нет доступных обновлений.
+frontend.immediate.up_to_date: Обновлено
+frontend.immediate.socket_connected: Подключено
+frontend.immediate.disable_stay_on_top: Выключить поверх всех окон
+frontend.immediate.enable_stay_on_top: Включить поверх всех окон
+frontend.immediate.enable_transparent: Включить прозрачность
+frontend.immediate.minimize: Свернуть
+frontend.immediate.close: Закрыть
+frontend.404.title: Почему мы здесь... для того, чтобы страдать?
+frontend.404.button: Главное меню
+frontend.settings.data_missing: Данные плагина недействительны или отсутствуют.
+frontend.settings: Настройки
+frontend.settings.global: Глобальные
+frontend.settings.controls: Управление
+frontend.settings.error: 'Ошибка: {0}'
+frontend.settings.backend_no_data: Данные от backend не были получены.
+frontend.settings.string.updated: Значение обновлено
+frontend.settings.number.updated: Значение обновлено
+frontend.settings.boolean.updated: Значение обновлено
+frontend.settings.array.updated_element: Элемент массива обновлён
+frontend.settings.array.added_element: Элемент массива добавлен
+frontend.settings.array.add: Добавить элемент
+frontend.settings.array.remove: Удалить
+frontend.settings.enum.no_enum: Не указано значение enum.
+frontend.settings.enum.updated: Значение обновлено
+frontend.settings.unknown_data_type: 'Неизвестный тип данных: {0}'
+frontend.settings.restarted: Перезапуск успешен
+frontend.feedback: Обратная связь
+frontend.feedback.sending: Обратная связь отправляется...
+frontend.feedback.sent: Обратная связь отправлена!
+frontend.feedback.disclaimer: Не делитесь никакими личными данными.
+frontend.feedback.submit: Отправить
+frontend.plugins.name: Название
+frontend.plugins.authors: Авторы
+frontend.plugins.tags: Теги
+frontend.plugins.select_tags: Поиск по тегам
+frontend.plugins.select_authors: Поиск по авторам
+frontend.plugins.selected_tags: 'Выбрано тегов: {0}'
+frontend.plugins.selected_authors: Выбрано {0} авторов
+frontend.plugins.end_list: Это конец списка
+frontend.plugins.enabling_plugin: Включение {0}
+frontend.plugins.enabled_plugin: '{0} включено'
+frontend.plugins.error_enabling_plugin: Ошибка при включении {0}
+frontend.plugins.enabling_all_plugins: Включение всех плагов...
+frontend.plugins.enabled_all_plugins: Все плагины включены
+frontend.plugins.disabling_plugin: Отключение {0}
+frontend.plugins.error_disabling_plugin: Ошибка при отключении {0}
+frontend.plugins.disabling_all_plugins: Отключение всех плагинов...
+frontend.plugins.disabled_all_plugins: Все плагины отключены
+frontend.dialog.not_supported: '{0} не поддерживается в диалоговом окне.'
+frontend.sidebar.updates_available: Доступны обновления
+frontend.sidebar.main: Основное
+frontend.sidebar.dashboard: Обзор
+frontend.sidebar.plugins: Плагины
+frontend.hello: Здравствуйте, {0}!
+frontend.disclaimer.description.line1: ETS2LA не несёт ответственности за любые 
+  негативные последствия, вызванные использованием любых функций этого ПО. 
+  Пожалуйста, используйте это ПО на свой страх и риск.
+frontend.disclaimer.description.line2: Использование ETS2LA в TruckersMP 
+  разрешено командой TMP, однако вы несёте ответственность за любые баны или 
+  предупреждения, вызванные использованием этого ПО.
+frontend.immediate.socket_disconnected: Отключено, пожалуйста, обновите 
+  страницу.
+frontend.immediate.disable_transparent: Выключить прозрачность
+frontend.feedback.empty: Обратная связь пуста, если у вас есть комментарии, 
+  пожалуйста, напишите их здесь.
+frontend.404.message: Короче просто нажмите кнопку снизу, чтобы вернуться на 
+  главную страницу, и скажите нам пожалуйста, как вы вообще здесь оказались?
+frontend.settings.global_info: Этот список включает в себя только те плагины, 
+  которые поддерживают файл глобальных настроек.
+frontend.settings.needs_restart: Чтобы обновить настройки, нужно перезапустить 
+  плагин.
+frontend.settings.array.removed_element: Элемент массива удалён
+frontend.feedback.error_sending: Произошла ошибка при отправке обратной связи, 
+  повторите позже.
+frontend.plugins.disabled_plugin: '{0} отключено'
+frontend.plugins.hidden: Скрыто {0} плагинов
+frontend.feedback.description: Пожалуйста, если у вас есть обратная связь, 
+  напишите её здесь. Она будет отправлена напрямую в закрытый канал, где её 
+  увидят разработчики.
+frontend.sidebar.visualization: Визуализация
+frontend.sidebar.manager: Менеджер
+frontend.sidebar.performance: Производительность
+frontend.sidebar.help: Помощь
+frontend.sidebar.wiki: Вики
+frontend.sidebar.chat: Чат
+frontend.sidebar.settings: Настройки
+frontend.sidebar.anonymous: Аноним
+frontend.sidebar.account: Аккаунт
+frontend.sidebar.sign_out: Выйти
+frontend.sidebar.sign_out_successful: Выход успешен.
+frontend.sidebar.sign_out_description: Вы можете войти обратно в любой момент.
+frontend.sidebar.sign_in: Войти
+frontend.login: Войти
+frontend.login.disclaimer: На данный момент мы поддерживаем вход только через 
+  Discord, чтобы нам не приходилось хранить чувствительные данные, такие как 
+  пароли.
+frontend.login.successful: Вход успешно выполнен!
+frontend.login.successful_description: Чтобы выйти, используйте контекстное меню
+  под вашим именем пользователя в левом нижнем углу.
+frontend.login.discord: Войти через Discord
+frontend.login.privacy_policy: Политика конфиденциальности
+frontend.login.already_logged_in: 'ПРИМЕЧАНИЕ: Вход в систему уже выполнен, вы можете
+  его обновить, выполнив вход снова.'
+frontend.support_development: Поддержать разработку

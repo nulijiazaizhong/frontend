@@ -38,6 +38,7 @@ import {
     UserCog,
     UserRoundMinus,
     ArrowLeftToLine,
+    Archive
 } from "lucide-react"
 
 import { SetSettingByKey } from "@/apis/settings"
@@ -146,6 +147,16 @@ export function ETS2LASidebar() {
                         }
                     }>
                         <ChartNoAxesGantt /> {translate("frontend.sidebar.manager")}
+                    </SidebarMenuButton>
+                    <SidebarMenuButton className={buttonClassName("/page", { url: "/plugins" })} onMouseDown={
+                        () => {
+                            startTransition(async () => {
+                                startProgress()
+                                router.push('/page?url=/catalogue')
+                            })
+                        }
+                    }>
+                        <Archive /> {"Catalogue"}
                     </SidebarMenuButton>
                     <SidebarMenuButton className={buttonClassName("/page", { url: "/performance" })} onMouseDown={
                         () => {

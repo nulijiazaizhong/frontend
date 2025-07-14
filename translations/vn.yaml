@@ -1,11 +1,18 @@
 frontend.hello: "Xin chào, {0}!"
 # ^ {0} is the name of the user Example: 'Hello, Tumppi066'
 frontend.disclaimer.title: "Lưu ý khi dùng!"
-frontend.disclaimer.description.line1: "ETS2LA không chịu trách nhiệm về bất kỳ hậu quả tiêu cực hoặc thiệt hại nào phát sinh từ việc sử dụng bất kỳ tính năng nào trong phần mềm này. Vui lòng sử dụng phần mềm với sự cẩn trọng và chấp nhận rủi ro của riêng bạn."
-frontend.disclaimer.description.line2: "Việc sử dụng ETS2LA trong TruckersMP đã được nhân viên TMP cho phép nhưng bạn vẫn phải tuân thủ các quy tắc của TruckersMP. Bạn phải chịu trách nhiệm về mọi lệnh cấm hoặc cảnh báo do sử dụng phần mềm này gây ra."
+frontend.disclaimer.description.line1: "ETS2LA không chịu trách nhiệm về bất kỳ hậu
+  quả tiêu cực hoặc thiệt hại nào phát sinh từ việc sử dụng bất kỳ tính năng nào trong
+  phần mềm này. Vui lòng sử dụng phần mềm với sự cẩn trọng và chấp nhận rủi ro của
+  riêng bạn."
+frontend.disclaimer.description.line2: "Việc sử dụng ETS2LA trong TruckersMP đã được
+  nhân viên TMP cho phép nhưng bạn vẫn phải tuân thủ các quy tắc của TruckersMP. Bạn
+  phải chịu trách nhiệm về mọi lệnh cấm hoặc cảnh báo do sử dụng phần mềm này gây
+  ra."
 frontend.disclaimer.ok: "Tôi đã đọc và hiểu"
 frontend.disclaimer.dontshowagain: "Không hiện lại"
-frontend.disclaimer.dontshowagain.toast: "Bạn sẽ không thấy thông báo này cho đến lần cập nhật tiếp theo."
+frontend.disclaimer.dontshowagain.toast: "Bạn sẽ không thấy thông báo này cho đến
+  lần cập nhật tiếp theo."
 frontend.logged_out: "Đã đăng xuất."
 frontend.states.complete: "Hoàn tất!"
 frontend.theme.dark: "Tối"
@@ -19,7 +26,8 @@ frontend.immediate.update_available: "Bạn đang chậm {0} bản cập nhật"
 frontend.immediate.no_updates: "Không có cập nhật nào."
 frontend.immediate.up_to_date: "Đang sử dụng phiên bản mới nhất."
 frontend.immediate.socket_connected: "Đã kết nối, chúc bạn chơi vui vẻ!"
-frontend.immediate.socket_disconnected: "Mất kết nối, hãy kiểm tra lại kết nối mạng của bạn và làm mới trang."
+frontend.immediate.socket_disconnected: "Mất kết nối, hãy kiểm tra lại kết nối mạng
+  của bạn và làm mới trang."
 frontend.immediate.enable_stay_on_top: "Bật luôn hiển thị trên cùng"
 frontend.immediate.disable_stay_on_top: "Tắt luôn hiển thị trên cùng"
 frontend.immediate.enable_transparent: "Bật chế độ trong suốt"
@@ -28,15 +36,17 @@ frontend.immediate.minimize: "Thu nhỏ"
 frontend.immediate.close: "Đóng"
 frontend.404.title: "Tại sao bạn lại ở đây? Nó chả có gì ở đây cả!"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "Dù sao thì, nhấn vào nút bên dưới để quay lại màn hình chính, và hãy cho chúng tôi biết làm thế nào bạn đến được đây?"
+frontend.404.message: "Dù sao thì, nhấn vào nút bên dưới để quay lại màn hình chính,
+  và hãy cho chúng tôi biết làm thế nào bạn đến được đây?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "Menu chính"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
 frontend.settings.data_missing: "Dữ liệu plugin không hợp lệ hoặc bị thiếu."
 frontend.settings: "Cài đặt"
 frontend.settings.global: "Chung"
-frontend.settings.controls: "Điều khiển"
-frontend.settings.global_info: "Danh sách này chỉ bao gồm các plugin hỗ trợ tệp cài đặt toàn cầu."
+frontend.settings.controls: "Các bộ điều khiển"
+frontend.settings.global_info: "Danh sách này chỉ bao gồm các plugin hỗ trợ tệp cài
+  đặt toàn cầu."
 frontend.settings.error: "Lỗi: {0}"
 # ^ {0} là thông điệp lỗi đã xảy ra.
 frontend.settings.backend_no_data: "Không nhận được dữ liệu từ backend."
@@ -55,11 +65,13 @@ frontend.settings.unknown_data_type: "Loại dữ liệu không xác định: {0
 frontend.settings.needs_restart: "Plugin cần khởi động lại để cập nhật cài đặt."
 frontend.settings.restarted: "Khởi động lại thành công"
 frontend.feedback: "Phản hồi"
-frontend.feedback.empty: "Phản hồi trống, vui lòng cung cấp bất kỳ phản hồi nào bạn có."
+frontend.feedback.empty: "Phản hồi trống, vui lòng cung cấp bất kỳ phản hồi nào bạn
+  có."
 frontend.feedback.sending: "Đang gửi phản hồi..."
 frontend.feedback.sent: "Phản hồi đã được gửi!"
 frontend.feedback.error_sending: "Có lỗi khi gửi phản hồi, thử lại sau."
-frontend.feedback.description: "Vui lòng cung cấp bất kỳ phản hồi nào bạn có. Điều này sẽ được gửi trực tiếp đến một kênh riêng tư để các nhà phát triển xem."
+frontend.feedback.description: "Vui lòng cung cấp bất kỳ phản hồi nào bạn có. Điều
+  này sẽ được gửi trực tiếp đến một kênh riêng tư để các nhà phát triển xem."
 frontend.feedback.disclaimer: "Xin lưu ý: Không chia sẻ bất kỳ thông tin cá nhân nào."
 frontend.feedback.submit: "Gửi"
 frontend.plugins.name: "Tên"
@@ -101,9 +113,13 @@ frontend.sidebar.sign_out_successful: "Đăng xuất thành công."
 frontend.sidebar.sign_out_description: "Bạn có thể đăng nhập lại bất cứ lúc nào."
 frontend.sidebar.sign_in: "Đăng nhập"
 frontend.login: "Đăng nhập"
-frontend.login.disclaimer: "Chúng tôi hiện chỉ hỗ trợ đăng nhập qua discord, điều này để chúng tôi không phải lưu trữ bất kỳ thông tin nhạy cảm nào như mật khẩu."
+frontend.login.disclaimer: "Chúng tôi hiện chỉ hỗ trợ đăng nhập qua discord, điều
+  này để chúng tôi không phải lưu trữ bất kỳ thông tin nhạy cảm nào như mật khẩu."
 frontend.login.discord: "Đăng nhập với Discord"
 frontend.login.privacy_policy: "Chính sách bảo mật"
-frontend.login.already_logged_in: "LƯU Ý: Bạn đã đăng nhập, bạn có thể ghi đè bằng cách đăng nhập lại."
+frontend.login.already_logged_in: "LƯU Ý: Bạn đã đăng nhập, bạn có thể ghi đè bằng
+  cách đăng nhập lại."
 frontend.login.successful: "Đăng nhập thành công!"
-frontend.login.successful_description: "Đăng xuất bằng cách sử dụng menu ngữ cảnh dưới tên người dùng của bạn ở góc dưới bên trái."
+frontend.login.successful_description: "Đăng xuất bằng cách sử dụng menu ngữ cảnh
+  dưới tên người dùng của bạn ở góc dưới bên trái."
+frontend.support_development: Hỗ trợ phát triển

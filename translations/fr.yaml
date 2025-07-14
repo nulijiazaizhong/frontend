@@ -30,7 +30,7 @@ frontend.immediate.minimize: 'Réduire la fenêtre'
 frontend.immediate.close: 'Fermer l’application'
 frontend.404.title: 'Pourquoi sommes-nous ici... juste pour souffrir ?'
 frontend.404.message: 'Peu importe, Clique sur le bouton ci-dessous pour retourner
-  au menu principal... et au passage, dis-nous comment t’as fini ici !'
+  au menu principal... et au passage, dis-nous comment t’as fini ici ?'
 frontend.404.button: 'Retour au menu'
 frontend.settings.data_missing: 'Les données du plugin sont invalides ou manquantes.'
 frontend.settings: 'Paramètres'

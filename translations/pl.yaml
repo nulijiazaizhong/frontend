@@ -1,11 +1,16 @@
 frontend.hello: "Witaj, {0}!"
 # ^ {0} is the name of the user Example: 'Hello, Tumppi066'
 frontend.disclaimer.title: "Ważna informacja!"
-frontend.disclaimer.description.line1: "ETS2LA nie ponosi odpowiedzialności za jakiekolwiek negatywne skutki wynikające z korzystania z funkcji oferowanych przez to oprogramowanie. Proszę korzystać z oprogramowania na własne ryzyko."
-frontend.disclaimer.description.line2: "Korzystanie z ETS2LA w TruckersMP zostało dopuszczone przez zespół TMP, jednak to Ty ponosisz odpowiedzialność za wszelkie bany lub ostrzeżenia wynikające z używania tego oprogramowania."
+frontend.disclaimer.description.line1: "ETS2LA nie ponosi odpowiedzialności za jakiekolwiek
+  negatywne skutki wynikające z korzystania z funkcji oferowanych przez to oprogramowanie.
+  Proszę korzystać z oprogramowania na własne ryzyko."
+frontend.disclaimer.description.line2: "Korzystanie z ETS2LA w TruckersMP zostało
+  dopuszczone przez zespół TMP, jednak to Ty ponosisz odpowiedzialność za wszelkie
+  bany lub ostrzeżenia wynikające z używania tego oprogramowania."
 frontend.disclaimer.ok: "Rozumiem"
-frontend.disclaimer.dontshowagain: "Nie pokazuj tego ponownie."
-frontend.disclaimer.dontshowagain.toast: "Nie zobaczysz tego ponownie aż do następnej aktualizacji."
+frontend.disclaimer.dontshowagain: "Nie pokazuj tego ponownie"
+frontend.disclaimer.dontshowagain.toast: "Nie zobaczysz tego ponownie aż do następnej
+  aktualizacji."
 frontend.logged_out: "Wylogowano."
 frontend.states.complete: "Gotowe!"
 frontend.theme.dark: "Ciemny"
@@ -16,10 +21,10 @@ frontend.immediate.update_check_error: "Błąd: {0}"
 # ^ {0} is the error message
 frontend.immediate.checking_updates: "Sprawdzanie aktualizacji..."
 frontend.immediate.update_available: "Jesteś {0} aktualizacji do tyłu"
-frontend.immediate.no_updates: "Brak dostępnych aktualizacji"
+frontend.immediate.no_updates: "Brak dostępnych aktualizacji."
 frontend.immediate.up_to_date: "Aktualne"
 frontend.immediate.socket_connected: "Połączono"
-frontend.immediate.socket_disconnected: "Rozłączono, proszę odświeżyć"
+frontend.immediate.socket_disconnected: "Rozłączono, proszę odświeżyć."
 frontend.immediate.enable_stay_on_top: "Włącz opcję zawsze na wierzchu"
 frontend.immediate.disable_stay_on_top: "Wyłącz opcję zawsze na wierzchu"
 frontend.immediate.enable_transparent: "Włącz przeźroczystość"
@@ -28,7 +33,8 @@ frontend.immediate.minimize: "Minimalizuj"
 frontend.immediate.close: "Zamknij"
 frontend.404.title: "Po co tu jesteśmy... po prostu, żeby cierpieć?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "Kliknij przycisk poniżej, aby wrócić do ekranu głównego, a czy możesz nam powiedzieć, jak tu trafiłeś?"
+frontend.404.message: "Kliknij przycisk poniżej, aby wrócić do ekranu głównego, a
+  czy możesz nam powiedzieć, jak tu trafiłeś?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "Menu główne"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
@@ -36,7 +42,8 @@ frontend.settings.data_missing: "Brak lub nieprawidłowe dane dodatku."
 frontend.settings: "Ustawienia"
 frontend.settings.global: "Globalne"
 frontend.settings.controls: "Sterowanie"
-frontend.settings.global_info: "Ta lista zawiera tylko dodatki, które obsługują plik ustawień globalnych."
+frontend.settings.global_info: "Ta lista zawiera tylko dodatki, które obsługują plik
+  ustawień globalnych."
 frontend.settings.error: "Błąd: {0}"
 # ^ {0} is the error message that happened.
 frontend.settings.backend_no_data: "Brak danych z serwera backend."
@@ -52,15 +59,18 @@ frontend.settings.enum.no_enum: "Brak dostarczonych wartości enum."
 frontend.settings.enum.updated: "Zaktualizowano ustawienie"
 frontend.settings.unknown_data_type: "Nieznany typ danych: {0}"
 # ^ {0} is the data type that was unknown. Example: 'Unknown data type: string'
-frontend.settings.needs_restart: "Dodatek potrzebuje ponownego uruchomienia w celu zastosowania ustawień."
-frontend.settings.restarted: "Ponowne uruchomienie powiodło się."
+frontend.settings.needs_restart: "Dodatek potrzebuje ponownego uruchomienia w celu
+  zastosowania ustawień."
+frontend.settings.restarted: "Ponowne uruchomienie powiodło się"
 frontend.feedback: "Opinia i uwagi"
 frontend.feedback.empty: "Opinie są puste, proszę podać wszelkie uwagi, które masz."
 frontend.feedback.sending: "Wysyłanie opinii..."
 frontend.feedback.sent: "Wysłano opinię!"
-frontend.feedback.error_sending: "Napotkano błąd podczas wysyłania opinii! Spróbuj później."
-frontend.feedback.description: "Proszę podać wszelkie uwagi, które masz. Zostaną one wysłane bezpośrednio do prywatnego kanału, aby deweloperzy mogli je zobaczyć."
-frontend.feedback.disclaimer: "Nie podawaj żadnych informacji osobistych"
+frontend.feedback.error_sending: "Napotkano błąd podczas wysyłania opinii! Spróbuj
+  później."
+frontend.feedback.description: "Proszę podać wszelkie uwagi, które masz. Zostaną one
+  wysłane bezpośrednio do prywatnego kanału, aby deweloperzy mogli je zobaczyć."
+frontend.feedback.disclaimer: "Nie podawaj żadnych informacji osobistych."
 frontend.feedback.submit: "Zgłoś"
 frontend.plugins.name: "Nazwa"
 frontend.plugins.authors: "Autorzy"
@@ -73,7 +83,7 @@ frontend.plugins.end_list: "Koniec listy"
 frontend.plugins.enabling_plugin: "Uruchamianie {0}"
 frontend.plugins.enabled_plugin: "Uruchomiono {0}"
 frontend.plugins.error_enabling_plugin: "Błąd podczas uruchamiania {0}"
-frontend.plugins.disabling_plugin: "Wyłączanie {0}"
+frontend.plugins.disabling_plugin: "Wyłącz {0}"
 frontend.plugins.disabled_plugin: "Wyłączanie {0}"
 frontend.plugins.error_disabling_plugin: "Błąd podczas wyłączania {0}"
 frontend.plugins.hidden: "{0} ukrytych dodatków"
@@ -97,9 +107,17 @@ frontend.sidebar.sign_out_successful: "Wylogowywanie powiodło się."
 frontend.sidebar.sign_out_description: "Możesz ponownie zalogować się w dowolnym momencie."
 frontend.sidebar.sign_in: "Zaloguj się"
 frontend.login: "Logowanie"
-frontend.login.disclaimer: "Obecnie wspieramy logowanie tylko przez Discorda, aby nie musieć przechowywać żadnych wrażliwych informacji, takich jak hasła."
+frontend.login.disclaimer: "Obecnie wspieramy logowanie tylko przez Discorda, aby
+  nie musieć przechowywać żadnych wrażliwych informacji, takich jak hasła."
 frontend.login.discord: "Zaloguj używając aplikacji Discord"
 frontend.login.privacy_policy: "Polityka prywatności"
-frontend.login.already_logged_in: "UWAGA: Jesteś już zalogowany. Możesz to nadpisać, logując się ponownie."
+frontend.login.already_logged_in: "UWAGA: Jesteś już zalogowany. Możesz to nadpisać,
+  logując się ponownie."
 frontend.login.successful: "Pomyślnie zalogowano!"
-frontend.login.successful_description: "Wyloguj się, korzystając z menu kontekstowego pod swoją nazwą użytkownika w lewym dolnym rogu."
+frontend.login.successful_description: "Wyloguj się, korzystając z menu kontekstowego
+  pod swoją nazwą użytkownika w lewym dolnym rogu."
+frontend.plugins.disabling_all_plugins: Wyłączanie wszystkich pluginów...
+frontend.plugins.disabled_all_plugins: Wyłączono wszystkie pluginy
+frontend.plugins.enabled_all_plugins: Włączono wszystkie pluginy
+frontend.support_development: Wspomóż rozwój
+frontend.plugins.enabling_all_plugins: Uruchamianie wszystkich pluginów...

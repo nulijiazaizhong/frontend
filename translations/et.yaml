@@ -1,1 +1,115 @@
-{}
+frontend.disclaimer.title: Tähelepanu!
+frontend.disclaimer.description.line2: ETS2LA kasutamine TruckersMP on TMP 
+  töötajate poolt lubatud, kuid teie vastutate selle tarkvara kasutamisest 
+  tulenevate keeldude või hoiatuste eest.
+frontend.disclaimer.ok: Saan aru
+frontend.disclaimer.dontshowagain: Ära seda enam näita
+frontend.disclaimer.dontshowagain.toast: Te ei näe seda uuesti enne järgmist 
+  värskendust.
+frontend.logged_out: Välja logitud.
+frontend.states.complete: Valmis!
+frontend.theme.dark: Tume
+frontend.theme.light: Valge
+frontend.immediate.disconnected: ETS2LA taustaprogrammist lahutatud
+frontend.immediate.update_check_error: 'Viga: {0}'
+frontend.immediate.checking_updates: Uuenduste kontrollimine...
+frontend.immediate.update_available: Oled {0} uuendus(d) taga
+frontend.immediate.no_updates: Ei uuendusi saadaval.
+frontend.immediate.up_to_date: Ajakohane
+frontend.immediate.socket_connected: Ühendatud
+frontend.immediate.disable_stay_on_top: Keela pealmisena püsida
+frontend.immediate.enable_stay_on_top: Luba pealmisena püsida
+frontend.immediate.disable_transparent: Keelatakse läbipaistvus
+frontend.immediate.minimize: Minimeeri
+frontend.immediate.close: Sulge
+frontend.404.title: Miks me siin oleme, et lihtsalt kannatada?
+frontend.404.button: Peamenüü
+frontend.settings.data_missing: Lisaosa andmed ei ole korrektsed või puuduvad.
+frontend.settings: Seadistused
+frontend.settings.global: Globaalne
+frontend.settings.controls: Kontrollid
+frontend.settings.global_info: See nimekiri sisaldab ainult lisaosad, mis 
+  toetavad globaalsete seadistuste faili.
+frontend.settings.error: 'Viga: {0}'
+frontend.settings.backend_no_data: Taustaprogrammist pole andmeid.
+frontend.settings.string.updated: Uuendatud seadistus
+frontend.settings.number.updated: Uuendatud seadistus
+frontend.settings.boolean.updated: Uuendatud seadistus
+frontend.settings.array.removed_element: Eemaldatud massiivielement
+frontend.settings.array.added_element: Lisatud massiivielement
+frontend.settings.array.add: Lisa element
+frontend.settings.array.remove: Eemalda
+frontend.settings.enum.updated: Uuendatud seadistus
+frontend.settings.unknown_data_type: 'Tundmatu andmetüüp: {0}'
+frontend.settings.needs_restart: Lisaosa vajab seadistuste uuendamiseks 
+  taaskäivitamist.
+frontend.settings.restarted: Taaskäivitamine õnnestus
+frontend.feedback: Tagasiside
+frontend.feedback.sending: Tagasiside saatmine...
+frontend.feedback.sent: Tagasiside saadeti!
+frontend.feedback.error_sending: Tagasiside saatmisel tekkis viga, proovi hiljem
+  uuesti.
+frontend.feedback.disclaimer: Ärge jagage isiklikke andmeid.
+frontend.feedback.submit: Esita
+frontend.plugins.name: Nimi
+frontend.plugins.authors: Autorid
+frontend.plugins.tags: Sildid
+frontend.plugins.select_tags: Otsime siltte
+frontend.plugins.select_authors: Otsime autoreid
+frontend.plugins.selected_tags: '{0} silt(di) valitud'
+frontend.plugins.selected_authors: '{0} valitud autor(id)'
+frontend.plugins.end_list: See on nimekirja lõpp
+frontend.plugins.enabling_plugin: Lubamine {0}
+frontend.plugins.error_enabling_plugin: Viga sisselülitamisel {0}
+frontend.plugins.enabling_all_plugins: Kõigi pluginate lubamine...
+frontend.plugins.enabled_all_plugins: Kõigi lisaosade lubamine
+frontend.plugins.disabling_plugin: Keelamine {0}
+frontend.plugins.disabled_plugin: Keeladut {0}
+frontend.plugins.error_disabling_plugin: Viga blokeerimisel {0}
+frontend.plugins.disabling_all_plugins: Kõigi lisaosade keelamine...
+frontend.plugins.disabled_all_plugins: Kõig lisaosad on keelatud
+frontend.plugins.hidden: '{0} lisaosa(d) peidetud'
+frontend.dialog.not_supported: '{0} ei ole dialoogis toetatud.'
+frontend.sidebar.updates_available: Saadaolevad uuendused
+frontend.sidebar.main: Peamine
+frontend.sidebar.dashboard: Armatuurlaud
+frontend.sidebar.visualization: Visualiseerimine
+frontend.sidebar.plugins: Lisaosad
+frontend.sidebar.manager: Haldur
+frontend.sidebar.performance: Etendus
+frontend.sidebar.help: Aita
+frontend.sidebar.wiki: Wiki
+frontend.sidebar.chat: Vestlus
+frontend.sidebar.settings: Seadistused
+frontend.sidebar.anonymous: Anonüümne
+frontend.sidebar.account: Konto
+frontend.sidebar.sign_out: Kirjutage valja
+frontend.sidebar.sign_out_successful: Kirjuta edukalt välja.
+frontend.sidebar.sign_out_description: Võid igal ajal sisse logida.
+frontend.sidebar.sign_in: Logi sisse
+frontend.login: Sisselogimine
+frontend.login.disclaimer: Praegu toetame ainult sisselogimist discordi kaudu, 
+  nii et me ei pea salvestama tundlikku teavet, näiteks paroole.
+frontend.login.discord: Sisselogimine discordiga
+frontend.login.privacy_policy: Privaatsuspoliitika
+frontend.login.successful: Edukalt sisse logitud!
+frontend.login.successful_description: Logi välja all vasakul asuva kasutajanime
+  all oleva kontekstimenüü abil.
+frontend.support_development: Arengu toetamine
+frontend.immediate.connected: Ühendatud ETS2LA taustaprogrammiga
+frontend.feedback.description: Palun andke tagasisidet, mis teil on. See 
+  saadetakse otse arendajatele vaatamiseks privaatsesse kanalisse.
+frontend.hello: Tere, {0}!
+frontend.disclaimer.description.line1: ETS2LA ei vastuta mis tahes halbade 
+  mõjude eest, mis on põhjustatud selle tarkvara pakutavate funktsioonide 
+  kasutamisest. Palun kasutage tarkvara omal vastutusel.
+frontend.404.message: Igal juhul klõpsake allpool olevat nuppu, et naasta 
+  avaekraanile, ja kas te saaksite meile öelda, kuidas sa siia said?
+frontend.settings.array.updated_element: Ajakohastatud massiivielement
+frontend.feedback.empty: Tagasiside on tühi, palun anna tagasisidet.
+frontend.login.already_logged_in: 'Märkus: olete juba sisse loginud, saate selle uuesti
+  sisse logides tühistada.'
+frontend.immediate.socket_disconnected: Lahti ühendatud, palun värskenda.
+frontend.immediate.enable_transparent: Läbipaistvuse lubamine
+frontend.settings.enum.no_enum: Toomväärtusi ei esitata.
+frontend.plugins.enabled_plugin: Lubatud {0}

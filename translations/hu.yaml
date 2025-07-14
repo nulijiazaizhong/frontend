@@ -1,33 +1,39 @@
 frontend.404.button: "Főmenü"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
-frontend.404.message: "Bárhogy is, kattints az alábbi gombra a kezdőképernyőre való visszatéréshez, és kérlek, mondd el, hogyan kerültél ide?"
+frontend.404.message: "Bárhogy is, kattints az alábbi gombra a kezdőképernyőre való
+  visszatéréshez, és kérlek, mondd el, hogyan kerültél ide?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.title: "Miért vagyunk itt... csak hogy szenvedjünk?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.dialog.not_supported: "{0} nem támogatott a párbeszédben."
 # ^ {0} is the function that is not supported. Example: 'EnabledLock is not supported in a dialog.'
-frontend.disclaimer.description.line1: "ETS2LA nem felelős semmilyen fennakadó problémáért, ami a program használata miatt történt. Kérlek használd a programot saját kockázatra."
-frontend.disclaimer.description.line2: "ETS2LA használata engedélyezve van a TruckersMP-ben, a moderátorok álltal, ám akármilyen figyelmeztetésért és büntetésért amit a program okoz, te vagy a felelős."
-frontend.disclaimer.dontshowagain: "Ne mutasa még egyszer ezt az üzenetet."
+frontend.disclaimer.description.line1: "ETS2LA nem felelős semmilyen fennakadó problémáért,
+  ami a program használata miatt történt. Kérlek használd a programot saját kockázatra."
+frontend.disclaimer.description.line2: "ETS2LA használata engedélyezve van a TruckersMP-ben,
+  a moderátorok álltal, ám akármilyen figyelmeztetésért és büntetésért amit a program
+  okoz, te vagy a felelős."
+frontend.disclaimer.dontshowagain: "Ne mutasa még egyszer ezt az üzenetet"
 frontend.disclaimer.dontshowagain.toast: "Te nem fogod ezt látni a következő frissítésig."
-frontend.disclaimer.ok: "Értettem."
+frontend.disclaimer.ok: "Értettem"
 frontend.disclaimer.title: "Felelősség válalás!"
 frontend.feedback: "Visszajelzés"
-frontend.feedback.description: "Kérlek, adj meg bármilyen visszajelzést. Ez közvetlenül egy privát csatornára kerül a fejlesztők számára."
+frontend.feedback.description: "Kérlek, adj meg bármilyen visszajelzést. Ez közvetlenül
+  egy privát csatornára kerül a fejlesztők számára."
 frontend.feedback.disclaimer: "Ne ossz meg személyes információkat."
 frontend.feedback.empty: "A visszajelzés üres, kérlek, adj meg bármilyen visszajelzést."
-frontend.feedback.error_sending: "Hiba történt a visszajelzés küldése közben, próbáld újra később."
+frontend.feedback.error_sending: "Hiba történt a visszajelzés küldése közben, próbáld
+  újra később."
 frontend.feedback.sending: "Visszajelzés küldése..."
 frontend.feedback.sent: "Visszajelzés elküldve!"
 frontend.feedback.submit: "Beküldés"
-frontend.hello: "Hello, {0}!"
+frontend.hello: "Szia, {0}!"
 # ^ {0} is the name of the user Example: 'Hello, Tumppi066'
 frontend.immediate.checking_updates: "Frissítések ellenőrzése..."
 frontend.immediate.close: "Bezárás"
 frontend.immediate.connected: "Kapcsolódva az ETS2LA háttérhez"
 frontend.immediate.disable_stay_on_top: "Az élő képernyőn tartás letiltása"
 frontend.immediate.disable_transparent: "Átlátszóság letiltása"
-frontend.immediate.disconnected: "Kapcsolat megszakadva az ETS2LA háttérrel"
+frontend.immediate.disconnected: "Kapcsolat megszakadt az ETS2LA háttérrel"
 frontend.immediate.enable_stay_on_top: "Az élő képernyőn tartás engedélyezése"
 frontend.immediate.enable_transparent: "Átlátszóság engedélyezése"
 frontend.immediate.minimize: "Minimalizálás"
@@ -71,7 +77,8 @@ frontend.settings.enum.updated: "Beállítás frissítve"
 frontend.settings.error: "Hiba: {0}"
 # ^ {0} is the error message that happened.
 frontend.settings.global: "Globális"
-frontend.settings.global_info: "Ez a lista csak azokat a pluginokat tartalmazza, amelyek támogatják a globális beállítási fájlt."
+frontend.settings.global_info: "Ez a lista csak azokat a pluginokat tartalmazza, amelyek
+  támogatják a globális beállítási fájlt."
 frontend.settings.needs_restart: "A plugin újraindítást igényel a beállítások frissítéséhez."
 frontend.settings.number.updated: "Beállítás frissítve"
 frontend.settings.restarted: "Újraindítás sikeres"
@@ -99,9 +106,15 @@ frontend.sidebar.sign_out_successful: "Sikeresen kijelentkeztél."
 frontend.sidebar.sign_out_description: "Bármikor bejelentkezhetsz."
 frontend.sidebar.sign_in: "Regisztráció"
 frontend.login: "Bejelentkezés"
-frontend.login.disclaimer: "Jelenleg csak Discoral tudsz bejelentkezni, hogy ne keljen szenzitív adatokat tárolnunk mint például jelszavak."
+frontend.login.disclaimer: "Jelenleg csak Discoral tudsz bejelentkezni, hogy ne keljen
+  szenzitív adatokat tárolnunk mint például jelszavak."
 frontend.login.discord: "Bejelentkezés Discorddal"
 frontend.login.privacy_policy: "Adatvédelmi irányelvek"
-frontend.login.already_logged_in: "MEGJEGYZÉS: Te már bejelentkeztél, felül tudod írni azzal, ha még egyszer bejelentkezel."
+frontend.login.already_logged_in: "MEGJEGYZÉS: Te már bejelentkeztél, felül tudod
+  írni azzal, ha még egyszer bejelentkezel."
 frontend.login.successful: "Sikeresen bejelentkeztél!"
-frontend.login.successful_description: "Kijelentkezéshez használd a context menüt a felhasználóneved alatt, a bal lenti sarokban."
+frontend.login.successful_description: "Kijelentkezéshez használd a context menüt
+  a felhasználóneved alatt, a bal lenti sarokban."
+frontend.plugins.disabled_all_plugins: Összes plugin leállítva
+frontend.support_development: Segíts a fejlesutésben
+frontend.plugins.disabling_all_plugins: Összes plugin leállítása...

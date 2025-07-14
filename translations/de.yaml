@@ -1,11 +1,16 @@
 frontend.hello: "Hallo, {0}!"
 # ^ {0} is the name of the user Example: 'Hello, Tumppi066'
 frontend.disclaimer.title: "Haftungsausschluss!"
-frontend.disclaimer.description.line1: "ETS2LA übernimmt keine Verantwortung für mögliche negative Auswirkungen durch die Nutzung dieses Programms. Die Nutzung erfolgt auf eigenes Risiko."
-frontend.disclaimer.description.line2: "Die Nutzung von ETS2LA in TruckersMP wurde von den TMP-Administratoren erlaubt, jedoch bist du selbst für eventuelle Sperren oder Verwarnungen verantwortlich."
+frontend.disclaimer.description.line1: "ETS2LA übernimmt keine Verantwortung für mögliche
+  negative Auswirkungen durch die Nutzung dieses Programms. Die Nutzung erfolgt auf
+  eigenes Risiko."
+frontend.disclaimer.description.line2: "Die Nutzung von ETS2LA in TruckersMP wurde
+  von den TMP-Administratoren erlaubt, jedoch bist du selbst für eventuelle Sperren
+  oder Verwarnungen verantwortlich."
 frontend.disclaimer.ok: "Verstanden"
 frontend.disclaimer.dontshowagain: "Nicht mehr anzeigen"
-frontend.disclaimer.dontshowagain.toast: "Dieser Hinweis wird erst nach dem nächsten Update wieder angezeigt."
+frontend.disclaimer.dontshowagain.toast: "Dieser Hinweis wird erst nach dem nächsten
+  Update wieder angezeigt."
 frontend.logged_out: "Abgemeldet."
 frontend.states.complete: "Fertig!"
 frontend.theme.dark: "Dunkel"
@@ -28,7 +33,8 @@ frontend.immediate.minimize: "Minimieren"
 frontend.immediate.close: "Schließen"
 frontend.404.title: "Warum sind wir hier... nur um zu leiden?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "Klicke auf den Button unten, um zur Startseite zurückzukehren. Und kannst du uns bitte sagen, wie du hier gelandet bist?"
+frontend.404.message: "Klicke auf den Button unten, um zur Startseite zurückzukehren.
+  Und kannst du uns bitte sagen, wie du hier gelandet bist?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "Hauptmenü"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
@@ -36,7 +42,8 @@ frontend.settings.data_missing: "Plugin-Daten sind ungültig oder fehlen."
 frontend.settings: "Einstellungen"
 frontend.settings.global: "Global"
 frontend.settings.controls: "Steuerung"
-frontend.settings.global_info: "Diese Liste enthält nur Plugins, die die globale Einstellungsdatei unterstützen."
+frontend.settings.global_info: "Diese Liste enthält nur Plugins, die die globale Einstellungsdatei
+  unterstützen."
 frontend.settings.error: "Fehler: {0}"
 # ^ {0} is the error message that happened.
 frontend.settings.backend_no_data: "Keine Daten vom Backend erhalten."
@@ -52,14 +59,17 @@ frontend.settings.enum.no_enum: "Keine Enum-Werte angegeben."
 frontend.settings.enum.updated: "Einstellung aktualisiert"
 frontend.settings.unknown_data_type: "Unbekannter Datentyp: {0}"
 # ^ {0} is the data type that was unknown. Example: 'Unknown data type: string'
-frontend.settings.needs_restart: "Das Plugin muss neu gestartet werden, um die Einstellungen zu übernehmen."
+frontend.settings.needs_restart: "Das Plugin muss neu gestartet werden, um die Einstellungen
+  zu übernehmen."
 frontend.settings.restarted: "Neustart erfolgreich"
 frontend.feedback: "Feedback"
 frontend.feedback.empty: "Feedback ist leer, bitte gib dein Feedback ein."
 frontend.feedback.sending: "Feedback wird gesendet..."
 frontend.feedback.sent: "Feedback gesendet!"
-frontend.feedback.error_sending: "Fehler beim Senden des Feedbacks, bitte später erneut versuchen."
-frontend.feedback.description: "Bitte teile uns dein Feedback mit. Es wird direkt an einen privaten Kanal für Entwickler gesendet."
+frontend.feedback.error_sending: "Fehler beim Senden des Feedbacks, bitte später erneut
+  versuchen."
+frontend.feedback.description: "Bitte teile uns dein Feedback mit. Es wird direkt
+  an einen privaten Kanal für Entwickler gesendet."
 frontend.feedback.disclaimer: "Teile keine persönlichen Informationen."
 frontend.feedback.submit: "Absenden"
 frontend.plugins.name: "Name"
@@ -84,7 +94,7 @@ frontend.plugins.hidden: "{0} Plugin(s) ausgeblendet"
 frontend.dialog.not_supported: "{0} wird im Dialog nicht unterstützt."
 # ^ {0} is the function that is not supported. Example: 'EnabledLock is not supported in a dialog.'
 frontend.sidebar.updates_available: "Updates verfügbar"
-frontend.sidebar.main: "Hauptmenü"
+frontend.sidebar.main: "Haupt"
 frontend.sidebar.dashboard: "Dashboard"
 frontend.sidebar.visualization: "Visualisierung"
 frontend.sidebar.plugins: "Plugins"
@@ -101,9 +111,13 @@ frontend.sidebar.sign_out_successful: "Erfolgreich abgemeldet."
 frontend.sidebar.sign_out_description: "Du kannst dich jederzeit wieder anmelden."
 frontend.sidebar.sign_in: "Anmelden"
 frontend.login: "Anmeldung"
-frontend.login.disclaimer: "Derzeit ist eine Anmeldung nur über Discord möglich, damit wir keine sensiblen Daten wie Passwörter speichern müssen."
+frontend.login.disclaimer: "Derzeit ist eine Anmeldung nur über Discord möglich, damit
+  wir keine sensiblen Daten wie Passwörter speichern müssen."
 frontend.login.discord: "Mit Discord anmelden"
 frontend.login.privacy_policy: "Datenschutzrichtlinie"
-frontend.login.already_logged_in: "HINWEIS: Du bist bereits angemeldet. Du kannst dies überschreiben, indem du dich erneut anmeldest."
+frontend.login.already_logged_in: "HINWEIS: Du bist bereits angemeldet. Du kannst
+  dies überschreiben, indem du dich erneut anmeldest."
 frontend.login.successful: "Erfolgreich angemeldet!"
-frontend.login.successful_description: "Melde dich über das Kontextmenü unter deinem Benutzernamen unten links ab."
+frontend.login.successful_description: "Melde dich über das Kontextmenü unter deinem
+  Benutzernamen unten links ab."
+frontend.support_development: Die Entwicklung unterstützen
