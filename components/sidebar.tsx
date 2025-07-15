@@ -33,7 +33,7 @@ import {
     ChartNoAxesGantt,
     ChartArea,
     BookText,
-    MessageSquare,
+    AlignEndVertical,
     Bolt,
     UserCog,
     UserRoundMinus,
@@ -148,16 +148,18 @@ export function ETS2LASidebar() {
                     }>
                         <ChartNoAxesGantt /> {translate("frontend.sidebar.manager")}
                     </SidebarMenuButton>
-                    <SidebarMenuButton className={buttonClassName("/page", { url: "/plugins" })} onMouseDown={
-                        () => {
-                            startTransition(async () => {
-                                startProgress()
-                                router.push('/page?url=/catalogue')
-                            })
-                        }
-                    }>
-                        <Archive /> {"Catalogue"}
-                    </SidebarMenuButton>
+                    {devmode && (
+                        <SidebarMenuButton className={buttonClassName("/page", { url: "/catalogue" })} onMouseDown={
+                            () => {
+                                startTransition(async () => {
+                                    startProgress()
+                                    router.push('/page?url=/catalogue')
+                                })
+                            }
+                        }>
+                            <Archive /> {"Catalogue"}
+                        </SidebarMenuButton>
+                    )}
                     <SidebarMenuButton className={buttonClassName("/page", { url: "/performance" })} onMouseDown={
                         () => {
                             startTransition(async () => {
@@ -185,13 +187,10 @@ export function ETS2LASidebar() {
                     </SidebarMenuButton>
                     <SidebarMenuButton className={buttonClassName("/page", { url: "/chat" })} onMouseDown={
                         () => {
-                            startTransition(async () => {
-                                startProgress()
-                                router.push('/page?url=/chat')
-                            })
+                            window.open("https://github.com/orgs/ETS2LA/projects/2", "_blank")
                         }
                     }>
-                        <MessageSquare /> {translate("frontend.sidebar.chat")}
+                        <AlignEndVertical /> Roadmap
                     </SidebarMenuButton>
                 </SidebarGroup>
                 {devmode && (
