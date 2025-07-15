@@ -32,6 +32,7 @@ import { ComboboxRenderer } from "./combobox_renderer"
 import { CheckboxRenderer } from "./checkbox_renderer"
 import { GraphRenderer } from "./graph_renderer"
 import Page from "@/app/page/page"
+import { Adsense } from "@ctrl/react-adsense"
 
 export function ParseClassname(default_classname: string, data_classname: string) {
 	if (data_classname == undefined) {
@@ -420,6 +421,30 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		);
 	}
 
+	const AdsenseRenderer = (data: any) => {
+		const classname = ParseClassname("", data.style.classname);
+		const style = data.style ? data.style : {};
+		const client = data.client ? data.client : "";
+		const slot = data.slot ? data.slot : "";
+		if (!client || !slot) {
+			return <p className="text-red-500">No AdSense client or slot provided</p>;
+		}
+		return (
+			<div className={classname} style={style} key={data.id}>
+				<Adsense
+					client={client}
+					slot={slot}
+					style={{ width: '100%', height: '100%' }}
+					format="auto"
+					data-ad-format="auto"
+					data-full-width-responsive="true"
+					data-ad-client={client}
+					data-ad-slot={slot}
+				/>
+			</div>
+		);
+	}
+
     // @ts-ignore
 	const PageRenderer = (data: any) => {
 		if (!Array.isArray(data)) {
@@ -503,6 +528,9 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 				}
 				if (key == "youtube") {
 					result.push(YoutubeRenderer(key_data));
+				}
+				if (key == "adsense") {
+					result.push(AdsenseRenderer(key_data));
 				}
 
 			} catch (error) {
