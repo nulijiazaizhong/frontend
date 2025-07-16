@@ -109,3 +109,4 @@ frontend.login.successful: "登录成功！"
 frontend.login.successful_description: "使用左下角用户名下的菜单进行注销。"
 frontend.menubar.plugins.plugin.enable: "启用插件"
 frontend.menubar.plugins.plugin.disable: "停用插件"
+frontend.support_development: 帮助开发工作
