@@ -225,55 +225,85 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		const style = data.style ? data.style : {};
 
 		return (
-			<Markdown
-				components={{
-				// @ts-expect-error
-				code({node, inline, className, children, ...props}) {
-					const hasLineBreaks = String(children).includes('\n');
-					const match = /language-(\w+)/.exec(className || '');
-					const lang = match ? match[1] : 'json';
+			<div className={classname} style={style} key={data.id}>
+				<Markdown
+					components={{
+					// @ts-expect-error
+					code({node, inline, className, children, ...props}) {
+						const hasLineBreaks = String(children).includes('\n');
+						const match = /language-(\w+)/.exec(className || '');
+						const lang = match ? match[1] : 'json';
+						
+						// For inline code (no line breaks)
+						if (!hasLineBreaks) {
+							return (
+							<code
+								className="rounded-md bg-accent p-1 font-geist-mono text-xs"
+								{...props}
+							>
+								{children}
+							</code>
+							);
+						}
 					
-					// For inline code (no line breaks)
-					if (!hasLineBreaks) {
+						// For code blocks (has line breaks)
 						return (
-						<code
-							className="rounded-md bg-accent p-1 font-geist-mono text-xs"
+							<SyntaxHighlighter
+							language={lang}
+							style={vscDarkPlus}
+							customStyle={{
+								margin: ('0 0'),
+								padding: '1rem',
+								borderRadius: '0.5rem',
+								fontSize: '0.75rem',
+								fontFamily: 'var(--font-geist-mono)'
+							}}
+							>
+							{String(children).replace(/\n$/, '')}
+							</SyntaxHighlighter>
+						);
+					},
+					// Custom renderer for images
+					img({node, ...props}) {
+						return (
+							<img
 							{...props}
-						>
-							{children}
-						</code>
+							className="rounded-md"
+							/>
+						);
+					},
+					// Custom H3, H4, and H5 renderers
+					h3({node, ...props}) {
+						return (
+							<h3
+								className="font-semibold mt-2 mb-1"
+								style = {{"fontSize": "1.0rem"}}
+								{...props}
+							/>
+						);
+					},
+					h4({node, ...props}) {
+						return (
+							<h4
+								className="font-semibold mt-2 mb-1"
+								style = {{"fontSize": "1.0rem"}}
+								{...props}
+							/>
+						);
+					},
+					h5({node, ...props}) {
+						return (
+							<h5
+								className="font-semibold mt-2 mb-1"
+								style = {{"fontSize": "0.875rem"}}
+								{...props}
+							/>
 						);
 					}
-				
-					// For code blocks (has line breaks)
-					return (
-						<SyntaxHighlighter
-						language={lang}
-						style={vscDarkPlus}
-						customStyle={{
-							margin: ('0 0'),
-							padding: '1rem',
-							borderRadius: '0.5rem',
-							fontSize: '0.75rem',
-							fontFamily: 'var(--font-geist-mono)'
-						}}
-						>
-						{String(children).replace(/\n$/, '')}
-						</SyntaxHighlighter>
-					);
-				},
-				// Custom renderer for images
-				img({node, ...props}) {
-					return (
-						<img
-						{...props}
-						className="rounded-md"
-						/>
-					);
-				},
-			}} className={classname}>
-				{data.text}
-			</Markdown>
+				}} className={classname}>
+					{data.text}
+				</Markdown>
+			</div>
 		);
 	}
 
