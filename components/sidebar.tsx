@@ -148,18 +148,16 @@ export function ETS2LASidebar() {
                     }>
                         <ChartNoAxesGantt /> {translate("frontend.sidebar.manager")}
                     </SidebarMenuButton>
-                    {devmode && (
-                        <SidebarMenuButton className={buttonClassName("/page", { url: "/catalogue" })} onMouseDown={
-                            () => {
-                                startTransition(async () => {
-                                    startProgress()
-                                    router.push('/page?url=/catalogue')
-                                })
-                            }
-                        }>
-                            <Archive /> {"Catalogue"}
-                        </SidebarMenuButton>
-                    )}
+                    <SidebarMenuButton className={buttonClassName("/page", { url: "/catalogue" })} onMouseDown={
+                        () => {
+                            startTransition(async () => {
+                                startProgress()
+                                router.push('/page?url=/catalogue')
+                            })
+                        }
+                    }>
+                        <Archive /> {"Catalogue"}
+                    </SidebarMenuButton>
                     <SidebarMenuButton className={buttonClassName("/page", { url: "/performance" })} onMouseDown={
                         () => {
                             startTransition(async () => {
