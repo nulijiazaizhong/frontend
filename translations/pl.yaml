@@ -8,7 +8,7 @@ frontend.disclaimer.description.line2: "Korzystanie z ETS2LA w TruckersMP zosta�
   dopuszczone przez zespół TMP, jednak to Ty ponosisz odpowiedzialność za wszelkie
   bany lub ostrzeżenia wynikające z używania tego oprogramowania."
 frontend.disclaimer.ok: "Rozumiem"
-frontend.disclaimer.dontshowagain: "Nie pokazuj tego ponownie"
+frontend.disclaimer.dontshowagain: "Nie pokazuj tego więcej"
 frontend.disclaimer.dontshowagain.toast: "Nie zobaczysz tego ponownie aż do następnej
   aktualizacji."
 frontend.logged_out: "Wylogowano."
@@ -31,10 +31,10 @@ frontend.immediate.enable_transparent: "Włącz przeźroczystość"
 frontend.immediate.disable_transparent: "Wyłącz przeźroczystość"
 frontend.immediate.minimize: "Minimalizuj"
 frontend.immediate.close: "Zamknij"
-frontend.404.title: "Po co tu jesteśmy... po prostu, żeby cierpieć?"
+frontend.404.title: "Dlaczego tu jesteśmy... żeby cierpieć?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "Kliknij przycisk poniżej, aby wrócić do ekranu głównego, a
-  czy możesz nam powiedzieć, jak tu trafiłeś?"
+frontend.404.message: "W każdym razie kliknij poniższy przycisk, aby powrócić do ekranu
+  domowego, i możesz nam powiedzieć, jak się tu dostałeś?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "Menu główne"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)

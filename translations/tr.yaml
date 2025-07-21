@@ -1,8 +1,12 @@
 frontend.hello: "Merhaba, {0}!"
 # ^ {0} is the name of the user Example: 'Hello, Tumppi066'
 frontend.disclaimer.title: "Sorumluluk Reddi Bildirimi!"
-frontend.disclaimer.description.line1: "Geliştirici ekip, ETS2LA veya herhangi bir ETS2LA eklentisinden kaynaklanan yan etkilerden sorumlu tutulamaz. Oluşabilecek her türlü olumsuz durum tamamen kullanıcı sorumluluğundadır."
-frontend.disclaimer.description.line2: "ETS2LA'nin TruckersMP'de kullanılması TMP ekibi tarafından onaylanmıştır, ancak ETS2LA yazılımı kaynaklı herhangi bir yasaklanma veya uyarı tamamen kullanıcı sorumluluğundadır."
+frontend.disclaimer.description.line1: "Geliştirici ekip, ETS2LA veya herhangi bir
+  ETS2LA eklentisinden kaynaklanan yan etkilerden sorumlu tutulamaz. Oluşabilecek
+  her türlü olumsuz durum tamamen kullanıcı sorumluluğundadır."
+frontend.disclaimer.description.line2: "ETS2LA'nin TruckersMP'de kullanılması TMP
+  ekibi tarafından onaylanmıştır, ancak ETS2LA yazılımı kaynaklı herhangi bir yasaklanma
+  veya uyarı tamamen kullanıcı sorumluluğundadır."
 frontend.disclaimer.ok: "Sorumluluk reddini anladım ve onaylıyorum."
 frontend.disclaimer.dontshowagain: "Bir daha gösterme"
 frontend.disclaimer.dontshowagain.toast: "Bir sonraki güncellemeye kadar gizlendi."
@@ -22,13 +26,14 @@ frontend.immediate.socket_connected: "Bağlı"
 frontend.immediate.socket_disconnected: "Bağlantı kesildi, lütfen yenileyin."
 frontend.immediate.enable_stay_on_top: "Üstte kalmayı etkinleştir"
 frontend.immediate.disable_stay_on_top: "Üstte kalmayı devre dışı bırak"
-frontend.immediate.enable_transparent: "Saydamlık efektlerini etkinleştir."
+frontend.immediate.enable_transparent: "Saydamlık efektlerini etkinleştir"
 frontend.immediate.disable_transparent: "Saydamlık efektlerini devre dışı bırak."
 frontend.immediate.minimize: "Küçült"
 frontend.immediate.close: "Kapat"
 frontend.404.title: "Burada olmanın sebebi... sadece acı çekmek mi?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "Herneyse, ana ekrana dönmek için aşağıdaki butona tıklayın. Ayrıca, buraya nasıl ulaştığınızı bize söyleyebilir misiniz?"
+frontend.404.message: "Herneyse, ana ekrana dönmek için aşağıdaki butona tıklayın.
+  Ayrıca, buraya nasıl ulaştığınızı bize söyleyebilir misiniz?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "Ana Menü"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
@@ -36,7 +41,8 @@ frontend.settings.data_missing: "Eklenti verileri geçersiz veya eksik."
 frontend.settings: "Ayarlar"
 frontend.settings.global: "Genel"
 frontend.settings.controls: "Kontroller"
-frontend.settings.global_info: "Bu liste yalnızca ortak ayarlar dosyasını destekleyen eklentileri içerir."
+frontend.settings.global_info: "Bu liste yalnızca ortak ayarlar dosyasını destekleyen
+  eklentileri içerir."
 frontend.settings.error: "Hata: {0}"
 # ^ {0} is the error message that happened.
 frontend.settings.backend_no_data: "Got no data from the backend."
@@ -52,14 +58,18 @@ frontend.settings.enum.no_enum: "Hiçbir enum değeri sağlanmadı."
 frontend.settings.enum.updated: "Ayar güncellendi"
 frontend.settings.unknown_data_type: "Bilinmeyen veri tipi: {0}"
 # ^ {0} is the data type that was unknown. Example: 'Unknown data type: string'
-frontend.settings.needs_restart: "Ayarların uygulanması için eklentinin yeniden başlatılması gerekmektedir."
+frontend.settings.needs_restart: "Ayarların uygulanabilmesi için eklentinin yeniden
+  başlatılması gerekmektedir."
 frontend.settings.restarted: "Yeniden başlatma başarılı!"
 frontend.feedback: "Geribildirim"
-frontend.feedback.empty: "Geri bildirim kutusu boş, lütfen geribildirimlerinizi paylaşın."
+frontend.feedback.empty: "Geribildirim kutusu boş, lütfen geri bildirimlerinizi bizimle
+  paylaşın."
 frontend.feedback.sending: "Geribildirim gönderiliyor..."
 frontend.feedback.sent: "Geribildirimleriniz gönderildi!"
-frontend.feedback.error_sending: "Geribildirimleriniz gönderirken bir hata oluştu, lütfen daha sonra tekrar deneyin."
-frontend.feedback.description: "Lütfen geribildirimlerinizi bizimle paylaşın. Bu, geliştiricilerin görebileceği özel bir kanala doğrudan gönderilecektir."
+frontend.feedback.error_sending: "Geribildirim gönderirken bir hata oluştu, lütfen
+  daha sonra tekrar deneyin."
+frontend.feedback.description: "Lütfen geribildirimlerinizi bizimle paylaşın. Bu,
+  geliştiricilerin görebileceği özel bir kanala doğrudan gönderilecektir."
 frontend.feedback.disclaimer: "Kişisel bilgilerinizi paylaşmayın."
 frontend.feedback.submit: "Gönder"
 frontend.plugins.name: "Adı"
@@ -75,7 +85,7 @@ frontend.plugins.enabled_plugin: "{0} etkinleştirildi"
 frontend.plugins.error_enabling_plugin: "{0} etkinleştirilirken hata oluştu"
 frontend.plugins.disabling_plugin: "{0} devre dışı bırakılıyor"
 frontend.plugins.disabled_plugin: "{0} devre dışı bırakıldı"
-frontend.plugins.error_disabling_plugin: "{0} devre dışı bırakılırken hata oluştu"
+frontend.plugins.error_disabling_plugin: "{0} devre dışı bırakılırken bir hata oluştu"
 frontend.plugins.hidden: "{0} eklenti gizlendi"
 frontend.dialog.not_supported: "{0} diyalog içinde desteklenmiyor."
 # ^ {0} is the function that is not supported. Example: 'EnabledLock is not supported in a dialog.'
@@ -97,9 +107,17 @@ frontend.sidebar.sign_out_successful: "Çıkış başarılı."
 frontend.sidebar.sign_out_description: "Her zaman yeniden giriş yapabilirsiniz."
 frontend.sidebar.sign_in: "Giriş Yap"
 frontend.login: "Giriş"
-frontend.login.disclaimer: "Anlık olarak yalnızca Discord ile girişi destekliyoruz. Bu, şifre gibi hassas verilerin güvenliğini sağlamak içindir."
+frontend.login.disclaimer: "Anlık olarak yalnızca Discord ile girişi destekliyoruz.
+  Bu, şifre gibi hassas verilerin güvenliğini sağlamak içindir."
 frontend.login.discord: "Discord ile Giriş Yap"
 frontend.login.privacy_policy: "Gizlilik Politikasi"
-frontend.login.already_logged_in: "NOT: Zaten giriş yaptınız. Tekrar giriş yaparak bunu geçersiz kılabilirsiniz."
+frontend.login.already_logged_in: "NOT: Zaten giriş yaptınız. Tekrar giriş yaparak
+  bunu geçersiz kılabilirsiniz."
 frontend.login.successful: "Başarıyla giriş yapıldı!"
-frontend.login.successful_description: "Sol alt köşede kullanıcı adınızın altındaki menüden çıkış yapabilirsiniz."
+frontend.login.successful_description: "Sol alt köşede kullanıcı adınızın altındaki
+  menüden çıkış yapabilirsiniz."
+frontend.plugins.enabling_all_plugins: Tüm eklentiler etkinleştiriliyor...
+frontend.plugins.enabled_all_plugins: Tüm eklentiler etkinleştirildi.
+frontend.plugins.disabling_all_plugins: Tüm eklentiler devre dışı bırakılıyor...
+frontend.plugins.disabled_all_plugins: Tüm eklentiler devre dışı bırakıldı
+frontend.support_development: Gelişimi destekleyin
