@@ -52,7 +52,6 @@ export function ResponsiveAdUnit({
         style={style}
         data-ad-client={`${_publisherId}`}
         data-ad-slot={String(slotId)}
-        data-ad-format="auto"
       />
     </div>
   );
