@@ -33,6 +33,7 @@ import { CheckboxRenderer } from "./checkbox_renderer"
 import { GraphRenderer } from "./graph_renderer"
 import Page from "@/app/page/page"
 import { Adsense } from "@ctrl/react-adsense"
+import { ResponsiveAdUnit } from "../responsive-ad-unit"
 
 export function ParseClassname(default_classname: string, data_classname: string) {
 	if (data_classname == undefined) {
@@ -464,23 +465,18 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 
 	const AdSenseRenderer = (data: any) => {
 		const classname = ParseClassname("", data.style.classname);
-		const style = ParseStyle({ width: "100%", height: "100%" }, data.style);
+		const style = ParseStyle({ width: "100%", height: "100%", display: "block" }, data.style);
 		const client = data.client ? data.client : "";
 		const slot = data.slot ? data.slot : "";
 		if (!client || !slot) {
 			return <p className="text-red-500">No AdSense client or slot provided</p>;
 		}
 		return (
-			<Adsense
-				className={classname}
-				client={client}
-				slot={slot}
+			<ResponsiveAdUnit
 				style={style}
-				format="auto"
-				data-ad-format="auto"
-				data-full-width-responsive="true"
-				data-ad-client={client}
-				data-ad-slot={slot}
+				publisherId={client}
+				slotId={slot}
+				key={data.id}
 			/>
 		);
 	}
