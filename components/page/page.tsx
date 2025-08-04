@@ -43,6 +43,17 @@ export function ParseClassname(default_classname: string, data_classname: string
 	return classname
 }
 
+export function ParseStyle(default_style: React.CSSProperties, data_style: React.CSSProperties) {
+	if (data_style == undefined) {
+		data_style = default_style
+	}
+	if (default_style == undefined) {
+		default_style = {}
+	}
+	const style = { ...default_style, ...data_style };
+	return style
+}
+
 export function ETS2LAPage({ url, data, enabled, className }: { url: string, data: any, enabled?: boolean, className?: string }) {
 	const { send } = useWebSocketPages()
 
@@ -451,27 +462,26 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 		);
 	}
 
-	const AdsenseRenderer = (data: any) => {
+	const AdSenseRenderer = (data: any) => {
 		const classname = ParseClassname("", data.style.classname);
-		const style = data.style ? data.style : {};
+		const style = ParseStyle({ width: "100%", height: "100%" }, data.style);
 		const client = data.client ? data.client : "";
 		const slot = data.slot ? data.slot : "";
 		if (!client || !slot) {
 			return <p className="text-red-500">No AdSense client or slot provided</p>;
 		}
 		return (
-			<div className={classname} style={style} key={data.id}>
-				<Adsense
-					client={client}
-					slot={slot}
-					style={{ width: '100%', height: '100%' }}
-					format="auto"
-					data-ad-format="auto"
-					data-full-width-responsive="true"
-					data-ad-client={client}
-					data-ad-slot={slot}
-				/>
-			</div>
+			<Adsense
+				className={classname}
+				client={client}
+				slot={slot}
+				style={style}
+				format="auto"
+				data-ad-format="auto"
+				data-full-width-responsive="true"
+				data-ad-client={client}
+				data-ad-slot={slot}
+			/>
 		);
 	}
 
@@ -560,7 +570,7 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 					result.push(YoutubeRenderer(key_data));
 				}
 				if (key == "adsense") {
-					result.push(AdsenseRenderer(key_data));
+					result.push(AdSenseRenderer(key_data));
 				}
 
 			} catch (error) {
