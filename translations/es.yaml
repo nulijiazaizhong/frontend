@@ -1,0 +1,118 @@
+frontend.immediate.disable_stay_on_top: Desactivar mantener siempre visible
+frontend.settings.unknown_data_type: 'Tipo de dato desconocido: {0}'
+frontend.feedback.disclaimer: No comparta ninguna información personal.
+frontend.settings.boolean.updated: Ajuste actualizado
+frontend.feedback.submit: Enviar
+frontend.sidebar.settings: Ajustes
+frontend.disclaimer.title: ¡Aviso!
+frontend.disclaimer.description.line2: El uso de ETS2LA en TruckersMP ha sido 
+  permitido por el equipo de TMP, pero tú eres responsable de cualquier 
+  suspensión o advertencia causada por el uso de este software.
+frontend.disclaimer.ok: Entiendo
+frontend.disclaimer.dontshowagain: No mostrar esto de nuevo
+frontend.disclaimer.dontshowagain.toast: No volverás a verlo hasta la próxima 
+  actualización.
+frontend.logged_out: Sesión cerrada.
+frontend.states.complete: ¡Hecho!
+frontend.theme.dark: Oscuro
+frontend.theme.light: Claro
+frontend.immediate.connected: Conectado al backend de ETS2LA
+frontend.immediate.update_check_error: 'Error: {0}'
+frontend.immediate.checking_updates: Comprobando actualizaciones...
+frontend.immediate.update_available: Tienes {0} actualización(es) pendientes
+frontend.immediate.no_updates: No hay actualizaciones disponibles.
+frontend.immediate.up_to_date: Actualizado
+frontend.immediate.socket_connected: Conectado
+frontend.immediate.socket_disconnected: Desconectado, por favor actualiza.
+frontend.immediate.enable_stay_on_top: Activar mantener siempre visible
+frontend.immediate.enable_transparent: Activar transparencia
+frontend.immediate.disable_transparent: Desactivar transparencia
+frontend.immediate.minimize: Minimizar
+frontend.immediate.close: Cerrar
+frontend.404.title: ¿Por qué estamos aquí... solo para sufrir?
+frontend.404.button: Menú principal
+frontend.settings.data_missing: Los datos del plugin no son válidos o faltan.
+frontend.settings: Ajustes
+frontend.settings.global: Global
+frontend.settings.controls: Controles
+frontend.settings.global_info: Esta lista solo incluye plugins que soportan el 
+  archivo de configuración global.
+frontend.settings.error: 'Error: {0}'
+frontend.settings.backend_no_data: No se recibieron datos del backend.
+frontend.settings.string.updated: Ajuste actualizado
+frontend.settings.number.updated: Ajuste actualizado
+frontend.settings.array.updated_element: Elemento del arreglo actualizado
+frontend.settings.array.removed_element: Elemento del arreglo eliminado
+frontend.settings.array.added_element: Elemento del arreglo añadido
+frontend.settings.array.add: Agregar elemento
+frontend.settings.array.remove: Quitar
+frontend.settings.enum.no_enum: No se proporcionaron valores para el enum.
+frontend.settings.enum.updated: Ajuste actualizado
+frontend.settings.needs_restart: El plugin necesita reiniciarse para actualizar 
+  la configuración.
+frontend.settings.restarted: Reinicio exitoso
+frontend.feedback: Comentarios
+frontend.feedback.sending: Enviando comentarios...
+frontend.feedback.sent: ¡Comentarios enviados!
+frontend.plugins.name: Nombre
+frontend.plugins.authors: Autores
+frontend.plugins.tags: Etiquetas
+frontend.plugins.select_authors: Buscar autores
+frontend.plugins.selected_tags: '{0} etiqueta(s) seleccionada(s)'
+frontend.plugins.selected_authors: '{0} autor(es) seleccionado(s)'
+frontend.plugins.end_list: Este es el final de la lista
+frontend.plugins.enabling_plugin: Activando {0}
+frontend.plugins.enabled_plugin: '{0} activado'
+frontend.plugins.enabling_all_plugins: Activando todos los plugins...
+frontend.plugins.enabled_all_plugins: Todos los plugins activados
+frontend.plugins.disabling_plugin: Desactivando {0}
+frontend.plugins.disabled_plugin: '{0} desactivado'
+frontend.plugins.error_disabling_plugin: Error al desactivar {0}
+frontend.plugins.disabling_all_plugins: Desactivando todos los plugins...
+frontend.plugins.hidden: '{0} plugin(s) oculto(s)'
+frontend.dialog.not_supported: '{0} no es compatible en un cuadro de diálogo.'
+frontend.sidebar.updates_available: Actualizaciones disponibles
+frontend.sidebar.main: Principal
+frontend.sidebar.dashboard: Panel de control
+frontend.sidebar.visualization: Visualización
+frontend.sidebar.plugins: Plugins
+frontend.sidebar.manager: Administrador
+frontend.sidebar.performance: Rendimiento
+frontend.sidebar.help: Ayuda
+frontend.sidebar.wiki: Wiki
+frontend.sidebar.chat: Chat
+frontend.sidebar.anonymous: Anónimo
+frontend.sidebar.account: Cuenta
+frontend.sidebar.sign_out: Cerrar sesión
+frontend.sidebar.sign_out_successful: Cierre de sesión exitoso.
+frontend.login: Iniciar sesión
+frontend.sidebar.sign_in: Registrarse
+frontend.login.discord: Iniciar sesión con Discord
+frontend.login.privacy_policy: Política de privacidad
+frontend.login.already_logged_in: 'NOTA: Ya has iniciado sesión, puedes sobrescribirla
+  iniciando sesión de nuevo.'
+frontend.login.successful: ¡Inicio de sesión exitoso!
+frontend.support_development: Apoyar el desarrollo
+frontend.disclaimer.description.line1: ¡Aviso! ETS2LA no se hace responsable de 
+  ningún efecto negativo causado por el uso de cualquiera de las funciones que 
+  ofrece este software. Por favor, utilízalo bajo tu propia responsabilidad.
+frontend.immediate.disconnected: Desconectado del backend de ETS2LA
+frontend.feedback.empty: Los comentarios están vacíos, por favor proporciona 
+  cualquier opinión que tengas.
+frontend.feedback.description: Por favor, proporciona cualquier comentario que 
+  tengas. Esto se enviará directamente a un canal privado para que los 
+  desarrolladores lo vean.
+frontend.plugins.error_enabling_plugin: Error al activar {0}
+frontend.hello: ¡Hola, {0}!
+frontend.404.message: De todos modos, haz clic en el botón de abajo para volver 
+  a la pantalla de inicio, ¿y podrías contarnos cómo llegaste hasta aquí?
+frontend.feedback.error_sending: Hubo un error al enviar los comentarios, 
+  intenta de nuevo más tarde.
+frontend.plugins.disabled_all_plugins: Todos los plugins desactivados
+frontend.login.disclaimer: Actualmente solo admitimos iniciar sesión vía 
+  Discord, para no tener que almacenar información sensible como contraseñas.
+frontend.login.successful_description: Cierra sesión usando el menú contextual 
+  debajo de tu nombre de usuario en la esquina inferior izquierda.
+frontend.plugins.select_tags: Buscar etiquetas
+frontend.sidebar.sign_out_description: Puedes iniciar sesión de nuevo en 
+  cualquier momento.
