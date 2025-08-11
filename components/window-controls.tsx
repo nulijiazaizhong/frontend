@@ -1,4 +1,4 @@
-import { CloseBackend, MinimizeBackend, SetStayOnTop, SetTransparent } from "@/apis/backend";
+import { CloseBackend, MinimizeBackend, SetStayOnTop, SetTransparent, ToggleFullscreen } from "@/apis/backend";
 import {
     Tooltip,
     TooltipContent,
@@ -136,26 +136,34 @@ export default function WindowControls() {
                         <TooltipTrigger 
                             onClick={(e) => {
                                 // Left click
-                                const newStayOnTop = !stayOnTop
-                                setStayOnTop(newStayOnTop)
+                                const newStayOnTop = !stayOnTop;
+                                setStayOnTop(newStayOnTop);
                                 SetStayOnTop(newStayOnTop).then(() => {
                                     toast.success(`${newStayOnTop ? "Window is now on top" : "Window is no longer on top"}`)
-                                })
+                                });
                             }}
                             onContextMenu={(e) => {
                                 // Right click
-                                e.preventDefault() // Prevent default context menu
-                                const newTransparency = !transparency
-                                setTransparency(newTransparency)
+                                e.preventDefault();
+                                const newTransparency = !transparency;
+                                setTransparency(newTransparency);
                                 SetTransparent(newTransparency).then(() => {
                                     toast.success(`${newTransparency ? "Window is now transparent" : "Window is no longer transparent"}`)
-                                })
+                                });
+                            }}
+                            onAuxClick={(e) => {
+                                // Middle click
+                                if (e.button === 1) {
+                                    e.preventDefault();
+                                    ToggleFullscreen();
+                                }
                             }}
                         >
                             <div className="w-[11px] h-[11px] bg-green-500 rounded-full flex items-center justify-center cursor-pointer" />
                         </TooltipTrigger>
                         <TooltipContent className="bg-sidebar border text-foreground font-geist">
                             <p className="text-xs"><span className="font-semibold text-muted-foreground">LMB</span> Stay on top</p>
+                            <p className="text-xs"><span className="font-semibold text-muted-foreground">MMB</span> Fullscreen</p>
                             <p className="text-xs"><span className="font-semibold text-muted-foreground">RMB</span> Transparency</p>
                         </TooltipContent>
                     </Tooltip>

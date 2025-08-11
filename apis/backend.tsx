@@ -230,6 +230,17 @@ export async function GetTransparent() {
     return data
 }
 
+export async function ToggleFullscreen() {
+    const response = await fetch(`http://${ip}:37520/window/fullscreen`, {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    const data = await response.json()
+    return data
+}
+
 export async function GetCurrentLanguage() {
     const response = await fetch(`http://${ip}:37520/api/language`, {
         method: "GET",
