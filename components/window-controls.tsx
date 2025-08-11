@@ -92,8 +92,8 @@ export default function WindowControls() {
         })
     }, []);
 
-    const collapsedContainerClassName = "flex gap-1 absolute h-6 w-[59px] border rounded-bl-lg top-0 right-0 items-center justify-center p-0 z-50 bg-sidebar transition-transform opacity-75 hover:opacity-100";
-    const containerClassName = "flex gap-1 absolute h-6 w-[59px] rounded-bl-lg top-0 right-0 items-center justify-center p-0 z-50 bg-transparent transition-transform";
+    const collapsedContainerClassName = "flex gap-1 absolute h-6 w-[59px] top-0 right-0 items-center justify-center p-0 z-50 transition-transform opacity-50 hover:opacity-100";
+    const containerClassName = "flex gap-1 absolute h-6 w-[59px] rounded-bl-lg top-0 right-0 items-center justify-center p-0 z-50 transition-transform";
 
     return (
         <>

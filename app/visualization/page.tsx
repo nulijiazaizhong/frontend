@@ -10,12 +10,14 @@ import { Button } from "@/components/ui/button";
 import useSWR from "swr";
 import { toast } from "sonner";
 import { useTheme } from "next-themes";
+import { useSidebar } from "@/components/ui/sidebar";
 
 export default function Visualization() {
     const [ usePromods, setUsePromods ] = useState(false);
     const [ useMirror, setUseMirror ] = useState(false);
     const [ isVisualizationOpen, setIsVisualizationOpen ] = useState(false);
     const [ isMapOpen, setIsMapOpen ] = useState(false);
+    const { open, setOpen } = useSidebar();
     const { theme } = useTheme();
 
     const map_link = "https://truckermudgeon.github.io/ets2la";
@@ -26,6 +28,10 @@ export default function Visualization() {
 
     const map = useMirror ? (usePromods ? pm_link : map_mirror) : (usePromods ? pm_link : map_link);
     const visualization = useMirror ? visualization_mirror : visualization_link;
+
+    useEffect(() => {
+        setOpen(false);
+    }, []);
 
     return (
         <motion.div className="flex w-full h-full">
@@ -48,7 +54,7 @@ export default function Visualization() {
                         />
                     )}
                     {!isVisualizationOpen && (
-                        <div className="border w-full h-full rounded-l-xl items-center flex flex-col gap-4 justify-center border-r-0 font-geist">
+                        <div className="w-full h-full items-center flex flex-col gap-4 justify-center font-geist">
                             <div className="flex flex-col gap-0 text-center">
                                 <p className="font-semibold pb-2">Load Visualization</p>
                                 <Button variant={"outline"} onClick={() => {
@@ -91,7 +97,7 @@ export default function Visualization() {
                         />
                     )}
                     {!isMapOpen && (
-                        <div className="border w-full h-full rounded-r-xl items-center flex flex-col gap-4 justify-center font-geist">
+                        <div className="border-l w-full h-full items-center flex flex-col gap-4 justify-center font-geist">
                             <div className="flex flex-col gap-0 text-center">
                             <p className="font-semibold pb-2">Load Map</p>
                                 <Button variant={"outline"} onClick={() => {
