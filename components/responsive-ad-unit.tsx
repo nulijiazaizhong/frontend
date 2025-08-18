@@ -44,7 +44,6 @@ export function ResponsiveAdUnit({
     return null;
   }
 
-  style.display = "block";
   return (
     <div key={key} style={style}>
       <ins

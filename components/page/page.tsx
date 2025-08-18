@@ -465,7 +465,7 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 
 	const AdSenseRenderer = (data: any) => {
 		const classname = ParseClassname("", data.style.classname);
-		const style = ParseStyle({ width: "100%", height: "100%", display: "block" }, data.style);
+		const style = ParseStyle({ width: "100%", height: "90px", display: "block" }, data.style);
 		const client = data.client ? data.client : "";
 		const slot = data.slot ? data.slot : "";
 		if (!client || !slot) {

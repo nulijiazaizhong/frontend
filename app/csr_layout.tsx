@@ -98,7 +98,7 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
     }, []);
 
     return (
-        <div className="h-screen w-screen flex overflow-hidden">
+        <div className="h-screen w-screen flex overflow-hidden" style={{ height: "100dvh !important" }}>
             { isNotRunning ? (
                 <div className="absolute top-0 left-0 w-full h-full flex bg-background font-geist justify-center items-center">
                     <div className="flex items-center justify-center flex-col gap-2 p-4">
@@ -142,7 +142,7 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
                                     <UIProvider>
                                         <Disclaimer closed_callback={() => {}} />
                                         <ProgressBarProvider>
-                                            <Toaster position={isCollapsed ? "bottom-center" : "bottom-right"} toastOptions={{
+                                            <Toaster position={"bottom-center"} toastOptions={{
                                                 unstyled: true,
                                                 classNames: {
                                                     toast: "rounded-lg text-foreground shadow-lg w-[354px] border p-4 flex gap-2 items-center text-sm bg-background",
@@ -160,6 +160,8 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
                                                     {isMobile && <SidebarTrigger className="absolute top-2 left-2 z-50" />}
                                                     {children}
                                                 </SidebarInset>
+                                                {/* This is a hack to make sure the sidebar inset always has a height of 100%. */}
+                                                <div className="w-48 fixed bottom-4 left-1/2 -translate-x-1/2 z-50 h-2"></div>
                                             </SidebarProvider>
                                         </ProgressBarProvider>
                                     </UIProvider>

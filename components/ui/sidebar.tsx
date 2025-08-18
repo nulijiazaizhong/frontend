@@ -139,7 +139,7 @@ function SidebarProvider({
             } as React.CSSProperties
           }
           className={cn(
-            "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full",
+            "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-dvh w-full",
             className
           )}
           {...props}
@@ -310,7 +310,7 @@ function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
       data-slot="sidebar-inset"
       className={cn(
         "bg-background relative min-h-svh flex w-full flex-1 flex-col",
-        "peer-data-[variant=inset]:peer-data-[state=expanded]:min-h-[calc(100svh-theme(spacing.8))] md:peer-data-[variant=inset]:peer-data-[state=expanded]:m-2 md:peer-data-[variant=inset]:peer-data-[state=expanded]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:rounded-br-lg md:peer-data-[variant=inset]:shadow",
+        "peer-data-[variant=inset]:peer-data-[state=expanded]:min-h-[calc(100svh-theme(spacing.8))] md:peer-data-[variant=inset]:peer-data-[state=expanded]:m-2 md:peer-data-[variant=inset]:peer-data-[state=expanded]:ml-0 md:peer-data-[variant=inset]:peer-data-[state=expanded]:rounded-xl md:peer-data-[variant=inset]:peer-data-[state=expanded]:rounded-br-lg md:peer-data-[variant=inset]:shadow",
         className
       )}
       {...props}
