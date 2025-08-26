@@ -20,7 +20,7 @@ export default function Visualization() {
     const { open, setOpen } = useSidebar();
     const { theme } = useTheme();
 
-    const map_link = "https://truckermudgeon.github.io/ets2la";
+    const map_link = "https://map.ets2la.com";
     const visualization_link = "https://visualization.ets2la.com?theme=" + theme;
     const map_mirror = "https://map.ets2la.cn/ets2la"
     const visualization_mirror = "https://visualization.ets2la.cn?theme=" + theme;
