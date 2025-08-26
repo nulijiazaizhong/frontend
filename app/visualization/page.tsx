@@ -22,7 +22,7 @@ export default function Visualization() {
 
     const map_link = "https://map.ets2la.com";
     const visualization_link = "https://visualization.ets2la.com?theme=" + theme;
-    const map_mirror = "https://map.ets2la.cn/ets2la"
+    const map_mirror = "https://map.ets2la.cn"
     const visualization_mirror = "https://visualization.ets2la.cn?theme=" + theme;
     const pm_link = "https://piggywu981.github.io/ets2la";
 
