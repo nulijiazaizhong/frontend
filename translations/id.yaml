@@ -1,0 +1,116 @@
+frontend.disclaimer.title: Penafian!
+frontend.disclaimer.description.line2: Penggunaan ETS2LA di TruckersMP telah 
+  diizinkan oleh staf TMP tetapi anda bertanggung jawab atas larangan atau 
+  peringatan yang disebabkan oleh penggunaan perangkat lunak ini.
+frontend.disclaimer.ok: Saya mengerti
+frontend.disclaimer.dontshowagain: Jangan tampilkan lagi
+frontend.disclaimer.dontshowagain.toast: Anda tidak akan melihatnya lagi hingga 
+  pembaruan berikutnya.
+frontend.logged_out: Telah logout.
+frontend.states.complete: Selesai!
+frontend.theme.dark: Gelap
+frontend.theme.light: Terang
+frontend.immediate.connected: Terhubung ke backend ETS2LA
+frontend.immediate.disconnected: Terputus dari backend ETS2LA
+frontend.immediate.update_check_error: 'Error: {0}'
+frontend.immediate.checking_updates: Memeriksa pembaruan...
+frontend.immediate.update_available: Anda tertinggal {0} pembaruan
+frontend.immediate.no_updates: Tidak ada pembaruan tersedia.
+frontend.immediate.up_to_date: Sudah terbaru
+frontend.immediate.socket_connected: Terhubung
+frontend.immediate.socket_disconnected: Terputus, harap refresh.
+frontend.immediate.enable_stay_on_top: Aktifkan tetap di atas
+frontend.immediate.disable_stay_on_top: Nonaktifkan tetap di atas
+frontend.immediate.enable_transparent: Aktifkan transparansi
+frontend.immediate.disable_transparent: Nonaktifkan transparansi
+frontend.immediate.minimize: Minimalkan
+frontend.immediate.close: Tutup
+frontend.404.title: Mengapa kita di sini... hanya untuk menderita?
+frontend.404.message: Klik tombol di bawah untuk kembali ke layar utama, dan 
+  bisakah anda beri tahu kami bagaimana anda sampai di sini?
+frontend.404.button: Menu Utama
+frontend.settings.data_missing: Data plugin tidak valid atau hilang.
+frontend.settings: Pengaturan
+frontend.settings.global: Global
+frontend.settings.controls: Kontrol
+frontend.settings.error: 'Error: {0}'
+frontend.settings.backend_no_data: Tidak mendapat data dari backend.
+frontend.settings.string.updated: Pengaturan diperbarui
+frontend.settings.number.updated: Pengaturan diperbarui
+frontend.settings.boolean.updated: Pengaturan diperbarui
+frontend.settings.array.updated_element: Elemen array diperbarui
+frontend.settings.array.removed_element: Elemen array dihapus
+frontend.settings.array.added_element: Elemen array ditambahkan
+frontend.settings.array.add: Tambah Elemen
+frontend.settings.array.remove: Hapus
+frontend.settings.enum.no_enum: Tidak ada nilai enum yang disediakan.
+frontend.settings.enum.updated: Pengaturan diperbarui
+frontend.settings.needs_restart: Plugin perlu dimulai ulang untuk memperbarui 
+  pengaturan.
+frontend.settings.restarted: Mulai Ulang Berhasil
+frontend.feedback: Masukan
+frontend.feedback.sending: Mengirim masukan...
+frontend.feedback.sent: Masukan terkirim!
+frontend.feedback.error_sending: Terjadi kesalahan saat mengirim masukan, coba 
+  lagi nanti.
+frontend.feedback.disclaimer: Jangan bagikan informasi pribadi apa pun.
+frontend.feedback.submit: Kirim
+frontend.plugins.name: Nama
+frontend.plugins.authors: Pembuat
+frontend.plugins.tags: Tag
+frontend.plugins.select_tags: Cari Tag
+frontend.plugins.select_authors: Cari Pembuat
+frontend.plugins.selected_tags: '{0} tag dipilih'
+frontend.plugins.selected_authors: '{0} penulis dipilih'
+frontend.plugins.end_list: Ini adalah akhir daftar
+frontend.plugins.enabling_plugin: Mengaktifkan {0}
+frontend.plugins.enabled_plugin: '{0} diaktifkan'
+frontend.plugins.error_enabling_plugin: Gagal mengaktifkan {0}
+frontend.plugins.enabling_all_plugins: Mengaktifkan semua plugin...
+frontend.plugins.enabled_all_plugins: Semua plugin diaktifkan
+frontend.plugins.disabling_plugin: Menonaktifkan {0}
+frontend.plugins.disabled_plugin: '{0} dinonaktifkan'
+frontend.plugins.error_disabling_plugin: Gagal menonaktifkan {0}
+frontend.plugins.disabling_all_plugins: Menonaktifkan semua plugin...
+frontend.plugins.disabled_all_plugins: Semua plugin dinonaktifkan
+frontend.plugins.hidden: '{0} plugin disembunyikan'
+frontend.dialog.not_supported: '{0} tidak didukung dalam dialog.'
+frontend.sidebar.updates_available: Pembaruan Tersedia
+frontend.sidebar.main: Utama
+frontend.sidebar.dashboard: Dasbor
+frontend.sidebar.visualization: Visualisasi
+frontend.sidebar.plugins: Plugin
+frontend.sidebar.manager: Manajer
+frontend.sidebar.performance: Performa
+frontend.sidebar.help: Bantuan
+frontend.sidebar.wiki: Wiki
+frontend.sidebar.chat: Obrolan
+frontend.sidebar.settings: Pengaturan
+frontend.sidebar.anonymous: Anonim
+frontend.sidebar.account: Akun
+frontend.sidebar.sign_out: Keluar
+frontend.sidebar.sign_out_successful: Berhasil keluar.
+frontend.sidebar.sign_in: Masuk
+frontend.login: Login
+frontend.login.privacy_policy: Kebijakan Privasi
+frontend.login.discord: Login dengan Discord
+frontend.login.disclaimer: Kami saat ini hanya mendukung login melalui Discord, 
+  ini agar kami tidak perlu menyimpan informasi sensitif seperti kata sandi.
+frontend.login.already_logged_in: 'CATATAN: Anda sudah login, anda bisa menimpanya
+  dengan login lagi.'
+frontend.login.successful: Berhasil login!
+frontend.login.successful_description: Keluar menggunakan menu konteks di bawah 
+  nama pengguna anda di kiri bawah.
+frontend.support_development: Dukung Pengembangan
+frontend.disclaimer.description.line1: ETS2LA tidak bertanggung jawab atas efek 
+  buruk apapun yang disebabkan oleh penggunaan fitur-fitur dalam perangkat lunak
+  ini. Harap gunakan perangkat lunak ini dengan risiko sendiri.
+frontend.settings.global_info: Daftar ini hanya mencakup plugin yang mendukung 
+  file pengaturan global.
+frontend.hello: Halo, {0}!
+frontend.settings.unknown_data_type: 'Tipe data tidak dikenal: {0}'
+frontend.feedback.empty: Masukan kosong, harap berikan masukan apa pun yang anda
+  miliki.
+frontend.feedback.description: Harap berikan masukan apa pun yang anda miliki. 
+  Ini akan dikirim langsung ke saluran pribadi untuk dilihat pengembang.
+frontend.sidebar.sign_out_description: Anda dapat masuk kembali kapan saja.

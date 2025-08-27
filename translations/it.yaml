@@ -3,14 +3,14 @@ frontend.hello: "Ciao, {0}!"
 frontend.disclaimer.title: "Avviso!"
 frontend.disclaimer.description.line1: "ETS2LA non è responsabile per eventuali effetti
   negativi causati dall'utilizzo di una qualsiasi delle funzionalità fornite da questo
-  software. Si prega di utilizzare il software a proprio rischio e pericolo.."
+  software. Si prega di utilizzare il software a proprio rischio e pericolo."
 frontend.disclaimer.description.line2: "L'utilizzo di ETS2LA in TruckersMP è stato
   consentito dallo staff TMP, ma sei responsabile di eventuali ban o avvisi causati
   dall'utilizzo di questo software."
 frontend.disclaimer.ok: "Ho capito"
 frontend.disclaimer.dontshowagain: "Non mostrare più"
 frontend.disclaimer.dontshowagain.toast: "Non lo vedrai fino al prossimo aggiornamento."
-frontend.logged_out: "Uscito."
+frontend.logged_out: "Disconnesso."
 frontend.states.complete: "Fatto!"
 frontend.theme.dark: "Scuro"
 frontend.theme.light: "Chiaro"
@@ -19,59 +19,60 @@ frontend.immediate.disconnected: "Disconnesso dal backend di ETS2LA"
 frontend.immediate.update_check_error: "Errore: {0}"
 # ^ {0} is the error message
 frontend.immediate.checking_updates: "Controllando per aggiornamenti..."
-frontend.immediate.update_available: "Tu sei {0} aggiornamento(i) indietro"
-frontend.immediate.no_updates: "Nessun Aggiornamento disponibile."
+frontend.immediate.update_available: "Sei {0} versione/i indietro"
+frontend.immediate.no_updates: "Nessun aggiornamento disponibile."
 frontend.immediate.up_to_date: "Aggiornato"
 frontend.immediate.socket_connected: "Connesso"
-frontend.immediate.socket_disconnected: "Disconnesso, perfavore aggiorna."
-frontend.immediate.enable_stay_on_top: "Resta in primo piano"
-frontend.immediate.disable_stay_on_top: "Non restare in primo piano"
-frontend.immediate.enable_transparent: "Abilita la transparenza"
-frontend.immediate.disable_transparent: "Disabilita la transparenza"
-frontend.immediate.minimize: "Minimizza"
+frontend.immediate.socket_disconnected: "Disconnesso, si prega di riaggiornare la
+  pagina."
+frontend.immediate.enable_stay_on_top: "Abilita finestra in primo piano"
+frontend.immediate.disable_stay_on_top: "Disabilita finestra in primo piano"
+frontend.immediate.enable_transparent: "Abilita la trasparenza"
+frontend.immediate.disable_transparent: "Disabilita la trasparenza"
+frontend.immediate.minimize: "Riduci a icona"
 frontend.immediate.close: "Chiudi"
 frontend.404.title: "Perché siamo qui... solo per soffrire?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "comunque clicca il bottone sotto per tornare alla home, potresti
-  perfavore dirmi come sei finito qui?"
+frontend.404.message: "In ogni caso clicca il bottone sottostante per tornare alla
+  homepage, e potresti dirci come sei finito qui?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "Menu Principale"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
-frontend.settings.data_missing: "Informazioni del plugin invalide o mancanti."
+frontend.settings.data_missing: "Informazioni sul plugin invalide o mancanti."
 frontend.settings: "Impostazioni"
 frontend.settings.global: "Globale"
 frontend.settings.controls: "Controlli"
-frontend.settings.global_info: "Questa lista è solo supportata dai plugin nel file
-  delle impostazioni globali."
+frontend.settings.global_info: "Questa lista include solo i plugin che supportano
+  il file di impostazioni globali."
 frontend.settings.error: "Errore: {0}"
 # ^ {0} is the error message that happened.
-frontend.settings.backend_no_data: "Nessuna Informazione dalla backend."
-frontend.settings.string.updated: "Impostazioni Aggiornate"
-frontend.settings.number.updated: "Impostazioni Aggiornate"
-frontend.settings.boolean.updated: "Impostazioni Aggiornate"
+frontend.settings.backend_no_data: "Nessuna Informazione ricevuta dal backend."
+frontend.settings.string.updated: "Impostazioni aggiornate"
+frontend.settings.number.updated: "Impostazioni aggiornate"
+frontend.settings.boolean.updated: "Impostazioni aggiornate"
 frontend.settings.array.updated_element: "Elemento array aggiornato"
 frontend.settings.array.removed_element: "Elemento array rimosso"
 frontend.settings.array.added_element: "Elemento array aggiunto"
 frontend.settings.array.add: "Aggiungi elemento"
 frontend.settings.array.remove: "Rimuovi"
-frontend.settings.enum.no_enum: "nessun valore enum inserito."
-frontend.settings.enum.updated: "impostazione aggiornate"
-frontend.settings.unknown_data_type: "tipo dato sconosciuto: {0}"
+frontend.settings.enum.no_enum: "Nessun valore enumeratore inserito."
+frontend.settings.enum.updated: "Impostazione aggiornate"
+frontend.settings.unknown_data_type: "Tipo di dato sconosciuto: {0}"
 # ^ {0} is the data type that was unknown. Example: 'Unknown data type: string'
 frontend.settings.needs_restart: "Il plugin deve essere riavviato per applicare le
   impostazioni."
 frontend.settings.restarted: "Riavvio eseguito con successo"
 frontend.feedback: "Aiutaci"
 frontend.feedback.empty: "Il campo dei commenti è vuoto, ti preghiamo di fornire un
-  feedback."
+  commento valido."
 frontend.feedback.sending: "Invio commento..."
 frontend.feedback.sent: "Commento inviato!"
-frontend.feedback.error_sending: "Ci è stato un errore nel inviare il commento riprova
+frontend.feedback.error_sending: "C'è stato un errore nell'inviare il commento, riprova
   più tardi."
-frontend.feedback.description: "perfavore inserisci i commenti, verrano inviati direttamente
-  in un canale privato per gli sviluppatori."
-frontend.feedback.disclaimer: "Non condividere informazioni personali."
-frontend.feedback.submit: "invia"
+frontend.feedback.description: "Perfavore inserisci qualsiasi commento. Quest'ultimi
+  verranno inviati direttamente agli sviluppatori per migliorare il programma."
+frontend.feedback.disclaimer: "Non condividere informazioni personali e/o sensibili."
+frontend.feedback.submit: "Invia"
 frontend.plugins.name: "Nome"
 frontend.plugins.authors: "Autori"
 frontend.plugins.tags: "Tags"
@@ -79,21 +80,21 @@ frontend.plugins.select_tags: "Cerca Tag"
 frontend.plugins.select_authors: "Cerca Autori"
 frontend.plugins.selected_tags: "{0} tag selezionati"
 frontend.plugins.selected_authors: "{0} autori selezionati"
-frontend.plugins.end_list: "questa è la fine della lista"
+frontend.plugins.end_list: "Questa è la fine della lista"
 frontend.plugins.enabling_plugin: "Attivando {0}"
 frontend.plugins.enabled_plugin: "Attivato {0}"
-frontend.plugins.error_enabling_plugin: "Errore attivando{0}"
+frontend.plugins.error_enabling_plugin: "Errore attivando {0}"
 frontend.plugins.disabling_plugin: "Disattivando {0}"
 frontend.plugins.disabled_plugin: "Disattivato {0}"
-frontend.plugins.error_disabling_plugin: "Errore disabilitando {0}"
-frontend.plugins.hidden: "{0} plugin nascosti"
-frontend.dialog.not_supported: "{0} non è supportato in un dialogo."
+frontend.plugins.error_disabling_plugin: "Errore disattivando {0}"
+frontend.plugins.hidden: "{0} plugin(s) nascosti"
+frontend.dialog.not_supported: "{0} non è supportato in una finestra di dialogo."
 # ^ {0} is the function that is not supported. Example: 'EnabledLock is not supported in a dialog.'
-frontend.sidebar.updates_available: "Aggiornamenti disponibili"
+frontend.sidebar.updates_available: "Aggiornamenti Disponibili"
 frontend.sidebar.main: "Principale"
 frontend.sidebar.dashboard: "Dashboard"
-frontend.sidebar.visualization: "visualizazione"
-frontend.sidebar.plugins: "Plugin"
+frontend.sidebar.visualization: "Visualizzazione"
+frontend.sidebar.plugins: "Plugins"
 frontend.sidebar.manager: "Gestione"
 frontend.sidebar.performance: "Prestazione"
 frontend.sidebar.help: "Aiuto"
@@ -103,22 +104,22 @@ frontend.sidebar.settings: "Impostazioni"
 frontend.sidebar.anonymous: "Anonimo"
 frontend.sidebar.account: "Account"
 frontend.sidebar.sign_out: "Esci"
-frontend.sidebar.sign_out_successful: "Uscito con successo"
-frontend.sidebar.sign_out_description: "Puoi riaccendere in qualsiasi momento."
+frontend.sidebar.sign_out_successful: "Disconnesso con successo."
+frontend.sidebar.sign_out_description: "Puoi ri-accedere in qualsiasi momento."
 frontend.sidebar.sign_in: "Accedi"
-frontend.login: "Login"
-frontend.login.disclaimer: "Per ora supportiamo l'accesso solo con Discord, questo
-  perché così non dobbiamo salvare nessuna informazione sensibile, per esempio le
-  password"
-frontend.login.discord: "accedi con Discord"
-frontend.login.privacy_policy: "documento sulla privacy"
-frontend.login.already_logged_in: "NOTA: Hai già effettuato l'accesso, puoi sovrascrivere
-  accedendo di nuovo"
-frontend.login.successful: "accesso eseguito con successo!"
-frontend.login.successful_description: "Esci usando il menu sotto il tuo nome in basso
-  a sinistra"
-frontend.plugins.enabling_all_plugins: Abilitazione di tutti i plugin...
-frontend.plugins.enabled_all_plugins: Attivati tutti i plugin
+frontend.login: "Accesso"
+frontend.login.disclaimer: "Al momento supportiamo solo il log-in tramite account
+  Discord. Facciamo questo per prevenire il trattenimento di dati personali e/o sensibili,
+  come ad esempio le password."
+frontend.login.discord: "Accedi con Discord"
+frontend.login.privacy_policy: "Politica sulla Privacy"
+frontend.login.already_logged_in: "Attenzione: Hai già fatto l'accesso. Puoi sovrascriverlo
+  accedendo nuovamente."
+frontend.login.successful: "Accesso eseguito con successo!"
+frontend.login.successful_description: "Esci utilizzando il menu posto sotto il tuo
+  nome utente, in basso a sinistra."
+frontend.plugins.enabling_all_plugins: Attivazione di tutti i plugin...
+frontend.plugins.enabled_all_plugins: Tutti i plugin sono stati attivati
 frontend.plugins.disabling_all_plugins: Disattivazione di tutti i plugin...
-frontend.plugins.disabled_all_plugins: disattivato tutti i plugin
-frontend.support_development: Supporta lo sviluppo
+frontend.plugins.disabled_all_plugins: Tutti i plugin sono stati disattivati
+frontend.support_development: Supporta lo Sviluppo

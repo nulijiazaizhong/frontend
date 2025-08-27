@@ -1,1 +1,86 @@
-{}
+frontend.hello: Ahoj, {0}!
+frontend.disclaimer.description.line2: Používání ETS2LA na TMP je povoleno, ale 
+  za případné zákazy nebo varování způsobené používáním tohoto softwaru nesete 
+  odpovědnost vy.
+frontend.disclaimer.ok: Chápu
+frontend.disclaimer.dontshowagain: Znova už mi to neukazuj
+frontend.disclaimer.dontshowagain.toast: Uvidíte to až při příští aktualizaci.
+frontend.logged_out: Odhlášeno.
+frontend.states.complete: Hotovo!
+frontend.theme.dark: Tmavý
+frontend.theme.light: Světlý
+frontend.immediate.connected: Připojen k ETS2LA backend
+frontend.immediate.disconnected: Odpojeno od ETS2LA backend
+frontend.immediate.update_check_error: 'Problém: {0}'
+frontend.immediate.checking_updates: Kontrola aktualizací...
+frontend.immediate.update_available: Jsi {0} aktualizací za nejnovější verzí
+frontend.immediate.no_updates: Žádné nové aktualizace.
+frontend.immediate.up_to_date: Aktuální
+frontend.immediate.socket_disconnected: Odpojeno, prosím obnov.
+frontend.immediate.enable_stay_on_top: Povolit zobrazení v popředí
+frontend.immediate.disable_stay_on_top: Zakázat zobrazení v popředí
+frontend.immediate.enable_transparent: Povolit průhlednost
+frontend.immediate.disable_transparent: Zakázat průhlednost
+frontend.immediate.minimize: Zmenšit
+frontend.immediate.close: Zavřit
+frontend.404.button: Hlavní menu
+frontend.settings.data_missing: Plugin data nejsou správné nebo chybí.
+frontend.settings: Nastavení
+frontend.settings.global: Globální
+frontend.settings.controls: Ovládání
+frontend.settings.global_info: Tento list obsahuje pouze pluginy které podporují
+  globální nastavení souboru.
+frontend.settings.error: 'Error: {0}'
+frontend.settings.backend_no_data: Nedostal jsem žádná data z backendu.
+frontend.settings.string.updated: Nastavení aktualizováno
+frontend.settings.number.updated: Nastavení aktualizováno
+frontend.settings.boolean.updated: Aktualizované nastavení
+frontend.settings.array.updated_element: Aktualizovaný prvek pole
+frontend.settings.array.removed_element: Odstraněný prvek pole
+frontend.settings.array.add: Přidat prvek
+frontend.settings.array.remove: Odstranit
+frontend.settings.enum.updated: Nastavení aktualizováno
+frontend.settings.needs_restart: Plugin vyžaduje restart pro aktualizaci 
+  nastavení.
+frontend.settings.restarted: Restart se poved
+frontend.feedback: Zpětná vazba
+frontend.feedback.sending: Odesílám... zpětnou vazbu..
+frontend.feedback.sent: Zpětná vazba odeslána !
+frontend.feedback.error_sending: Objevil se error při odesílání zpětné vazby, 
+  zkus prosím později.
+frontend.feedback.disclaimer: Nesdílej žádné osobní údaje.
+frontend.feedback.submit: Odeslat
+frontend.plugins.name: Jméno
+frontend.plugins.authors: Tvůrci
+frontend.plugins.tags: Štítek
+frontend.plugins.select_authors: Hledej tvůrce
+frontend.plugins.select_tags: Najdi štítky
+frontend.plugins.selected_tags: '{0} štítků vybráno'
+frontend.plugins.selected_authors: '{0} autorů vybráno'
+frontend.plugins.end_list: Toto je konec listu
+frontend.plugins.enabling_plugin: Zapínám {0}
+frontend.plugins.enabled_plugin: Zapnuto {0}
+frontend.plugins.error_enabling_plugin: Chyba v zapínání {0}
+frontend.plugins.enabling_all_plugins: Zapínám všechny pluginy...
+frontend.plugins.enabled_all_plugins: Zapnuty všechny pluginy
+frontend.plugins.disabling_plugin: Vypínám {0}
+frontend.plugins.disabled_plugin: Vypnuty {0}
+frontend.plugins.error_disabling_plugin: Chyba při vypínání {0}
+frontend.plugins.disabled_all_plugins: Vypnuty všechny pluginy
+frontend.plugins.hidden: '{0} plugin(y) jsou skryté'
+frontend.disclaimer.title: Vyloučení nebo zřeknutí odpovědnosti
+frontend.404.title: Proč jsme tady... jen abychom trpěli?
+frontend.settings.array.added_element: Přidaný prvek pole
+frontend.disclaimer.description.line1: ETS2LA není zodpovědná za jakékolif 
+  způsobené škody používáním tohoto programu. Použití programu je na svůj 
+  vlastní risk
+frontend.settings.unknown_data_type: Neznámý data type:{0}
+frontend.feedback.empty: Zpětná vazba je prázná, prosím přidej zpětnou vazbu 
+  kterou máš.
+frontend.immediate.socket_connected: Připojeno
+frontend.404.message: Klikni na tlačítko níže, aby ses vrátil na domovskou 
+  obrazovku, a můžeš nám prosímtě říct, jak ses sem dostal?
+frontend.settings.enum.no_enum: Nebyly zadány žádné hodnoty výčtu.
+frontend.feedback.description: Prosím řekni nám zpěnou vazbu, bude to odesláno 
+  přímo k developerům.
+frontend.plugins.disabling_all_plugins: Vypínám všechny pluginy...

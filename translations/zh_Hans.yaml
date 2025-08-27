@@ -28,7 +28,7 @@ frontend.immediate.minimize: "最小化"
 frontend.immediate.close: "关闭"
 frontend.404.title: "您貌似进入到了我们的视野盲区？"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
-frontend.404.message: "无论如何，请点击下方按钮返回主界面，并告诉我们您是怎么到达这个页面的"
+frontend.404.message: "无论如何，请点击下方按钮返回主界面，并告诉我们您是怎么到达这个页面的?"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page!
 frontend.404.button: "返回到主界面"
 # ^ You can go wild here, I'd like to see some fun jokes in the 404 page! (at least make this something about the main menu)
