@@ -37,7 +37,7 @@ export const translate = (key: string, ...values: any[]): string => {
 
     // Look for translation in current language
     let translation = undefined;
-    if(!translations[currentLanguage]["default"].hasOwnProperty(key)) {
+    if(!translations[currentLanguage]["default"] || !translations[currentLanguage]["default"].hasOwnProperty(key)) {
         return key;
     } else {
         translation = translations[currentLanguage]["default"][key];
