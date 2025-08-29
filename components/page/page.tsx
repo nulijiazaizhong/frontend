@@ -30,6 +30,7 @@ import { SliderComponent } from "@/components/page/slider"
 import { InputRenderer } from "./input_renderer"
 import { ComboboxRenderer } from "./combobox_renderer"
 import { CheckboxRenderer } from "./checkbox_renderer"
+import { SwitchRenderer } from "./switch_renderer"
 import { GraphRenderer } from "./graph_renderer"
 import Page from "@/app/page/page"
 import { Adsense } from "@ctrl/react-adsense"
@@ -544,6 +545,11 @@ export function ETS2LAPage({ url, data, enabled, className }: { url: string, dat
 				if (key == "checkbox") {
 					result.push(
 						<CheckboxRenderer data={key_data} url={url} send={send} key={key_data.key} />
+					)
+				}
+				if (key == "switch") {
+					result.push(
+						<SwitchRenderer data={key_data} url={url} send={send} key={key_data.key} />
 					)
 				}
 				if (key == "input") {

@@ -5,12 +5,9 @@ import {
     SidebarGroup,
     SidebarGroupLabel,
     SidebarHeader,
-    SidebarGroupAction,
     SidebarMenuButton,
     SidebarMenu,
     SidebarMenuItem,
-    SidebarMenuSub,
-    SidebarMenuSubItem,
     SidebarRail
 } from "@/components/ui/sidebar"
 
@@ -38,7 +35,8 @@ import {
     UserCog,
     UserRoundMinus,
     ArrowLeftToLine,
-    Archive
+    Archive,
+    MessageCircleHeart
 } from "lucide-react"
 
 import { SetSettingByKey } from "@/apis/settings"
@@ -189,6 +187,16 @@ export function ETS2LASidebar() {
                         }
                     }>
                         <AlignEndVertical /> Roadmap
+                    </SidebarMenuButton>
+                    <SidebarMenuButton className={buttonClassName("/page", { url: "/chat" })} onMouseDown={
+                        () => {
+                            startTransition(async () => {
+                                startProgress()
+                                router.push('/page?url=/feedback')
+                            })
+                        }
+                    }>
+                        <MessageCircleHeart /> Feedback
                     </SidebarMenuButton>
                 </SidebarGroup>
                 {devmode && (
