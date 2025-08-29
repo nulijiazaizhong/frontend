@@ -44,7 +44,6 @@ export default function RootLayout({ children, } : Readonly<{ children: React.Re
                 `}</Script>
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-sidebarbg overflow-hidden w-screen h-screen`}>
-                <Script src="https://umami.ets2la.com/script.js" data-website-id="ca602362-299b-4222-9ea5-bbd2610488b3" onError={() => {}} />
                 <AuthProvider>
                     <CSRLayout>{children}</CSRLayout>
                 </AuthProvider>
