@@ -1,6 +1,7 @@
 import { ParseClassname } from "./page";
 import { useState, useEffect } from "react";
 import { Checkbox } from "../ui/checkbox";
+import { set } from "react-hook-form";
 
 export function CheckboxRenderer({ data, url, send }: any) {
 	const classname = ParseClassname("", data.style?.classname);
@@ -9,9 +10,10 @@ export function CheckboxRenderer({ data, url, send }: any) {
 	const default_value = data.default ?? false;
 
 	const [checked, setChecked] = useState(default_value);
+	const [update, setUpdate] = useState(false);
 
 	useEffect(() => {
-		if (changed) {
+		if (changed != null && update) {
 			send({
 				type: "function",
 				data: {
@@ -21,7 +23,8 @@ export function CheckboxRenderer({ data, url, send }: any) {
 				}
 			});
 		}
-	}, [checked]);
+		setUpdate(false);
+	}, [update]);
 
 	useEffect(() => {
 		setChecked(default_value);
@@ -34,6 +37,7 @@ export function CheckboxRenderer({ data, url, send }: any) {
 			checked={checked}
 			onCheckedChange={(checked) => {
 				setChecked(checked);
+				setUpdate(true);
 			}}
 		/>
 	);
