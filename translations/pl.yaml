@@ -1,4 +1,4 @@
-frontend.hello: "Witaj, {0}!"
+frontend.hello: "Cześć, {0}!"
 # ^ {0} is the name of the user Example: 'Hello, Tumppi066'
 frontend.disclaimer.title: "Ważna informacja!"
 frontend.disclaimer.description.line1: "ETS2LA nie ponosi odpowiedzialności za jakiekolwiek

@@ -1,3 +1,5 @@
+"use client";
+
 import {
     Sidebar,
     SidebarContent,
@@ -48,6 +50,8 @@ import { GetDevmode, ReloadPlugins } from "@/apis/backend"
 import { toast } from "sonner"
 import useSWR from "swr"
 import RenderPage from "./page/render_page"
+import { usePages } from "@/hooks/usePages"
+import { useState, useEffect } from "react";
 
 export function ETS2LASidebar() {
     const { data: update_data } = useSWR("update", CheckForUpdate, { refreshInterval: 60000 })
@@ -59,6 +63,23 @@ export function ETS2LASidebar() {
     const path = usePathname()
     const params = useSearchParams()
     const { theme } = useTheme();
+    const pages = usePages();
+
+    const [validPages, setValidPages] = useState([]);
+
+    useEffect(() => {
+        const sidebarPages = [];
+        for (const [key, data] of Object.entries(pages)) {
+            // @ts-ignore - No types for data
+            if (data.location == "sidebar"){
+                // @ts-ignore - No types for data
+                sidebarPages.push(data);
+            }
+        }
+        // @ts-ignore - No types for data
+        setValidPages(sidebarPages);
+        console.log("Valid sidebar pages:", sidebarPages);
+    }, [pages]);
 
     const buttonClassName = (targetPath: string, targetQuery?: { [key: string]: string }) => {
         if (targetQuery) {
@@ -166,6 +187,19 @@ export function ETS2LASidebar() {
                     }>
                         <ChartArea /> {translate("frontend.sidebar.performance")}
                     </SidebarMenuButton>
+                    {validPages && validPages.map((data:any, index:number) => (
+                        data && data.url && data.location && data.title ?
+                        <SidebarMenuButton className={buttonClassName("/page", { url: data.url })} key={index} onMouseDown={
+                            () => {
+                                startTransition(async () => {
+                                    startProgress()
+                                    router.push('/page?url=' + data.url)
+                                })
+                            }
+                        }>
+                            {data.title}
+                        </SidebarMenuButton> : null
+                    ))}
                 </SidebarGroup>
                 <SidebarGroup>
                     <SidebarGroupLabel className="font-semibold">
