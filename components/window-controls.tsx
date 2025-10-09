@@ -51,7 +51,7 @@ export default function WindowControls() {
                 const newY = windowPosition.y + (e.screenY - lastMousePosition.y);
                 setWindowPosition({ x: newX, y: newY });
                 // @ts-ignore
-                window.pywebview._bridge.call('pywebviewMoveWindow', [newX, newY], "move");
+                window.pywebview._jsApiCallback("pywebviewMoveWindow", [newX, newY], "move");
                 setLastMousePosition({ x: e.screenX, y: e.screenY });
             }
         };
