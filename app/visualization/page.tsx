@@ -16,6 +16,7 @@ export default function Visualization() {
     const [ usePromods, setUsePromods ] = useState(false);
     const [ useMirror, setUseMirror ] = useState(false);
     const [ isVisualizationOpen, setIsVisualizationOpen ] = useState(false);
+    const [ visualizationSize, setVisualizationSize ] = useState(60);
     const [ isMapOpen, setIsMapOpen ] = useState(false);
     const { open, setOpen } = useSidebar();
     const { theme } = useTheme();
@@ -35,12 +36,13 @@ export default function Visualization() {
 
     return (
         <>
-            <motion.div className="flex w-full h-full">
+            <motion.div className="flex w-full h-full relative">
                 <ResizablePanelGroup direction="horizontal" className="w-full h-full">
                     <ResizablePanel className="h-full relative" defaultSize={60} onResize={(size) => {
                         if(size < 5){
                             setIsVisualizationOpen(false);
                         }
+                        setVisualizationSize(size);
                     }}>
                         {isMapOpen && isVisualizationOpen && (
                             <div className="absolute right-0 top-0 bottom-0 w-1 z-10 bg-linear-to-r from-transparent to-[#181818]" />
@@ -72,10 +74,15 @@ export default function Visualization() {
                                         RAM Usage: ~400mb
                                     </p>
                                     <p className="text-xs text-muted-foreground text-center">
-                                        Please note that loading might take a minute the first time. <br />
-                                        The visualization will update once the game is unpaused.
+                                        Note: If the layout of this page looks weird, <br/>you can press F5 to refresh the page.
                                     </p>
                                 </div>
+
+                                {visualizationSize > 40 && (
+                                    <div className="absolute right-2 text-xs text-muted-foreground font-geist">
+                                        {'Try this! ->'}
+                                    </div>
+                                )}
                             </div>
                         )}
                     </ResizablePanel>
@@ -127,12 +134,17 @@ export default function Visualization() {
                         )}
                     </ResizablePanel>
                 </ResizablePanelGroup>
+            
+                {/* This div is required to make sure the page is always full height, presumably due to google ads... */}
+                <div className="w-full absolute -bottom-16 z-50 text-xs text-center text-muted-foreground font-geist">
+                    <Button variant={"secondary"} onClick={() => {
+                        window.location.reload();
+                        toast.success("Layout fix triggered!");
+                    }}>
+                        Fix Layout
+                    </Button>
+                </div>
             </motion.div>
-        
-            {/* This div is required to make sure the page is always full height, presumably due to google ads... */}
-            <div className="w-48 fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
-            </div>
-        
         </>
     )
 }

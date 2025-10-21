@@ -161,7 +161,7 @@ export default function CSRLayout({ children, }: Readonly<{ children: React.Reac
                                                     {children}
                                                 </SidebarInset>
                                                 {/* This is a hack to make sure the sidebar inset always has a height of 100%. */}
-                                                <div className="w-48 fixed bottom-4 left-1/2 -translate-x-1/2 z-50 h-2"></div>
+                                                <div className="w-48 fixed bottom-8 left-1/2 -translate-x-1/2 z-50 h-2"></div>
                                             </SidebarProvider>
                                         </ProgressBarProvider>
                                     </UIProvider>
