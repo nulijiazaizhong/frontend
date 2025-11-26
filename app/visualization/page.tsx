@@ -38,10 +38,12 @@ export default function Visualization() {
         open: boolean
         useMirror: boolean;
         mapName: string;
+        disableRouteCam: boolean;
     }>({
         open: false,
         useMirror: false,
         mapName: "base",
+        disableRouteCam: false,
     });
 
     const map_link = "https://map.ets2la.com";
@@ -49,7 +51,7 @@ export default function Visualization() {
     const map_mirror = "https://map.ets2la.cn"
     const visualization_mirror = "https://visualization.ets2la.cn?theme=" + (visualizationOptions.forceTheme ? visualizationOptions.forceTheme : theme);
 
-    const map = (mapOptions.useMirror ? map_mirror : map_link) + "?mapName=" + mapOptions.mapName;
+    const map = (mapOptions.useMirror ? map_mirror : map_link) + "?mapName=" + mapOptions.mapName + (mapOptions.disableRouteCam ? "&noFollowRoute" : "");
     const visualization = visualizationOptions.useMirror ? visualization_mirror : visualization_link;
 
     useEffect(() => {
@@ -60,7 +62,7 @@ export default function Visualization() {
         <>
             <motion.div className="flex w-full h-full relative">
                 <ResizablePanelGroup direction="horizontal" className="w-full h-full">
-                    <ResizablePanel className="h-full relative" defaultSize={60} onResize={(size) => {
+                    <ResizablePanel className="h-full relative" defaultSize={40} onResize={(size) => {
                         if(size < 5){
                             setVisualizationOptions({ ...visualizationOptions, open: false });
                         }
@@ -117,7 +119,7 @@ export default function Visualization() {
                         )}
                     </ResizablePanel>
                     <ResizableHandle withHandle className="bg-transparent w-0 opacity-20 hover:opacity-100 z-50 transition-all" />
-                    <ResizablePanel className="h-full w-0 relative" defaultSize={40} onResize={(size) => {
+                    <ResizablePanel className="h-full w-0 relative" defaultSize={60} onResize={(size) => {
                         if(size < 5){
                             setMapOptions({ ...mapOptions, open: false });
                         }
@@ -147,6 +149,15 @@ export default function Visualization() {
                                         <p className={"text-xs" + (mapOptions.mapName == "promods" ? "" :" text-muted-foreground")} onClick={() => {
                                             setMapOptions({ ...mapOptions, mapName: mapOptions.mapName == "promods" ? "base" : "promods" });
                                         }}>Promods Support</p>
+                                    </div>
+
+                                    <div className="flex items-center gap-2 pt-2">
+                                        <Checkbox checked={mapOptions.disableRouteCam} onCheckedChange={(e) => {
+                                            setMapOptions({ ...mapOptions, disableRouteCam: e as boolean });
+                                        }} />
+                                        <p className={"text-xs" + (mapOptions.disableRouteCam ? "" :" text-muted-foreground")} onClick={() => {
+                                            setMapOptions({ ...mapOptions, disableRouteCam: !mapOptions.disableRouteCam });
+                                        }}>{"Simple Camera (supports low resolutions)"}</p>
                                     </div>
 
                                     <div className="flex items-center gap-2 pt-2">
