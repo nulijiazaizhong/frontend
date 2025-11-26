@@ -37,7 +37,7 @@ export function Disclaimer({ closed_callback }: { closed_callback: () => void })
                         <div className="flex items-center gap-2 pl-[3px] pointer-events-none">
                             <Image src={kofi_logo} alt="Ko-Fi" className="w-6 h-6" />
                             <span className="max-w-0 opacity-0 group-hover:max-w-md group-hover:opacity-100 transition-all duration-300 whitespace-nowrap text-white">
-                                {translate("about.support_development")}
+                                {translate("frontend.support_development")}
                             </span>
                         </div>
                     </Button>

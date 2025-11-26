@@ -11,24 +11,46 @@ import useSWR from "swr";
 import { toast } from "sonner";
 import { useTheme } from "next-themes";
 import { useSidebar } from "@/components/ui/sidebar";
+import { Checkbox } from "@/components/ui/checkbox";
+
+function other_theme(theme: string) {
+    if (theme == "light") return "dark";
+    if (theme == "dark") return "light";
+    return "system";
+}
 
 export default function Visualization() {
-    const [ usePromods, setUsePromods ] = useState(false);
-    const [ useMirror, setUseMirror ] = useState(false);
-    const [ isVisualizationOpen, setIsVisualizationOpen ] = useState(false);
     const [ visualizationSize, setVisualizationSize ] = useState(60);
-    const [ isMapOpen, setIsMapOpen ] = useState(false);
     const { open, setOpen } = useSidebar();
-    const { theme } = useTheme();
+    const { resolvedTheme: theme } = useTheme();
+
+    const [ visualizationOptions, setVisualizationOptions ] = useState<{
+        open: boolean
+        useMirror: boolean;
+        forceTheme: string | null;
+    }>({
+        open: false,
+        useMirror: false,
+        forceTheme: null,
+    });
+
+    const [ mapOptions, setMapOptions ] = useState<{
+        open: boolean
+        useMirror: boolean;
+        mapName: string;
+    }>({
+        open: false,
+        useMirror: false,
+        mapName: "base",
+    });
 
     const map_link = "https://map.ets2la.com";
-    const visualization_link = "https://visualization.ets2la.com?theme=" + theme;
+    const visualization_link = "https://visualization.ets2la.com?theme=" + (visualizationOptions.forceTheme ? visualizationOptions.forceTheme : theme);
     const map_mirror = "https://map.ets2la.cn"
-    const visualization_mirror = "https://visualization.ets2la.cn?theme=" + theme;
-    const pm_link = "https://piggywu981.github.io/ets2la";
+    const visualization_mirror = "https://visualization.ets2la.cn?theme=" + (visualizationOptions.forceTheme ? visualizationOptions.forceTheme : theme);
 
-    const map = useMirror ? (usePromods ? pm_link : map_mirror) : (usePromods ? pm_link : map_link);
-    const visualization = useMirror ? visualization_mirror : visualization_link;
+    const map = (mapOptions.useMirror ? map_mirror : map_link) + "?mapName=" + mapOptions.mapName;
+    const visualization = visualizationOptions.useMirror ? visualization_mirror : visualization_link;
 
     useEffect(() => {
         setOpen(false);
@@ -40,14 +62,14 @@ export default function Visualization() {
                 <ResizablePanelGroup direction="horizontal" className="w-full h-full">
                     <ResizablePanel className="h-full relative" defaultSize={60} onResize={(size) => {
                         if(size < 5){
-                            setIsVisualizationOpen(false);
+                            setVisualizationOptions({ ...visualizationOptions, open: false });
                         }
                         setVisualizationSize(size);
                     }}>
-                        {isMapOpen && isVisualizationOpen && (
+                        {mapOptions.open && visualizationOptions.open && (
                             <div className="absolute right-0 top-0 bottom-0 w-1 z-10 bg-linear-to-r from-transparent to-[#181818]" />
                         )}
-                        {isVisualizationOpen && (
+                        {visualizationOptions.open && (
                             <motion.iframe className="w-full h-full" 
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -56,46 +78,54 @@ export default function Visualization() {
                                 src={visualization}
                             />
                         )}
-                        {!isVisualizationOpen && (
-                            <div className="w-full h-full items-center flex flex-col gap-4 justify-center font-geist">
-                                <div className="flex flex-col gap-0 text-center">
-                                    <p className="font-semibold pb-2">Load Visualization</p>
-                                    <Button variant={"outline"} onClick={() => {
-                                        setIsVisualizationOpen(true)
-                                    }} className="border-b-0 rounded-b-none group w-48"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Official</span></Button>
-                                    <Button variant={"outline"} onClick={() => {
-                                        setUseMirror(true);
-                                        setIsVisualizationOpen(true)
-                                    }}  className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Goodnightan mirror</span></Button>
-                                </div>
+                        {!visualizationOptions.open && (
+                            <div className="w-full h-full items-center flex flex-col gap-4 justify-center font-geist relative">
+                                <div className="top-6 left-6 absolute">
+                                    <p className="font-semibold pb-1">Visualization</p>
+                                    <p className="text-xs text-muted-foreground">This visualization will show the current state of the self driving systems.</p>
 
-                                <div className="flex flex-col gap-2 items-center">
-                                    <p className="text-xs text-muted-foreground font-geist-mono">
-                                        RAM Usage: ~400mb
-                                    </p>
-                                    <p className="text-xs text-muted-foreground text-center">
-                                        Note: If the layout of this page looks weird, <br/>you can press F5 to refresh the page.
-                                    </p>
-                                </div>
-
-                                {visualizationSize > 40 && (
-                                    <div className="absolute right-2 text-xs text-muted-foreground font-geist">
-                                        {'Try this! ->'}
+                                    <div className="flex items-center gap-2 pt-2">
+                                        <Checkbox checked={visualizationOptions.useMirror} onCheckedChange={(e) => {
+                                            setVisualizationOptions({ ...visualizationOptions, useMirror: e as boolean });
+                                        }} className="size-4"/>
+                                        <span className={"text-xs" + (visualizationOptions.useMirror ? "" :" text-muted-foreground")} onClick={() => {
+                                            setVisualizationOptions({ ...visualizationOptions, useMirror: !visualizationOptions.useMirror });
+                                        }}>Goodnightan Mirror</span>
                                     </div>
-                                )}
+
+                                    { theme ? (
+                                        <div className="flex items-center gap-2 pt-2 pb-3">
+                                            <Checkbox checked={visualizationOptions.forceTheme === other_theme(theme)} onCheckedChange={(e) => {
+                                                setVisualizationOptions({ ...visualizationOptions, forceTheme: visualizationOptions.forceTheme ? null : other_theme(theme) });
+                                            }} className="size-4"/>
+                                            <span className={"text-xs" + (visualizationOptions.forceTheme === other_theme(theme) ? "" :" text-muted-foreground")} onClick={() => {
+                                                setVisualizationOptions({ ...visualizationOptions, forceTheme: visualizationOptions.forceTheme ? null : other_theme(theme)  });
+                                            }}>Force {other_theme(theme)} theme</span>
+                                        </div>
+                                    ) : null}
+                                </div>
+
+                                <div className="flex flex-col bottom-6 left-6 absolute gap-2">
+                                    <a className="text-xs text-muted-foreground" href={visualization} target="_blank">{visualization}</a>
+                                    <Button size={"sm"} variant={"outline"} onClick={() => {
+                                        setVisualizationOptions({ ...visualizationOptions, open: true });
+                                    }} className="group w-48">
+                                        <span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Load Visualization</span>
+                                    </Button>
+                                </div>
                             </div>
                         )}
                     </ResizablePanel>
                     <ResizableHandle withHandle className="bg-transparent w-0 opacity-20 hover:opacity-100 z-50 transition-all" />
                     <ResizablePanel className="h-full w-0 relative" defaultSize={40} onResize={(size) => {
                         if(size < 5){
-                            setIsMapOpen(false);
+                            setMapOptions({ ...mapOptions, open: false });
                         }
                     }}>
-                        {isVisualizationOpen && isMapOpen && (
+                        {visualizationOptions.open && mapOptions.open && (
                             <div className="absolute left-0 top-0 bottom-0 w-1 z-10 bg-linear-to-l from-transparent to-[#181818]" />
                         )}
-                        {isMapOpen && (
+                        {mapOptions.open && (
                             <motion.iframe className="w-full h-full" 
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -104,31 +134,35 @@ export default function Visualization() {
                                 src={map}
                             />
                         )}
-                        {!isMapOpen && (
-                            <div className="border-l w-full h-full items-center flex flex-col gap-4 justify-center font-geist">
-                                <div className="flex flex-col gap-0 text-center">
-                                <p className="font-semibold pb-2">Load Map</p>
-                                    <Button variant={"outline"} onClick={() => {
-                                        setIsMapOpen(true)
-                                    }} className="border-b-0 rounded-b-none group w-48"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Official</span></Button>
-                                    <Button variant={"outline"} onClick={() => {
-                                        setUsePromods(true);
-                                        setIsMapOpen(true)
-                                    }} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Promods Support</span></Button>
-                                    <Button variant={"outline"} onClick={() => {
-                                        setUseMirror(true);
-                                        setIsMapOpen(true)
-                                    }} className="mt-2 border-b-0 rounded-b-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Goodnightan Mirror</span></Button>
-                                    <Button variant={"outline"} onClick={() => {
-                                        setUseMirror(true);
-                                        setUsePromods(true);
-                                        setIsMapOpen(true)
-                                    }} className="rounded-t-none group"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Promods Support</span></Button>
+                        {!mapOptions.open && (
+                            <div className="border-l w-full h-full items-center flex flex-col gap-4 justify-center font-geist relative">
+                                <div className="top-6 left-6 absolute">
+                                    <p className="font-semibold pb-1">Map</p>
+                                    <p className="text-xs text-muted-foreground">You can see your location and route here.</p>
+
+                                    <div className="flex items-center gap-2 pt-2">
+                                        <Checkbox checked={mapOptions.mapName == "promods" } onCheckedChange={(e) => {
+                                            setMapOptions({ ...mapOptions, mapName: e as boolean ? "promods" : "base" });
+                                        }} />
+                                        <p className={"text-xs" + (mapOptions.mapName == "promods" ? "" :" text-muted-foreground")} onClick={() => {
+                                            setMapOptions({ ...mapOptions, mapName: mapOptions.mapName == "promods" ? "base" : "promods" });
+                                        }}>Promods Support</p>
+                                    </div>
+
+                                    <div className="flex items-center gap-2 pt-2">
+                                        <Checkbox checked={mapOptions.useMirror} onCheckedChange={(e) => {
+                                            setMapOptions({ ...mapOptions, useMirror: e as boolean });
+                                        }} />
+                                        <p className={"text-xs" + (mapOptions.useMirror ? "" :" text-muted-foreground")} onClick={() => {
+                                            setMapOptions({ ...mapOptions, useMirror: !mapOptions.useMirror });
+                                        }}>Goodnightan Mirror</p>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col gap-2 items-center">
-                                    <p className="text-xs text-muted-foreground font-geist-mono">
-                                        RAM Usage: ~200mb
-                                    </p>
+                                <div className="flex flex-col gap-0 bottom-6 left-6 absolute">
+                                    <a className="text-xs text-muted-foreground pb-2" href={map} target="_blank">{map}</a>
+                                    <Button variant={"outline"} onClick={() => {
+                                        setMapOptions({ ...mapOptions, open: true });
+                                    }} className="group w-48"><span className="text-muted-foreground text-xs group-hover:text-foreground transition-all">Load Map</span></Button>
                                 </div>
                             </div>
                         )}
