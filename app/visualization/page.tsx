@@ -23,6 +23,7 @@ export default function Visualization() {
     const [ visualizationSize, setVisualizationSize ] = useState(60);
     const { open, setOpen } = useSidebar();
     const { resolvedTheme: theme } = useTheme();
+    const isVertical = window.innerWidth < window.innerHeight;
 
     const [ visualizationOptions, setVisualizationOptions ] = useState<{
         open: boolean
@@ -61,7 +62,7 @@ export default function Visualization() {
     return (
         <>
             <motion.div className="flex w-full h-full relative">
-                <ResizablePanelGroup direction="horizontal" className="w-full h-full">
+                <ResizablePanelGroup direction={isVertical ? "vertical" : "horizontal"} className="w-full h-full">
                     <ResizablePanel className="h-full relative" defaultSize={40} onResize={(size) => {
                         if(size < 5){
                             setVisualizationOptions({ ...visualizationOptions, open: false });
@@ -119,7 +120,7 @@ export default function Visualization() {
                         )}
                     </ResizablePanel>
                     <ResizableHandle withHandle className="bg-transparent w-0 opacity-20 hover:opacity-100 z-50 transition-all" />
-                    <ResizablePanel className="h-full w-0 relative" defaultSize={60} onResize={(size) => {
+                    <ResizablePanel className="h-full w-full relative" defaultSize={60} onResize={(size) => {
                         if(size < 5){
                             setMapOptions({ ...mapOptions, open: false });
                         }
