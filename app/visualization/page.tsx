@@ -52,7 +52,9 @@ export default function Visualization() {
     const map_mirror = "https://map.ets2la.cn"
     const visualization_mirror = "https://visualization.ets2la.cn?theme=" + (visualizationOptions.forceTheme ? visualizationOptions.forceTheme : theme);
 
-    const map = (mapOptions.useMirror ? map_mirror : map_link) + "?mapName=" + mapOptions.mapName + (mapOptions.disableRouteCam ? "&noFollowRoute" : "");
+    const map = (mapOptions.useMirror ? map_mirror : map_link) + "?mapName=" + mapOptions.mapName 
+              + (mapOptions.disableRouteCam ? "&noFollowRoute" : "")
+              + (mapOptions.useMirror ? "&tileRootUrl=https://data.ets2la.cn/" : "");
     const visualization = visualizationOptions.useMirror ? visualization_mirror : visualization_link;
 
     useEffect(() => {
